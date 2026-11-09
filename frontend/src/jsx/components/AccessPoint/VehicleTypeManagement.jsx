@@ -1,0 +1,485 @@
+import React, { useState, useEffect, Fragment } from 'react';
+import { Card, Modal, Form } from 'react-bootstrap';
+import Swal from 'sweetalert2';
+import { getVehicleTypes, createVehicleType, updateVehicleType, deleteVehicleType } from '../../../services/GateManagementService';
+import { usePermission } from '../../../hooks/usePermission';
+import CreateButton from '../../../components/permissions/CreateButton';
+import EditButton from '../../../components/permissions/EditButton';
+import DeleteButton from '../../../components/permissions/DeleteButton';
+
+const VehicleTypeManagement = () => {
+    const { can } = usePermission();
+    const [loading, setLoading] = useState(false);
+    const [types, setTypes] = useState([]);
+    const [editMode, setEditMode] = useState(false);
+    const [editId, setEditId] = useState(null);
+    const [showModal, setShowModal] = useState(false);
+    const [searchTerm, setSearchTerm] = useState('');
+    const [formData, setFormData] = useState({
+        name: ''
+    });
+
+    useEffect(() => {
+        fetchTypes();
+    }, []);
+
+    const fetchTypes = async () => {
+        try {
+            const data = await getVehicleTypes();
+            setTypes(data || []);
+        } catch (error) {
+            console.error("Error fetching vehicle types", error);
+        }
+    };
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleShowModal = (type = null) => {
+        if (type && type.id) {
+            setEditMode(true);
+            setEditId(type.id);
+            setFormData({
+                name: type.name || ''
+            });
+        } else {
+            setEditMode(false);
+            setEditId(null);
+            setFormData({ name: '' });
+        }
+        setShowModal(true);
+    };
+
+    const handleEdit = (type) => {
+        handleShowModal(type);
+    };
+
+    const resetForm = () => {
+        setEditMode(false);
+        setEditId(null);
+        setFormData({ name: '' });
+        setShowModal(false);
+        setTimeout(() => {
+            if (document.activeElement && typeof document.activeElement.blur === 'function') {
+                document.activeElement.blur();
+            }
+        }, 100);
+    };
+
+    useEffect(() => {
+        if (showModal) {
+            const timer = setTimeout(() => {
+                const inputs = Array.from(
+                    document.querySelectorAll('.gate-custom-modal input:not([disabled]):not([readonly]), .gate-custom-modal textarea:not([disabled]):not([readonly])')
+                ).filter(el => el.offsetParent !== null && el.type !== 'hidden');
+                if (inputs.length > 0) {
+                    inputs[0].focus();
+                }
+            }, 100);
+            return () => clearTimeout(timer);
+        }
+    }, [showModal]);
+
+    const getFocusable = () => {
+        const modal = document.querySelector('.gate-custom-modal');
+        if (!modal) return [];
+        return Array.from(
+            modal.querySelectorAll(
+                '.form-control-custom, button[type="submit"]:not([disabled])'
+            )
+        ).filter(el => el.offsetParent !== null && !el.disabled);
+    };
+
+    const handleKeyDown = (e) => {
+        if (e.key !== 'Enter') return;
+        if (e.target.tagName.toLowerCase() === 'textarea' && e.shiftKey) return;
+
+        const all = getFocusable();
+        const index = all.indexOf(document.activeElement);
+        if (index > -1 && index < all.length - 1) {
+            e.preventDefault();
+            if (index === all.length - 2) {
+                all[all.length - 1].click();
+            } else {
+                all[index + 1].focus();
+            }
+        }
+    };
+
+    const handleFocus = (e) => {
+        if (e.target.tagName === 'INPUT' && (e.target.type === 'number' || e.target.type === 'text')) {
+            e.target.select();
+        }
+    };
+
+    const handleDelete = async (id, name) => {
+        const result = await Swal.fire({
+            title: 'Delete Vehicle Type?',
+            text: `Are you sure you want to delete "${name || 'this type'}"?`,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it'
+        });
+
+        if (result.isConfirmed) {
+            try {
+                // Assuming deleteVehicleType exists, if not we'll need to add it to service
+                await deleteVehicleType(id);
+                Swal.fire({ icon: 'success', title: 'Deleted', text: 'Vehicle Type deleted successfully', timer: 2000, showConfirmButton: false });
+                fetchTypes();
+            } catch (error) {
+                let errorMsg = 'Failed to delete vehicle type';
+                if (error.response && error.response.data && error.response.data.detail) {
+                    errorMsg = error.response.data.detail;
+                }
+                Swal.fire({ icon: 'error', title: 'Error', text: errorMsg });
+            }
+        }
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        const trimmedName = (formData.name || '').trim().toLowerCase();
+
+        if (trimmedName) {
+            const duplicateName = types.some(t => {
+                if (editMode && t.id === editId) return false;
+                return (t.name || '').trim().toLowerCase() === trimmedName;
+            });
+
+            if (duplicateName) {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Duplicate Type Name',
+                    text: 'A Vehicle Type with this Name already exists!'
+                });
+                return;
+            }
+        }
+
+        try {
+            setLoading(true);
+            if (editMode) {
+                // Assuming updateVehicleType exists, if not we'll need to add it to service
+                await updateVehicleType(editId, formData);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Updated',
+                    text: 'Vehicle Type updated successfully',
+                    timer: 2000,
+                    showConfirmButton: false,
+                    returnFocus: false
+                });
+            } else {
+                await createVehicleType(formData);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success',
+                    text: 'Vehicle Type registered successfully',
+                    timer: 2000,
+                    showConfirmButton: false,
+                    returnFocus: false
+                });
+            }
+            resetForm();
+            fetchTypes();
+        } catch (error) {
+            console.error("Error saving vehicle type:", error);
+            const errorMsg = error.response?.data?.name?.[0] ||
+                error.response?.data?.detail ||
+                `Failed to ${editMode ? 'update' : 'register'} vehicle type.`;
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: errorMsg,
+                returnFocus: false
+            });
+        } finally {
+            setLoading(false);
+            setTimeout(() => {
+                if (document.activeElement && typeof document.activeElement.blur === 'function') {
+                    document.activeElement.blur();
+                }
+            }, 100);
+        }
+    };
+
+    const filteredTypes = types.filter(type =>
+        (type.name || '').toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    return (
+        <div className="container-fluid">
+            <div className="page-titles">
+                <button
+                    onClick={() => window.history.back()}
+                    className="btn btn-outline-primary btn-sm d-flex align-items-center"
+                    style={{ gap: '6px', borderRadius: '6px' }}
+                >
+                    <i className="fa fa-arrow-left"></i> Back
+                </button>
+            </div>
+
+            <div className="row">
+                <div className="col-lg-12">
+                    <Card>
+                        <Card.Header className="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+                            <Card.Title className="mb-0 text-nowrap">Vehicle Types</Card.Title>
+                            <div className="d-flex flex-column flex-sm-row align-items-stretch align-items-sm-center gap-3 flex-grow-1 justify-content-md-end">
+                                <div className="search-bar-container w-100 m-0" style={{ maxWidth: '250px' }}>
+                                    <span className="search-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                                    </span>
+                                    <input
+                                        type="text"
+                                        className="search-input"
+                                        placeholder="Search type..."
+                                        value={searchTerm}
+                                        onChange={(e) => setSearchTerm(e.target.value)}
+                                    />
+                                </div>
+                                <div className="d-flex gap-2 align-items-center justify-content-start flex-shrink-0">
+                                    <CreateButton
+                                        module="gates"
+                                        onClick={() => handleShowModal()}
+                                    >
+                                        Type
+                                    </CreateButton>
+                                </div>
+                            </div>
+                        </Card.Header>
+                        <Card.Body>
+                            {loading ? (
+                                <div className="text-center py-5">
+                                    <div className="spinner-border text-primary" role="status">
+                                        <span className="visually-hidden">Loading...</span>
+                                    </div>
+                                </div>
+                            ) : (
+                                <div className="table-responsive">
+                                    <table className="table table-responsive-md">
+                                        <thead>
+                                            <tr>
+                                                <th><strong>TYPE NAME</strong></th>
+                                                <th className="text-end"><strong>ACTIONS</strong></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {filteredTypes.length === 0 ? (
+                                                <tr>
+                                                    <td colSpan="2" className="text-center py-4 text-muted">
+                                                        No vehicle types found
+                                                    </td>
+                                                </tr>
+                                            ) : (
+                                                filteredTypes.map((type) => (
+                                                    <tr key={type.id}>
+                                                        <td><strong>{type.name || '-'}</strong></td>
+                                                        <td className="text-end">
+                                                            {can('gates', 'edit') || can('gates', 'delete') ? (
+                                                                <div className="d-flex justify-content-end">
+                                                                    <EditButton
+                                                                        module="gates"
+                                                                        onClick={() => handleEdit(type)}
+                                                                        className="me-1"
+                                                                    />
+                                                                    <DeleteButton
+                                                                        module="gates"
+                                                                        onClick={() => handleDelete(type.id, type.name)}
+                                                                    />
+                                                                </div>
+                                                            ) : null}
+                                                        </td>
+                                                    </tr>
+                                                ))
+                                            )}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            )}
+                        </Card.Body>
+                    </Card>
+                </div>
+            </div>
+
+            {/* Custom Styled Popup Modal matching StockItem modal style */}
+            <Modal
+                show={showModal}
+                onHide={resetForm}
+                dialogClassName="gate-custom-modal"
+                backdrop="static"
+                keyboard={false}
+                restoreFocus={false}
+                size="md"
+                centered
+            >
+                <div className="modal-header-custom">
+                    <div className="d-flex align-items-center gap-3">
+                        <div className="modal-icon-circle">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM10 19H5V5H10V19ZM19 19H12V5H19V19Z" fill="white" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 className="modal-title font-w600 mb-0" style={{ fontSize: '18px', color: '#1e293b' }}>
+                                {editMode ? 'Edit Vehicle Type' : 'Save Vehicle Type'}
+                            </h4>
+                            <p className="text-muted mb-0" style={{ fontSize: '13px' }}>
+                                Enter details to manage vehicle type
+                            </p>
+                        </div>
+                    </div>
+                    <button type="button" className="modal-close-x" onClick={resetForm}>
+                        &times;
+                    </button>
+                </div>
+
+                <Form onSubmit={handleSubmit} onKeyDown={handleKeyDown} onFocus={handleFocus}>
+                    <div className="modal-body-custom">
+                        <div className="mb-3">
+                            <Form.Label className="form-label-custom">Type Name <span className="text-danger">*</span></Form.Label>
+                            <Form.Control
+                                type="text"
+                                name="name"
+                                className="form-control-custom"
+                                value={formData.name}
+                                onChange={handleChange}
+                                placeholder="Enter vehicle type name"
+                                autoFocus
+                                required
+                            />
+                        </div>
+                    </div>
+
+                    <div className="modal-footer-custom">
+                        <button type="button" className="btn-close-custom" onClick={resetForm}>
+                            Cancel
+                        </button>
+                        <button type="submit" className="btn-save-custom" disabled={loading}>
+                            {loading ? (
+                                <>
+                                    <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                                    Saving...
+                                </>
+                            ) : (
+                                editMode ? 'Update' : 'Save'
+                            )}
+                        </button>
+                    </div>
+                </Form>
+            </Modal>
+
+            <style>{`
+                .gate-custom-modal .modal-content {
+                    border-radius: 16px !important;
+                    border: none !important;
+                    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12) !important;
+                    overflow: hidden;
+                }
+                .gate-custom-modal .modal-header-custom {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 24px 28px 16px 28px;
+                    border-bottom: 1px solid #f1f5f9;
+                }
+                .gate-custom-modal .modal-icon-circle {
+                    width: 48px;
+                    height: 48px;
+                    background-color: #2ece8a;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    box-shadow: 0 4px 10px rgba(46, 206, 138, 0.2);
+                }
+                .gate-custom-modal .modal-close-x {
+                    border: none;
+                    background: transparent;
+                    font-size: 24px;
+                    color: #aaa;
+                    cursor: pointer;
+                    transition: color 0.2s;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 4px;
+                }
+                .gate-custom-modal .modal-close-x:hover {
+                    color: #555;
+                }
+                .gate-custom-modal .modal-body-custom {
+                    padding: 24px 28px;
+                    max-height: 70vh;
+                    overflow-y: auto;
+                }
+                .gate-custom-modal .modal-footer-custom {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    padding: 20px 28px 24px 28px;
+                    border-top: 1px solid #f1f5f9;
+                    background-color: #fafbfc;
+                    gap: 12px;
+                }
+                .gate-custom-modal .form-label-custom {
+                    font-size: 13px;
+                    font-weight: 500;
+                    color: #4a5568;
+                    margin-bottom: 6px;
+                }
+                .gate-custom-modal .form-control-custom {
+                    border: 1px solid #cbd5e1;
+                    border-radius: 10px;
+                    padding: 10px 14px;
+                    font-size: 13px;
+                    color: #334155;
+                    background-color: #fff;
+                    transition: border-color 0.2s, box-shadow 0.2s;
+                    width: 100%;
+                }
+                .gate-custom-modal .form-control-custom:focus {
+                    outline: none;
+                    border-color: #2ece8a;
+                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15);
+                }
+                .gate-custom-modal .form-control-custom::placeholder {
+                    color: #94a3b8;
+                }
+                .gate-custom-modal .btn-close-custom {
+                    background-color: #7A70BA !important;
+                    color: white !important;
+                    border-radius: 8px !important;
+                    font-weight: 500 !important;
+                    font-size: 14px !important;
+                    padding: 10px 24px !important;
+                    border: none !important;
+                    cursor: pointer;
+                    transition: background-color 0.2s, transform 0.1s;
+                }
+                .gate-custom-modal .btn-close-custom:hover {
+                    background-color: #6357a7 !important;
+                }
+                .gate-custom-modal .btn-save-custom {
+                    background-color: #2ece8a !important;
+                    color: white !important;
+                    border-radius: 8px !important;
+                    font-weight: 500 !important;
+                    font-size: 14px !important;
+                    padding: 10px 24px !important;
+                    border: none !important;
+                    cursor: pointer;
+                    transition: background-color 0.2s, transform 0.1s;
+                }
+                .gate-custom-modal .btn-save-custom:hover {
+                    background-color: #26b277 !important;
+                }
+            `}</style>
+        </div>
+    );
+};
+
+export default VehicleTypeManagement;

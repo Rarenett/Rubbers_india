@@ -1,0 +1,1567 @@
+@import url("https://fonts.googleapis.com/css?family=Lato");
+.testimonial-one img {
+  display: unset !important;
+  width: 90%;
+}
+.coinDetails-datepiker .picker__container {
+  position: relative !important;
+}
+.wallet-card {
+  margin: 0 auto;
+  width: 95% !important;
+}
+.dataTables_wrapper .dataTables_paginate span .paginate_button {
+  display: inline-block;
+}
+.sidebar-right
+  .tab-content
+  .tab-pane
+  .admin-settings
+  input[type="radio"]:checked
+  + label::after {
+  background-color: rgba(1, 1, 1, 0) !important;
+}
+/* ////////////////////////fixed */
+.element-right-round button#dropdown-button-drop-dwon {
+  border-radius: 0 0.75rem 0.75rem 0;
+}
+._i-hover:hover {
+  left: 0 !important;
+}
+@media screen and (min-width: 695px) {
+  .d-unset {
+    display: unset !important;
+  }
+}
+.d-unset {
+  display: block;
+}
+button#check-minutes {
+  border-radius: 0 0.75rem 0.75rem 0;
+}
+.fc-toolbar-chunk {
+  display: flex;
+}
+@media screen and (max-width: 335px) {
+  .fc-toolbar-chunk {
+    display: block;
+    text-align: center;
+    line-height: 2.8;
+  }
+  .fc-direction-ltr .fc-toolbar > * > :not(:first-child) {
+    margin: 0 !important;
+  }
+}
+/* Editor */
+.tox .tox-notification--warn,
+.tox .tox-notification--warning {
+  display: none !important;
+}
+
+/* Map */
+svg.svg-map {
+  stroke: white !important;
+}
+.svg-map__location {
+  fill: #eff2f4 !important;
+}
+.svg-map__location:focus,
+.svg-map__location:hover {
+  fill: black !important;
+}
+.map-unselected{
+	fill: #eff2f4;
+}
+
+.p-meddle {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 100%;
+}
+/* color picker */
+
+.chrome-picker {
+  position: absolute;
+  top: -310px;
+}
+.color-gradian-tixia .popover {
+  top: -410px !important;
+}
+/* wizard */
+
+/* date piker */
+@media screen and (max-width: 590px) {
+  .rangeDatePicker .calendar__item {
+    display: block !important;
+    width: 100%;
+  }
+  .rangeDatePicker .calendar__container {
+    width: 100% !important;
+  }
+}
+
+form#step-form-horizontal div:first-child > div:last-child {
+  text-align: right;
+  /* padding-top: 2rem; */
+}
+
+label.mailclinet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #eef5f9;
+  text-align: center;
+  margin: auto;
+}
+
+.wizard-four-color {
+  color: #222fb9;
+  text-decoration: underline;
+}
+
+.redio-false {
+  display: none;
+}
+
+span.mail-icon {
+  font-size: 3rem;
+  display: inline-block;
+  line-height: 1;
+  margin-top: -1rem;
+}
+
+span.mail-text {
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* Wizard end */
+
+/* cursor-pointer */
+.cursor-pointer {
+  cursor: pointer;
+}
+/* form */
+#multiselect button.btn.dropdown-toggle.btn-light {
+  background: no-repeat;
+  border: 1px solid #d7dae3;
+  color: #3e4954;
+  font-weight: 100;
+}
+/* slider */
+
+.card-text {
+  margin-bottom: 0;
+}
+#whiteSpace {
+  white-space: normal;
+}
+
+#tp-btn::after {
+  content: "";
+}
+
+.swal-footer {
+  text-align: center !important;
+  margin: 0 !important;
+}
+
+.ui .progress .progress-bar {
+  animation-name: animateBar;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.6s;
+}
+@keyframes animateBar {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+ol.go2441762052 {
+  text-align: center;
+}
+
+#order2 {
+  order: 2;
+}
+
+/* Editor */
+
+.summernote > :first-child {
+  min-height: 250px;
+  border: 1px solid #a9a9a9;
+  border-color: #f0f1f5;
+}
+.rdw-image-modal {
+  right: 0 !important;
+  left: unset !important;
+}
+.rdw-editor-toolbar {
+  border-top: 0 !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+}
+
+/* Button */
+button:focus,
+a:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Chart */
+
+.go2478912419 {
+  text-align: center;
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.picker-input__text,
+.range-picker-input {
+  width: 100% !important;
+}
+
+.timepicker-container,
+.MuiFormControl-root.MuiTextField-root {
+  flex: 1 1 auto;
+}
+
+.timepicker-container input {
+  background: #fff;
+  border: 1px solid #f0f1f5;
+  color: #b1b1b1;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+  height: 41px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.MuiFormControl-root.MuiTextField-root {
+  display: block;
+}
+.MuiInputBase-root.MuiInput-root.MuiInput-underline.MuiInputBase-formControl.MuiInput-formControl {
+  width: 100%;
+  height: 100%;
+}
+
+.dd .nestable-item-name {
+  color: #fff;
+  background: #43DC80;
+  display: block;
+  height: 35px;
+  margin: 8px 0;
+  padding: 8px 10px;
+  text-decoration: none;
+  font-weight: 700;
+  border: 1px solid #EEEEEE;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 13px;
+  margin-bottom: -4px;
+}
+.dd .nestable-list{
+	padding: 0 0 0 40px;
+}
+/* Picker */
+
+.i-false:after {
+  content: none !important;
+}
+
+rect#chart_ChartBorder {
+  fill: transparent;
+}
+
+/* pagination */
+.pagination {
+  margin-bottom: 0 !important;
+}
+.rc-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 80;
+}
+.rc-backdrop.invert {
+  background: rgba(1, 1, 1, 0.7);
+}
+.range-picker-input {
+  display: inline-flex;
+  border: 1px solid #e4e4e4;
+  width: 300px;
+}
+.range-picker-input * {
+  box-sizing: border-box;
+}
+.range-picker-input__icon {
+  display: inline-flex;
+  align-items: center;
+}
+.range-picker-input__start,
+.range-picker-input__end {
+  display: inline-flex;
+  flex: 1;
+}
+.range-picker-input__start .picker-input.range input,
+.range-picker-input__end .picker-input.range input {
+  width: 100%;
+  border: none;
+}
+.picker-input {
+  display: inline-block;
+  position: relative;
+}
+.picker-input__icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+  display: inline-flex;
+  align-items: center;
+}
+.picker-input__text {
+  padding: 10px;
+  border: 1px solid #e4e4e4;
+  outline: none;
+  font-size: 16.8px;
+}
+.picker-input__text:disabled {
+  background: #e4e4e4;
+}
+.picker-input__clear {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  cursor: pointer;
+}
+.picker {
+  display: inline-block;
+}
+.picker__container {
+  position: absolute;
+  z-index: 100;
+}
+.picker__container.portal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.picker__container__include-time {
+  border: 1px solid #e4e4e4;
+}
+.picker__container__include-time .calendar__item,
+.picker__container__include-time .time__container {
+  border: none;
+}
+.picker__container__tab {
+  margin: 10px 0;
+}
+.picker__container__tab button {
+  padding: 5px 10px;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  background: none;
+  border: none;
+  border-bottom: 2px solid #e4e4e4;
+}
+.picker__container__tab button.active {
+  color: #49599a;
+  border-bottom: 2px solid #49599a;
+}
+.picker__container__tab button:first-child {
+  border-right: none;
+}
+.picker__container__tab button svg {
+  margin-right: 5px;
+}
+.time__container {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #e4e4e4;
+  padding: 15px;
+  background: white;
+  font-family: "Lato";
+  font-size: 12px;
+}
+.time__container__div {
+  margin: 0 10px;
+}
+.time__container__type {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+.time-input {
+  display: inline-block;
+  width: 40px;
+  overflow: hidden;
+}
+.time-input__up,
+.time-input__down {
+  border: 1px solid #e4e4e4;
+}
+.time-input__up button,
+.time-input__down button {
+  outline: none;
+  width: 100%;
+  cursor: pointer;
+  border: none;
+}
+.time-input__text {
+  width: 100%;
+  border-left: 1px solid #e4e4e4;
+  border-right: 1px solid #e4e4e4;
+  box-sizing: border-box;
+}
+.time-input__text input {
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  font-size: 15px;
+  padding: 5px;
+  text-align: center;
+  outline: none;
+}
+
+/* calender */
+
+.react-calendar {
+  border: none !important;
+  font-family: "poppins", sans-serif;
+}
+
+abbr[title],
+abbr[data-original-title] {
+  text-decoration: none !important;
+}
+button.react-calendar__tile.react-calendar__month-view__days__day.react-calendar__month-view__days__day--neighboringMonth {
+  color: #dee2e6 !important;
+  font-family: "poppins", sans-serif;
+}
+
+span.react-calendar__navigation__label__labelText.react-calendar__navigation__label__labelText--from {
+  font-size: 20px;
+  font-weight: 500;
+  color: #000;
+  font-family: "poppins", sans-serif;
+}
+button.react-calendar__navigation__arrow.react-calendar__navigation__prev-button,
+button.react-calendar__navigation__arrow.react-calendar__navigation__next-button {
+  display: none;
+}
+
+button.react-calendar__tile.react-calendar__month-view__days__day {
+  border-radius: 10px;
+  color: black;
+  color: #000;
+  font-weight: 500;
+  height: 46px;
+  line-height: 30px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "poppins", sans-serif;
+}
+button.react-calendar__navigation__label {
+  /* padding: 20px 15px; */
+  border-radius: 1.75rem !important;
+  font-size: 20px;
+}
+button.react-calendar__navigation__label:hover {
+  color: white !important;
+  background: #eeeeee !important;
+}
+button.react-calendar__navigation__label:hover > span {
+  /* color: white !important; */
+  /* background: #EEEEEE !important; */
+}
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus,
+.react-calendar__navigation__label:hover > span {
+  /* background-color: #eeeeee !important; */
+  /* color: white; */
+  /* border-radius: 50%; */
+}
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus,
+.react-calendar__tile--hasActive,
+.react-calendar__navigation button[disabled],
+.react-calendar__navigation button[disabled] > span {
+  background-color: #eeeeee !important;
+
+  /* color: white; */
+}
+button.react-calendar__tile.react-calendar__tile--now.react-calendar__month-view__days__day,
+button.react-calendar__tile.react-calendar__tile--active.react-calendar__tile--range.react-calendar__tile--rangeStart.react-calendar__tile--rangeEnd.react-calendar__tile--rangeBothEnds.react-calendar__month-view__days__day {
+  position: relative;
+  background: #eeeeee !important;
+  box-shadow: none;
+  /* color: white !important; */
+  border-radius: 10px;
+  overflow: unset !important;
+  padding: 16px 5px 15px 5px;
+  /* border-radius: 35px; */
+  line-height: 1;
+}
+
+.react-calendar {
+  border: none;
+}
+
+.calendar {
+  display: inline-block;
+  background: white;
+  font-size: 12px;
+}
+.calendar *,
+.calendar *:before,
+.calendar *:after {
+  box-sizing: border-box;
+}
+.calendar__container {
+  width: 270px;
+  font-family: "Roboto", sans-serif;
+  display: none;
+}
+.calendar__list {
+  display: table;
+}
+.calendar__item {
+  display: table-cell;
+  border: 1px solid #ececec;
+}
+.calendar__item:not(:first-child) {
+  border-left: none !important;
+}
+.calendar--show {
+  display: inline-block;
+}
+.calendar__head {
+  position: relative;
+  background: #43dc80;
+  padding: 10px 6px;
+}
+.calendar__head--title {
+  font-size: 1.3em;
+  color: white;
+  text-align: center;
+  margin: 4px;
+}
+.calendar__head--button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: none;
+  font-size: 20px;
+}
+.calendar__head--button svg {
+  fill: white;
+}
+.calendar__head--prev,
+.calendar__head--next {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+}
+.calendar__head--prev {
+  left: 0;
+}
+.calendar__head--next {
+  right: 0;
+}
+.calendar__panel--show {
+  display: block !important;
+}
+.calendar__panel--today {
+  background: #aab6fe;
+  padding: 5px;
+  display: none;
+}
+.calendar__panel--today h2 {
+  margin: 0;
+  cursor: pointer;
+  font-size: 12px;
+  text-align: center;
+}
+.calendar__body--table {
+  width: 100%;
+  table-layout: fixed;
+  text-align: center;
+  border-spacing: none;
+  border-collapse: collapse;
+}
+.calendar__body--table th {
+  height: 30px;
+  vertical-align: middle;
+  color: #212121;
+}
+.calendar__day {
+  vertical-align: top;
+  padding-top: 5px;
+  height: 40px;
+  cursor: pointer;
+}
+/* .calendar__day self:hover:not(&--disabled) {
+   background: #aab6fe;
+   cursor: pointer;
+} */
+.calendar__day--0 {
+  color: red;
+}
+.calendar__day--6 {
+  color: blue;
+}
+.calendar__day--today {
+  background: #fff9c4;
+}
+.calendar__day--disabled {
+  color: #ddd;
+  cursor: initial;
+}
+.calendar__day--start,
+.calendar__day--end,
+.calendar__day--selected {
+  background: #7986cb;
+  color: #fff;
+}
+.calendar__day--start:hover,
+.calendar__day--end:hover,
+.calendar__day--selected:hover {
+  background: #7986cb;
+}
+.calendar__day--range {
+  background: #dce1ff;
+}
+.calendar__day--text {
+  display: block;
+  font-size: 10px;
+}
+.calendar__year,
+.calendar__month {
+  height: 55px;
+  vertical-align: middle;
+}
+.calendar__year:hover,
+.calendar__month:hover {
+  background: #aab6fe;
+  cursor: pointer;
+}
+
+/* Selector Design */
+.css-1okebmr-indicatorSeparator {
+  display: none;
+}
+
+.form-icon-circle,
+.modal-icon-circle {
+  background: var(--form-icon-color, var(--cc-primary, var(--primary, #2bc155))) !important;
+  background-color: var(--form-icon-color, var(--cc-primary, var(--primary, #2bc155))) !important;
+  color: #ffffff !important;
+}
+
+.form-icon-box {
+  background: var(--form-icon-color, var(--cc-primary, var(--primary, #2bc155))) !important;
+  color: #ffffff !important;
+}
+
+.btn-primary:not(.btn-xs):not(.btn-sm):not(.sharp),
+.btn-secondary:not(.btn-xs):not(.btn-sm):not(.sharp) {
+  padding: 8px 18px !important;
+  font-size: 13px !important;
+}
+
+body.has-custom-bg {
+  background: var(--custom-bg) !important;
+  background-color: var(--custom-bg) !important;
+}
+
+body.has-custom-font-color {
+  color: var(--custom-font-color) !important;
+  --bs-body-color: var(--custom-font-color);
+  --title: var(--custom-font-color);
+}
+
+body.has-custom-font-color h1,
+body.has-custom-font-color h2,
+body.has-custom-font-color h3,
+body.has-custom-font-color h4,
+body.has-custom-font-color h5,
+body.has-custom-font-color h6,
+body.has-custom-font-color .h1,
+body.has-custom-font-color .h2,
+body.has-custom-font-color .h3,
+body.has-custom-font-color .h4,
+body.has-custom-font-color .h5,
+body.has-custom-font-color .h6 {
+  color: var(--custom-font-color) !important;
+}
+
+body.has-custom-font-color .card-title,
+body.has-custom-font-color .card-header,
+body.has-custom-font-color .card-body,
+body.has-custom-font-color .card-header .card-title,
+body.has-custom-font-color .card-header h4,
+body.has-custom-font-color .card-header h5 {
+  color: var(--custom-font-color) !important;
+}
+
+body.has-custom-font-color label:not(.badge):not(.btn),
+body.has-custom-font-color .form-label,
+body.has-custom-font-color .col-form-label,
+body.has-custom-font-color .font-w600,
+body.has-custom-font-color .font-w500,
+body.has-custom-font-color .font-w700 {
+  color: var(--custom-font-color) !important;
+}
+
+body.has-custom-font-color .table,
+body.has-custom-font-color .table th,
+body.has-custom-font-color .table td,
+body.has-custom-font-color .table strong,
+body.has-custom-font-color .table thead tr th,
+body.has-custom-font-color .table tbody tr td {
+  color: var(--custom-font-color) !important;
+}
+
+body.has-custom-font-color .header-left .dashboard_bar {
+  color: var(--custom-font-color) !important;
+}
+
+body.has-custom-font-color .modal-title,
+body.has-custom-font-color .modal-body {
+  color: var(--custom-font-color) !important;
+}
+
+/* Form inputs, textareas, selects, and custom controls */
+body.has-custom-font-color input.form-control,
+body.has-custom-font-color textarea.form-control,
+body.has-custom-font-color select.form-control,
+body.has-custom-font-color .form-control-custom,
+body.has-custom-font-color .form-control,
+body.has-custom-font-color .form-select,
+body.has-custom-font-color .sof-input,
+body.has-custom-font-color .sof-table-input,
+body.has-custom-font-color .sof-modal-ctrl,
+body.has-custom-font-color .sof-cell-input,
+body.has-custom-font-color .sof-cell-select,
+body.has-custom-font-color input[type="text"],
+body.has-custom-font-color input[type="number"],
+body.has-custom-font-color input[type="email"],
+body.has-custom-font-color input[type="password"],
+body.has-custom-font-color input[type="search"],
+body.has-custom-font-color input[type="tel"],
+body.has-custom-font-color input[type="url"],
+body.has-custom-font-color input[type="date"],
+body.has-custom-font-color input[type="datetime-local"],
+body.has-custom-font-color input[type="month"],
+body.has-custom-font-color input[type="time"],
+body.has-custom-font-color textarea,
+body.has-custom-font-color select,
+body.has-custom-font-color .search-input,
+body.has-custom-font-color .search-bar-container input,
+body.has-custom-font-color .dataTables_filter input,
+body.has-custom-font-color .react-datepicker__input-container input,
+body.has-custom-font-color .react-select__single-value,
+body.has-custom-font-color .react-select__input-container input,
+body.has-custom-font-color .react-select__input input,
+body.has-custom-font-color .modal-dialog .form-control-custom,
+body.has-custom-font-color .modal-dialog .form-control,
+body.has-custom-font-color .modal-dialog input,
+body.has-custom-font-color .modal-dialog textarea,
+body.has-custom-font-color .modal-dialog select,
+body.has-custom-font-color .modal-body .form-control,
+body.has-custom-font-color .modal-body .form-control-custom,
+body.has-custom-font-color .modal-body input,
+body.has-custom-font-color .modal-body textarea,
+body.has-custom-font-color .modal-body select,
+body.has-custom-font-color [class*="-custom-modal"] .form-control-custom,
+body.has-custom-font-color [class*="-custom-modal"] input,
+body.has-custom-font-color [class*="-custom-modal"] select,
+body.has-custom-font-color [class*="-custom-modal"] textarea,
+body.has-custom-font-color[data-theme-version="dark"] .form-control,
+body.has-custom-font-color[data-theme-version="dark"] .form-control-custom,
+body.has-custom-font-color[data-theme-version="dark"] .modal-body .form-control,
+body.has-custom-font-color[data-theme-version="dark"] .modal-body .form-control-custom,
+body.has-custom-font-color[data-theme-version="dark"] .modal-body select,
+body.has-custom-font-color[data-theme-version="dark"] input,
+body.has-custom-font-color[data-theme-version="dark"] textarea,
+body.has-custom-font-color[data-theme-version="dark"] select,
+body.has-custom-font-color[data-theme-version="dark"] [class*="-custom-modal"] .form-control-custom,
+body.has-custom-font-color .input-group-text {
+  color: var(--custom-font-color) !important;
+  caret-color: var(--custom-font-color);
+}
+
+body.has-custom-font-color input.form-control:focus,
+body.has-custom-font-color textarea.form-control:focus,
+body.has-custom-font-color select.form-control:focus,
+body.has-custom-font-color .form-control-custom:focus,
+body.has-custom-font-color .form-control:focus,
+body.has-custom-font-color .form-select:focus,
+body.has-custom-font-color input:focus,
+body.has-custom-font-color textarea:focus,
+body.has-custom-font-color select:focus,
+body.has-custom-font-color .modal-dialog .form-control-custom:focus,
+body.has-custom-font-color .modal-dialog .form-control:focus,
+body.has-custom-font-color .modal-body .form-control-custom:focus,
+body.has-custom-font-color .modal-body .form-control:focus,
+body.has-custom-font-color [class*="-custom-modal"] .form-control-custom:focus,
+body.has-custom-font-color[data-theme-version="dark"] .form-control-custom:focus,
+body.has-custom-font-color[data-theme-version="dark"] .modal-body .form-control:focus {
+  color: var(--custom-font-color) !important;
+}
+
+body.has-custom-font-color .form-control::placeholder,
+body.has-custom-font-color .form-control-custom::placeholder,
+body.has-custom-font-color input::placeholder,
+body.has-custom-font-color textarea::placeholder,
+body.has-custom-font-color .search-input::placeholder,
+body.has-custom-font-color .modal-dialog .form-control-custom::placeholder,
+body.has-custom-font-color .modal-dialog .form-control::placeholder,
+body.has-custom-font-color .modal-body .form-control::placeholder,
+body.has-custom-font-color .modal-body .form-control-custom::placeholder,
+body.has-custom-font-color [class*="-custom-modal"] .form-control-custom::placeholder,
+body.has-custom-font-color .react-select__placeholder,
+body.has-custom-font-color[data-theme-version="dark"] .form-control::placeholder,
+body.has-custom-font-color[data-theme-version="dark"] .form-control-custom::placeholder,
+body.has-custom-font-color[data-theme-version="dark"] .modal-body .form-control::placeholder {
+  color: var(--custom-font-color) !important;
+  opacity: 0.55 !important;
+}
+
+body.has-custom-font-color select option {
+  color: var(--custom-font-color);
+  background-color: #fff;
+}
+
+body.has-custom-font-color[data-theme-version="dark"] select option {
+  color: var(--custom-font-color);
+  background-color: #24292D;
+}
+
+body.has-custom-font-color input:disabled,
+body.has-custom-font-color textarea:disabled,
+body.has-custom-font-color select:disabled,
+body.has-custom-font-color .form-control:disabled,
+body.has-custom-font-color .form-control-custom:disabled {
+  opacity: 0.6 !important;
+  color: var(--custom-font-color) !important;
+}
+
+/* ============================================================
+   Buttons & Icons - Stick to Crisp White for Solid/Action Buttons
+   ============================================================ */
+body.has-custom-font-color .btn:not([class*="btn-outline-"]):not(.btn-link):not(.btn-light):not(.page-link),
+body.has-custom-font-color button.btn:not([class*="btn-outline-"]):not(.btn-link):not(.btn-light):not(.page-link),
+body.has-custom-font-color .btn-primary,
+body.has-custom-font-color .btn-secondary,
+body.has-custom-font-color .btn-success,
+body.has-custom-font-color .btn-danger,
+body.has-custom-font-color .btn-warning,
+body.has-custom-font-color .btn-info,
+body.has-custom-font-color .btn-dark,
+body.has-custom-font-color .btn-create-action,
+body.has-custom-font-color .btn-save-custom,
+body.has-custom-font-color .btn-close-custom,
+body.has-custom-font-color .lead-source-add-btn,
+body.has-custom-font-color .crm-export-btn,
+body.has-custom-font-color .quick-add-btn,
+body.has-custom-font-color .image-upload-btn,
+body.has-custom-font-color .btn-allocate-action,
+body.has-custom-font-color .btn-approve-action,
+body.has-custom-font-color .btn-details-action,
+body.has-custom-font-color .btn-history-action,
+body.has-custom-font-color .btn-reject-action,
+body.has-custom-font-color [class*="-custom-modal"] .btn-save-custom,
+body.has-custom-font-color [class*="-custom-modal"] .btn-close-custom,
+body.has-custom-font-color .modal-footer .btn:not([class*="btn-outline-"]):not(.btn-link):not(.btn-light),
+body.has-custom-font-color .table .btn:not([class*="btn-outline-"]):not(.btn-link):not(.btn-light) {
+  color: #ffffff !important;
+}
+
+body.has-custom-font-color .btn:not([class*="btn-outline-"]):not(.btn-link):not(.btn-light):not(.page-link) i,
+body.has-custom-font-color .btn:not([class*="btn-outline-"]):not(.btn-link):not(.btn-light):not(.page-link) svg,
+body.has-custom-font-color .btn:not([class*="btn-outline-"]):not(.btn-link):not(.btn-light):not(.page-link) span:not(.badge),
+body.has-custom-font-color button.btn:not([class*="btn-outline-"]):not(.btn-link):not(.btn-light):not(.page-link) i,
+body.has-custom-font-color button.btn:not([class*="btn-outline-"]):not(.btn-link):not(.btn-light):not(.page-link) svg,
+body.has-custom-font-color .btn-primary i,
+body.has-custom-font-color .btn-primary svg,
+body.has-custom-font-color .btn-secondary i,
+body.has-custom-font-color .btn-success i,
+body.has-custom-font-color .btn-danger i,
+body.has-custom-font-color .btn-warning i,
+body.has-custom-font-color .btn-info i,
+body.has-custom-font-color .btn-dark i,
+body.has-custom-font-color .btn-create-action i,
+body.has-custom-font-color .btn-create-action svg,
+body.has-custom-font-color .btn-save-custom i,
+body.has-custom-font-color .btn-close-custom i,
+body.has-custom-font-color .lead-source-add-btn i,
+body.has-custom-font-color .crm-export-btn i,
+body.has-custom-font-color .quick-add-btn i,
+body.has-custom-font-color .image-upload-btn i,
+body.has-custom-font-color .btn-allocate-action i,
+body.has-custom-font-color .btn-approve-action i,
+body.has-custom-font-color .btn-details-action i,
+body.has-custom-font-color .btn-history-action i,
+body.has-custom-font-color .btn-reject-action i,
+body.has-custom-font-color [class*="-custom-modal"] .btn-save-custom i,
+body.has-custom-font-color [class*="-custom-modal"] .btn-close-custom i,
+body.has-custom-font-color .modal-footer .btn:not([class*="btn-outline-"]) i,
+body.has-custom-font-color .table .btn:not([class*="btn-outline-"]):not(.btn-link):not(.btn-light) i,
+body.has-custom-font-color .table .btn:not([class*="btn-outline-"]):not(.btn-link):not(.btn-light) svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+/* Maintain crisp white text on filled hover states for outline buttons */
+body.has-custom-font-color .btn-outline-danger:hover,
+body.has-custom-font-color .btn-outline-danger:hover i,
+body.has-custom-font-color .btn-outline-primary:hover,
+body.has-custom-font-color .btn-outline-primary:hover i,
+body.has-custom-font-color .btn-outline-secondary:hover,
+body.has-custom-font-color .btn-outline-secondary:hover i,
+body.has-custom-font-color .btn-outline-info:hover,
+body.has-custom-font-color .btn-outline-info:hover i,
+body.has-custom-font-color .btn-outline-warning:hover,
+body.has-custom-font-color .btn-outline-warning:hover i,
+body.has-custom-font-color .btn-outline-success:hover,
+body.has-custom-font-color .btn-outline-success:hover i,
+body.has-custom-font-color .btn-delete-action:hover,
+body.has-custom-font-color .btn-delete-action:hover i,
+body.has-custom-font-color .btn-edit-action:hover,
+body.has-custom-font-color .btn-edit-action:hover i {
+  color: #ffffff !important;
+}
+
+body.has-custom-font-color .dataTables_info,
+body.has-custom-font-color .dataTables_length,
+body.has-custom-font-color .dataTables_filter label {
+  color: var(--custom-font-color) !important;
+}
+
+body.has-custom-font-color .breadcrumb-item,
+body.has-custom-font-color .breadcrumb-item a {
+  color: var(--custom-font-color) !important;
+}
+
+body.has-custom-font-color .content-body p,
+body.has-custom-font-color .content-body span:not(.badge):not(.btn):not(.spinner-border):not(.text-danger):not(.text-success):not(.text-warning):not(.text-info):not(.text-primary):not([class*="badge-"]) {
+  color: var(--custom-font-color);
+}
+
+/* Pagination buttons, numbers, chevrons, and states */
+body.has-custom-font-color .pagination .page-item:not(.active) .page-link,
+body.has-custom-font-color .pagination .page-item:not(.active) button.page-link,
+body.has-custom-font-color .pagination .page-item:not(.active) a.page-link,
+body.has-custom-font-color .pagination .page-item.page-indicator .page-link,
+body.has-custom-font-color .pagination .page-item.page-indicator .page-link i,
+body.has-custom-font-color .pagination.pagination-primary .page-item:not(.active) .page-link,
+body.has-custom-font-color .pagination.pagination-gutter .page-item:not(.active) .page-link,
+body.has-custom-font-color .pagination.no-bg .page-item:not(.active) .page-link,
+body.has-custom-font-color .pagination .page-link:not(.active),
+body.has-custom-font-color .dataTables_paginate .paginate_button:not(.current) {
+  color: var(--custom-font-color) !important;
+}
+
+body.has-custom-font-color .pagination .page-item.disabled .page-link,
+body.has-custom-font-color .pagination .page-item.disabled .page-link i,
+body.has-custom-font-color .dataTables_paginate .paginate_button.disabled {
+  color: var(--custom-font-color) !important;
+  opacity: 0.45 !important;
+}
+
+body.has-custom-font-color .pagination .page-item:not(.active):not(.disabled) .page-link:hover,
+body.has-custom-font-color .pagination .page-item:not(.active):not(.disabled) .page-link:hover i,
+body.has-custom-font-color .dataTables_paginate .paginate_button:not(.current):not(.disabled):hover {
+  color: var(--custom-font-color) !important;
+  opacity: 0.85;
+}
+
+body.has-custom-font-color .pagination .page-item.active .page-link,
+body.has-custom-font-color .dataTables_paginate .paginate_button.current {
+  color: #ffffff !important;
+}
+
+/* Pagination info / muted counters ("Showing 1 to 10 of 21 entries") */
+body.has-custom-font-color .text-muted:not(.badge):not(.btn),
+body.has-custom-font-color .dataTables_info,
+body.has-custom-font-color .dataTables_length,
+body.has-custom-font-color .dataTables_filter label {
+  color: var(--custom-font-color) !important;
+  opacity: 0.75;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 50%;
+}
+
+/* ============================================================
+   CUSTOM COLOR THEME - color_custom
+   All values driven by CSS variables set via JS.
+   ============================================================ */
+
+/* Primary Accent - buttons, links, active states */
+[data-primary="color_custom"] a:hover,
+[data-primary="color_custom"] .btn-link,
+[data-primary="color_custom"] .text-primary {
+  color: var(--cc-primary, #2bc155) !important;
+}
+[data-primary="color_custom"] .btn-primary,
+[data-primary="color_custom"] .badge-primary,
+[data-primary="color_custom"] .page-titles .breadcrumb .breadcrumb-item.active {
+  background-color: var(--cc-primary, #2bc155) !important;
+  border-color: var(--cc-primary, #2bc155) !important;
+}
+[data-primary="color_custom"] .btn-primary:hover,
+[data-primary="color_custom"] .btn-primary:focus {
+  background-color: var(--cc-primary-dark, #22a844) !important;
+  border-color: var(--cc-primary-dark, #22a844) !important;
+}
+[data-primary="color_custom"] .sidebar-right-trigger,
+[data-primary="color_custom"] .nav-control {
+  background-color: var(--cc-primary, #2bc155) !important;
+}
+[data-primary="color_custom"] ul.metismenu li a:hover,
+[data-primary="color_custom"] ul.metismenu li a:focus,
+[data-primary="color_custom"] ul.metismenu li.mm-active > a {
+  color: var(--cc-primary, #2bc155) !important;
+}
+[data-primary="color_custom"] ul.metismenu li.mm-active > a svg g [fill] {
+  fill: var(--cc-primary, #2bc155) !important;
+}
+[data-primary="color_custom"] .pagination li.active .page-link {
+  background-color: var(--cc-primary, #2bc155) !important;
+  border-color: var(--cc-primary, #2bc155) !important;
+}
+[data-primary="color_custom"] .form-control:focus {
+  border-color: var(--cc-primary, #2bc155) !important;
+  box-shadow: 0 0 0 0.25rem rgba(var(--cc-primary-rgb, 43,193,85), 0.25) !important;
+}
+[data-primary="color_custom"] .card-header {
+  border-left-color: var(--cc-primary, #2bc155) !important;
+}
+
+/* Navigation Header Background */
+[data-nav-headerbg="color_custom"] .nav-header {
+  background-color: var(--cc-nav-header, #2bc155) !important;
+  background: var(--cc-nav-header, #2bc155) !important;
+}
+[data-nav-headerbg="color_custom"] .nav-header .brand-title,
+[data-nav-headerbg="color_custom"] .nav-header .brand-logo span {
+  color: #fff !important;
+}
+
+/* Top Header Background */
+[data-headerbg="color_custom"] .header {
+  background-color: var(--cc-header, #2bc155) !important;
+  background: var(--cc-header, #2bc155) !important;
+}
+[data-headerbg="color_custom"] .header .search-area .form-control,
+[data-headerbg="color_custom"] .header .search-area .input-group-text {
+  background-color: var(--cc-header-light, rgba(255,255,255,0.15)) !important;
+  color: #fff !important;
+}
+[data-headerbg="color_custom"] .hamburger .line,
+[data-headerbg="color_custom"] .header-right .header-profile i,
+[data-headerbg="color_custom"] .header-right .notification_dropdown .nav-link i,
+[data-headerbg="color_custom"] .header-right svg {
+  stroke: #fff !important;
+  color: #fff !important;
+}
+
+/* Sidebar Background */
+[data-sibebarbg="color_custom"] .deznav,
+[data-sibebarbg="color_custom"] .deznav .metismenu,
+[data-sibebarbg="color_custom"] .menu-toggle .deznav {
+  background-color: var(--cc-sidebar, #2bc155) !important;
+  background: var(--cc-sidebar, #2bc155) !important;
+}
+[data-sibebarbg="color_custom"] .deznav .metismenu li a,
+[data-sibebarbg="color_custom"] .deznav .metismenu > li > a {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+[data-sibebarbg="color_custom"] .deznav .metismenu li.mm-active > a,
+[data-sibebarbg="color_custom"] .deznav .metismenu li:hover > a,
+[data-sibebarbg="color_custom"] .deznav .metismenu li a:hover {
+  color: #fff !important;
+  background: rgba(255,255,255,0.15) !important;
+}
+[data-sibebarbg="color_custom"] .deznav .metismenu ul {
+  background-color: var(--cc-sidebar-dark, rgba(0,0,0,0.1)) !important;
+}
+[data-sibebarbg="color_custom"] .deznav .header-profile .header-info span,
+[data-sibebarbg="color_custom"] .copyright { color: rgba(255,255,255,0.7) !important; }
+
+/* Custom Sidebar Font Color */
+body.has-custom-sidebar-font .deznav .metismenu li a,
+body.has-custom-sidebar-font .deznav .metismenu > li > a,
+body.has-custom-sidebar-font .deznav .metismenu .nav-text,
+body.has-custom-sidebar-font .deznav .metismenu li.menu-title,
+body.has-custom-sidebar-font .deznav .header-profile .header-info span,
+body.has-custom-sidebar-font .deznav .copyright {
+  color: var(--custom-sidebar-font-color) !important;
+}
+
+body.has-custom-sidebar-font .deznav .metismenu li a i,
+body.has-custom-sidebar-font .deznav .metismenu > li > a > i {
+  color: var(--custom-sidebar-font-color) !important;
+}
+
+body.has-custom-sidebar-font .deznav .metismenu li a svg,
+body.has-custom-sidebar-font .deznav .metismenu li a svg path,
+body.has-custom-sidebar-font .deznav .metismenu li a svg g [fill] {
+  fill: var(--custom-sidebar-font-color) !important;
+  stroke: var(--custom-sidebar-font-color) !important;
+}
+
+body.has-custom-sidebar-font .deznav .metismenu .has-arrow:after,
+body.has-custom-sidebar-font .deznav .metismenu li.active > .has-arrow:after,
+body.has-custom-sidebar-font .deznav .metismenu .mm-active > .has-arrow:after {
+  border-color: var(--custom-sidebar-font-color) !important;
+}
+
+body.has-custom-sidebar-font .deznav .metismenu li.mm-active > a,
+body.has-custom-sidebar-font .deznav .metismenu li:hover > a,
+body.has-custom-sidebar-font .deznav .metismenu li a:hover,
+body.has-custom-sidebar-font .deznav .metismenu li a:focus {
+  color: var(--custom-sidebar-font-color) !important;
+}
+
+/* ============================================================
+   REACT SELECT THEME INTEGRATION
+   ============================================================ */
+
+/* Default / color_1 / color_3 (Green Theme) */
+.react-select__option--is-focused:not(.react-select__option--is-selected) {
+  background-color: rgba(43, 193, 85, 0.1) !important;
+}
+.react-select__option--is-selected {
+  background-color: #2bc155 !important;
+  color: #fff !important;
+}
+.react-select__control--is-focused {
+  border-color: #2bc155 !important;
+}
+
+/* color_2 / color_8 (Purple/Lavender Theme) */
+[data-primary="color_2"] .react-select__option--is-focused:not(.react-select__option--is-selected),
+[data-primary="color_8"] .react-select__option--is-focused:not(.react-select__option--is-selected) {
+  background-color: rgba(66, 56, 157, 0.1) !important;
+}
+[data-primary="color_2"] .react-select__option--is-selected,
+[data-primary="color_8"] .react-select__option--is-selected {
+  background-color: #42389d !important;
+  color: #fff !important;
+}
+[data-primary="color_2"] .react-select__control--is-focused,
+[data-primary="color_8"] .react-select__control--is-focused {
+  border-color: #42389d !important;
+}
+
+/* color_4 (Plum Theme) */
+[data-primary="color_4"] .react-select__option--is-focused:not(.react-select__option--is-selected) {
+  background-color: rgba(102, 50, 89, 0.1) !important;
+}
+[data-primary="color_4"] .react-select__option--is-selected {
+  background-color: #663259 !important;
+  color: #fff !important;
+}
+[data-primary="color_4"] .react-select__control--is-focused {
+  border-color: #663259 !important;
+}
+
+/* color_5 (Red Theme) */
+[data-primary="color_5"] .react-select__option--is-focused:not(.react-select__option--is-selected) {
+  background-color: rgba(255, 73, 97, 0.1) !important;
+}
+[data-primary="color_5"] .react-select__option--is-selected {
+  background-color: #ff4961 !important;
+  color: #fff !important;
+}
+[data-primary="color_5"] .react-select__control--is-focused {
+  border-color: #ff4961 !important;
+}
+
+/* color_6 (Orange Theme) */
+[data-primary="color_6"] .react-select__option--is-focused:not(.react-select__option--is-selected) {
+  background-color: rgba(253, 126, 20, 0.1) !important;
+}
+[data-primary="color_6"] .react-select__option--is-selected {
+  background-color: #fd7e14 !important;
+  color: #fff !important;
+}
+[data-primary="color_6"] .react-select__control--is-focused {
+  border-color: #fd7e14 !important;
+}
+
+/* color_7 (Yellow Theme) */
+[data-primary="color_7"] .react-select__option--is-focused:not(.react-select__option--is-selected) {
+  background-color: rgba(255, 193, 7, 0.1) !important;
+}
+[data-primary="color_7"] .react-select__option--is-selected {
+  background-color: #ffc107 !important;
+  color: #fff !important;
+}
+[data-primary="color_7"] .react-select__control--is-focused {
+  border-color: #ffc107 !important;
+}
+
+/* color_9 (Teal Theme) */
+[data-primary="color_9"] .react-select__option--is-focused:not(.react-select__option--is-selected) {
+  background-color: rgba(32, 201, 151, 0.1) !important;
+}
+[data-primary="color_9"] .react-select__option--is-selected {
+  background-color: #20c997 !important;
+  color: #fff !important;
+}
+[data-primary="color_9"] .react-select__control--is-focused {
+  border-color: #20c997 !important;
+}
+
+/* color_10 (Cyan Theme) */
+[data-primary="color_10"] .react-select__option--is-focused:not(.react-select__option--is-selected) {
+  background-color: rgba(23, 162, 184, 0.1) !important;
+}
+[data-primary="color_10"] .react-select__option--is-selected {
+  background-color: #17a2b8 !important;
+  color: #fff !important;
+}
+[data-primary="color_10"] .react-select__control--is-focused {
+  border-color: #17a2b8 !important;
+}
+
+/* color_11 (Grey Theme) */
+[data-primary="color_11"] .react-select__option--is-focused:not(.react-select__option--is-selected) {
+  background-color: rgba(108, 117, 125, 0.1) !important;
+}
+[data-primary="color_11"] .react-select__option--is-selected {
+  background-color: #6c757d !important;
+  color: #fff !important;
+}
+[data-primary="color_11"] .react-select__control--is-focused {
+  border-color: #6c757d !important;
+}
+
+/* color_12 (Dark Grey Theme) */
+[data-primary="color_12"] .react-select__option--is-focused:not(.react-select__option--is-selected) {
+  background-color: rgba(52, 58, 64, 0.1) !important;
+}
+[data-primary="color_12"] .react-select__option--is-selected {
+  background-color: #343a40 !important;
+  color: #fff !important;
+}
+[data-primary="color_12"] .react-select__control--is-focused {
+  border-color: #343a40 !important;
+}
+
+/* color_13 (Dark/Black Theme) */
+[data-primary="color_13"] .react-select__option--is-focused:not(.react-select__option--is-selected) {
+  background-color: rgba(42, 42, 42, 0.1) !important;
+}
+[data-primary="color_13"] .react-select__option--is-selected {
+  background-color: #2a2a2a !important;
+  color: #fff !important;
+}
+[data-primary="color_13"] .react-select__control--is-focused {
+  border-color: #2a2a2a !important;
+}
+
+/* color_14 (Blue Theme) */
+[data-primary="color_14"] .react-select__option--is-focused:not(.react-select__option--is-selected) {
+  background-color: rgba(72, 133, 237, 0.1) !important;
+}
+[data-primary="color_14"] .react-select__option--is-selected {
+  background-color: #4885ed !important;
+  color: #fff !important;
+}
+[data-primary="color_14"] .react-select__control--is-focused {
+  border-color: #4885ed !important;
+}
+
+/* color_15 (Light Green Theme) */
+[data-primary="color_15"] .react-select__option--is-focused:not(.react-select__option--is-selected) {
+  background-color: rgba(76, 179, 43, 0.1) !important;
+}
+[data-primary="color_15"] .react-select__option--is-selected {
+  background-color: #4cb32b !important;
+  color: #fff !important;
+}
+[data-primary="color_15"] .react-select__control--is-focused {
+  border-color: #4cb32b !important;
+}
+
+/* Custom Color Theme */
+[data-primary="color_custom"] .react-select__option--is-focused:not(.react-select__option--is-selected) {
+  background-color: rgba(var(--cc-primary-rgb, 43, 193, 85), 0.1) !important;
+}
+[data-primary="color_custom"] .react-select__option--is-selected {
+  background-color: var(--cc-primary, #2bc155) !important;
+  color: #fff !important;
+}
+[data-primary="color_custom"] .react-select__control--is-focused {
+  border-color: var(--cc-primary, #2bc155) !important;
+}
+
+/* General overrides for text color when focused */
+.react-select__option--is-focused:not(.react-select__option--is-selected) {
+  color: #2f3f50 !important;
+}
+[data-theme-version="dark"] .react-select__option--is-focused:not(.react-select__option--is-selected) {
+  color: #fff !important;
+}
+
+/* Increase length of scrollbar thumb line across tables and scrollable elements */
+::-webkit-scrollbar {
+  width: 10px !important;
+  height: 10px !important;
+}
+
+::-webkit-scrollbar-button {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+div, ol, span, ul, .table-responsive, .custom-price-list-scrollbar {
+  scrollbar-width: auto !important;
+}
+
+::-webkit-scrollbar-thumb,
+.table-responsive::-webkit-scrollbar-thumb,
+.custom-price-list-scrollbar::-webkit-scrollbar-thumb,
+.dataTables_scrollBody::-webkit-scrollbar-thumb,
+.jsgrid-grid-body::-webkit-scrollbar-thumb {
+  min-height: 120px !important;
+}
+
+/* ==========================================================================
+   GLOBAL PRINT STYLES - HIDE NAVIGATION & MAKE REPORTS FULL WIDTH
+   ========================================================================== */
+@media print {
+  /* 1. Hide Web App Sidebar, Header Navigation, Buttons, Controls, Footers */
+  .deznav,
+  .dvez-sidebar,
+  .nav-header,
+  .header,
+  .nav-control,
+  .hamburger,
+  .sidebar-right,
+  .tally-sidebar,
+  .chatbox,
+  .event-sidebar,
+  .footer,
+  .page-titles,
+  .no-print,
+  .btn,
+  .btn-close,
+  button,
+  .card-header .btn,
+  .card-header button,
+  .action-buttons,
+  .tally-header-actions,
+  ul.pagination,
+  .pagination,
+  .dataTables_paginate {
+    display: none !important;
+  }
+
+  /* 2. Reset Body, Main Wrapper, Content Area to 100% Full Width */
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  #main-wrapper {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  .content-body {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    min-height: auto !important;
+    float: none !important;
+    position: static !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: transparent !important;
+  }
+
+  .container-fluid,
+  .row,
+  .col-lg-12,
+  .col-xl-12,
+  .col-md-12,
+  .col-sm-12,
+  .card,
+  .card-body,
+  .tally-grid-box {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: transparent !important;
+  }
+
+  /* 3. Table Print Styling */
+  .table-responsive {
+    overflow: visible !important;
+    display: block !important;
+    width: 100% !important;
+  }
+
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+  }
+
+  tr {
+    page-break-inside: avoid !important;
+  }
+
+  thead {
+    display: table-header-group !important;
+  }
+
+  /* 4. Force Color Accuracy */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
+
+
+
+
+
+/* Responsive adjustments for Report Filters */
+.search-bar-container {
+    max-width: 100%;
+    min-width: 200px;
+    flex-shrink: 0;
+}
+
+.react-datepicker-wrapper {
+    min-width: 120px;
+}
+
+@media (max-width: 1400px) {
+    /* 1. Tabs - keep them slightly smaller but wide enough to avoid empty space */
+    .bg-light.rounded-pill button.px-4.py-2 {
+        padding-left: 1.2rem !important;
+        padding-right: 1.2rem !important;
+        padding-top: 0.4rem !important;
+        padding-bottom: 0.4rem !important;
+        font-size: 0.9rem !important;
+    }
+    
+    /* 2. Force report filters container to stay on one line */
+    .report-filters-wrapper {
+        flex-wrap: nowrap !important;
+        gap: 0.75rem !important;
+        overflow-x: auto;
+        width: 100%;
+        justify-content: space-between; /* space them evenly */
+        padding-bottom: 5px;
+    }
+    
+    .report-filters-wrapper > div.d-flex.align-items-center.flex-wrap {
+        flex-wrap: nowrap !important;
+        gap: 0.75rem !important;
+        flex: 1; /* allow date filters to grow */
+    }
+    
+    /* Allow the individual date filter groups to grow */
+    .report-filters-wrapper > div.d-flex.align-items-center.flex-wrap > .d-flex.align-items-center.gap-2 {
+        flex: 1;
+    }
+    
+    /* Let date pickers expand */
+    .react-datepicker-wrapper {
+        min-width: 90px !important;
+        width: 100% !important; 
+    }
+    .react-datepicker__input-container input {
+        font-size: 0.85rem !important;
+        padding: 0.3rem 0.5rem !important;
+        height: 38px !important;
+        width: 100% !important;
+    }
+    
+    /* Let search bar expand */
+    .report-filters-wrapper > .d-flex.align-items-center.gap-2 {
+        flex: 1.5; /* search gets slightly more space */
+    }
+    .search-bar-container {
+        min-width: 130px !important;
+        width: 100% !important;
+    }
+    .search-input {
+        font-size: 0.85rem !important;
+        height: 38px !important;
+        padding-left: 2rem !important;
+        width: 100% !important;
+    }
+    
+    /* Labels and icons */
+    .search-icon {
+        left: 10px !important;
+    }
+    .search-icon svg {
+        width: 14px !important;
+        height: 14px !important;
+    }
+    label.form-label.fw-bold {
+        font-size: 0.85rem !important;
+        margin-right: 0 !important;
+        white-space: nowrap;
+    }
+    
+    /* Export buttons size unchanged from user request */
+    button[title^='Export'], button[title='Print'] {
+        padding: 0.3rem 0.5rem !important;
+    }
+    button[title^='Export'] svg, button[title='Print'] svg {
+        width: 14px !important;
+        height: 14px !important;
+    }
+}

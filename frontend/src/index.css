@@ -1,0 +1,1273 @@
+/* Coustom */
+
+/* =====================================================
+   Global Table Row Hover Effect
+   Darkens the hovered row across all tables project-wide
+   ===================================================== */
+table tbody tr {
+  transition: background-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+/* Light theme: darken the row on hover */
+table tbody tr:hover,
+.table tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.06) !important;
+  cursor: pointer;
+}
+
+/* Dark theme: darken the row on hover */
+[data-theme-version="dark"] table tbody tr:hover,
+[data-theme-version="dark"] .table tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.25) !important;
+}
+
+/* =====================================================
+   Sidebar Hierarchical Indentation
+   Levels: Menu > Submenu > Sub-submenu
+   ===================================================== */
+
+/* --- Level 2: Submenu items --- */
+/* Already set to padding-left: 3.5rem in _sidebar-global.scss,
+   but we reinforce + add a subtle left-border accent */
+.deznav .metismenu > li > ul > li > a {
+  padding-left: 3.2rem !important;
+  font-size: 14px !important;
+  position: relative;
+}
+
+/* Vertical guide line alongside submenus */
+.deznav .metismenu > li > ul {
+  border-left: 2px solid rgba(150, 155, 160, 0.18);
+  margin-left: 2.6rem;
+  padding-left: 0 !important;
+}
+
+.deznav .metismenu > li > ul > li > a {
+  padding-left: 1.2rem !important;
+}
+
+/* --- Level 3: Sub-submenu items --- */
+/* Indented further right with its own guide line */
+.deznav .metismenu > li > ul > li > ul {
+  border-left: 2px solid rgba(150, 155, 160, 0.12);
+  margin-left: 1rem;
+  padding-left: 0 !important;
+}
+
+.deznav .metismenu > li > ul > li > ul > li > a {
+  padding-left: 1.4rem !important;
+  font-size: 13px !important;
+  opacity: 0.88;
+}
+
+/* Dot bullet on sub-submenu links */
+.deznav .metismenu > li > ul > li > ul > li > a::before {
+  content: "•";
+  position: absolute;
+  left: 0.3rem;
+  font-size: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.5;
+}
+
+/* Active & hover colours stay consistent */
+.deznav .metismenu > li > ul > li > ul > li > a:hover,
+.deznav .metismenu > li > ul > li > ul > li > a.mm-active {
+  opacity: 1;
+}
+
+/* Dark theme guide-line colours */
+[data-theme-version="dark"] .deznav .metismenu > li > ul {
+  border-left-color: rgba(255, 255, 255, 0.08);
+}
+[data-theme-version="dark"] .deznav .metismenu > li > ul > li > ul {
+  border-left-color: rgba(255, 255, 255, 0.05);
+}
+
+/* =====================================================
+   Sidebar Icon Fix
+   Prevents custom font icons (like Flaticon and FontAwesome)
+   from disappearing when the parent menu is active (mm-active).
+   The default stylesheet tries to set font-weight: 100/300,
+   which custom icon fonts don't support and thus vanish.
+   ===================================================== */
+.deznav .metismenu li.mm-active > a i.fas,
+.deznav .metismenu li.mm-active > a i[class^="fa-"],
+.deznav .metismenu li.mm-active > a i[class*=" fa-"] {
+  font-weight: 900 !important;
+}
+
+.deznav .metismenu li.mm-active > a i.fa,
+.deznav .metismenu li.mm-active > a i.far,
+.deznav .metismenu li.mm-active > a i[class^="flaticon-"],
+.deznav .metismenu li.mm-active > a i[class*=" flaticon-"] {
+  font-weight: normal !important;
+}
+
+.deznav .metismenu li.mm-active > a svg {
+  font-weight: normal !important;
+}
+
+/* Card header search bar - slim pill-shaped style */
+.card-header .form-control {
+  height: 36px !important;
+  min-height: 36px !important;
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+  font-size: 13px !important;
+  line-height: 1.2 !important;
+  border-radius: 6px !important;
+  border: 1px solid #e0e4ea !important;
+  background-color: #f8f9fa !important;
+  box-shadow: none !important;
+}
+.card-header .form-control:focus {
+  border-color: #b0b8c4 !important;
+  background-color: #fff !important;
+  box-shadow: none !important;
+}
+@media only screen and (max-width: 991px) {
+  .sabuj_ml_tb_2 {
+    margin-left: 0.5rem !important;
+  }
+}
+
+/* =====================================================
+   Page Titles & Back Button Positioning
+   Moves the back button to the right and minimizes vertical space.
+   ===================================================== */
+/* =====================================================
+   Page Layout & Container Space Reduction
+   Reduces top, left, right, and internal white space project-wide
+   ===================================================== */
+.content-body .container-fluid {
+  padding-top: 15px !important;
+  padding-right: 15px !important;
+  padding-left: 15px !important;
+  padding-bottom: 15px !important;
+}
+
+.page-titles {
+  display: none !important;
+}
+
+.page-titles .breadcrumb {
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+}
+
+/* Card Outer & Inner Padding Optimization */
+.custom-card,
+.card:not(.h-100) {
+  margin-bottom: 15px !important;
+  height: auto !important;
+}
+
+.custom-card .card-header,
+.card .card-header {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+
+.custom-card .card-body,
+.card .card-body {
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+  padding-bottom: 16px !important;
+  padding-top: 4px !important;
+}
+
+.page-titles button {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03) !important;
+  background-color: #fff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #475569 !important;
+  transition: all 0.2s ease !important;
+  font-weight: 500 !important;
+  padding: 6px 14px !important;
+}
+
+.page-titles button:hover {
+  background-color: #7A70BA !important; /* theme primary brand color */
+  border-color: #7A70BA !important;
+  color: #fff !important;
+}
+
+[data-theme-version="dark"] .page-titles button {
+  background-color: #1a1f23 !important;
+  border-color: #333a4d !important;
+  color: #e2e8f0 !important;
+}
+
+[data-theme-version="dark"] .page-titles button:hover {
+  background-color: #7A70BA !important;
+  border-color: #7A70BA !important;
+  color: #fff !important;
+}
+
+/* --- Premium Journal/Payment/Receipt Voucher Modal Styling --- */
+.journal-voucher-modal .modal-content {
+  border-radius: 16px !important;
+  border: none !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+}
+
+.journal-voucher-modal .modal-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+  padding: 20px 24px 10px 24px !important;
+}
+
+.journal-voucher-modal .modal-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
+  padding: 12px 24px 16px 24px !important;
+}
+
+.journal-voucher-modal .form-control,
+.journal-voucher-modal .form-select {
+  border: 1px solid #e2e8f0 !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.journal-voucher-modal .form-control:focus,
+.journal-voucher-modal .form-select:focus {
+  border-color: #7A70BA !important;
+  box-shadow: 0 0 0 3px rgba(122, 112, 186, 0.15) !important;
+  background-color: #fff !important;
+}
+
+.journal-entry-table {
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+}
+
+.journal-entry-table thead tr th {
+  background-color: #f8f9fa !important;
+  border-bottom: 2px solid #e2e8f0 !important;
+  font-weight: 700 !important;
+  font-size: 11px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  color: #475569 !important;
+  padding: 10px 12px !important;
+}
+
+.journal-entry-table tbody tr td {
+  border-bottom: 1px solid #e2e8f0 !important;
+  padding: 8px 10px !important;
+}
+
+.journal-entry-table tbody tr:last-child td {
+  border-bottom: none !important;
+}
+
+/* Custom transitions and styling for add/remove buttons */
+.journal-voucher-modal .btn-icon {
+  transition: all 0.2s ease !important;
+}
+.journal-voucher-modal .btn-icon:hover {
+  transform: scale(1.08);
+}
+
+/* Remove default caret from By/To dropdown toggle */
+.dropdown-toggle-no-caret::after {
+  display: none !important;
+}
+
+/* Universal Save and Close Button styling */
+.btn-universal-close {
+  background-color: #7A70BA !important;
+  border-color: #7A70BA !important;
+  color: #fff !important;
+  height: 42px !important;
+  padding: 0 24px !important;
+  border-radius: 10px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.2s ease !important;
+  border: none !important;
+}
+.btn-universal-close:hover {
+  background-color: #695fa3 !important;
+  border-color: #695fa3 !important;
+  color: #fff !important;
+  opacity: 0.9;
+}
+
+.btn-universal-save {
+  background-color: #2bc155 !important;
+  border-color: #2bc155 !important;
+  color: #fff !important;
+  height: 42px !important;
+  padding: 0 24px !important;
+  border-radius: 10px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.2s ease !important;
+  border: none !important;
+}
+.btn-universal-save:hover {
+  background-color: #22a844 !important;
+  border-color: #22a844 !important;
+  color: #fff !important;
+  opacity: 0.9;
+}
+
+/* =====================================================
+   Company Profile Image Upload Action Buttons
+   ===================================================== */
+.btn-image-change {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  padding: 6px 14px !important;
+  height: 32px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+  border-radius: 8px !important;
+  border: 1px solid #d1d5db !important;
+  background-color: #ffffff !important;
+  color: #374151 !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+  cursor: pointer !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  outline: none !important;
+  user-select: none !important;
+  white-space: nowrap !important;
+}
+
+.btn-image-change i {
+  font-size: 12px !important;
+  color: #6b7280 !important;
+  transition: color 0.2s ease !important;
+}
+
+.btn-image-change:hover {
+  background-color: #f8fafc !important;
+  border-color: #9ca3af !important;
+  color: #111827 !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08) !important;
+  transform: translateY(-1px) !important;
+}
+
+.btn-image-change:hover i {
+  color: #111827 !important;
+}
+
+.btn-image-change:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.btn-image-remove {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  padding: 6px 14px !important;
+  height: 32px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+  border-radius: 8px !important;
+  border: 1px solid #fecdd3 !important;
+  background-color: #fff1f2 !important;
+  color: #e11d48 !important;
+  box-shadow: 0 1px 2px rgba(225, 29, 72, 0.04) !important;
+  cursor: pointer !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  outline: none !important;
+  user-select: none !important;
+  white-space: nowrap !important;
+}
+
+.btn-image-remove i {
+  font-size: 12px !important;
+  color: #e11d48 !important;
+  transition: color 0.2s ease !important;
+}
+
+.btn-image-remove:hover {
+  background-color: #fee2e2 !important;
+  border-color: #fda4af !important;
+  color: #be123c !important;
+  box-shadow: 0 2px 5px rgba(225, 29, 72, 0.12) !important;
+  transform: translateY(-1px) !important;
+}
+
+.btn-image-remove:hover i {
+  color: #be123c !important;
+}
+
+.btn-image-remove:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 1px 2px rgba(225, 29, 72, 0.04) !important;
+}
+
+/* Dark mode overrides */
+[data-theme-version="dark"] .btn-image-change {
+  background-color: #1e242a !important;
+  border-color: #3b4252 !important;
+  color: #e5e9f0 !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme-version="dark"] .btn-image-change i {
+  color: #9ca3af !important;
+}
+
+[data-theme-version="dark"] .btn-image-change:hover {
+  background-color: #2e3440 !important;
+  border-color: #4c566a !important;
+  color: #ffffff !important;
+}
+
+[data-theme-version="dark"] .btn-image-change:hover i {
+  color: #ffffff !important;
+}
+
+[data-theme-version="dark"] .btn-image-remove {
+  background-color: rgba(225, 29, 72, 0.12) !important;
+  border-color: rgba(225, 29, 72, 0.35) !important;
+  color: #fb7185 !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme-version="dark"] .btn-image-remove i {
+  color: #fb7185 !important;
+}
+
+[data-theme-version="dark"] .btn-image-remove:hover {
+  background-color: rgba(225, 29, 72, 0.22) !important;
+  border-color: rgba(225, 29, 72, 0.5) !important;
+  color: #fda4af !important;
+}
+
+[data-theme-version="dark"] .btn-image-remove:hover i {
+  color: #fda4af !important;
+}
+
+/* =====================================================
+   Branch Configuration Toggle Card
+   ===================================================== */
+.branch-toggle-card {
+  background-color: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  user-select: none;
+}
+
+.branch-toggle-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transform: translateY(-1px);
+}
+
+.branch-toggle-card.active {
+  background-color: #fbfdfc;
+  border-color: rgba(46, 206, 138, 0.4);
+}
+
+.branch-toggle-card.active:hover {
+  border-color: #2ece8a;
+}
+
+.branch-toggle-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  background-color: #f1f5f9;
+  color: #64748b;
+  font-size: 18px;
+}
+
+.branch-toggle-card.active .branch-toggle-icon {
+  background-color: rgba(46, 206, 138, 0.12);
+  color: #10b981;
+}
+
+.branch-toggle-title {
+  font-weight: 600;
+  font-size: 14px;
+  color: #1e293b;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+
+.branch-toggle-desc {
+  font-size: 12px;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+.branch-toggle-switch {
+  position: relative;
+  width: 46px;
+  height: 24px;
+  border-radius: 24px;
+  background-color: #cbd5e1;
+  transition: background-color 0.25s ease;
+  flex-shrink: 0;
+}
+
+.branch-toggle-card.active .branch-toggle-switch {
+  background-color: #2ece8a;
+}
+
+.branch-toggle-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.branch-toggle-card.active .branch-toggle-thumb {
+  transform: translateX(22px);
+}
+
+/* Dark mode support */
+[data-theme-version="dark"] .branch-toggle-card {
+  background-color: #1e242a;
+  border-color: #333a4d;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme-version="dark"] .branch-toggle-card:hover {
+  border-color: #4b5563;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme-version="dark"] .branch-toggle-card.active {
+  background-color: #1f272e;
+  border-color: rgba(46, 206, 138, 0.35);
+}
+
+[data-theme-version="dark"] .branch-toggle-card.active:hover {
+  border-color: rgba(46, 206, 138, 0.6);
+}
+
+[data-theme-version="dark"] .branch-toggle-icon {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #94a3b8;
+}
+
+[data-theme-version="dark"] .branch-toggle-card.active .branch-toggle-icon {
+  background-color: rgba(46, 206, 138, 0.15);
+  color: #34d399;
+}
+
+[data-theme-version="dark"] .branch-toggle-title {
+  color: #f1f5f9;
+}
+
+[data-theme-version="dark"] .branch-toggle-desc {
+  color: #94a3b8;
+}
+
+[data-theme-version="dark"] .branch-toggle-switch {
+  background-color: #475569;
+}
+
+[data-theme-version="dark"] .branch-toggle-card.active .branch-toggle-switch {
+  background-color: #2ece8a;
+}
+
+/* =====================================================
+   Global Input Text Capitalization (Title Case)
+   Capitalizes the first letter of each word in text input boxes globally
+   (Excludes password, email, username, login page fields, and company description)
+   ===================================================== */
+input[type="text"]:not([type="password"]):not([type="email"]):not([name="username"]):not([name="password"]),
+textarea:not(#company_description):not(.company-description-textarea):not([name="description"]) {
+  text-transform: capitalize;
+}
+
+/* Explicitly disable text transformation for login inputs, emails, usernames, passwords, and company description */
+#company_description,
+.company-description-textarea,
+textarea#company_description,
+textarea[name="description"],
+.login-wrapper input,
+.authincation-content input,
+input[type="password"],
+input[type="email"],
+input[name="password"],
+input[name="username"],
+.no-capitalize {
+  text-transform: none !important;
+}
+
+/* =====================================================
+   Hide Edge Default Password Reveal Icon
+   ===================================================== */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+
+/* =====================================================
+   Financial Reports Action Buttons (No Purple Hover Color)
+   ===================================================== */
+.tally-action-btn {
+  background-color: #ffffff !important;
+  color: #374151 !important;
+  border: 1px solid #d1d5db !important;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease !important;
+}
+
+.tally-action-btn:hover,
+.tally-action-btn:focus,
+.tally-action-btn:active,
+.tally-action-btn.active {
+  background-color: #f3f4f6 !important;
+  color: #111827 !important;
+  border-color: #9ca3af !important;
+  box-shadow: none !important;
+}
+
+[data-theme-version="dark"] .tally-action-btn {
+  background-color: #1e293b !important;
+  color: #e2e8f0 !important;
+  border-color: #334155 !important;
+}
+
+[data-theme-version="dark"] .tally-action-btn:hover,
+[data-theme-version="dark"] .tally-action-btn:focus,
+[data-theme-version="dark"] .tally-action-btn:active,
+[data-theme-version="dark"] .tally-action-btn.active {
+  background-color: #334155 !important;
+  color: #ffffff !important;
+  border-color: #475569 !important;
+}
+
+
+/* Hide spin buttons for specific number inputs */
+.no-spinner::-webkit-outer-spin-button,
+.no-spinner::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.no-spinner[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* =====================================================
+   Global Dark Mode Form Controls & Date Pickers Fix
+   ===================================================== */
+[data-theme-version="dark"] .form-control,
+[data-theme-version="dark"] .form-select,
+[data-theme-version="dark"] input[type="text"],
+[data-theme-version="dark"] input[type="date"],
+[data-theme-version="dark"] input[type="time"],
+[data-theme-version="dark"] input[type="number"],
+[data-theme-version="dark"] input[type="email"],
+[data-theme-version="dark"] input[type="password"],
+[data-theme-version="dark"] textarea {
+  background-color: #24292D !important;
+  color: #ffffff !important;
+  border-color: #4a5568 !important;
+  color-scheme: dark;
+}
+
+[data-theme-version="dark"] .form-control:focus,
+[data-theme-version="dark"] .form-select:focus,
+[data-theme-version="dark"] input[type="text"]:focus,
+[data-theme-version="dark"] input[type="date"]:focus,
+[data-theme-version="dark"] input[type="time"]:focus,
+[data-theme-version="dark"] input[type="number"]:focus,
+[data-theme-version="dark"] textarea:focus {
+  background-color: #24292D !important;
+  color: #ffffff !important;
+  border-color: #7A70BA !important;
+  box-shadow: 0 0 0 0.25rem rgba(122, 112, 186, 0.25) !important;
+}
+
+[data-theme-version="dark"] .form-control::placeholder,
+[data-theme-version="dark"] input::placeholder,
+[data-theme-version="dark"] textarea::placeholder {
+  color: #718096 !important;
+}
+
+/* Native date/time picker calendar icon invert in dark mode */
+[data-theme-version="dark"] input[type="date"]::-webkit-calendar-picker-indicator,
+[data-theme-version="dark"] input[type="time"]::-webkit-calendar-picker-indicator,
+[data-theme-version="dark"] input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  filter: invert(1) brightness(0.85);
+  cursor: pointer;
+}
+
+/* =====================================================
+   Global Date & Time Inputs: Enable Both Keyboard Typing and Calendar Picker
+   ===================================================== */
+input[type="date"],
+input[type="datetime-local"],
+input[type="time"] {
+  position: relative !important;
+  overflow: visible !important;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  position: static !important;
+  display: inline-block !important;
+  width: 20px !important;
+  height: 20px !important;
+  min-width: 20px !important;
+  min-height: 20px !important;
+  opacity: 1 !important;
+  cursor: pointer !important;
+  margin-left: auto !important;
+  padding: 0 !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23475569' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 16px 16px !important;
+  transition: transform 0.15s ease-in-out, opacity 0.15s ease-in-out;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover,
+input[type="datetime-local"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1 !important;
+  transform: scale(1.1);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%232ece8a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E") !important;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+  position: static !important;
+  display: inline-block !important;
+  width: 20px !important;
+  height: 20px !important;
+  min-width: 20px !important;
+  min-height: 20px !important;
+  opacity: 1 !important;
+  cursor: pointer !important;
+  margin-left: auto !important;
+  padding: 0 !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23475569' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cpolyline points='12 6 12 12 16 14'%3E%3C/polyline%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 16px 16px !important;
+}
+
+[data-theme-version="dark"] input[type="date"]::-webkit-calendar-picker-indicator,
+[data-theme-version="dark"] input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23cbd5e1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E") !important;
+}
+
+[data-theme-version="dark"] input[type="time"]::-webkit-calendar-picker-indicator {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23cbd5e1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cpolyline points='12 6 12 12 16 14'%3E%3C/polyline%3E%3C/svg%3E") !important;
+}
+
+/* Ensure datetime editable segments (day, month, year) can receive focus and allow typing */
+input[type="date"]::-webkit-datetime-edit,
+input[type="datetime-local"]::-webkit-datetime-edit,
+input[type="time"]::-webkit-datetime-edit {
+  display: inline-flex !important;
+  cursor: text !important;
+}
+
+input[type="date"]::-webkit-datetime-edit-fields-wrapper,
+input[type="datetime-local"]::-webkit-datetime-edit-fields-wrapper,
+input[type="time"]::-webkit-datetime-edit-fields-wrapper {
+  display: inline-flex !important;
+  cursor: text !important;
+}
+
+input[type="date"]::-webkit-datetime-edit-day-field:focus,
+input[type="date"]::-webkit-datetime-edit-month-field:focus,
+input[type="date"]::-webkit-datetime-edit-year-field:focus,
+input[type="datetime-local"]::-webkit-datetime-edit-day-field:focus,
+input[type="datetime-local"]::-webkit-datetime-edit-month-field:focus,
+input[type="datetime-local"]::-webkit-datetime-edit-year-field:focus {
+  background-color: #0d6efd !important;
+  color: #ffffff !important;
+  border-radius: 2px !important;
+}
+
+/* Global React-Select Dark Mode Styling */
+[data-theme-version="dark"] .react-select__control {
+  background-color: #24292D !important;
+  border-color: #4a5568 !important;
+  color: #ffffff !important;
+}
+
+[data-theme-version="dark"] .react-select__menu {
+  background-color: #2F363E !important;
+  border: 1px solid #4a5568 !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme-version="dark"] .react-select__option {
+  background-color: transparent !important;
+  color: #e2e8f0 !important;
+}
+
+[data-theme-version="dark"] .react-select__option:hover,
+[data-theme-version="dark"] .react-select__option--is-focused {
+  background-color: #3d464e !important;
+  color: #ffffff !important;
+}
+
+[data-theme-version="dark"] .react-select__option--is-selected {
+  background-color: #2ece8a !important;
+  color: #ffffff !important;
+}
+
+[data-theme-version="dark"] .react-select__single-value {
+  color: #ffffff !important;
+}
+
+[data-theme-version="dark"] .react-select__input-container {
+  color: #ffffff !important;
+}
+
+[data-theme-version="dark"] .react-select__placeholder {
+  color: #718096 !important;
+}
+
+/* Global Modal Dark Mode Overrides */
+[data-theme-version="dark"] .modal-content {
+  background-color: #2F363E !important;
+  color: #e2e8f0 !important;
+}
+
+[data-theme-version="dark"] .modal-header,
+[data-theme-version="dark"] .modal-footer {
+  border-color: #3d464e !important;
+}
+
+[data-theme-version="dark"] .modal-title {
+  color: #ffffff !important;
+}
+
+/* Global Dropdown Menus Dark Mode */
+[data-theme-version="dark"] .dropdown-menu {
+  background-color: #2F363E !important;
+  border-color: #4a5568 !important;
+}
+
+[data-theme-version="dark"] .dropdown-item {
+  color: #e2e8f0 !important;
+}
+
+[data-theme-version="dark"] .dropdown-item:hover,
+[data-theme-version="dark"] .dropdown-item:focus {
+  background-color: #3d464e !important;
+  color: #ffffff !important;
+}
+
+[data-theme-version="dark"] .dropdown-divider {
+  border-top-color: #4a5568 !important;
+}
+
+/* Global Tables & Table Headers Dark Mode */
+[data-theme-version="dark"] .table-light,
+[data-theme-version="dark"] .table-light th,
+[data-theme-version="dark"] .table-light td,
+[data-theme-version="dark"] thead.table-light th,
+[data-theme-version="dark"] thead.table-light td,
+[data-theme-version="dark"] .table thead th {
+  background-color: #24292D !important;
+  color: #e2e8f0 !important;
+  border-color: #3d464e !important;
+  --bs-table-bg: #24292D !important;
+  --bs-table-color: #e2e8f0 !important;
+}
+
+[data-theme-version="dark"] .table {
+  color: #e2e8f0 !important;
+  border-color: #3d464e !important;
+  --bs-table-color: #e2e8f0 !important;
+  --bs-table-border-color: #3d464e !important;
+}
+
+[data-theme-version="dark"] .table td,
+[data-theme-version="dark"] .table th {
+  border-color: #3d464e !important;
+}
+
+[data-theme-version="dark"] .table-hover > tbody > tr:hover > * {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+  color: #ffffff !important;
+}
+
+/* Global Nav Tabs Dark Mode */
+[data-theme-version="dark"] .nav-tabs {
+  border-bottom-color: #3d464e !important;
+}
+
+[data-theme-version="dark"] .nav-tabs .nav-link {
+  color: #a0aec0 !important;
+  border-color: transparent !important;
+  background-color: transparent !important;
+}
+
+[data-theme-version="dark"] .nav-tabs .nav-link:hover,
+[data-theme-version="dark"] .nav-tabs .nav-link:focus {
+  color: #ffffff !important;
+  border-color: #3d464e #3d464e transparent !important;
+  background-color: rgba(255, 255, 255, 0.02) !important;
+}
+
+[data-theme-version="dark"] .nav-tabs .nav-link.active,
+[data-theme-version="dark"] .nav-tabs .nav-item.show .nav-link {
+  background-color: #24292D !important;
+  color: #2ece8a !important;
+  border-color: #3d464e #3d464e #24292D !important;
+  font-weight: 600;
+}
+
+/* Global Factory Banner Box Dark Mode */
+[data-theme-version="dark"] .factory-banner-box {
+  background-color: rgba(122, 112, 186, 0.15) !important;
+  border-color: rgba(122, 112, 186, 0.4) !important;
+}
+
+[data-theme-version="dark"] .factory-banner-box span,
+[data-theme-version="dark"] .factory-banner-box i {
+  color: #c4b5fd !important;
+}
+
+
+
+
+/* =====================================================
+   Hide Number Input Spin Buttons (Top/Bottom Arrows)
+   Removes top & bottom arrow buttons (spinners) from number input fields
+   in Journal, Receipt, Contra, Payment, and across the application.
+   ===================================================== */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0 !important;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield !important;
+  appearance: textfield !important;
+}
+
+/* =====================================================
+   Sidebar Active & Hover Menu Item - Glenda Brand Color (#1a3a72)
+   ===================================================== */
+.deznav .metismenu > li.mm-active > a {
+  background: rgba(26, 58, 114, 0.1) !important;
+  color: #1a3a72 !important;
+  font-weight: 500;
+  box-shadow: none !important;
+}
+
+.deznav .metismenu > li.mm-active > a i,
+.deznav .metismenu > li.mm-active > a svg,
+.deznav .metismenu > li.mm-active > a g [fill] {
+  color: #1a3a72 !important;
+  fill: #1a3a72 !important;
+}
+
+.deznav .metismenu > li:hover > a,
+.deznav .metismenu > li:focus > a {
+  color: #1a3a72 !important;
+}
+
+.deznav .metismenu > li:hover > a i,
+.deznav .metismenu > li:hover > a svg,
+.deznav .metismenu > li:hover > a g [fill] {
+  color: #1a3a72 !important;
+}
+
+/* Global React-Select Dark Mode Styling */
+[data-theme-version="dark"] .react-select__control {
+  background-color: #24292D !important;
+  border-color: #4a5568 !important;
+  color: #ffffff !important;
+}
+
+[data-theme-version="dark"] .react-select__menu {
+  background-color: #2F363E !important;
+  border: 1px solid #4a5568 !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme-version="dark"] .react-select__option {
+  background-color: transparent !important;
+  color: #e2e8f0 !important;
+}
+
+[data-theme-version="dark"] .react-select__option:hover,
+[data-theme-version="dark"] .react-select__option--is-focused {
+  background-color: #3d464e !important;
+  color: #ffffff !important;
+}
+
+[data-theme-version="dark"] .react-select__option--is-selected {
+  background-color: #2ece8a !important;
+  color: #ffffff !important;
+}
+
+[data-theme-version="dark"] .react-select__single-value {
+  color: #ffffff !important;
+}
+
+[data-theme-version="dark"] .react-select__input-container {
+  color: #ffffff !important;
+}
+
+[data-theme-version="dark"] .react-select__placeholder {
+  color: #718096 !important;
+}
+
+/* Global Modal Dark Mode Overrides */
+[data-theme-version="dark"] .modal-content {
+  background-color: #2F363E !important;
+  color: #e2e8f0 !important;
+}
+
+[data-theme-version="dark"] .modal-header,
+[data-theme-version="dark"] .modal-footer {
+  border-color: #3d464e !important;
+}
+
+[data-theme-version="dark"] .modal-title {
+  color: #ffffff !important;
+}
+
+/* Global Dropdown Menus Dark Mode */
+[data-theme-version="dark"] .dropdown-menu {
+  background-color: #2F363E !important;
+  border-color: #4a5568 !important;
+}
+
+[data-theme-version="dark"] .dropdown-item {
+  color: #e2e8f0 !important;
+}
+
+[data-theme-version="dark"] .dropdown-item:hover,
+[data-theme-version="dark"] .dropdown-item:focus {
+  background-color: #3d464e !important;
+  color: #ffffff !important;
+}
+
+[data-theme-version="dark"] .dropdown-divider {
+  border-top-color: #4a5568 !important;
+}
+
+/* Global Tables & Table Headers Dark Mode */
+[data-theme-version="dark"] .table-light,
+[data-theme-version="dark"] .table-light th,
+[data-theme-version="dark"] .table-light td,
+[data-theme-version="dark"] thead.table-light th,
+[data-theme-version="dark"] thead.table-light td,
+[data-theme-version="dark"] .table thead th {
+  background-color: #24292D !important;
+  color: #e2e8f0 !important;
+  border-color: #3d464e !important;
+  --bs-table-bg: #24292D !important;
+  --bs-table-color: #e2e8f0 !important;
+}
+
+[data-theme-version="dark"] .table {
+  color: #e2e8f0 !important;
+  border-color: #3d464e !important;
+  --bs-table-color: #e2e8f0 !important;
+  --bs-table-border-color: #3d464e !important;
+}
+
+[data-theme-version="dark"] .table td,
+[data-theme-version="dark"] .table th {
+  border-color: #3d464e !important;
+}
+
+[data-theme-version="dark"] .table-hover > tbody > tr:hover > * {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+  color: #ffffff !important;
+}
+
+/* Global Nav Tabs Dark Mode */
+[data-theme-version="dark"] .nav-tabs {
+  border-bottom-color: #3d464e !important;
+}
+
+[data-theme-version="dark"] .nav-tabs .nav-link {
+  color: #a0aec0 !important;
+  border-color: transparent !important;
+  background-color: transparent !important;
+}
+
+[data-theme-version="dark"] .nav-tabs .nav-link:hover,
+[data-theme-version="dark"] .nav-tabs .nav-link:focus {
+  color: #ffffff !important;
+  border-color: #3d464e #3d464e transparent !important;
+  background-color: rgba(255, 255, 255, 0.02) !important;
+}
+
+[data-theme-version="dark"] .nav-tabs .nav-link.active,
+[data-theme-version="dark"] .nav-tabs .nav-item.show .nav-link {
+  background-color: #24292D !important;
+  color: #2ece8a !important;
+  border-color: #3d464e #3d464e #24292D !important;
+  font-weight: 600;
+}
+
+/* Global Factory Banner Box Dark Mode */
+[data-theme-version="dark"] .factory-banner-box {
+  background-color: rgba(122, 112, 186, 0.15) !important;
+  border-color: rgba(122, 112, 186, 0.4) !important;
+}
+
+[data-theme-version="dark"] .factory-banner-box span,
+[data-theme-version="dark"] .factory-banner-box i {
+  color: #c4b5fd !important;
+}
+
+
+
+
+/* =====================================================
+   Hide Number Input Spin Buttons (Top/Bottom Arrows)
+   Removes top & bottom arrow buttons (spinners) from number input fields
+   in Journal, Receipt, Contra, Payment, and across the application.
+   ===================================================== */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0 !important;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield !important;
+  appearance: textfield !important;
+}
+
+/* =====================================================
+   Sidebar Active & Hover Menu Item - Glenda Brand Color (#1a3a72)
+   ===================================================== */
+.deznav .metismenu > li.mm-active > a {
+  background: rgba(26, 58, 114, 0.1) !important;
+  color: #1a3a72 !important;
+  font-weight: 500;
+  box-shadow: none !important;
+}
+
+.deznav .metismenu > li.mm-active > a i,
+.deznav .metismenu > li.mm-active > a svg,
+.deznav .metismenu > li.mm-active > a g [fill] {
+  color: #1a3a72 !important;
+  fill: #1a3a72 !important;
+}
+
+.deznav .metismenu > li:hover > a,
+.deznav .metismenu > li:focus > a {
+  color: #1a3a72 !important;
+}
+
+.deznav .metismenu > li:hover > a i,
+.deznav .metismenu > li:hover > a svg,
+.deznav .metismenu > li:hover > a g [fill] {
+  color: #1a3a72 !important;
+  fill: #1a3a72 !important;
+}
+
+.deznav .metismenu ul a:hover,
+.deznav .metismenu ul a:focus,
+.deznav .metismenu ul a.mm-active {
+  color: #1a3a72 !important;
+}
+
+.search-icon-input { padding-left: 40px !important; }
+
+.swal2-container {
+  z-index: 100000 !important;
+}
+
+/* ---- COMMON MASTER MENU RESPONSIVE FIX ---- */
+.deznav .metismenu a,
+.deznav .metismenu .nav-text {
+    white-space: normal !important;
+    word-break: break-word !important;
+}
+
+.deznav .metismenu li,
+.deznav .metismenu a {
+    height: auto !important;
+    min-height: auto !important;
+}
+
+.deznav .metismenu > li > a,
+.deznav .metismenu ul a {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+    line-height: 1.4 !important;
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+}
+
+.deznav .metismenu .nav-text {
+    display: block !important;
+    width: 100% !important;
+    padding-right: 25px !important; /* Space for the arrow */
+}
+
+.deznav .metismenu ul a {
+    padding-right: 30px !important;
+}
+
+.deznav .metismenu .has-arrow {
+    position: relative;
+}
+.deznav .metismenu .has-arrow::after {
+    position: absolute !important;
+    right: 15px !important;
+    top: 50% !important;
+    transform: translateY(-50%) rotate(135deg) !important;
+    margin-top: 0 !important;
+}
+.deznav .metismenu .has-arrow[aria-expanded=true]::after,
+.deznav .metismenu .mm-active > .has-arrow::after {
+    transform: translateY(-50%) rotate(226deg) !important;
+}
+
+/* ---- FIX SCROLLBAR LAYOUT THRASHING ---- */
+/* Force the vertical scrollbar track to always render to prevent window.innerWidth from oscillating when page height changes */
+html {
+    overflow-y: scroll !important;
+}
+
+/* ---- STOP RESIZE ANIMATIONS ---- */
+.resize-animation-stopper * {
+  animation: none !important;
+  transition: none !important;
+}

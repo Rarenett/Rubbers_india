@@ -1,0 +1,138 @@
+================================================================================
+IMPLEMENTATION PLAN: PARK AREA & PARKING SLOT ALLOCATION IN ACCESS POINT
+================================================================================
+
+1. OVERVIEW & REQUIREMENTS
+--------------------------------------------------------------------------------
+- Display Park Area names as a dropdown in the Gate Entry form.
+- Dynamically load and show available Parking Slot numbers when a Park Area is selected.
+- Assign the entering vehicle to one of the available slots.
+- When the vehicle departs campus (exit), automatically return the slot status to 'Available'.
+- CONDITIONAL RULE: The parking section must ONLY appear when a vehicle is present
+  in the entry (either dedicated Vehicle Entry or Visitor Entry with accompanied vehicle).
+  If no vehicle is present, the parking section is completely hidden.
+
+
+2. ARCHITECTURE & LIFECYCLE
+--------------------------------------------------------------------------------
+[Gate Entry Form Opened]
+       │
+       ▼
+[Is Vehicle Present?]
+       ├── NO (Pedestrian / Employee) ──> Parking section hidden
+       │
+       └── YES (Vehicle Mode OR Visitor with Vehicle)
+              │
+              ▼
+       [Select Park Area Dropdown]
+              │
+              ▼
+       [Load Available Slots Dropdown (status == 'Available')]
+              │
+              ▼
+       [Select Slot & Submit Entry]
+              │
+              ▼
+       [Backend saves Entry & sets ParkingSlot.status = 'Occupied']
+              │
+              ▼
+       [Vehicle inside Campus]
+              │
+              ▼
+       [Vehicle Mark Exit / Checkout]
+              │
+              ▼
+       [Backend checks out Entry & sets ParkingSlot.status = 'Available']
+
+
+3. DETAILED STEP-BY-STEP IMPLEMENTATION
+--------------------------------------------------------------------------------
+
+PHASE 1: BACKEND DATABASE MODELS & MIGRATIONS
+File: backend/gate_app/models.py
+- Extend VehicleEntry:
+  * park_area = ForeignKey(ParkArea, on_delete=models.SET_NULL, null=True, blank=True, related_name='vehicle_entries')
+  * parking_slot = ForeignKey(ParkingSlot, on_delete=models.SET_NULL, null=True, blank=True, related_name='vehicle_entries')
+- Extend GateEntry (for visitors arriving by vehicle):
+  * park_area = ForeignKey(ParkArea, on_delete=models.SET_NULL, null=True, blank=True, related_name='gate_entries')
+  * parking_slot = ForeignKey(ParkingSlot, on_delete=models.SET_NULL, null=True, blank=True, related_name='gate_entries')
+- Extend GateEntryVehicle:
+  * park_area = ForeignKey(ParkArea, on_delete=models.SET_NULL, null=True, blank=True, related_name='gate_entry_vehicles')
+  * parking_slot = ForeignKey(ParkingSlot, on_delete=models.SET_NULL, null=True, blank=True, related_name='gate_entry_vehicles')
+- Migration:
+  * Run: python manage.py makemigrations gate_app
+  * Run: python manage.py migrate
+
+PHASE 2: SERIALIZERS & LIFECYCLE HANDLERS
+File: backend/gate_app/serializers.py
+- In VehicleEntrySerializer and GateEntrySerializer:
+  * Expose park_area and parking_slot
+  * Add read-only fields:
+    - park_area_name (obj.park_area.name)
+    - parking_slot_number (obj.parking_slot.slot_number)
+    - parking_display (e.g. "Main Campus Parking - Slot #4")
+
+File: backend/gate_app/views.py
+- In VehicleEntryViewSet.perform_create & GateEntryViewSet.perform_create:
+  * If parking_slot is provided:
+    - Mark parking_slot.status = 'Occupied'
+    - Save slot
+- In perform_update:
+  * If slot is reassigned, release old slot (status = 'Available') and occupy new slot.
+- In VehicleEntryViewSet.mark_exit:
+  * On vehicle checkout (full exit or vehicle-only exit):
+    - If vehicle_entry.parking_slot:
+        vehicle_entry.parking_slot.status = 'Available'
+        vehicle_entry.parking_slot.save(update_fields=['status'])
+- In GateEntryViewSet.mark_exit:
+  * On full checkout or departure of accompanied vehicles:
+    - If gate_entry.parking_slot:
+        gate_entry.parking_slot.status = 'Available'
+        gate_entry.parking_slot.save(update_fields=['status'])
+- Auto-Reconciliation (Safety Net):
+  * In ParkAreaViewSet.slots action, verify slots: if any slot is marked 'Occupied'
+    with no active inside entry referencing it, auto-restore status = 'Available'.
+
+PHASE 3: FRONTEND API & ENTRY FORM UI
+File: frontend/src/services/GateManagementService.js
+- Ensure getParkAreas() and getParkAreaSlots(areaId) are ready.
+
+File: frontend/src/jsx/components/AccessPoint/GateEntryForm.jsx
+- Visibility Guard:
+  const hasVehiclePresence = entryMode === 'vehicle' || (selectedVehicles && selectedVehicles.length > 0);
+  * If !hasVehiclePresence: Hide parking section completely.
+- Form State:
+  * formData.park_area
+  * formData.parking_slot
+  * parkAreaOptions (fetched on mount)
+  * availableSlotOptions (dynamically populated when park_area changes)
+- Form Controls (Canonical Glenda Theme):
+  * Dropdown 1: Parking Area (selects Park Area, resets slot, fetches slots)
+  * Dropdown 2: Parking Slot (filters slot.status === 'Available')
+    - Shows "Slot 1 (Available)", "Slot 2 (Available)"...
+    - If no slots available: Displays warning badge "All Slots Occupied in this Area"
+- Form Submission:
+  * Append park_area and parking_slot to FormData payload in both handleSubmit
+    and handleSubmitVehicle.
+
+PHASE 4: ACCESS POINT DETAIL & CHECKOUT VISIBILITY
+- GateEntryDetail.jsx:
+  * Display assigned Parking Area and Slot in the Vehicle & Transport summary card.
+- CheckoutModal.jsx:
+  * Display current parking slot info during checkout review.
+- Printable Gate Pass:
+  * Print "Parking: [Area Name] - Slot #[Number]".
+
+
+4. VERIFICATION CHECKLIST
+--------------------------------------------------------------------------------
+[ ] 1. Visitor Entry (Walk-In, 0 Vehicles) -> Parking dropdowns are completely hidden.
+[ ] 2. Vehicle Entry (Dedicated) -> Parking dropdowns are visible.
+[ ] 3. Visitor Entry (With Vehicle) -> Parking dropdowns are visible.
+[ ] 4. Selecting Park Area dynamically populates only available slots.
+[ ] 5. Submitting entry marks selected slot as 'Occupied' in database.
+[ ] 6. Next vehicle entry sees only the remaining available slots.
+[ ] 7. Marking vehicle exit automatically restores slot status back to 'Available'.
+[ ] 8. Frontend production build passes cleanly (npm run build).
+[ ] 9. WORKLOG.md updated per project rules.
+================================================================================

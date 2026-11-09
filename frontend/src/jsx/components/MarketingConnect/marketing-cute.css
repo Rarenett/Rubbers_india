@@ -1,0 +1,244 @@
+/* Marketing Connect - Cute Mobile Enhancements */
+
+@media (max-width: 768px) {
+    /* General soft background and padding */
+    .container-fluid {
+        padding: 12px !important;
+        background-color: #f7f9fc !important;
+    }
+
+    /* Cards - Make them bubbly and soft */
+    .card, .dso-card, .dso-card2 {
+        border-radius: 22px !important;
+        border: none !important;
+        box-shadow: 0 10px 30px rgba(112, 128, 175, 0.1) !important;
+        margin-bottom: 20px !important;
+        overflow: hidden;
+        background: #ffffff !important;
+    }
+
+    /* Card bodies padding adjustment */
+    .card-body {
+        padding: 20px !important;
+    }
+
+    /* Inputs and Selects - Chunky, friendly, touchable */
+    .form-control, .form-select, .dso-input, .dso-select {
+        border-radius: 18px !important;
+        border: 2px solid #eef2f7 !important;
+        padding: 14px 18px !important;
+        font-size: 16px !important; /* Prevents iOS zoom */
+        background-color: #f8fafc !important;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        color: #334155 !important;
+    }
+
+    .form-control:focus, .form-select:focus, .dso-input:focus, .dso-select:focus {
+        border-color: #818cf8 !important;
+        box-shadow: 0 0 0 4px rgba(129, 140, 248, 0.2) !important;
+        background-color: #ffffff !important;
+    }
+
+    /* Buttons - Pill shaped, cute gradient, bouncy */
+    .btn, .btn-primary, .btn-success, .btn-danger, .btn-info {
+        border-radius: 24px !important;
+        padding: 14px 24px !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.3px !important;
+        border: none !important;
+        box-shadow: 0 6px 16px rgba(0,0,0,0.08) !important;
+        transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s ease !important;
+    }
+
+    .btn:active {
+        transform: scale(0.94) !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;
+    }
+    
+    .btn-primary {
+        background: linear-gradient(135deg, #818cf8 0%, #6366f1 100%) !important;
+        color: white !important;
+    }
+
+    .btn-success {
+        background: linear-gradient(135deg, #34d399 0%, #10b981 100%) !important;
+        color: white !important;
+    }
+    
+    .btn-danger {
+        background: linear-gradient(135deg, #f87171 0%, #ef4444 100%) !important;
+        color: white !important;
+    }
+
+    /* Fix for small icon buttons like edit/delete in tables */
+    .btn.btn-sm, .btn.btn-xs, .btn.sharp {
+        padding: 6px 12px !important;
+        border-radius: 12px !important;
+        font-size: 0.85rem !important;
+    }
+    
+    .btn.btn-xs.sharp, .btn.btn-sm.sharp {
+        padding: 0 !important;
+        width: 36px !important;
+        height: 36px !important;
+        border-radius: 50% !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    /* Labels - cute styling */
+    .form-label, label, style\=\{fieldLabel\} {
+        font-size: 0.8rem !important;
+        font-weight: 700 !important;
+        color: #64748b !important;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        margin-bottom: 8px !important;
+        display: block;
+    }
+
+    /* Modal - make it slide up nicely and have rounded top corners like a bottom sheet */
+    .modal-dialog {
+        margin: 0 !important;
+        align-items: flex-end !important;
+        min-height: 100vh;
+        display: flex;
+    }
+    .modal-content {
+        border-radius: 30px 30px 0 0 !important;
+        border: none !important;
+        padding-bottom: 20px; /* Safe area */
+    }
+    .modal-header {
+        border-bottom: 1px solid #f1f5f9 !important;
+        padding: 24px 20px 16px !important;
+    }
+    .modal-title {
+        font-weight: 800 !important;
+        font-size: 1.25rem !important;
+        color: #0f172a !important;
+    }
+
+    /* Dashboard Icons */
+    .col-6 {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+    .card-body h5 {
+        font-size: 1.1rem !important;
+        margin-top: 8px !important;
+    }
+    .card-body p {
+        font-size: 0.8rem !important;
+    }
+    .card-body div[style*="fontSize"],
+    .card-body .marketing-icon-wrapper {
+        font-size: 2.2rem !important;
+    }
+    
+    /* Order module specific */
+    .dso-left-panel, .dso-right-panel {
+        width: 100% !important;
+        position: relative !important;
+        border-radius: 24px !important;
+        padding: 0 !important;
+        background: transparent !important;
+    }
+    .dso-card {
+        padding: 24px !important;
+    }
+}
+
+/* Dashboard Cute Animations & Styling */
+.marketing-card {
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease !important;
+}
+.marketing-card:hover {
+    transform: translateY(-8px) scale(1.03) !important;
+    box-shadow: 0 15px 35px rgba(112, 128, 175, 0.2) !important;
+}
+.marketing-icon-wrapper {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+    box-shadow: inset 0 4px 6px rgba(255,255,255,0.7), 0 5px 15px rgba(0,0,0,0.05);
+    margin: 0 auto 15px auto;
+}
+@keyframes popIn {
+    0% { opacity: 0; transform: scale(0.8) translateY(20px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Transport Mode Chip Selector */
+.transport-mode-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(68px, 1fr));
+    gap: 8px;
+    width: 100%;
+}
+
+.transport-chip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 6px;
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    outline: none;
+    user-select: none;
+}
+
+.transport-chip:hover {
+    border-color: #cbd5e1;
+    background: #f1f5f9;
+}
+
+.transport-chip.active {
+    background: #eef2ff;
+    border-color: #6366f1;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+    transform: translateY(-2px);
+}
+
+.transport-chip-icon {
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+    line-height: 1;
+}
+
+.transport-chip-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #475569;
+}
+
+.transport-chip.active .transport-chip-label {
+    color: #4f46e5;
+}
+
+@media (max-width: 576px) {
+    .transport-mode-grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 6px;
+    }
+    .transport-chip {
+        padding: 8px 4px;
+        border-radius: 12px;
+    }
+    .transport-chip-icon {
+        font-size: 1.3rem;
+    }
+    .transport-chip-label {
+        font-size: 0.72rem;
+    }
+}
+

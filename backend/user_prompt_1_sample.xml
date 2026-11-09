@@ -1,0 +1,19 @@
+<USER_REQUEST>
+Now, just like Sales Order is pushed to Tally, i want to push Sales Invoices to Tally too. Give an implementation for that
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-09-07T14:44:34+05:30.
+
+The user's current state is as follows:
+Active Document: e:\glenda_vite\glenda_vite\backend\sales_app\serializers.py (LANGUAGE_PYTHON)
+Cursor is on line: 1
+Other open documents:
+- e:\glenda_vite\glenda_vite\backend\sales_app\management\commands\sync_tally.py (LANGUAGE_PYTHON)
+- e:\glenda_vite\glenda_vite\frontend\src\jsx\components\Sales\SalesOrderList.jsx (LANGUAGE_JAVASCRIPT)
+- e:\glenda_vite\glenda_vite\backend\sales_app\utils\tally_xml.py (LANGUAGE_PYTHON)
+- e:\glenda_vite\glenda_vite\backend\backend\settings.py (LANGUAGE_PYTHON)
+- e:\glenda_vite\glenda_vite\backend\sales_app\serializers.py (LANGUAGE_PYTHON)
+</ADDITIONAL_METADATA>
+<USER_SETTINGS_CHANGE>
+The user changed setting `Model Selection` from None to Gemini 3.8 Flash (Medium). No need to comment on this change if the user doesn't ask about it. If reporting what model you are, please use a human readable name instead of the exact string.
+</USER_SETTINGS_CHANGE>

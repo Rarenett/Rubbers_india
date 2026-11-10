@@ -78,7 +78,7 @@ const ComplaintFinalDecisionView = () => {
                 title: 'Updated!',
                 text: `Cutoff date for Ticket #${id} updated successfully.`,
                 icon: 'success',
-                confirmButtonColor: '#2ece8a',
+                confirmButtonColor: '#0a500f',
                 timer: 1500,
                 showConfirmButton: false
             });

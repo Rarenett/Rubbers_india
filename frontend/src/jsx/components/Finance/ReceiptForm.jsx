@@ -45,16 +45,16 @@ const ReceiptForm = (props) => {
         control: (base, state) => ({
             ...base,
             minHeight: '38px',
-            borderColor: state.isFocused ? '#2ece8a' : '#cbd5e1',
-            boxShadow: state.isFocused ? '0 0 0 2px rgba(46,206,138,0.15)' : 'none',
-            '&:hover': { borderColor: '#2ece8a' },
+            borderColor: state.isFocused ? '#0a500f' : '#cbd5e1',
+            boxShadow: state.isFocused ? '0 0 0 2px rgba(10, 80, 15,0.15)' : 'none',
+            '&:hover': { borderColor: '#0a500f' },
             borderRadius: '10px',
             fontSize: '13px',
         }),
         menu: base => ({ ...base, zIndex: 9999, fontSize: '0.875rem' }),
         option: (base, state) => ({
             ...base,
-            backgroundColor: state.isSelected ? '#2ece8a' : state.isFocused ? '#f0fdf6' : 'white',
+            backgroundColor: state.isSelected ? '#0a500f' : state.isFocused ? '#f0fdf6' : 'white',
             color: state.isSelected ? 'white' : '#333',
             cursor: 'pointer',
         }),
@@ -233,7 +233,7 @@ const ReceiptForm = (props) => {
                                                         style={{ height: '38px' }}
                                                     />
                                                     {hasBills && (
-                                                        <div style={{ fontSize: 11, color: '#2ece8a', marginTop: 4, fontWeight: 'bold', textAlign: 'right', cursor: 'pointer' }} onClick={() => openBillSettlement(idx)}>
+                                                        <div style={{ fontSize: 11, color: '#0a500f', marginTop: 4, fontWeight: 'bold', textAlign: 'right', cursor: 'pointer' }} onClick={() => openBillSettlement(idx)}>
                                                             <i className="fa fa-check-circle me-1"></i>
                                                             {rowAllocs.length} Ref{rowAllocs.length > 1 ? 's' : ''} allocated
                                                         </div>
@@ -319,7 +319,7 @@ const ReceiptForm = (props) => {
                                     {/* Summary Row */}
                                     <tr className="table-light fw-semibold">
                                         <td className="text-end text-muted py-2" style={{ fontSize: '13px' }}>Total Credit:</td>
-                                        <td className="text-end text-primary py-2" style={{ fontSize: '14px', color: '#2ece8a !important' }}>{totalCredit.toFixed(2)}</td>
+                                        <td className="text-end text-primary py-2" style={{ fontSize: '14px', color: '#0a500f !important' }}>{totalCredit.toFixed(2)}</td>
                                         {maintainNarration && <td></td>}
                                         <td></td>
                                     </tr>
@@ -362,7 +362,7 @@ const ReceiptForm = (props) => {
                                 </div>
                             )}
                             {isBalanced && (
-                                <div className="text-success small fw-semibold" style={{ color: '#2ece8a' }}>
+                                <div className="text-success small fw-semibold" style={{ color: '#0a500f' }}>
                                     <i className="fa fa-check-circle me-1"></i>
                                     Voucher balanced successfully.
                                 </div>

@@ -170,7 +170,7 @@ const ProductConfigurationManagement = ({ currentUser }) => {
                                     className="d-flex align-items-center justify-content-center"
                                     style={{
                                         height: '38px', borderRadius: '6px', whiteSpace: 'nowrap', padding: '0 16px',
-                                        backgroundColor: 'rgb(61, 53, 119)', borderColor: 'rgb(61, 53, 119)', fontSize: '13px'
+                                        backgroundColor: '#0a500f', borderColor: '#0a500f', fontSize: '13px'
                                     }}
                                 >
                                     <i className="fa fa-plus me-2"></i> Add Mapping

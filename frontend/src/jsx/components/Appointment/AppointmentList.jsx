@@ -137,8 +137,8 @@ const AppointmentList = () => {
                             className="btn btn-sm d-flex align-items-center"
                             title="New Appointment"
                             style={{
-                                backgroundColor: 'rgb(61, 53, 119)',
-                                borderColor: 'rgb(61, 53, 119)',
+                                backgroundColor: '#0a500f',
+                                borderColor: '#0a500f',
                                 color: 'white',
                                 height: '34px',
                                 fontSize: '13px',

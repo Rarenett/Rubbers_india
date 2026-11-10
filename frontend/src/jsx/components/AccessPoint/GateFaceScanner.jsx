@@ -200,7 +200,7 @@ const GateFaceScanner = ({
             ctx.fillStyle = 'rgba(0, 0, 0, 0.55)';
             ctx.fillRect(0, canvas.height - 40, canvas.width, 40);
             ctx.font = 'bold 16px sans-serif';
-            ctx.fillStyle = '#2ece8a';
+            ctx.fillStyle = '#0a500f';
             ctx.fillText(`Gate Camera • ${dateStr} ${timeStr}`, 14, canvas.height - 14);
 
             const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg', 0.88));
@@ -303,7 +303,7 @@ const GateFaceScanner = ({
                 title: 'Face Not Recognized',
                 text: errMsg,
                 showCancelButton: true,
-                confirmButtonColor: '#2ece8a',
+                confirmButtonColor: '#0a500f',
                 cancelButtonColor: '#64748b',
                 confirmButtonText: '<i class="fa fa-user-plus me-1"></i> Enroll Face Now',
                 cancelButtonText: 'Try Again',
@@ -480,10 +480,10 @@ const GateFaceScanner = ({
                                 }}
                             >
                                 {/* Corner Accents */}
-                                <div style={{ position: 'absolute', top: '-2px', left: '-2px', width: '20px', height: '20px', borderTop: '3px solid #2ece8a', borderLeft: '3px solid #2ece8a', borderTopLeftRadius: '8px' }}></div>
-                                <div style={{ position: 'absolute', top: '-2px', right: '-2px', width: '20px', height: '20px', borderTop: '3px solid #2ece8a', borderRight: '3px solid #2ece8a', borderTopRightRadius: '8px' }}></div>
-                                <div style={{ position: 'absolute', bottom: '-2px', left: '-2px', width: '20px', height: '20px', borderBottom: '3px solid #2ece8a', borderLeft: '3px solid #2ece8a', borderBottomLeftRadius: '8px' }}></div>
-                                <div style={{ position: 'absolute', bottom: '-2px', right: '-2px', width: '20px', height: '20px', borderBottom: '3px solid #2ece8a', borderRight: '3px solid #2ece8a', borderBottomRightRadius: '8px' }}></div>
+                                <div style={{ position: 'absolute', top: '-2px', left: '-2px', width: '20px', height: '20px', borderTop: '3px solid #0a500f', borderLeft: '3px solid #0a500f', borderTopLeftRadius: '8px' }}></div>
+                                <div style={{ position: 'absolute', top: '-2px', right: '-2px', width: '20px', height: '20px', borderTop: '3px solid #0a500f', borderRight: '3px solid #0a500f', borderTopRightRadius: '8px' }}></div>
+                                <div style={{ position: 'absolute', bottom: '-2px', left: '-2px', width: '20px', height: '20px', borderBottom: '3px solid #0a500f', borderLeft: '3px solid #0a500f', borderBottomLeftRadius: '8px' }}></div>
+                                <div style={{ position: 'absolute', bottom: '-2px', right: '-2px', width: '20px', height: '20px', borderBottom: '3px solid #0a500f', borderRight: '3px solid #0a500f', borderBottomRightRadius: '8px' }}></div>
                             </div>
 
                             {/* Scan Line Animation */}

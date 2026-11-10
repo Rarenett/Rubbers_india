@@ -65,9 +65,9 @@ const CandidateFormModal = ({ show, onHide, onSave, editId }) => {
         control: (base, state) => ({
             ...base,
             minHeight: '42px',
-            borderColor: state.isFocused ? '#2ece8a' : '#cbd5e1',
-            boxShadow: state.isFocused ? '0 0 0 3px rgba(46,206,138,0.15)' : 'none',
-            '&:hover': { borderColor: '#2ece8a' },
+            borderColor: state.isFocused ? '#0a500f' : '#cbd5e1',
+            boxShadow: state.isFocused ? '0 0 0 3px rgba(10, 80, 15,0.15)' : 'none',
+            '&:hover': { borderColor: '#0a500f' },
             borderRadius: '10px',
             fontSize: '13px',
             color: '#334155',
@@ -76,7 +76,7 @@ const CandidateFormModal = ({ show, onHide, onSave, editId }) => {
         menu: base => ({ ...base, zIndex: 99999, fontSize: '13px' }),
         option: (base, state) => ({
             ...base,
-            backgroundColor: state.isSelected ? '#2ece8a' : state.isFocused ? '#f0fdf4' : 'white',
+            backgroundColor: state.isSelected ? '#0a500f' : state.isFocused ? '#f0fdf4' : 'white',
             color: state.isSelected ? 'white' : '#334155',
             cursor: 'pointer',
         }),
@@ -441,12 +441,12 @@ const CandidateFormModal = ({ show, onHide, onSave, editId }) => {
                 .cfm-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #2ece8a;
+                    background-color: #0a500f;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    box-shadow: 0 4px 10px rgba(46, 206, 138, 0.2);
+                    box-shadow: 0 4px 10px rgba(10, 80, 15, 0.2);
                 }
                 .cfm-modal .modal-close-x {
                     border: none;
@@ -472,7 +472,7 @@ const CandidateFormModal = ({ show, onHide, onSave, editId }) => {
                     gap: 12px;
                 }
                 .cfm-modal .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -482,9 +482,9 @@ const CandidateFormModal = ({ show, onHide, onSave, editId }) => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .cfm-modal .btn-close-custom:hover { background-color: #6357a7 !important; }
+                .cfm-modal .btn-close-custom:hover { background-color: #bb2d3b !important; }
                 .cfm-modal .btn-save-custom {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -494,7 +494,7 @@ const CandidateFormModal = ({ show, onHide, onSave, editId }) => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .cfm-modal .btn-save-custom:hover { background-color: #26b277 !important; }
+                .cfm-modal .btn-save-custom:hover { background-color: #073d0b !important; }
                 .cfm-custom-tabs {
                     border-bottom: 1px solid #e2e8f0;
                     padding: 0 28px;
@@ -511,9 +511,9 @@ const CandidateFormModal = ({ show, onHide, onSave, editId }) => {
                 }
                 .cfm-custom-tabs .nav-link:hover { color: #475569; border-bottom-color: #cbd5e1; }
                 .cfm-custom-tabs .nav-link.active {
-                    color: #2ece8a;
+                    color: #0a500f;
                     background: transparent;
-                    border-bottom-color: #2ece8a;
+                    border-bottom-color: #0a500f;
                 }
                 .cfm-tab-content { padding: 24px 28px; }
             `}</style>

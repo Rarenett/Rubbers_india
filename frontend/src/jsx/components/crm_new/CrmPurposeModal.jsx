@@ -55,7 +55,7 @@ const CrmPurposeModal = ({ show, onHide }) => {
                 icon: 'warning',
                 title: 'Validation Error',
                 text: 'Please enter a Purpose Name.',
-                confirmButtonColor: '#2ece8a'
+                confirmButtonColor: '#0a500f'
             });
             return;
         }
@@ -69,7 +69,7 @@ const CrmPurposeModal = ({ show, onHide }) => {
                 icon: 'warning',
                 title: 'Duplicate Purpose',
                 text: `Purpose "${trimmedName}" already exists. Please choose a different purpose or edit the existing one.`,
-                confirmButtonColor: '#2ece8a'
+                confirmButtonColor: '#0a500f'
             });
             return;
         }
@@ -119,7 +119,7 @@ const CrmPurposeModal = ({ show, onHide }) => {
                 icon: 'error',
                 title: 'Error',
                 text: errMsg,
-                confirmButtonColor: '#2ece8a'
+                confirmButtonColor: '#0a500f'
             });
         } finally {
             setSaving(false);
@@ -145,7 +145,7 @@ const CrmPurposeModal = ({ show, onHide }) => {
                 icon: 'warning',
                 title: 'Cannot Delete Purpose',
                 html: `The Purpose <b>"${name}"</b> is already associated with <b>${count}</b> CRM follow-up ${count === 1 ? 'record' : 'records'}.<br/><br/><span class="text-muted small">Purposes associated with existing follow-ups cannot be deleted to preserve activity and audit history. Please deactivate it instead if no longer needed.</span>`,
-                confirmButtonColor: '#2ece8a',
+                confirmButtonColor: '#0a500f',
                 confirmButtonText: 'Understood'
             });
             return;
@@ -185,7 +185,7 @@ const CrmPurposeModal = ({ show, onHide }) => {
                     icon: 'warning',
                     title: 'Cannot Delete',
                     text: msg,
-                    confirmButtonColor: '#2ece8a'
+                    confirmButtonColor: '#0a500f'
                 });
             }
         }
@@ -220,12 +220,12 @@ const CrmPurposeModal = ({ show, onHide }) => {
                 .purpose-custom-modal .modal-icon-circle {
                     width: 42px;
                     height: 42px;
-                    background-color: #2ece8a;
+                    background-color: #0a500f;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    box-shadow: 0 4px 10px rgba(46, 206, 138, 0.25);
+                    box-shadow: 0 4px 10px rgba(10, 80, 15, 0.25);
                 }
                 .purpose-custom-modal .modal-close-x {
                     border: none;
@@ -262,11 +262,11 @@ const CrmPurposeModal = ({ show, onHide }) => {
                 }
                 .purpose-custom-modal .form-control-custom:focus {
                     outline: none;
-                    border-color: #2ece8a;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15);
+                    border-color: #0a500f;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
                 }
                 .purpose-custom-modal .btn-save-custom {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: #fff !important;
                     border-radius: 8px !important;
                     font-weight: 600 !important;
@@ -280,21 +280,21 @@ const CrmPurposeModal = ({ show, onHide }) => {
                     transition: background-color 0.2s;
                 }
                 .purpose-custom-modal .btn-save-custom:hover {
-                    background-color: #26b277 !important;
+                    background-color: #073d0b !important;
                 }
                 .purpose-custom-modal .btn-cancel-custom {
-                    background-color: #f1f5f9 !important;
-                    color: #475569 !important;
+                    background-color: #dc3545 !important;
+                    color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
-                    font-size: 13px !important;
-                    padding: 8px 18px !important;
-                    border: 1px solid #e2e8f0 !important;
+                    font-size: 14px !important;
+                    padding: 10px 24px !important;
+                    border: none !important;
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
                 .purpose-custom-modal .btn-cancel-custom:hover {
-                    background-color: #e2e8f0 !important;
+                    background-color: #bb2d3b !important;
                 }
                 .purpose-custom-modal .purpose-table-wrapper {
                     max-height: 240px;

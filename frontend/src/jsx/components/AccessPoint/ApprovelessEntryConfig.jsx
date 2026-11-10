@@ -113,12 +113,12 @@ const ApprovelessEntryConfig = () => {
             ...base,
             minHeight: '42px',
             borderRadius: '8px',
-            borderColor: state.isFocused ? '#2ece8a' : (isDark ? '#334155' : '#e2e8f0'),
+            borderColor: state.isFocused ? '#0a500f' : (isDark ? '#334155' : '#e2e8f0'),
             backgroundColor: isDark ? '#1e293b' : '#ffffff',
             color: isDark ? '#f8fafc' : '#0f172a',
-            boxShadow: state.isFocused ? '0 0 0 3px rgba(46, 206, 138, 0.15)' : 'none',
+            boxShadow: state.isFocused ? '0 0 0 3px rgba(10, 80, 15, 0.15)' : 'none',
             '&:hover': {
-                borderColor: '#2ece8a'
+                borderColor: '#0a500f'
             }
         }),
         singleValue: (base) => ({
@@ -135,7 +135,7 @@ const ApprovelessEntryConfig = () => {
         option: (base, state) => ({
             ...base,
             backgroundColor: state.isSelected
-                ? '#2ece8a'
+                ? '#0a500f'
                 : state.isFocused
                     ? (isDark ? '#334155' : '#f0fdf4')
                     : 'transparent',
@@ -450,10 +450,10 @@ const ApprovelessEntryConfig = () => {
                                             setNotes('');
                                             setIsEnabled(true);
                                         }}
-                                        className="btn text-white fw-medium shadow-sm"
+                                        className="btn btn-cancel-custom text-white fw-medium shadow-sm"
                                         style={{
-                                            backgroundColor: '#7A70BA',
-                                            borderColor: '#7A70BA',
+                                            backgroundColor: '#dc3545',
+                                            borderColor: '#dc3545',
                                             borderRadius: '8px',
                                             fontSize: '14px',
                                             padding: '8px 22px'
@@ -466,8 +466,8 @@ const ApprovelessEntryConfig = () => {
                                         className="btn text-white fw-medium shadow-sm d-flex align-items-center justify-content-center"
                                         disabled={submitting || !selectedDepartment || !selectedEmployee}
                                         style={{
-                                            backgroundColor: '#2ece8a',
-                                            borderColor: '#2ece8a',
+                                            backgroundColor: '#0a500f',
+                                            borderColor: '#0a500f',
                                             borderRadius: '8px',
                                             fontSize: '14px',
                                             padding: '8px 24px',

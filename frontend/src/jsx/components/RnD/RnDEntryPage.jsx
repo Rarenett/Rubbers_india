@@ -121,7 +121,7 @@ const RnDEntryPage = () => {
                     style={{ width: '175px', height: '34px', fontSize: '13px', borderRadius: '6px', borderColor: '#e2e8f0', color: '#475569' }}
                 >
                     <span className="d-flex align-items-center gap-1 text-truncate" style={{ maxWidth: '145px' }}>
-                        <i className="fa fa-industry" style={{ fontSize: '11px', color: '#7A70BA', flexShrink: 0 }}></i>
+                        <i className="fa fa-industry" style={{ fontSize: '11px', color: '#0a500f', flexShrink: 0 }}></i>
                         <span className="text-truncate font-w500">{selectedLabel}</span>
                     </span>
                 </Dropdown.Toggle>
@@ -205,11 +205,11 @@ const RnDEntryPage = () => {
                 }
                 .btn-entry-custom {
                     background-color: transparent !important;
-                    border: 1px solid #7A70BA !important;
-                    color: #7A70BA !important;
+                    border: 1px solid #0a500f !important;
+                    color: #0a500f !important;
                 }
                 .btn-entry-custom:hover {
-                    background-color: #7A70BA !important;
+                    background-color: #0a500f !important;
                     color: #ffffff !important;
                     box-shadow: 0 4px 12px rgba(122, 112, 186, 0.2) !important;
                 }
@@ -238,10 +238,10 @@ const RnDEntryPage = () => {
                     border-color: #bbf7d0;
                 }
                 .rnd-main-tabs .nav-link.active {
-                    background-color: #2ece8a !important;
-                    border-color: #2ece8a !important;
+                    background-color: #0a500f !important;
+                    border-color: #0a500f !important;
                     color: #ffffff !important;
-                    box-shadow: 0 4px 10px rgba(46, 206, 138, 0.25) !important;
+                    box-shadow: 0 4px 10px rgba(10, 80, 15, 0.25) !important;
                 }
                 .rnd-main-tabs .nav-link .tab-counter-badge {
                     background-color: #e2e8f0;
@@ -250,7 +250,7 @@ const RnDEntryPage = () => {
                 }
                 .rnd-main-tabs .nav-link.active .tab-counter-badge {
                     background-color: #ffffff !important;
-                    color: #2ece8a !important;
+                    color: #0a500f !important;
                 }
                 [data-theme-version="dark"] .rnd-main-tabs .nav-link {
                     background-color: #2F363E;
@@ -262,8 +262,8 @@ const RnDEntryPage = () => {
                     color: #f1f5f9;
                 }
                 [data-theme-version="dark"] .rnd-main-tabs .nav-link.active {
-                    background-color: #2ece8a !important;
-                    border-color: #2ece8a !important;
+                    background-color: #0a500f !important;
+                    border-color: #0a500f !important;
                     color: #ffffff !important;
                 }
                 [data-theme-version="dark"] .rnd-main-tabs .nav-link .tab-counter-badge {
@@ -272,7 +272,7 @@ const RnDEntryPage = () => {
                 }
                 [data-theme-version="dark"] .rnd-main-tabs .nav-link.active .tab-counter-badge {
                     background-color: #ffffff !important;
-                    color: #2ece8a !important;
+                    color: #0a500f !important;
                 }
             `}</style>
 
@@ -493,11 +493,11 @@ const RnDEntryPage = () => {
                                                                                                     variant="outline-success"
                                                                                                     size="sm"
                                                                                                     className="shadow-sm"
-                                                                                                    style={{ padding: '4px 12px', fontSize: '12px', borderRadius: '6px', borderColor: '#2ece8a', color: '#2ece8a', backgroundColor: 'transparent' }}
+                                                                                                    style={{ padding: '4px 12px', fontSize: '12px', borderRadius: '6px', borderColor: '#0a500f', color: '#0a500f', backgroundColor: 'transparent' }}
                                                                                                     onClick={() => handleAddEntry(line)}
                                                                                                     title="Edit R&D Entry"
-                                                                                                    onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#2ece8a'; e.currentTarget.style.color = '#fff'; }}
-                                                                                                    onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#2ece8a'; }}
+                                                                                                    onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#0a500f'; e.currentTarget.style.color = '#fff'; }}
+                                                                                                    onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#0a500f'; }}
                                                                                                 >
                                                                                                     <i className="fa fa-pen me-1"></i> Edit
                                                                                                 </Button>
@@ -562,7 +562,7 @@ const RnDEntryPage = () => {
                                                         <div>
                                                             <div className="d-flex justify-content-between align-items-center mb-2">
                                                                 <span className="font-w600" style={{ fontSize: '14px' }}>
-                                                                    <i className="fa fa-sliders me-1" style={{ color: '#2ece8a' }}></i> Adjustment #{item.id}
+                                                                    <i className="fa fa-sliders me-1" style={{ color: '#0a500f' }}></i> Adjustment #{item.id}
                                                                 </span>
                                                                 {item.production_date && (
                                                                     <small className="text-muted" style={{ fontSize: '11px' }}>
@@ -637,11 +637,11 @@ const RnDEntryPage = () => {
                                                                         variant="outline-success"
                                                                         size="sm"
                                                                         className="shadow-sm"
-                                                                        style={{ padding: '4px 12px', fontSize: '12px', borderRadius: '6px', borderColor: '#2ece8a', color: '#2ece8a', backgroundColor: 'transparent' }}
+                                                                        style={{ padding: '4px 12px', fontSize: '12px', borderRadius: '6px', borderColor: '#0a500f', color: '#0a500f', backgroundColor: 'transparent' }}
                                                                         onClick={() => handleAddEntry(item)}
                                                                         title="Edit R&D Entry"
-                                                                        onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#2ece8a'; e.currentTarget.style.color = '#fff'; }}
-                                                                        onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#2ece8a'; }}
+                                                                        onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#0a500f'; e.currentTarget.style.color = '#fff'; }}
+                                                                        onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#0a500f'; }}
                                                                     >
                                                                         <i className="fa fa-pen me-1"></i> Edit
                                                                     </Button>

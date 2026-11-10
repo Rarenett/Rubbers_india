@@ -21,8 +21,8 @@ const CreateButton = ({ module, onClick, to, children, className, variant = "pri
     };
 
     const defaultStyle = {
-        backgroundColor: 'rgb(61, 53, 119)',
-        borderColor: 'rgb(61, 53, 119)',
+        backgroundColor: '#0a500f',
+        borderColor: '#0a500f',
         color: 'white',
         height: '34px',
         display: 'flex',

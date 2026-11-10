@@ -547,7 +547,7 @@ const AssetAllocationList = ({
                                 {onAllocate ? (
                                     <>
                                         <div className="allocation-actions-group">
-                                            <button className="btn shadow-none allocation-add-btn" style={{ backgroundColor: 'rgb(61, 53, 119)', borderColor: 'rgb(61, 53, 119)', color: '#fff', height: '38px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: '13px', borderRadius: '6px', padding: '0 16px' }} onClick={onAllocate}>
+                                            <button className="btn shadow-none allocation-add-btn" style={{ backgroundColor: '#0a500f', borderColor: '#0a500f', color: '#fff', height: '38px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: '13px', borderRadius: '6px', padding: '0 16px' }} onClick={onAllocate}>
                                                 + Allocate
                                             </button>
                                             <button className="btn btn-sm btn-light border allocation-export-btn" style={{ borderRadius: '6px', width: '38px', height: '38px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', padding: '0' }} onClick={() => onExport && onExport('pdf')} title="Export PDF">

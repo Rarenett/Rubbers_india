@@ -145,7 +145,7 @@ DATABASES = {
             'NAME': 'db_rubbersindia',
             'USER':'remote_user',        
             'PASSWORD':'12345',
-            'HOST': '192.168.1.41',  # server PC IP
+            'HOST': '192.168.1.45',  # server PC IP
 
         }
 

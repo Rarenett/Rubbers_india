@@ -27,13 +27,13 @@ const selectStyles = {
         ...base,
         minHeight: '40px',
         height: 'auto',
-        borderColor: state.isFocused ? '#2ece8a' : '#cbd5e1',
-        boxShadow: state.isFocused ? '0 0 0 3px rgba(46, 206, 138, 0.15)' : 'none',
+        borderColor: state.isFocused ? '#0a500f' : '#cbd5e1',
+        boxShadow: state.isFocused ? '0 0 0 3px rgba(10, 80, 15, 0.15)' : 'none',
         borderRadius: '10px',
         backgroundColor: '#fff',
         fontSize: '13px',
         '&:hover': {
-            borderColor: state.isFocused ? '#2ece8a' : '#cbd5e1',
+            borderColor: state.isFocused ? '#0a500f' : '#cbd5e1',
         },
     }),
     valueContainer: (base) => ({
@@ -63,16 +63,16 @@ const selectStyles = {
     }),
     option: (base, state) => ({
         ...base,
-        backgroundColor: state.isSelected ? '#2ece8a' : state.isFocused ? 'rgba(46, 206, 138, 0.1)' : '#fff',
+        backgroundColor: state.isSelected ? '#0a500f' : state.isFocused ? 'rgba(10, 80, 15, 0.1)' : '#fff',
         color: state.isSelected ? '#fff' : '#1e293b',
         cursor: 'pointer',
         padding: '8px 14px',
     }),
     multiValue: (base) => ({
         ...base,
-        backgroundColor: 'rgba(46, 206, 138, 0.12)',
+        backgroundColor: 'rgba(10, 80, 15, 0.12)',
         borderRadius: '6px',
-        border: '1px solid rgba(46, 206, 138, 0.3)',
+        border: '1px solid rgba(10, 80, 15, 0.3)',
         margin: '2px',
         display: 'flex',
         alignItems: 'center',
@@ -92,7 +92,7 @@ const selectStyles = {
         paddingRight: '6px',
         borderRadius: '0 6px 6px 0',
         '&:hover': {
-            backgroundColor: '#2ece8a',
+            backgroundColor: '#0a500f',
             color: '#fff',
         },
     }),
@@ -696,7 +696,7 @@ const RenewalReminderList = () => {
                                     type="button"
                                     className="btn btn-primary d-flex align-items-center justify-content-center"
                                     onClick={() => setShowUpdationModal(true)}
-                                    style={{ height: '38px', borderRadius: '6px', whiteSpace: 'nowrap', padding: '0 16px', backgroundColor: '#1a3a72', borderColor: '#1a3a72', fontWeight: '600', fontSize: '13px' }}
+                                    style={{ height: '38px', borderRadius: '6px', whiteSpace: 'nowrap', padding: '0 16px', backgroundColor: '#0a500f', borderColor: '#0a500f', fontWeight: '600', fontSize: '13px' }}
                                     title="Open Renewal Updation Form"
                                 >
                                     <i className="fa fa-refresh me-2"></i>
@@ -862,7 +862,7 @@ const RenewalReminderList = () => {
                                     <button
                                         type="button"
                                         className="btn btn-sm btn-success d-flex align-items-center justify-content-center"
-                                        style={{ height: '40px', width: '40px', borderRadius: '10px', backgroundColor: '#2ece8a', borderColor: '#2ece8a' }}
+                                        style={{ height: '40px', width: '40px', borderRadius: '10px', backgroundColor: '#0a500f', borderColor: '#0a500f' }}
                                         onClick={() => setShowSubjectModal(true)}
                                         title="Quick Add Subject"
                                     >
@@ -1017,12 +1017,12 @@ const RenewalReminderList = () => {
                 .gate-custom-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #2ece8a;
+                    background-color: #0a500f;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    box-shadow: 0 4px 10px rgba(46, 206, 138, 0.2);
+                    box-shadow: 0 4px 10px rgba(10, 80, 15, 0.2);
                 }
                 .gate-custom-modal .modal-close-x {
                     border: none;
@@ -1071,14 +1071,14 @@ const RenewalReminderList = () => {
                 }
                 .gate-custom-modal .form-control-custom:focus {
                     outline: none;
-                    border-color: #2ece8a;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15);
+                    border-color: #0a500f;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
                 }
                 .gate-custom-modal .form-control-custom::placeholder {
                     color: #94a3b8;
                 }
                 .gate-custom-modal .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -1089,10 +1089,10 @@ const RenewalReminderList = () => {
                     transition: background-color 0.2s, transform 0.1s;
                 }
                 .gate-custom-modal .btn-close-custom:hover {
-                    background-color: #6357a7 !important;
+                    background-color: #bb2d3b !important;
                 }
                 .gate-custom-modal .btn-save-custom {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -1103,11 +1103,11 @@ const RenewalReminderList = () => {
                     transition: background-color 0.2s, transform 0.1s;
                 }
                 .gate-custom-modal .btn-save-custom:hover {
-                    background-color: #26b277 !important;
+                    background-color: #073d0b !important;
                 }
                 .gate-custom-modal .react-select__multi-value {
-                    background-color: rgba(46, 206, 138, 0.12) !important;
-                    border: 1px solid rgba(46, 206, 138, 0.3) !important;
+                    background-color: rgba(10, 80, 15, 0.12) !important;
+                    border: 1px solid rgba(10, 80, 15, 0.3) !important;
                     border-radius: 6px !important;
                     margin: 2px 4px 2px 0 !important;
                     display: inline-flex !important;
@@ -1125,7 +1125,7 @@ const RenewalReminderList = () => {
                     border-radius: 0 6px 6px 0 !important;
                 }
                 .gate-custom-modal .react-select__multi-value__remove:hover {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: #fff !important;
                 }
             `}</style>

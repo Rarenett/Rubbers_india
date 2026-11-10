@@ -386,7 +386,7 @@ const SpotAppointmentView = ({
             showCancelButton: true,
             confirmButtonText: 'Register Now',
             cancelButtonText: 'Cancel',
-            confirmButtonColor: '#2ece8a'
+            confirmButtonColor: '#0a500f'
         }).then((result) => {
             if (result.isConfirmed) {
                 setShowSpotModal(true);
@@ -844,15 +844,15 @@ const SpotAppointmentView = ({
                 }
                 .appointment-custom-modal .form-control-custom:focus {
                     outline: none !important;
-                    border-color: #2ece8a !important;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15) !important;
+                    border-color: #0a500f !important;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15) !important;
                 }
                 .appointment-custom-modal .form-control-custom::placeholder {
                     color: #94a3b8 !important;
                 }
                 .appointment-custom-modal .btn-close-custom {
-                    background-color: #7A70BA !important;
-                    border-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
+                    border-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -863,11 +863,11 @@ const SpotAppointmentView = ({
                     transition: background-color 0.2s, transform 0.1s;
                 }
                 .appointment-custom-modal .btn-close-custom:hover {
-                    background-color: #6357a7 !important;
+                    background-color: #bb2d3b !important;
                 }
                 .appointment-custom-modal .btn-save-custom {
-                    background-color: #2ece8a !important;
-                    border-color: #2ece8a !important;
+                    background-color: #0a500f !important;
+                    border-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -878,7 +878,7 @@ const SpotAppointmentView = ({
                     transition: background-color 0.2s, transform 0.1s;
                 }
                 .appointment-custom-modal .btn-save-custom:hover {
-                    background-color: #26b277 !important;
+                    background-color: #073d0b !important;
                 }
             `}} />
         </div>

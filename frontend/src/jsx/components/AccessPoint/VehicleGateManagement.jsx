@@ -234,7 +234,7 @@ const VehicleGateManagement = ({ embedded = false }) => {
                         <div className="d-flex gap-2 align-items-center justify-content-start flex-shrink-0">
                             <Button
                                 className="rounded-pill px-3 shadow-sm fw-semibold d-flex align-items-center text-white"
-                                style={{ background: '#2ece8a', borderColor: '#2ece8a' }}
+                                style={{ background: '#0a500f', borderColor: '#0a500f' }}
                                 onClick={() => navigate('/access-point/gate-entry?mode=fast_pass')}
                                 title="Instant 1-Tap Entry / Exit for Owner & Company Vehicles"
                             >

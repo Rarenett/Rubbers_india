@@ -260,7 +260,7 @@ a:focus {
 
 .dd .nestable-item-name {
   color: #fff;
-  background: #43DC80;
+  background: #0a500f;
   display: block;
   height: 35px;
   margin: 8px 0;
@@ -558,7 +558,7 @@ button.react-calendar__tile.react-calendar__tile--active.react-calendar__tile--r
 }
 .calendar__head {
   position: relative;
-  background: #43dc80;
+  background: #0a500f;
   padding: 10px 6px;
 }
 .calendar__head--title {
@@ -676,13 +676,13 @@ button.react-calendar__tile.react-calendar__tile--active.react-calendar__tile--r
 
 .form-icon-circle,
 .modal-icon-circle {
-  background: var(--form-icon-color, var(--cc-primary, var(--primary, #2bc155))) !important;
-  background-color: var(--form-icon-color, var(--cc-primary, var(--primary, #2bc155))) !important;
+  background: var(--form-icon-color, var(--cc-primary, var(--primary, #0a500f))) !important;
+  background-color: var(--form-icon-color, var(--cc-primary, var(--primary, #0a500f))) !important;
   color: #ffffff !important;
 }
 
 .form-icon-box {
-  background: var(--form-icon-color, var(--cc-primary, var(--primary, #2bc155))) !important;
+  background: var(--form-icon-color, var(--cc-primary, var(--primary, #0a500f))) !important;
   color: #ffffff !important;
 }
 
@@ -1028,47 +1028,56 @@ input[type="color"]::-webkit-color-swatch {
 [data-primary="color_custom"] a:hover,
 [data-primary="color_custom"] .btn-link,
 [data-primary="color_custom"] .text-primary {
-  color: var(--cc-primary, #2bc155) !important;
+  color: var(--cc-primary, #0a500f) !important;
 }
 [data-primary="color_custom"] .btn-primary,
-[data-primary="color_custom"] .badge-primary,
+[data-primary="color_custom"] .badge-primary:not(.light),
 [data-primary="color_custom"] .page-titles .breadcrumb .breadcrumb-item.active {
-  background-color: var(--cc-primary, #2bc155) !important;
-  border-color: var(--cc-primary, #2bc155) !important;
+  background-color: var(--cc-primary, #0a500f) !important;
+  border-color: var(--cc-primary, #0a500f) !important;
+  color: #fff !important;
+}
+[data-primary="color_custom"] .light.badge-primary,
+.light.badge-primary {
+  background-color: rgba(10, 80, 15, 0.12) !important;
+  color: #0a500f !important;
+}
+[data-primary="color_custom"] .light.badge-primary i,
+.light.badge-primary i {
+  color: #0a500f !important;
 }
 [data-primary="color_custom"] .btn-primary:hover,
 [data-primary="color_custom"] .btn-primary:focus {
   background-color: var(--cc-primary-dark, #22a844) !important;
   border-color: var(--cc-primary-dark, #22a844) !important;
 }
-[data-primary="color_custom"] .sidebar-right-trigger,
-[data-primary="color_custom"] .nav-control {
-  background-color: var(--cc-primary, #2bc155) !important;
+[data-primary="color_custom"] .sidebar-right-trigger {
+  background-color: var(--cc-primary, #0a500f) !important;
 }
 [data-primary="color_custom"] ul.metismenu li a:hover,
 [data-primary="color_custom"] ul.metismenu li a:focus,
 [data-primary="color_custom"] ul.metismenu li.mm-active > a {
-  color: var(--cc-primary, #2bc155) !important;
+  color: var(--cc-primary, #0a500f) !important;
 }
 [data-primary="color_custom"] ul.metismenu li.mm-active > a svg g [fill] {
-  fill: var(--cc-primary, #2bc155) !important;
+  fill: var(--cc-primary, #0a500f) !important;
 }
 [data-primary="color_custom"] .pagination li.active .page-link {
-  background-color: var(--cc-primary, #2bc155) !important;
-  border-color: var(--cc-primary, #2bc155) !important;
+  background-color: var(--cc-primary, #0a500f) !important;
+  border-color: var(--cc-primary, #0a500f) !important;
 }
 [data-primary="color_custom"] .form-control:focus {
-  border-color: var(--cc-primary, #2bc155) !important;
+  border-color: var(--cc-primary, #0a500f) !important;
   box-shadow: 0 0 0 0.25rem rgba(var(--cc-primary-rgb, 43,193,85), 0.25) !important;
 }
 [data-primary="color_custom"] .card-header {
-  border-left-color: var(--cc-primary, #2bc155) !important;
+  border-left-color: var(--cc-primary, #0a500f) !important;
 }
 
 /* Navigation Header Background */
 [data-nav-headerbg="color_custom"] .nav-header {
-  background-color: var(--cc-nav-header, #2bc155) !important;
-  background: var(--cc-nav-header, #2bc155) !important;
+  background-color: var(--cc-nav-header, #0a500f) !important;
+  background: var(--cc-nav-header, #0a500f) !important;
 }
 [data-nav-headerbg="color_custom"] .nav-header .brand-title,
 [data-nav-headerbg="color_custom"] .nav-header .brand-logo span {
@@ -1077,8 +1086,8 @@ input[type="color"]::-webkit-color-swatch {
 
 /* Top Header Background */
 [data-headerbg="color_custom"] .header {
-  background-color: var(--cc-header, #2bc155) !important;
-  background: var(--cc-header, #2bc155) !important;
+  background-color: var(--cc-header, #0a500f) !important;
+  background: var(--cc-header, #0a500f) !important;
 }
 [data-headerbg="color_custom"] .header .search-area .form-control,
 [data-headerbg="color_custom"] .header .search-area .input-group-text {
@@ -1097,8 +1106,8 @@ input[type="color"]::-webkit-color-swatch {
 [data-sibebarbg="color_custom"] .deznav,
 [data-sibebarbg="color_custom"] .deznav .metismenu,
 [data-sibebarbg="color_custom"] .menu-toggle .deznav {
-  background-color: var(--cc-sidebar, #2bc155) !important;
-  background: var(--cc-sidebar, #2bc155) !important;
+  background-color: var(--cc-sidebar, #0a500f) !important;
+  background: var(--cc-sidebar, #0a500f) !important;
 }
 [data-sibebarbg="color_custom"] .deznav .metismenu li a,
 [data-sibebarbg="color_custom"] .deznav .metismenu > li > a {
@@ -1160,11 +1169,11 @@ body.has-custom-sidebar-font .deznav .metismenu li a:focus {
   background-color: rgba(43, 193, 85, 0.1) !important;
 }
 .react-select__option--is-selected {
-  background-color: #2bc155 !important;
+  background-color: #0a500f !important;
   color: #fff !important;
 }
 .react-select__control--is-focused {
-  border-color: #2bc155 !important;
+  border-color: #0a500f !important;
 }
 
 /* color_2 / color_8 (Purple/Lavender Theme) */
@@ -1319,11 +1328,11 @@ body.has-custom-sidebar-font .deznav .metismenu li a:focus {
   background-color: rgba(var(--cc-primary-rgb, 43, 193, 85), 0.1) !important;
 }
 [data-primary="color_custom"] .react-select__option--is-selected {
-  background-color: var(--cc-primary, #2bc155) !important;
+  background-color: var(--cc-primary, #0a500f) !important;
   color: #fff !important;
 }
 [data-primary="color_custom"] .react-select__control--is-focused {
-  border-color: var(--cc-primary, #2bc155) !important;
+  border-color: var(--cc-primary, #0a500f) !important;
 }
 
 /* General overrides for text color when focused */
@@ -1564,4 +1573,45 @@ div, ol, span, ul, .table-responsive, .custom-price-list-scrollbar {
         width: 14px !important;
         height: 14px !important;
     }
+}
+
+/* Error & Warning Alert Confirmation Button in Red (#dc3545) */
+.swal2-icon-error ~ .swal2-actions .swal2-confirm,
+.swal2-icon-warning ~ .swal2-actions .swal2-confirm,
+.swal2-icon.swal2-error ~ .swal2-actions .swal2-confirm,
+.swal2-icon.swal2-warning ~ .swal2-actions .swal2-confirm,
+.swal2-icon-error ~ div .swal2-confirm,
+.swal2-icon-warning ~ div .swal2-confirm,
+.swal2-popup.swal2-icon-error .swal2-actions .swal2-confirm,
+.swal2-popup.swal2-icon-warning .swal2-actions .swal2-confirm,
+.swal2-popup.swal2-icon-error .swal2-styled.swal2-confirm,
+.swal2-popup.swal2-icon-warning .swal2-styled.swal2-confirm,
+.swal2-popup:has(.swal2-icon.swal2-error) .swal2-styled.swal2-confirm,
+.swal2-popup:has(.swal2-icon.swal2-warning) .swal2-styled.swal2-confirm,
+.swal2-popup:has(.swal2-icon-error) .swal2-styled.swal2-confirm,
+.swal2-popup:has(.swal2-icon-warning) .swal2-styled.swal2-confirm,
+.swal2-popup:has(.swal2-warning) .swal2-styled.swal2-confirm,
+.swal2-popup:has(.swal2-error) .swal2-styled.swal2-confirm {
+  background-color: #dc3545 !important;
+  border-color: #dc3545 !important;
+  color: #ffffff !important;
+}
+.swal2-icon-error ~ .swal2-actions .swal2-confirm:hover,
+.swal2-icon-warning ~ .swal2-actions .swal2-confirm:hover,
+.swal2-icon.swal2-error ~ .swal2-actions .swal2-confirm:hover,
+.swal2-icon.swal2-warning ~ .swal2-actions .swal2-confirm:hover,
+.swal2-icon-error ~ div .swal2-confirm:hover,
+.swal2-icon-warning ~ div .swal2-confirm:hover,
+.swal2-popup.swal2-icon-error .swal2-actions .swal2-confirm:hover,
+.swal2-popup.swal2-icon-warning .swal2-actions .swal2-confirm:hover,
+.swal2-popup.swal2-icon-error .swal2-styled.swal2-confirm:hover,
+.swal2-popup.swal2-icon-warning .swal2-styled.swal2-confirm:hover,
+.swal2-popup:has(.swal2-icon.swal2-error) .swal2-styled.swal2-confirm:hover,
+.swal2-popup:has(.swal2-icon.swal2-warning) .swal2-styled.swal2-confirm:hover,
+.swal2-popup:has(.swal2-icon-error) .swal2-styled.swal2-confirm:hover,
+.swal2-popup:has(.swal2-icon-warning) .swal2-styled.swal2-confirm:hover,
+.swal2-popup:has(.swal2-warning) .swal2-styled.swal2-confirm:hover,
+.swal2-popup:has(.swal2-error) .swal2-styled.swal2-confirm:hover {
+  background-color: #bb2d3b !important;
+  border-color: #bb2d3b !important;
 }

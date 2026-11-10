@@ -139,16 +139,16 @@ const ManufacturalJournalFormModal = ({ show, onHide, onSaved, editItem }) => {
             minHeight: '38px',
             fontSize: '13px',
             borderRadius: '10px',
-            borderColor: state.isFocused ? '#2ece8a' : '#cbd5e1',
-            boxShadow: state.isFocused ? '0 0 0 3px rgba(46,206,138,0.15)' : 'none',
-            '&:hover': { borderColor: '#2ece8a' },
+            borderColor: state.isFocused ? '#0a500f' : '#cbd5e1',
+            boxShadow: state.isFocused ? '0 0 0 3px rgba(10, 80, 15,0.15)' : 'none',
+            '&:hover': { borderColor: '#0a500f' },
         }),
         menu: base => ({ ...base, zIndex: 9999, fontSize: '13px' }),
         menuPortal: base => ({ ...base, zIndex: 99999 }),
         option: (base, state) => ({
             ...base,
             backgroundColor: state.isSelected ? '#f1f5f9' : state.isFocused ? '#f8fafc' : 'white',
-            color: state.isSelected ? '#2ece8a' : '#334155',
+            color: state.isSelected ? '#0a500f' : '#334155',
             fontWeight: state.isSelected ? '600' : 'normal',
             cursor: 'pointer',
         }),
@@ -979,12 +979,12 @@ const ManufacturalJournalFormModal = ({ show, onHide, onSaved, editItem }) => {
                 .item-custom-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #2ece8a;
+                    background-color: #0a500f;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    box-shadow: 0 4px 10px rgba(46, 206, 138, 0.2);
+                    box-shadow: 0 4px 10px rgba(10, 80, 15, 0.2);
                 }
                 .item-custom-modal .modal-close-x {
                     border: none;
@@ -1035,14 +1035,14 @@ const ManufacturalJournalFormModal = ({ show, onHide, onSaved, editItem }) => {
                 }
                 .item-custom-modal .form-control-custom:focus {
                     outline: none;
-                    border-color: #2ece8a;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15);
+                    border-color: #0a500f;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
                 }
                 .item-custom-modal .form-control-custom::placeholder {
                     color: #94a3b8;
                 }
                 .item-custom-modal .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -1053,10 +1053,10 @@ const ManufacturalJournalFormModal = ({ show, onHide, onSaved, editItem }) => {
                     transition: background-color 0.2s;
                 }
                 .item-custom-modal .btn-close-custom:hover {
-                    background-color: #6357a7 !important;
+                    background-color: #bb2d3b !important;
                 }
                 .item-custom-modal .btn-save-custom {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -1067,7 +1067,7 @@ const ManufacturalJournalFormModal = ({ show, onHide, onSaved, editItem }) => {
                     transition: background-color 0.2s;
                 }
                 .item-custom-modal .btn-save-custom:hover {
-                    background-color: #26b277 !important;
+                    background-color: #073d0b !important;
                 }
                 .journal-header-box {
                     background: #fff;
@@ -1455,7 +1455,7 @@ const ManufacturalJournalFormModal = ({ show, onHide, onSaved, editItem }) => {
                                                         <div className="journal-section-line"></div>
                                                     </div>
                                                     <div style={{ fontSize: '13px', fontWeight: 600, color: '#334155', whiteSpace: 'nowrap' }}>
-                                                        Subtotal: <span style={{ color: '#2ece8a' }}>{totalConsumption.toFixed(2)}</span>
+                                                        Subtotal: <span style={{ color: '#0a500f' }}>{totalConsumption.toFixed(2)}</span>
                                                     </div>
                                                 </div>
                                                 <div className="consumption-sec">
@@ -1487,7 +1487,7 @@ const ManufacturalJournalFormModal = ({ show, onHide, onSaved, editItem }) => {
                                                         <div className="journal-section-line"></div>
                                                     </div>
                                                     <div style={{ fontSize: '13px', fontWeight: 600, color: '#334155', whiteSpace: 'nowrap' }}>
-                                                        Subtotal: <span style={{ color: '#2ece8a' }}>{displayProductionCost.toFixed(2)}</span>
+                                                        Subtotal: <span style={{ color: '#0a500f' }}>{displayProductionCost.toFixed(2)}</span>
                                                     </div>
                                                 </div>
                                                 <div className="production-sec">
@@ -1528,7 +1528,7 @@ const ManufacturalJournalFormModal = ({ show, onHide, onSaved, editItem }) => {
                 {/* Footer */}
                 <div className="modal-footer-custom">
                     <div style={{ fontSize: '13px', color: '#64748b', fontWeight: 500 }}>
-                        Total Consumption Cost: <span style={{ color: '#f59e0b', fontWeight: 600 }}>{totalConsumption.toFixed(2)}</span> | Total Production Cost: <span style={{ color: '#2ece8a', fontWeight: 600 }}>{displayProductionCost.toFixed(2)}</span>
+                        Total Consumption Cost: <span style={{ color: '#f59e0b', fontWeight: 600 }}>{totalConsumption.toFixed(2)}</span> | Total Production Cost: <span style={{ color: '#0a500f', fontWeight: 600 }}>{displayProductionCost.toFixed(2)}</span>
                     </div>
                     <div className="d-flex gap-2">
                         <Button

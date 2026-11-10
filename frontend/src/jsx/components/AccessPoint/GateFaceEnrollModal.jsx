@@ -351,7 +351,7 @@ const GateFaceEnrollModal = ({
                                         style={{
                                             width: '160px',
                                             height: '190px',
-                                            border: '2px dashed rgba(46, 206, 138, 0.7)',
+                                            border: '2px dashed rgba(10, 80, 15, 0.7)',
                                             borderRadius: '12px'
                                         }}
                                     ></div>
@@ -368,7 +368,7 @@ const GateFaceEnrollModal = ({
                                     className="px-4 py-1.5 rounded-pill fw-semibold shadow-sm text-white"
                                     onClick={handleCapture}
                                     disabled={!cameraActive || isDetecting || !modelsLoaded}
-                                    style={{ backgroundColor: '#2ece8a', borderColor: '#2ece8a' }}
+                                    style={{ backgroundColor: '#0a500f', borderColor: '#0a500f' }}
                                 >
                                     {isDetecting ? (
                                         <>

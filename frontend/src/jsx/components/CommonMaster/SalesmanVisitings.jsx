@@ -357,15 +357,15 @@ const SalesmanVisitings = () => {
     const customSelectStyles = {
         control: (base, state) => ({
             ...base,
-            border: state.isFocused ? '1px solid #2ece8a' : '1px solid #cbd5e1',
+            border: state.isFocused ? '1px solid #0a500f' : '1px solid #cbd5e1',
             borderRadius: '10px',
             fontSize: '13px',
             color: '#334155',
             backgroundColor: '#fff',
-            boxShadow: state.isFocused ? '0 0 0 3px rgba(46, 206, 138, 0.15)' : 'none',
+            boxShadow: state.isFocused ? '0 0 0 3px rgba(10, 80, 15, 0.15)' : 'none',
             minHeight: '43px',
             '&:hover': {
-                border: state.isFocused ? '1px solid #2ece8a' : '1px solid #cbd5e1'
+                border: state.isFocused ? '1px solid #0a500f' : '1px solid #cbd5e1'
             }
         }),
         valueContainer: (base) => ({
@@ -413,11 +413,11 @@ const SalesmanVisitings = () => {
             ...base,
             fontSize: '13px',
             padding: '10px 14px',
-            backgroundColor: state.isSelected ? '#2ece8a' : state.isFocused ? '#f8fafc' : 'white',
+            backgroundColor: state.isSelected ? '#0a500f' : state.isFocused ? '#f8fafc' : 'white',
             color: state.isSelected ? 'white' : '#334155',
             cursor: 'pointer',
             '&:active': {
-                backgroundColor: '#26b277'
+                backgroundColor: '#073d0b'
             }
         })
     };
@@ -573,18 +573,18 @@ const SalesmanVisitings = () => {
                 <style>{`
                     .pkg-custom-modal .modal-content { border-radius: 16px !important; border: none !important; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12) !important; overflow: hidden; }
                     .pkg-custom-modal .modal-header-custom { display: flex; align-items: center; justify-content: space-between; padding: 24px 28px 16px 28px; border-bottom: 1px solid #f1f5f9; }
-                    .pkg-custom-modal .modal-icon-circle { width: 48px; height: 48px; background-color: #2ece8a; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(46, 206, 138, 0.2); }
+                    .pkg-custom-modal .modal-icon-circle { width: 48px; height: 48px; background-color: #0a500f; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(10, 80, 15, 0.2); }
                     .pkg-custom-modal .modal-close-x { border: none; background: transparent; font-size: 24px; color: #aaa; cursor: pointer; transition: color 0.2s; display: flex; align-items: center; justify-content: center; padding: 4px; }
                     .pkg-custom-modal .modal-close-x:hover { color: #555; }
                     .pkg-custom-modal .modal-body-custom { padding: 24px 28px; max-height: 70vh; overflow-y: auto; }
                     .pkg-custom-modal .modal-footer-custom { display: flex; align-items: center; justify-content: flex-end; padding: 20px 28px 24px 28px; border-top: 1px solid #f1f5f9; background-color: #fafbfc; gap: 12px; }
                     .pkg-custom-modal .form-label-custom { font-size: 13px; font-weight: 500; color: #4a5568; margin-bottom: 6px; }
                     .pkg-custom-modal .form-control-custom { border: 1px solid #cbd5e1; border-radius: 10px; padding: 10px 14px; font-size: 13px; color: #334155; background-color: #fff; transition: border-color 0.2s, box-shadow 0.2s; width: 100%; }
-                    .pkg-custom-modal .form-control-custom:focus { outline: none; border-color: #2ece8a; box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15); }
-                    .pkg-custom-modal .btn-close-custom { background-color: #7A70BA !important; color: white !important; border-radius: 8px !important; font-weight: 500 !important; font-size: 14px !important; padding: 10px 24px !important; border: none !important; cursor: pointer; transition: background-color 0.2s, transform 0.1s; }
-                    .pkg-custom-modal .btn-close-custom:hover { background-color: #6357a7 !important; }
-                    .pkg-custom-modal .btn-save-custom { background-color: #2ece8a !important; color: white !important; border-radius: 8px !important; font-weight: 500 !important; font-size: 14px !important; padding: 10px 24px !important; border: none !important; cursor: pointer; transition: background-color 0.2s, transform 0.1s; }
-                    .pkg-custom-modal .btn-save-custom:hover { background-color: #26b277 !important; }
+                    .pkg-custom-modal .form-control-custom:focus { outline: none; border-color: #0a500f; box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15); }
+                    .pkg-custom-modal .btn-close-custom { background-color: #dc3545 !important; color: white !important; border-radius: 8px !important; font-weight: 500 !important; font-size: 14px !important; padding: 10px 24px !important; border: none !important; cursor: pointer; transition: background-color 0.2s, transform 0.1s; }
+                    .pkg-custom-modal .btn-close-custom:hover { background-color: #bb2d3b !important; }
+                    .pkg-custom-modal .btn-save-custom { background-color: #0a500f !important; color: white !important; border-radius: 8px !important; font-weight: 500 !important; font-size: 14px !important; padding: 10px 24px !important; border: none !important; cursor: pointer; transition: background-color 0.2s, transform 0.1s; }
+                    .pkg-custom-modal .btn-save-custom:hover { background-color: #073d0b !important; }
                 `}</style>
                 <div className="modal-header-custom">
                     <div className="d-flex align-items-center gap-3">

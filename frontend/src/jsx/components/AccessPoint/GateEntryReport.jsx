@@ -466,7 +466,7 @@ const GateEntryReport = ({ embedded = false }) => {
                                 justify-content: space-between;
                                 align-items: flex-end;
                                 margin-bottom: 12px;
-                                border-bottom: 2px solid #2ece8a;
+                                border-bottom: 2px solid #0a500f;
                                 padding-bottom: 8px;
                             }
                             .report-title {
@@ -781,10 +781,10 @@ const GateEntryReport = ({ embedded = false }) => {
                         white-space: nowrap;
                     }
                     .ger-tab-pill.active {
-                        background: #2ece8a !important;
+                        background: #0a500f !important;
                         color: #ffffff !important;
                         font-weight: 600;
-                        box-shadow: 0 2px 6px rgba(46, 206, 138, 0.35);
+                        box-shadow: 0 2px 6px rgba(10, 80, 15, 0.35);
                     }
                     .ger-tab-pill.inactive {
                         background: transparent;
@@ -915,7 +915,7 @@ const GateEntryReport = ({ embedded = false }) => {
                                                         padding: '4px 12px',
                                                         fontSize: '12px',
                                                         fontWeight: dateQuickFilter === df.id ? '600' : '500',
-                                                        background: dateQuickFilter === df.id ? '#2ece8a' : 'transparent',
+                                                        background: dateQuickFilter === df.id ? '#0a500f' : 'transparent',
                                                         color: dateQuickFilter === df.id ? '#ffffff' : (isDark ? '#94a3b8' : '#64748b'),
                                                         transition: 'all 0.2s ease',
                                                     }}
@@ -937,10 +937,10 @@ const GateEntryReport = ({ embedded = false }) => {
                                                 }}
                                                 title="Start Date"
                                                 style={{
-                                                    border: `1px solid ${startDate ? '#2ece8a' : (isDark ? '#334155' : '#e2e8f0')}`,
+                                                    border: `1px solid ${startDate ? '#0a500f' : (isDark ? '#334155' : '#e2e8f0')}`,
                                                     backgroundColor: isDark ? '#1e293b' : '#ffffff',
                                                     color: isDark ? '#e2e8f0' : '#1e293b',
-                                                    boxShadow: startDate ? '0 0 0 2px rgba(46, 206, 138, 0.15)' : 'none',
+                                                    boxShadow: startDate ? '0 0 0 2px rgba(10, 80, 15, 0.15)' : 'none',
                                                 }}
                                             />
                                             <span className="text-muted" style={{ fontSize: '12px', fontWeight: '500' }}>to</span>
@@ -954,10 +954,10 @@ const GateEntryReport = ({ embedded = false }) => {
                                                 }}
                                                 title="End Date"
                                                 style={{
-                                                    border: `1px solid ${endDate ? '#2ece8a' : (isDark ? '#334155' : '#e2e8f0')}`,
+                                                    border: `1px solid ${endDate ? '#0a500f' : (isDark ? '#334155' : '#e2e8f0')}`,
                                                     backgroundColor: isDark ? '#1e293b' : '#ffffff',
                                                     color: isDark ? '#e2e8f0' : '#1e293b',
-                                                    boxShadow: endDate ? '0 0 0 2px rgba(46, 206, 138, 0.15)' : 'none',
+                                                    boxShadow: endDate ? '0 0 0 2px rgba(10, 80, 15, 0.15)' : 'none',
                                                 }}
                                             />
                                             {(startDate || endDate) && (
@@ -1128,7 +1128,7 @@ const GateEntryReport = ({ embedded = false }) => {
                                                                                 className="badge light"
                                                                                 style={{ 
                                                                                     backgroundColor: `${item.category_color}18`, 
-                                                                                    color: item.category_color || '#2ece8a',
+                                                                                    color: item.category_color || '#0a500f',
                                                                                     border: `1px solid ${item.category_color}40`,
                                                                                     fontSize: '11.5px'
                                                                                 }}

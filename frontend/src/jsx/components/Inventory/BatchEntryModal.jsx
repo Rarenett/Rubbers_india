@@ -376,8 +376,8 @@ const BatchEntryModal = ({
                 }
                 .batch-modal .bm-input:focus {
                     outline: none;
-                    border-color: #2ece8a;
-                    box-shadow: 0 0 0 3px rgba(46,206,138,0.15);
+                    border-color: #0a500f;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15,0.15);
                 }
                 .batch-modal .bm-input::placeholder { color: #94a3b8; }
                 .batch-modal .btn-add-row {
@@ -385,7 +385,7 @@ const BatchEntryModal = ({
                     align-items: center;
                     gap: 6px;
                     background: none;
-                    border: 1.5px dashed #2ece8a;
+                    border: 1.5px dashed #0a500f;
                     color: #16a34a;
                     border-radius: 8px;
                     padding: 7px 14px;
@@ -418,7 +418,7 @@ const BatchEntryModal = ({
                     background: #fafbfc;
                 }
                 .batch-modal .btn-cancel-bm {
-                    background: #7A70BA !important;
+                    background: #0a500f !important;
                     color: white !important;
                     border: none !important;
                     border-radius: 8px !important;
@@ -428,7 +428,7 @@ const BatchEntryModal = ({
                     cursor: pointer;
                 }
                 .batch-modal .btn-confirm-bm {
-                    background: #2ece8a !important;
+                    background: #0a500f !important;
                     color: white !important;
                     border: none !important;
                     border-radius: 8px !important;
@@ -461,7 +461,7 @@ const BatchEntryModal = ({
                     <div className="d-flex align-items-center gap-3">
                         <div style={{
                             width: 40, height: 40, borderRadius: '50%',
-                            background: '#2ece8a', display: 'flex',
+                            background: '#0a500f', display: 'flex',
                             alignItems: 'center', justifyContent: 'center'
                         }}>
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
@@ -551,9 +551,9 @@ const BatchEntryModal = ({
                                                     minHeight: '34px',
                                                     fontSize: '13px',
                                                     borderRadius: '8px',
-                                                    borderColor: state.isFocused ? '#2ece8a' : '#cbd5e1',
-                                                    boxShadow: state.isFocused ? '0 0 0 3px rgba(46,206,138,0.15)' : 'none',
-                                                    '&:hover': { borderColor: '#2ece8a' },
+                                                    borderColor: state.isFocused ? '#0a500f' : '#cbd5e1',
+                                                    boxShadow: state.isFocused ? '0 0 0 3px rgba(10, 80, 15,0.15)' : 'none',
+                                                    '&:hover': { borderColor: '#0a500f' },
                                                 }),
                                                 menu: base => ({ ...base, zIndex: 9999, fontSize: '13px' }),
                                                 singleValue: (base, state) => ({
@@ -565,7 +565,7 @@ const BatchEntryModal = ({
                                                     backgroundColor: state.data.isDivider
                                                         ? 'white'
                                                         : state.isSelected
-                                                            ? '#2ece8a'
+                                                            ? '#0a500f'
                                                             : (state.isFocused && isKeyboard)
                                                                 ? '#f0fdf4'
                                                                 : 'white',
@@ -579,7 +579,7 @@ const BatchEntryModal = ({
                                                         backgroundColor: state.data.isDivider
                                                             ? 'white'
                                                             : state.isSelected
-                                                                ? '#2ece8a'
+                                                                ? '#0a500f'
                                                                 : '#f0fdf4',
                                                         color: state.data.isDivider ? '#94a3b8' : state.isSelected ? 'white' : '#334155',
                                                     }

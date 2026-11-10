@@ -116,20 +116,20 @@ class Company(models.Model):
 
     login_panel_color = models.CharField(
         max_length=20,
-        default='#1a3a72',
+        default='#0a500f',
         blank=True,
         help_text="Hex colour for the login page left panel overlay"
     )
 
     # Dashboard theme colours (persisted so they survive across browsers/devices)
-    theme_nav_header_color = models.CharField(max_length=20, default='#2bc155', blank=True)
-    theme_header_color     = models.CharField(max_length=20, default='#2bc155', blank=True)
-    theme_sidebar_color    = models.CharField(max_length=20, default='#2bc155', blank=True)
+    theme_nav_header_color = models.CharField(max_length=20, default='#0a500f', blank=True)
+    theme_header_color     = models.CharField(max_length=20, default='#0a500f', blank=True)
+    theme_sidebar_color    = models.CharField(max_length=20, default='#0a500f', blank=True)
     theme_sidebar_font_color = models.CharField(max_length=20, default='', blank=True)
-    theme_primary_color    = models.CharField(max_length=20, default='#2bc155', blank=True)
+    theme_primary_color    = models.CharField(max_length=20, default='#0a500f', blank=True)
     theme_bg_color         = models.CharField(max_length=20, default='',        blank=True)
     theme_font_color       = models.CharField(max_length=20, default='',        blank=True)
-    theme_form_icon_color  = models.CharField(max_length=20, default='#2bc155', blank=True)
+    theme_form_icon_color  = models.CharField(max_length=20, default='#0a500f', blank=True)
     theme_version          = models.CharField(max_length=10, default='light',   blank=True)
 
     has_branches = models.BooleanField(

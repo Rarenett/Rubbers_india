@@ -330,7 +330,7 @@ const WalletCreation = () => {
         icon: 'warning',
         title: 'Cannot Delete Wallet',
         html: `The wallet <b>"${wallet.wallet_name}"</b> is already associated with <b>${pointsCount}</b> point ${pointsCount === 1 ? 'entry' : 'entries'}.<br/><br/><span class="text-muted small">Wallets connected to points entries cannot be deleted to preserve ledger integrity. Please deactivate the wallet instead if it is no longer in use.</span>`,
-        confirmButtonColor: '#2ece8a',
+        confirmButtonColor: '#0a500f',
         confirmButtonText: 'Understood',
       });
       return;
@@ -341,7 +341,7 @@ const WalletCreation = () => {
         icon: 'warning',
         title: 'Cannot Delete Wallet',
         html: `The wallet <b>"${wallet.wallet_name}"</b> is already associated with <b>${txnCount}</b> financial ${txnCount === 1 ? 'transaction' : 'transactions'}.<br/><br/><span class="text-muted small">Wallets with recorded financial transactions cannot be deleted to preserve audit history. Please deactivate the wallet instead.</span>`,
-        confirmButtonColor: '#2ece8a',
+        confirmButtonColor: '#0a500f',
         confirmButtonText: 'Understood',
       });
       return;
@@ -448,7 +448,7 @@ const WalletCreation = () => {
           icon: 'success',
           title: 'Wallet Updated',
           text: `Wallet "${payload.wallet_name}" updated successfully.`,
-          confirmButtonColor: '#2ece8a',
+          confirmButtonColor: '#0a500f',
         });
       } else {
         await WalletService.createWallet(payload);
@@ -456,7 +456,7 @@ const WalletCreation = () => {
           icon: 'success',
           title: 'Wallet Created',
           text: `Wallet "${payload.wallet_name}" created successfully.`,
-          confirmButtonColor: '#2ece8a',
+          confirmButtonColor: '#0a500f',
         });
       }
       handleCloseModal();
@@ -481,7 +481,7 @@ const WalletCreation = () => {
         icon: 'error',
         title: 'Operation Failed',
         html: errorMsg,
-        confirmButtonColor: '#2ece8a',
+        confirmButtonColor: '#0a500f',
       });
     } finally {
       setSubmitting(false);
@@ -513,9 +513,9 @@ const WalletCreation = () => {
       ...base,
       height: '38px',
       minHeight: '38px',
-      borderColor: hasError ? '#dc3545' : state.isFocused ? '#2ece8a' : '#cbd5e1',
-      boxShadow: state.isFocused ? '0 0 0 2px rgba(46, 206, 138, 0.2)' : 'none',
-      '&:hover': { borderColor: '#2ece8a' },
+      borderColor: hasError ? '#dc3545' : state.isFocused ? '#0a500f' : '#cbd5e1',
+      boxShadow: state.isFocused ? '0 0 0 2px rgba(10, 80, 15, 0.2)' : 'none',
+      '&:hover': { borderColor: '#0a500f' },
       borderRadius: '8px',
       fontSize: '13px',
       backgroundColor: '#ffffff',
@@ -541,7 +541,7 @@ const WalletCreation = () => {
     }),
     option: (base, state) => ({
       ...base,
-      backgroundColor: state.isSelected ? '#2ece8a' : state.isFocused ? '#eefdf6' : 'white',
+      backgroundColor: state.isSelected ? '#0a500f' : state.isFocused ? '#eefdf6' : 'white',
       color: state.isDisabled ? '#94a3b8' : state.isSelected ? '#ffffff' : '#334155',
       cursor: state.isDisabled ? 'not-allowed' : 'pointer',
       padding: '8px 14px',
@@ -638,12 +638,12 @@ const WalletCreation = () => {
         .item-custom-modal .modal-icon-circle {
           width: 44px;
           height: 44px;
-          background-color: #2ece8a;
+          background-color: #0a500f;
           border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
-          box-shadow: 0 4px 10px rgba(46, 206, 138, 0.2);
+          box-shadow: 0 4px 10px rgba(10, 80, 15, 0.2);
           color: white;
           font-size: 18px;
         }
@@ -695,11 +695,11 @@ const WalletCreation = () => {
         }
         .item-custom-modal .form-control-custom:focus {
           outline: none;
-          border-color: #2ece8a;
-          box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15);
+          border-color: #0a500f;
+          box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
         }
         .item-custom-modal .btn-close-custom {
-          background-color: #7A70BA !important;
+          background-color: #dc3545 !important;
           color: white !important;
           border-radius: 8px !important;
           font-weight: 500 !important;
@@ -710,10 +710,10 @@ const WalletCreation = () => {
           transition: background-color 0.2s;
         }
         .item-custom-modal .btn-close-custom:hover {
-          background-color: #6357a7 !important;
+          background-color: #bb2d3b !important;
         }
         .item-custom-modal .btn-save-custom {
-          background-color: #2ece8a !important;
+          background-color: #0a500f !important;
           color: white !important;
           border-radius: 8px !important;
           font-weight: 500 !important;
@@ -724,7 +724,7 @@ const WalletCreation = () => {
           transition: background-color 0.2s;
         }
         .item-custom-modal .btn-save-custom:hover {
-          background-color: #26b277 !important;
+          background-color: #073d0b !important;
         }
       `}</style>
 

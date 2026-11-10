@@ -264,8 +264,8 @@ const TaskManagementDashboard = () => {
                       fontSize: "13px",
                       fontWeight: "500",
                       backgroundColor:
-                        viewMode === "today" ? "#2ece8a" : "transparent",
-                      borderColor: "#2ece8a",
+                        viewMode === "today" ? "#0a500f" : "transparent",
+                      borderColor: "#0a500f",
                     }}
                     onClick={() => setViewMode("today")}
                   >

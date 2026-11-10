@@ -703,7 +703,7 @@ const EmployeeVehicleConfig = () => {
                     <form onSubmit={handleSubmitVehicleForm}>
                         <style>{`
                             .pkg-close-btn {
-                                background-color: #7A70BA !important;
+                                background-color: #dc3545 !important;
                                 color: white !important;
                                 border-radius: 8px !important;
                                 font-weight: 500 !important;
@@ -714,10 +714,10 @@ const EmployeeVehicleConfig = () => {
                                 transition: background-color 0.2s, transform 0.1s !important;
                             }
                             .pkg-close-btn:hover {
-                                background-color: #6357a7 !important;
+                                background-color: #bb2d3b !important;
                             }
                             .pkg-submit-btn {
-                                background-color: #2ece8a !important;
+                                background-color: #0a500f !important;
                                 color: white !important;
                                 border-radius: 8px !important;
                                 font-weight: 500 !important;
@@ -728,8 +728,8 @@ const EmployeeVehicleConfig = () => {
                                 transition: background-color 0.2s, transform 0.1s !important;
                             }
                             .pkg-submit-btn:hover, .pkg-submit-btn:focus {
-                                background-color: #26b277 !important;
-                                box-shadow: 0 0 0 4px rgba(46, 206, 138, 0.4) !important;
+                                background-color: #073d0b !important;
+                                box-shadow: 0 0 0 4px rgba(10, 80, 15, 0.4) !important;
                                 outline: none !important;
                             }
                             .veh-tab-btn {
@@ -742,10 +742,10 @@ const EmployeeVehicleConfig = () => {
                                 cursor: pointer;
                             }
                             .veh-tab-btn.active {
-                                background-color: #2ece8a !important;
-                                border-color: #2ece8a !important;
+                                background-color: #0a500f !important;
+                                border-color: #0a500f !important;
                                 color: #ffffff !important;
-                                box-shadow: 0 2px 6px rgba(46, 206, 138, 0.3) !important;
+                                box-shadow: 0 2px 6px rgba(10, 80, 15, 0.3) !important;
                             }
                             .veh-tab-btn:not(.active) {
                                 background-color: #f8fafc !important;
@@ -763,7 +763,7 @@ const EmployeeVehicleConfig = () => {
                                 <div className="d-flex align-items-center gap-3">
                                     <div style={{
                                         width: '48px', height: '48px', borderRadius: '50%',
-                                        background: '#2ece8a',
+                                        background: '#0a500f',
                                         display: 'flex', alignItems: 'center', justifyContent: 'center',
                                         flexShrink: 0,
                                     }}>
@@ -807,7 +807,7 @@ const EmployeeVehicleConfig = () => {
                                 <div>
                                     <div className="fw-bold" style={{ color: '#1e293b', fontSize: '0.95rem' }}>{targetEmployee.name}</div>
                                     <div className="text-muted" style={{ fontSize: '12px' }}>
-                                        ID: <span className="fw-semibold text-dark">{targetEmployee.employment_no || '—'}</span> &bull; Current: <strong style={{ color: '#2ece8a' }}>{targetEmployee.preferred_vehicle?.vehicle_number || (targetEmployee.vehicles?.[0]?.vehicle_number || 'No Vehicle')}</strong>
+                                        ID: <span className="fw-semibold text-dark">{targetEmployee.employment_no || '—'}</span> &bull; Current: <strong style={{ color: '#0a500f' }}>{targetEmployee.preferred_vehicle?.vehicle_number || (targetEmployee.vehicles?.[0]?.vehicle_number || 'No Vehicle')}</strong>
                                     </div>
                                 </div>
                                 <div>
@@ -885,7 +885,7 @@ const EmployeeVehicleConfig = () => {
                                             <button
                                                 type="button"
                                                 className="btn btn-sm btn-link text-decoration-none fw-semibold"
-                                                style={{ color: '#2ece8a' }}
+                                                style={{ color: '#0a500f' }}
                                                 onClick={() => setModalMode('new')}
                                             >
                                                 + Click here to register a new vehicle &rarr;

@@ -96,7 +96,7 @@ export default class Example extends PureComponent {
           <Tooltip cursor={{ fill: "transparent" }} />
           <Bar
             dataKey="pv"
-            fill={this.props.color ? this.props.color : "#43DC80"}
+            fill={this.props.color ? this.props.color : "#0a500f"}
             background={{ fill: "#eee" }}
           />
         </BarChart>

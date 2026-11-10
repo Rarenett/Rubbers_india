@@ -52,7 +52,7 @@ export default class TinyLineChart extends PureComponent {
       <ResponsiveContainer width="100%" aspect={4.0 / 2.0}>
         <LineChart data={data}>
           <Tooltip />
-          <Line type="monotone" dataKey="pv" stroke="#43DC80" strokeWidth={2} />
+          <Line type="monotone" dataKey="pv" stroke="#0a500f" strokeWidth={2} />
         </LineChart>
       </ResponsiveContainer>
     );

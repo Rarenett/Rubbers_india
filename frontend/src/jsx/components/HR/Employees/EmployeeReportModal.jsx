@@ -925,12 +925,12 @@ const EmployeeReportModal = ({ show, onHide, candidateId, employeeId, employeeNa
                 .emp-custom-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #2ece8a;
+                    background-color: #0a500f;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    box-shadow: 0 4px 10px rgba(46, 206, 138, 0.2);
+                    box-shadow: 0 4px 10px rgba(10, 80, 15, 0.2);
                 }
                 .emp-custom-modal .modal-close-x {
                     border: none;
@@ -975,9 +975,9 @@ const EmployeeReportModal = ({ show, onHide, candidateId, employeeId, employeeNa
                 }
                 .emp-custom-tabs .nav-link:hover { color: #475569; border-bottom-color: #cbd5e1; }
                 .emp-custom-tabs .nav-link.active {
-                    color: #2ece8a;
+                    color: #0a500f;
                     background: transparent;
-                    border-bottom-color: #2ece8a;
+                    border-bottom-color: #0a500f;
                 }
                 .emp-tab-content { padding: 24px 28px; }
                 

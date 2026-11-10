@@ -131,9 +131,9 @@ const ComplaintList = ({ myOnly }) => {
                                     onClick={() => setListFilter('UNSOLVED')}
                                     className="list-filter-btn"
                                     style={{
-                                        backgroundColor: listFilter === 'UNSOLVED' ? 'rgb(61, 53, 119)' : 'transparent',
-                                        borderColor: 'rgb(61, 53, 119)',
-                                        color: listFilter === 'UNSOLVED' ? 'white' : 'rgb(61, 53, 119)',
+                                        backgroundColor: listFilter === 'UNSOLVED' ? '#0a500f' : 'transparent',
+                                        borderColor: '#0a500f',
+                                        color: listFilter === 'UNSOLVED' ? 'white' : '#0a500f',
                                         height: '34px',
                                         display: 'flex',
                                         alignItems: 'center',
@@ -146,9 +146,9 @@ const ComplaintList = ({ myOnly }) => {
                                     onClick={() => setListFilter('SOLVED')}
                                     className="list-filter-btn"
                                     style={{
-                                        backgroundColor: listFilter === 'SOLVED' ? 'rgb(61, 53, 119)' : 'transparent',
-                                        borderColor: 'rgb(61, 53, 119)',
-                                        color: listFilter === 'SOLVED' ? 'white' : 'rgb(61, 53, 119)',
+                                        backgroundColor: listFilter === 'SOLVED' ? '#0a500f' : 'transparent',
+                                        borderColor: '#0a500f',
+                                        color: listFilter === 'SOLVED' ? 'white' : '#0a500f',
                                         height: '34px',
                                         display: 'flex',
                                         alignItems: 'center',

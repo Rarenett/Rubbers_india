@@ -111,10 +111,10 @@ const LeadCreate = () => {
             ...provided,
             minHeight: '44px',
             borderRadius: '10px',
-            borderColor: state.isFocused ? '#2ece8a' : '#cbd5e1',
-            boxShadow: state.isFocused ? '0 0 0 3px rgba(46, 206, 138, 0.15)' : 'none',
+            borderColor: state.isFocused ? '#0a500f' : '#cbd5e1',
+            boxShadow: state.isFocused ? '0 0 0 3px rgba(10, 80, 15, 0.15)' : 'none',
             '&:hover': {
-                borderColor: state.isFocused ? '#2ece8a' : '#94a3b8'
+                borderColor: state.isFocused ? '#0a500f' : '#94a3b8'
             },
             backgroundColor: '#ffffff',
             fontSize: '13px',
@@ -155,14 +155,14 @@ const LeadCreate = () => {
             ...provided,
             fontSize: '13px',
             backgroundColor: state.isSelected
-                ? '#2ece8a'
+                ? '#0a500f'
                 : state.isFocused
                     ? '#f1f5f9'
                     : '#ffffff',
             color: state.isSelected ? '#ffffff' : '#334155',
             cursor: 'pointer',
             '&:active': {
-                backgroundColor: '#2ece8a',
+                backgroundColor: '#0a500f',
                 color: '#ffffff'
             }
         })
@@ -729,8 +729,8 @@ const LeadCreate = () => {
                 }
                 .lead-normal-form .form-control-custom:focus {
                     outline: none;
-                    border-color: #2ece8a;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15);
+                    border-color: #0a500f;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
                 }
                 .lead-normal-form .form-control-custom::placeholder {
                     color: #94a3b8;
@@ -746,12 +746,12 @@ const LeadCreate = () => {
                 .form-card-top-header .header-icon-box {
                     width: 44px;
                     height: 44px;
-                    background-color: #2ece8a;
+                    background-color: #0a500f;
                     border-radius: 12px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    box-shadow: 0 4px 10px rgba(46, 206, 138, 0.2);
+                    box-shadow: 0 4px 10px rgba(10, 80, 15, 0.2);
                     flex-shrink: 0;
                 }
 
@@ -801,8 +801,8 @@ const LeadCreate = () => {
                 .custom-form-tabs .tab-btn.active {
                     background: transparent !important;
                     border: none !important;
-                    border-bottom: 2px solid #2ece8a !important;
-                    color: #2ece8a !important;
+                    border-bottom: 2px solid #0a500f !important;
+                    color: #0a500f !important;
                     font-weight: 600 !important;
                     box-shadow: none !important;
                 }
@@ -890,13 +890,13 @@ const LeadCreate = () => {
                     height: 1.35em;
                 }
                 .table-wise-switch-box .form-check-input:checked {
-                    background-color: #2ece8a !important;
-                    border-color: #2ece8a !important;
+                    background-color: #0a500f !important;
+                    border-color: #0a500f !important;
                 }
 
                 /* Action buttons */
                 .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -907,10 +907,10 @@ const LeadCreate = () => {
                     transition: background-color 0.2s;
                 }
                 .btn-close-custom:hover {
-                    background-color: #6357a7 !important;
+                    background-color: #bb2d3b !important;
                 }
                 .btn-save-custom {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -968,7 +968,7 @@ const LeadCreate = () => {
 
                 /* Plus add button */
                 .btn-quick-add {
-                    background-color: #2ece8a;
+                    background-color: #0a500f;
                     border: none;
                     color: white;
                     border-radius: 10px;
@@ -1039,10 +1039,10 @@ const LeadCreate = () => {
                     background-color: rgba(255, 255, 255, 0.75);
                 }
                 .owner-type-toggle-btn.active {
-                    background-color: #2ece8a;
+                    background-color: #0a500f;
                     color: #ffffff;
                     font-weight: 600;
-                    box-shadow: 0 2px 6px rgba(46, 206, 138, 0.35);
+                    box-shadow: 0 2px 6px rgba(10, 80, 15, 0.35);
                 }
                 .owner-type-toggle-btn.active i {
                     color: #ffffff;
@@ -1477,7 +1477,7 @@ const LeadCreate = () => {
                                                             style={{
                                                                 width: '16px',
                                                                 height: '16px',
-                                                                accentColor: '#2ece8a',
+                                                                accentColor: '#0a500f',
                                                                 cursor: 'pointer',
                                                                 margin: 0
                                                             }}
@@ -1930,7 +1930,7 @@ const LeadCreate = () => {
                                             <div
                                                 className="p-4 rounded text-center mb-3"
                                                 style={{
-                                                    border: '2px dashed #2ece8a',
+                                                    border: '2px dashed #0a500f',
                                                     backgroundColor: '#f0fdf4',
                                                     cursor: 'pointer'
                                                 }}
@@ -1953,7 +1953,7 @@ const LeadCreate = () => {
                                                                 height: '46px',
                                                                 borderRadius: '50%',
                                                                 objectFit: 'cover',
-                                                                border: '2px solid #2ece8a',
+                                                                border: '2px solid #0a500f',
                                                                 flexShrink: 0
                                                             }}
                                                         />

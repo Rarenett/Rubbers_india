@@ -147,7 +147,7 @@ const ManageCompany = () => {
     const [letterheadPreview, setLetterheadPreview] = useState(null);
     const [titleLogoFile, setTitleLogoFile] = useState(null);
     const [titleLogoPreview, setTitleLogoPreview] = useState(null);
-    const [loginPanelColor, setLoginPanelColor] = useState('#1a3a72');
+    const [loginPanelColor, setLoginPanelColor] = useState('#0a500f');
 
     useEffect(() => {
         const syncColors = () => {
@@ -407,7 +407,7 @@ const ManageCompany = () => {
                 if (companyData.title_logo) setTitleLogoPreview(companyData.title_logo);
 
                 // Store settings for global use — prefer DB value, fall back to localStorage
-                const dbColor = companyData.login_panel_color || '#1a3a72';
+                const dbColor = companyData.login_panel_color || '#0a500f';
                 setLoginPanelColor(dbColor);
                 localStorage.setItem('companySettings', JSON.stringify({
                     dateFormat: companyData.date_format || 'DD/MM/YYYY',
@@ -573,9 +573,9 @@ const ManageCompany = () => {
             ...base,
             minHeight: '40px',
             backgroundColor: isDarkMode ? '#24292D' : '#fff',
-            borderColor: state.isFocused ? '#2ece8a' : (isDarkMode ? '#4a5568' : '#cbd5e1'),
-            boxShadow: state.isFocused ? '0 0 0 3px rgba(46,206,138,0.15)' : 'none',
-            '&:hover': { borderColor: '#2ece8a' },
+            borderColor: state.isFocused ? '#0a500f' : (isDarkMode ? '#4a5568' : '#cbd5e1'),
+            boxShadow: state.isFocused ? '0 0 0 3px rgba(10, 80, 15,0.15)' : 'none',
+            '&:hover': { borderColor: '#0a500f' },
             borderRadius: '10px',
             fontSize: '13px',
         }),
@@ -597,7 +597,7 @@ const ManageCompany = () => {
         option: (base, state) => ({
             ...base,
             backgroundColor: state.isSelected
-                ? '#2ece8a'
+                ? '#0a500f'
                 : state.isFocused
                     ? (isDarkMode ? '#3d464e' : '#eefdf6')
                     : (isDarkMode ? '#2F363E' : 'white'),
@@ -1144,16 +1144,16 @@ const ManageCompany = () => {
                 }
                 .fy-custom-modal .form-control-custom:focus {
                     outline: none;
-                    border-color: #2ece8a;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15);
+                    border-color: #0a500f;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
                 }
                 .fy-custom-modal .form-control-custom::placeholder { color: #94a3b8; }
                 .fy-custom-modal .form-check-input:checked {
-                    background-color: #2ece8a;
-                    border-color: #2ece8a;
+                    background-color: #0a500f;
+                    border-color: #0a500f;
                 }
                 .fy-custom-modal .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -1163,9 +1163,9 @@ const ManageCompany = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .fy-custom-modal .btn-close-custom:hover { background-color: #6357a7 !important; }
+                .fy-custom-modal .btn-close-custom:hover { background-color: #bb2d3b !important; }
                 .fy-custom-modal .btn-save-custom {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -1175,7 +1175,7 @@ const ManageCompany = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .fy-custom-modal .btn-save-custom:hover { background-color: #26b277 !important; }
+                .fy-custom-modal .btn-save-custom:hover { background-color: #073d0b !important; }
                 .search-input-custom {
                     height: 38px !important;
                     border-radius: 6px !important;
@@ -1188,8 +1188,8 @@ const ManageCompany = () => {
                 }
                 .search-input-custom:focus {
                     outline: none !important;
-                    border-color: #2ece8a !important;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15) !important;
+                    border-color: #0a500f !important;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15) !important;
                 }
                 .search-input-custom::placeholder {
                     color: #94a3b8 !important;
@@ -1252,7 +1252,7 @@ const ManageCompany = () => {
                     line-height: 1.55;
                 }
                 .fy-validation-ok-btn {
-                    background-color: #7A70BA;
+                    background-color: #0a500f;
                     color: #fff;
                     border: none;
                     border-radius: 8px;
@@ -1263,7 +1263,7 @@ const ManageCompany = () => {
                     transition: background-color 0.2s, transform 0.1s;
                 }
                 .fy-validation-ok-btn:hover {
-                    background-color: #6357a7;
+                    background-color: #073d0b;
                     transform: translateY(-1px);
                 }
                 .fy-validation-ok-btn:active { transform: translateY(0); }
@@ -1336,16 +1336,16 @@ const ManageCompany = () => {
                 }
                 .addr-custom-modal .form-control-custom:focus {
                     outline: none;
-                    border-color: #2ece8a;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15);
+                    border-color: #0a500f;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
                 }
                 .addr-custom-modal .form-control-custom::placeholder { color: #94a3b8; }
                 .addr-custom-modal .form-check-input:checked {
-                    background-color: #2ece8a;
-                    border-color: #2ece8a;
+                    background-color: #0a500f;
+                    border-color: #0a500f;
                 }
                 .addr-custom-modal .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -1355,9 +1355,9 @@ const ManageCompany = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .addr-custom-modal .btn-close-custom:hover { background-color: #6357a7 !important; }
+                .addr-custom-modal .btn-close-custom:hover { background-color: #bb2d3b !important; }
                 .addr-custom-modal .btn-save-custom {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -1367,7 +1367,7 @@ const ManageCompany = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .addr-custom-modal .btn-save-custom:hover { background-color: #26b277 !important; }
+                .addr-custom-modal .btn-save-custom:hover { background-color: #073d0b !important; }
 
                 /* ===== CONTACT MODAL ===== */
                 .contact-custom-modal .modal-content {
@@ -1438,16 +1438,16 @@ const ManageCompany = () => {
                 }
                 .contact-custom-modal .form-control-custom:focus {
                     outline: none;
-                    border-color: #2ece8a;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15);
+                    border-color: #0a500f;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
                 }
                 .contact-custom-modal .form-control-custom::placeholder { color: #94a3b8; }
                 .contact-custom-modal .form-check-input:checked {
-                    background-color: #2ece8a;
-                    border-color: #2ece8a;
+                    background-color: #0a500f;
+                    border-color: #0a500f;
                 }
                 .contact-custom-modal .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -1457,9 +1457,9 @@ const ManageCompany = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .contact-custom-modal .btn-close-custom:hover { background-color: #6357a7 !important; }
+                .contact-custom-modal .btn-close-custom:hover { background-color: #bb2d3b !important; }
                 .contact-custom-modal .btn-save-custom {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -1469,7 +1469,7 @@ const ManageCompany = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .contact-custom-modal .btn-save-custom:hover { background-color: #26b277 !important; }
+                .contact-custom-modal .btn-save-custom:hover { background-color: #073d0b !important; }
 
                 /* ===== BRANCH MODAL ===== */
                 .branch-custom-modal .modal-content {
@@ -1540,16 +1540,16 @@ const ManageCompany = () => {
                 }
                 .branch-custom-modal .form-control-custom:focus {
                     outline: none;
-                    border-color: #2ece8a;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15);
+                    border-color: #0a500f;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
                 }
                 .branch-custom-modal .form-control-custom::placeholder { color: #94a3b8; }
                 .branch-custom-modal .form-check-input:checked {
-                    background-color: #2ece8a;
-                    border-color: #2ece8a;
+                    background-color: #0a500f;
+                    border-color: #0a500f;
                 }
                 .branch-custom-modal .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -1559,9 +1559,9 @@ const ManageCompany = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .branch-custom-modal .btn-close-custom:hover { background-color: #6357a7 !important; }
+                .branch-custom-modal .btn-close-custom:hover { background-color: #bb2d3b !important; }
                 .branch-custom-modal .btn-save-custom {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -1571,7 +1571,7 @@ const ManageCompany = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .branch-custom-modal .btn-save-custom:hover { background-color: #26b277 !important; }
+                .branch-custom-modal .btn-save-custom:hover { background-color: #073d0b !important; }
 
                 /* ===== FACTORY MODAL ===== */
                 .factory-custom-modal .modal-content {
@@ -1642,16 +1642,16 @@ const ManageCompany = () => {
                 }
                 .factory-custom-modal .form-control-custom:focus {
                     outline: none;
-                    border-color: #2ece8a;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15);
+                    border-color: #0a500f;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
                 }
                 .factory-custom-modal .form-control-custom::placeholder { color: #94a3b8; }
                 .factory-custom-modal .form-check-input:checked {
-                    background-color: #2ece8a;
-                    border-color: #2ece8a;
+                    background-color: #0a500f;
+                    border-color: #0a500f;
                 }
                 .factory-custom-modal .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -1661,9 +1661,9 @@ const ManageCompany = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .factory-custom-modal .btn-close-custom:hover { background-color: #6357a7 !important; }
+                .factory-custom-modal .btn-close-custom:hover { background-color: #bb2d3b !important; }
                 .factory-custom-modal .btn-save-custom {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -1673,7 +1673,7 @@ const ManageCompany = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .factory-custom-modal .btn-save-custom:hover { background-color: #26b277 !important; }
+                .factory-custom-modal .btn-save-custom:hover { background-color: #073d0b !important; }
 
                 /* ===== WAREHOUSE MODAL ===== */
                 .warehouse-custom-modal .modal-content {
@@ -1744,16 +1744,16 @@ const ManageCompany = () => {
                 }
                 .warehouse-custom-modal .form-control-custom:focus {
                     outline: none;
-                    border-color: #2ece8a;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15);
+                    border-color: #0a500f;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
                 }
                 .warehouse-custom-modal .form-control-custom::placeholder { color: #94a3b8; }
                 .warehouse-custom-modal .form-check-input:checked {
-                    background-color: #2ece8a;
-                    border-color: #2ece8a;
+                    background-color: #0a500f;
+                    border-color: #0a500f;
                 }
                 .warehouse-custom-modal .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -1763,9 +1763,9 @@ const ManageCompany = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .warehouse-custom-modal .btn-close-custom:hover { background-color: #6357a7 !important; }
+                .warehouse-custom-modal .btn-close-custom:hover { background-color: #bb2d3b !important; }
                 .warehouse-custom-modal .btn-save-custom {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -1775,7 +1775,7 @@ const ManageCompany = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .warehouse-custom-modal .btn-save-custom:hover { background-color: #26b277 !important; }
+                .warehouse-custom-modal .btn-save-custom:hover { background-color: #073d0b !important; }
 
                 /* Responsive enhancements for ManageCompany */
                 .manage-company-tabs.nav-tabs {
@@ -1876,7 +1876,7 @@ const ManageCompany = () => {
                 [data-theme-version="dark"] .form-control-custom:focus,
                 [data-theme-version="dark"] .modal-body .form-control:focus,
                 [data-theme-version="dark"] .modal-body select:focus {
-                    border-color: #2ece8a !important;
+                    border-color: #0a500f !important;
                     background-color: #24292D !important;
                     color: #fff !important;
                 }
@@ -3110,12 +3110,12 @@ const ManageCompany = () => {
                                                     <div>
                                                         <div className="d-flex align-items-center gap-2">
                                                             <div className="font-w700 fs-16 mb-0" style={{ textTransform: 'uppercase' }}>{customSidebarColor}</div>
-                                                            {customSidebarColor && customSidebarColor !== '#2bc155' && (
+                                                            {customSidebarColor && customSidebarColor !== '#0a500f' && (
                                                                 <button
                                                                     type="button"
                                                                     className="btn btn-link btn-xs p-0 text-muted"
                                                                     style={{ fontSize: '11px', textDecoration: 'underline' }}
-                                                                    onClick={() => changeCustomSidebarColor('#2bc155')}
+                                                                    onClick={() => changeCustomSidebarColor('#0a500f')}
                                                                     title="Reset sidebar background to default"
                                                                 >
                                                                     Reset
@@ -3294,7 +3294,7 @@ const ManageCompany = () => {
                                                     <button
                                                         type="button"
                                                         className="btn btn-outline-secondary btn-xs px-3"
-                                                        onClick={() => setLoginPanelColor('#1a3a72')}
+                                                        onClick={() => setLoginPanelColor('#0a500f')}
                                                     >
                                                         Reset
                                                     </button>
@@ -3682,7 +3682,7 @@ const ManageCompany = () => {
                                     </div>
                                 )}
                                 {branchForm.gst_number && /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/.test(branchForm.gst_number) && (
-                                    <div className="valid-feedback d-block" style={{ fontSize: '12.5px', color: '#2ece8a' }}>
+                                    <div className="valid-feedback d-block" style={{ fontSize: '12.5px', color: '#0a500f' }}>
                                         <i className="fa fa-check-circle me-1"></i> Valid GST format
                                     </div>
                                 )}

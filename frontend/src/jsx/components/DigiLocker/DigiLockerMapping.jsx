@@ -736,7 +736,7 @@ const DigiLockerMapping = () => {
              '</div>',
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: '#3d3577',
+      confirmButtonColor: '#0a500f',
       cancelButtonColor: '#d33',
       confirmButtonText: 'Yes, Transfer Ownership',
       cancelButtonText: 'Cancel'
@@ -815,7 +815,7 @@ const DigiLockerMapping = () => {
             '</div>',
       icon: 'question',
       showCancelButton: true,
-      confirmButtonColor: '#3d3577',
+      confirmButtonColor: '#0a500f',
       cancelButtonColor: '#d33',
       confirmButtonText: 'Yes, Update Email',
       cancelButtonText: 'Cancel'
@@ -1458,7 +1458,7 @@ const DigiLockerMapping = () => {
               variant="primary"
               type="submit"
               disabled={savingOtpEmail}
-              style={{ backgroundColor: "rgb(61, 53, 119)", borderColor: "rgb(61, 53, 119)" }}
+              style={{ backgroundColor: "#0a500f", borderColor: "#0a500f" }}
             >
               {savingOtpEmail ? (
                 <>
@@ -1590,8 +1590,8 @@ const DigiLockerMapping = () => {
               type="submit"
               disabled={transferSubmitting || !newOwnerEmployeeId}
               style={{
-                backgroundColor: "rgb(61, 53, 119)",
-                borderColor: "rgb(61, 53, 119)",
+                backgroundColor: "#0a500f",
+                borderColor: "#0a500f",
               }}
             >
               {transferSubmitting ? "Transferring..." : "Transfer Ownership"}
@@ -1880,8 +1880,8 @@ const DigiLockerMapping = () => {
               type="submit"
               disabled={submitting}
               style={{
-                backgroundColor: "rgb(61, 53, 119)",
-                borderColor: "rgb(61, 53, 119)",
+                backgroundColor: "#0a500f",
+                borderColor: "#0a500f",
               }}
             >
               {submitting

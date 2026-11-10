@@ -358,13 +358,13 @@ const LeadImportModal = ({
                     {/* Metrics / Statistics Cards */}
                     <div className="row g-3 mb-3">
                         <div className="col-md-4">
-                            <div className="card border-0 shadow-sm rounded-3 mb-0" style={{ backgroundColor: '#f0f4ff', borderLeft: '4px solid #3d3577' }}>
+                            <div className="card border-0 shadow-sm rounded-3 mb-0" style={{ backgroundColor: '#f0f4ff', borderLeft: '4px solid #0a500f' }}>
                                 <div className="card-body p-3 d-flex justify-content-between align-items-center">
                                     <div>
                                         <div className="text-muted small text-uppercase fw-bold">Total Staged Rows</div>
                                         <h3 className="fw-bold mb-0 text-dark">{total_rows}</h3>
                                     </div>
-                                    <div className="rounded-circle p-2" style={{ backgroundColor: '#e0e7ff', color: '#3d3577' }}>
+                                    <div className="rounded-circle p-2" style={{ backgroundColor: '#e0e7ff', color: '#0a500f' }}>
                                         <i className="fa fa-file-excel fa-2x"></i>
                                     </div>
                                 </div>
@@ -822,7 +822,7 @@ const LeadImportModal = ({
                                 variant="primary"
                                 onClick={handlePushAllLeads}
                                 disabled={actionLoading || invalid_rows_count > 0 || total_rows === 0}
-                                style={{ backgroundColor: 'rgb(61, 53, 119)', borderColor: 'rgb(61, 53, 119)' }}
+                                style={{ backgroundColor: '#0a500f', borderColor: '#0a500f' }}
                             >
                                 {actionLoading ? (
                                     <>

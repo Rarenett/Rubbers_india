@@ -33,12 +33,12 @@ const ShelfForm = ({
                 .sfm-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #2ece8a;
+                    background-color: #0a500f;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    box-shadow: 0 4px 10px rgba(46, 206, 138, 0.2);
+                    box-shadow: 0 4px 10px rgba(10, 80, 15, 0.2);
                 }
                 .sfm-modal .modal-close-x {
                     border: none;
@@ -82,12 +82,12 @@ const ShelfForm = ({
                 }
                 .sfm-modal .form-control-custom:focus {
                     outline: none;
-                    border-color: #2ece8a;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15);
+                    border-color: #0a500f;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
                 }
                 .sfm-modal .form-control-custom::placeholder { color: #94a3b8; }
                 .sfm-modal .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -97,9 +97,9 @@ const ShelfForm = ({
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .sfm-modal .btn-close-custom:hover { background-color: #6357a7 !important; }
+                .sfm-modal .btn-close-custom:hover { background-color: #bb2d3b !important; }
                 .sfm-modal .btn-save-custom {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -109,7 +109,7 @@ const ShelfForm = ({
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .sfm-modal .btn-save-custom:hover { background-color: #26b277 !important; }
+                .sfm-modal .btn-save-custom:hover { background-color: #073d0b !important; }
 
                 .sfm-modal .custom-select-container {
                     position: relative;
@@ -132,8 +132,8 @@ const ShelfForm = ({
                 }
                 .sfm-modal .custom-select-trigger:focus-within {
                     outline: none;
-                    border-color: #2ece8a;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15);
+                    border-color: #0a500f;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
                 }
                 .sfm-modal .custom-select-dropdown {
                     position: absolute;

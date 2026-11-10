@@ -17,9 +17,9 @@ const selectStyles = {
     control: (base, state) => ({
         ...base,
         minHeight: '38px',
-        borderColor: state.isFocused ? '#2ece8a' : '#cbd5e1',
-        boxShadow: state.isFocused ? '0 0 0 3px rgba(46, 206, 138, 0.15)' : 'none',
-        '&:hover': { borderColor: '#2ece8a' },
+        borderColor: state.isFocused ? '#0a500f' : '#cbd5e1',
+        boxShadow: state.isFocused ? '0 0 0 3px rgba(10, 80, 15, 0.15)' : 'none',
+        '&:hover': { borderColor: '#0a500f' },
         borderRadius: '10px',
         fontSize: '13px',
         backgroundColor: '#fff',
@@ -35,7 +35,7 @@ const selectStyles = {
     menuPortal: base => ({ ...base, zIndex: 99999 }),
     option: (base, state) => ({
         ...base,
-        backgroundColor: state.isSelected ? '#2ece8a' : state.isFocused ? 'rgba(46, 206, 138, 0.1)' : 'white',
+        backgroundColor: state.isSelected ? '#0a500f' : state.isFocused ? 'rgba(10, 80, 15, 0.1)' : 'white',
         color: state.isSelected ? 'white' : '#334155',
         cursor: 'pointer',
         fontSize: '13px',
@@ -695,7 +695,7 @@ const teamModalItemsPerPage = 5;
                     icon: 'success',
                     title: 'Leads Assigned Successfully!',
                     text: `${payload.leads.length} lead(s) assigned to ${destinationName} with deadline ${assignClosingDate}.`,
-                    confirmButtonColor: '#2ece8a'
+                    confirmButtonColor: '#0a500f'
                 });
             }
         } catch (error) {
@@ -750,7 +750,7 @@ const teamModalItemsPerPage = 5;
                                             module="telecalling"
                                             variant="success"
                                             className="btn-sm"
-                                            style={{ backgroundColor: '#2ece8a', borderColor: '#2ece8a' }}
+                                            style={{ backgroundColor: '#0a500f', borderColor: '#0a500f' }}
                                             onClick={() => {
                                                 setEditingTeamId(null);
                                                 setTeamName('');
@@ -1607,7 +1607,7 @@ const teamModalItemsPerPage = 5;
                                                                     width: '18px',
                                                                     height: '18px',
                                                                     borderRadius: '4px',
-                                                                    backgroundColor: '#2ece8a',
+                                                                    backgroundColor: '#0a500f',
                                                                     display: 'flex',
                                                                     alignItems: 'center',
                                                                     justifyContent: 'center',
@@ -1998,7 +1998,7 @@ const teamModalItemsPerPage = 5;
                                                 icon: 'success', 
                                                 title: 'Team updated successfully!', 
                                                 showConfirmButton: true,
-                                                confirmButtonColor: '#2ece8a'
+                                                confirmButtonColor: '#0a500f'
                                             });
                                         }
                                     } else {
@@ -2021,7 +2021,7 @@ const teamModalItemsPerPage = 5;
                                                 icon: 'success', 
                                                 title: 'Team created successfully!', 
                                                 showConfirmButton: true,
-                                                confirmButtonColor: '#2ece8a'
+                                                confirmButtonColor: '#0a500f'
                                             });
                                         }
                                     }
@@ -2345,12 +2345,12 @@ const teamModalItemsPerPage = 5;
                 .telecalling-team-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #2ece8a;
+                    background-color: #0a500f;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    box-shadow: 0 4px 10px rgba(46, 206, 138, 0.2);
+                    box-shadow: 0 4px 10px rgba(10, 80, 15, 0.2);
                     flex-shrink: 0;
                 }
                 .item-custom-modal .modal-close-x,
@@ -2432,7 +2432,7 @@ const teamModalItemsPerPage = 5;
                 .item-custom-modal .btn-close-custom,
                 .parkarea-custom-modal .btn-close-custom,
                 .telecalling-team-modal .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -2447,12 +2447,12 @@ const teamModalItemsPerPage = 5;
                 .item-custom-modal .btn-close-custom:hover,
                 .parkarea-custom-modal .btn-close-custom:hover,
                 .telecalling-team-modal .btn-close-custom:hover {
-                    background-color: #6357a7 !important;
+                    background-color: #bb2d3b !important;
                 }
                 .item-custom-modal .btn-save-custom,
                 .parkarea-custom-modal .btn-save-custom,
                 .telecalling-team-modal .btn-save-custom {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -2467,7 +2467,7 @@ const teamModalItemsPerPage = 5;
                 .item-custom-modal .btn-save-custom:hover,
                 .parkarea-custom-modal .btn-save-custom:hover,
                 .telecalling-team-modal .btn-save-custom:hover {
-                    background-color: #26b277 !important;
+                    background-color: #073d0b !important;
                 }
                 .item-custom-modal .btn-save-custom:disabled,
                 .parkarea-custom-modal .btn-save-custom:disabled,
@@ -2502,8 +2502,8 @@ const teamModalItemsPerPage = 5;
                 .item-custom-modal .form-control-custom:focus,
                 .parkarea-custom-modal .form-control-custom:focus,
                 .telecalling-team-modal .form-control-custom:focus {
-                    border-color: #2ece8a;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15);
+                    border-color: #0a500f;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
                     outline: none;
                 }
                 /* Telecalling Responsive Layout Enhancements */

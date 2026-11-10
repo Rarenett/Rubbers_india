@@ -1257,7 +1257,7 @@ const GateEntryList = ({ embedded = false }) => {
                     <form onSubmit={handleConfirmSwitchVehicle}>
                         <style>{`
                             .pkg-close-btn {
-                                background-color: #7A70BA !important;
+                                background-color: #dc3545 !important;
                                 color: white !important;
                                 border-radius: 8px !important;
                                 font-weight: 500 !important;
@@ -1268,10 +1268,10 @@ const GateEntryList = ({ embedded = false }) => {
                                 transition: background-color 0.2s, transform 0.1s !important;
                             }
                             .pkg-close-btn:hover {
-                                background-color: #6357a7 !important;
+                                background-color: #bb2d3b !important;
                             }
                             .pkg-submit-btn {
-                                background-color: #2ece8a !important;
+                                background-color: #0a500f !important;
                                 color: white !important;
                                 border-radius: 8px !important;
                                 font-weight: 500 !important;
@@ -1282,8 +1282,8 @@ const GateEntryList = ({ embedded = false }) => {
                                 transition: background-color 0.2s, transform 0.1s !important;
                             }
                             .pkg-submit-btn:hover, .pkg-submit-btn:focus {
-                                background-color: #26b277 !important;
-                                box-shadow: 0 0 0 4px rgba(46, 206, 138, 0.4) !important;
+                                background-color: #073d0b !important;
+                                box-shadow: 0 0 0 4px rgba(10, 80, 15, 0.4) !important;
                                 outline: none !important;
                             }
                             .veh-tab-btn {
@@ -1296,10 +1296,10 @@ const GateEntryList = ({ embedded = false }) => {
                                 cursor: pointer;
                             }
                             .veh-tab-btn.active {
-                                background-color: #2ece8a !important;
-                                border-color: #2ece8a !important;
+                                background-color: #0a500f !important;
+                                border-color: #0a500f !important;
                                 color: #ffffff !important;
-                                box-shadow: 0 2px 6px rgba(46, 206, 138, 0.3) !important;
+                                box-shadow: 0 2px 6px rgba(10, 80, 15, 0.3) !important;
                             }
                             .veh-tab-btn:not(.active) {
                                 background-color: ${isDark ? '#0f172a' : '#f8fafc'} !important;
@@ -1318,7 +1318,7 @@ const GateEntryList = ({ embedded = false }) => {
                                 <div className="d-flex align-items-center gap-3">
                                     <div style={{
                                         width: '48px', height: '48px', borderRadius: '50%',
-                                        background: '#2ece8a',
+                                        background: '#0a500f',
                                         display: 'flex', alignItems: 'center', justifyContent: 'center',
                                         flexShrink: 0,
                                     }}>
@@ -1357,7 +1357,7 @@ const GateEntryList = ({ embedded = false }) => {
                                 <div>
                                     <div className="fw-bold" style={{ color: isDark ? '#fff' : '#1e293b', fontSize: '0.95rem' }}>{targetEntryForVehicleSwitch.employee_name || 'Employee'}</div>
                                     <div className="text-muted" style={{ fontSize: '12px' }}>
-                                        ID: <span className="fw-semibold" style={{ color: isDark ? '#cbd5e1' : '#1e293b' }}>{targetEntryForVehicleSwitch.employment_no || '—'}</span> &bull; Current: <strong style={{ color: '#2ece8a' }}>{targetEntryForVehicleSwitch.vehicle_number || 'No Vehicle'}</strong>
+                                        ID: <span className="fw-semibold" style={{ color: isDark ? '#cbd5e1' : '#1e293b' }}>{targetEntryForVehicleSwitch.employment_no || '—'}</span> &bull; Current: <strong style={{ color: '#0a500f' }}>{targetEntryForVehicleSwitch.vehicle_number || 'No Vehicle'}</strong>
                                     </div>
                                 </div>
                                 <div>
@@ -1406,7 +1406,7 @@ const GateEntryList = ({ embedded = false }) => {
                                             <button
                                                 type="button"
                                                 className="btn btn-sm btn-link text-decoration-none fw-semibold"
-                                                style={{ color: '#2ece8a' }}
+                                                style={{ color: '#0a500f' }}
                                                 onClick={() => setSwitchMode('new')}
                                             >
                                                 + Click here to register a new vehicle &rarr;
@@ -1549,12 +1549,12 @@ const GateEntryList = ({ embedded = false }) => {
                 .item-custom-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #2ece8a;
+                    background-color: #0a500f;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    box-shadow: 0 4px 10px rgba(46, 206, 138, 0.2);
+                    box-shadow: 0 4px 10px rgba(10, 80, 15, 0.2);
                 }
                 .item-custom-modal .modal-close-x {
                     border: none;
@@ -1583,8 +1583,8 @@ const GateEntryList = ({ embedded = false }) => {
                     width: 95% !important;
                 }
                 .item-custom-modal .btn-close-custom {
-                    background-color: #7A70BA !important;
-                    border-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
+                    border-color: #0a500f !important;
                     color: #fff !important;
                     font-weight: 500;
                     font-size: 14px;
@@ -1592,13 +1592,13 @@ const GateEntryList = ({ embedded = false }) => {
                     border-radius: 8px;
                 }
                 .item-custom-modal .btn-close-custom:hover {
-                    background-color: #6357a7 !important;
-                    border-color: #6357a7 !important;
+                    background-color: #bb2d3b !important;
+                    border-color: #073d0b !important;
                     color: #fff !important;
                 }
                 .item-custom-modal .btn-save-custom {
-                    background-color: #2ece8a !important;
-                    border-color: #2ece8a !important;
+                    background-color: #0a500f !important;
+                    border-color: #0a500f !important;
                     color: #fff !important;
                     font-weight: 500;
                     font-size: 14px;
@@ -1606,8 +1606,8 @@ const GateEntryList = ({ embedded = false }) => {
                     border-radius: 8px;
                 }
                 .item-custom-modal .btn-save-custom:hover {
-                    background-color: #26b277 !important;
-                    border-color: #26b277 !important;
+                    background-color: #073d0b !important;
+                    border-color: #073d0b !important;
                     color: #fff !important;
                 }
                 `

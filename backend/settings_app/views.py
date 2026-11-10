@@ -82,7 +82,7 @@ class CompanyViewSet(viewsets.ModelViewSet):
         if not company:
             return Response({
                 'id': None,
-                'login_panel_color': '#1a3a72',
+                'login_panel_color': '#0a500f',
                 'display_name': '',
                 'logo': None,
                 'description': '',
@@ -103,7 +103,7 @@ class CompanyViewSet(viewsets.ModelViewSet):
         title_logo_url = request.build_absolute_uri(company.title_logo.url) if company.title_logo else None
         return Response({
             'id': company.id,
-            'login_panel_color': company.login_panel_color or '#1a3a72',
+            'login_panel_color': company.login_panel_color or '#0a500f',
             'display_name': company.display_name or company.name or '',
             'logo': logo_url,
             'title_logo': title_logo_url,

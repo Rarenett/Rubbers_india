@@ -196,7 +196,7 @@ const AdminReviewList = () => {
                                                 <div className="d-flex justify-content-end">
                                                     <button 
                                                         className="btn shadow btn-xs sharp" 
-                                                        style={{ backgroundColor: 'rgb(61, 53, 119)', borderColor: 'rgb(61, 53, 119)', color: 'white' }}
+                                                        style={{ backgroundColor: '#0a500f', borderColor: '#0a500f', color: 'white' }}
                                                         onClick={() => handleViewDetails(c)}
                                                     >
                                                         <i className="fa fa-eye"></i>
@@ -336,10 +336,10 @@ const AdminReviewList = () => {
                 </Modal.Body>
                 <Modal.Footer>
                     <Button 
-                        style={{ backgroundColor: '#7A70BA', borderColor: '#7A70BA', color: 'white', borderRadius: '8px', padding: '10px 24px', fontWeight: 500 }} 
+                        style={{ backgroundColor: '#0a500f', borderColor: '#0a500f', color: 'white', borderRadius: '8px', padding: '10px 24px', fontWeight: 500 }} 
                         onClick={() => setShowModal(false)}
-                        onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#6357a7'}
-                        onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#7A70BA'}
+                        onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#073d0b'}
+                        onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#0a500f'}
                     >
                         Close
                     </Button>

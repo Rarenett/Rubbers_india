@@ -128,7 +128,7 @@ const Read = () => {
                                         className="d-flex align-items-center justify-content-center fw-bold text-white shadow-sm me-3 rounded"
                                         style={{
                                           width: '50px', height: '50px',
-                                          background: 'linear-gradient(135deg, #43dc80 0%, #2bb673 100%)',
+                                          background: 'linear-gradient(135deg, #0a500f 0%, #2bb673 100%)',
                                           fontSize: '18px'
                                         }}
                                       >

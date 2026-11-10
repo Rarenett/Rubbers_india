@@ -41,17 +41,17 @@ const ProductConfigurationForm = ({
         control: (provided, state) => ({
             ...provided,
             borderRadius: '10px',
-            borderColor: state.isFocused ? '#2ece8a' : '#cbd5e1',
+            borderColor: state.isFocused ? '#0a500f' : '#cbd5e1',
             minHeight: '42px',
-            boxShadow: state.isFocused ? '0 0 0 3px rgba(46, 206, 138, 0.15)' : 'none',
+            boxShadow: state.isFocused ? '0 0 0 3px rgba(10, 80, 15, 0.15)' : 'none',
             '&:hover': {
-                borderColor: state.isFocused ? '#2ece8a' : '#cbd5e1'
+                borderColor: state.isFocused ? '#0a500f' : '#cbd5e1'
             },
             backgroundColor: isEditing ? '#f8fafc' : '#fff'
         }),
         option: (provided, state) => ({
             ...provided,
-            backgroundColor: state.isSelected ? '#2ece8a' : state.isFocused ? '#f8f9fa' : 'white',
+            backgroundColor: state.isSelected ? '#0a500f' : state.isFocused ? '#f8f9fa' : 'white',
             color: state.isSelected ? 'white' : '#334155',
         }),
         menu: (provided) => ({
@@ -82,12 +82,12 @@ const ProductConfigurationForm = ({
                 .cl-custom-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #2ece8a;
+                    background-color: #0a500f;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    box-shadow: 0 4px 10px rgba(46, 206, 138, 0.2);
+                    box-shadow: 0 4px 10px rgba(10, 80, 15, 0.2);
                 }
                 .cl-custom-modal .modal-close-x {
                     border: none;
@@ -123,7 +123,7 @@ const ProductConfigurationForm = ({
                     margin-bottom: 6px;
                 }
                 .cl-custom-modal .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -133,13 +133,13 @@ const ProductConfigurationForm = ({
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .cl-custom-modal .btn-close-custom:hover { background-color: #6357a7 !important; }
+                .cl-custom-modal .btn-close-custom:hover { background-color: #bb2d3b !important; }
                 .cl-custom-modal .btn-close-custom:focus { 
                     outline: none !important;
                     box-shadow: 0 0 0 4px rgba(122, 112, 186, 0.3) !important;
                 }
                 .cl-custom-modal .btn-save-custom {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -149,10 +149,10 @@ const ProductConfigurationForm = ({
                     cursor: pointer;
                     transition: background-color 0.2s, box-shadow 0.2s;
                 }
-                .cl-custom-modal .btn-save-custom:hover { background-color: #26b277 !important; }
+                .cl-custom-modal .btn-save-custom:hover { background-color: #073d0b !important; }
                 .cl-custom-modal .btn-save-custom:focus {
                     outline: none !important;
-                    box-shadow: 0 0 0 4px rgba(46, 206, 138, 0.3) !important;
+                    box-shadow: 0 0 0 4px rgba(10, 80, 15, 0.3) !important;
                 }
                 
                 /* Beautiful Custom Switches */
@@ -177,8 +177,8 @@ const ProductConfigurationForm = ({
                     transition: all 0.25s ease;
                 }
                 .cl-custom-modal .custom-feature-switch .form-check-input:checked {
-                    background-color: #2ece8a;
-                    border-color: #2ece8a;
+                    background-color: #0a500f;
+                    border-color: #0a500f;
                 }
                 .cl-custom-modal .custom-feature-switch .form-check-input:focus {
                     box-shadow: none;

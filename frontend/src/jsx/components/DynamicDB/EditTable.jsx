@@ -220,8 +220,8 @@ const EditTable = () => {
               module="database_designer"
               onClick={() => { setShowAddPanel(p => !p); setAddErr(null); }}
               style={{
-                backgroundColor: 'rgb(61, 53, 119)',
-                borderColor: 'rgb(61, 53, 119)',
+                backgroundColor: '#0a500f',
+                borderColor: '#0a500f',
                 color: 'white',
                 height: '34px',
                 display: 'inline-flex',

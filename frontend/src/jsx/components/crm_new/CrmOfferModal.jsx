@@ -102,7 +102,7 @@ const CrmOfferModal = ({ show, onHide }) => {
                 icon: 'warning',
                 title: 'Validation Error',
                 text: 'Please enter an Offer Name / Title.',
-                confirmButtonColor: '#2ece8a'
+                confirmButtonColor: '#0a500f'
             });
             return;
         }
@@ -163,7 +163,7 @@ const CrmOfferModal = ({ show, onHide }) => {
                 icon: 'error',
                 title: 'Save Failed',
                 text: msg,
-                confirmButtonColor: '#2ece8a'
+                confirmButtonColor: '#0a500f'
             });
         } finally {
             setSaving(false);
@@ -223,12 +223,12 @@ const CrmOfferModal = ({ show, onHide }) => {
                 .offer-quick-modal .modal-icon-circle {
                     width: 44px;
                     height: 44px;
-                    background: linear-gradient(135deg, #2ece8a 0%, #20b073 100%);
+                    background: linear-gradient(135deg, #0a500f 0%, #20b073 100%);
                     border-radius: 12px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    box-shadow: 0 4px 12px rgba(46, 206, 138, 0.25);
+                    box-shadow: 0 4px 12px rgba(10, 80, 15, 0.25);
                 }
                 .offer-quick-modal .modal-close-x {
                     border: none;

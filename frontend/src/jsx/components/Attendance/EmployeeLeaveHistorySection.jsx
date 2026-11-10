@@ -89,7 +89,7 @@ const EmployeeLeaveHistorySection = ({
                             height: '28px',
                             borderRadius: '6px',
                             backgroundColor: '#e8faf2',
-                            color: '#2ece8a',
+                            color: '#0a500f',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',

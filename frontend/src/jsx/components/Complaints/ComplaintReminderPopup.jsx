@@ -44,8 +44,8 @@ const ComplaintReminderPopup = () => {
                             showCancelButton: true,
                             confirmButtonText: 'View Complaint',
                             cancelButtonText: 'Dismiss',
-                            confirmButtonColor: '#2ece8a',
-                            cancelButtonColor: '#6e7d88'
+                            confirmButtonColor: '#0a500f',
+                            cancelButtonColor: '#dc3545'
                         }).then((result) => {
                             if (result.isConfirmed) {
                                 navigate(`/complaints/detail/${complaint.id}`);

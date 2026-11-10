@@ -26,7 +26,7 @@ class ApexLine3 extends React.Component {
 
         stroke: {
           width: [4],
-          colors: ["#43DC80"],
+          colors: ["#0a500f"],
           curve: "straight",
         },
 
@@ -47,11 +47,11 @@ class ApexLine3 extends React.Component {
             "Dec",
           ],
         },
-        colors: ["#43DC80"],
+        colors: ["#0a500f"],
         markers: {
           size: [6],
           strokeWidth: [4],
-          strokeColors: ["#43DC80"],
+          strokeColors: ["#0a500f"],
           border: 0,
           colors: ["#fff"],
           hover: {

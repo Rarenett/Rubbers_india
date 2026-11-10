@@ -686,9 +686,9 @@ const RepairPartForm = () => {
                     transition: all 0.2s ease;
                 }
                 .repair-part-form-container .form-control:focus {
-                    border-color: #06b6d4;
+                    border-color: #0a500f;
                     outline: none;
-                    box-shadow: 0 0 0 3px rgba(6,182,212,0.15);
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
                 }
                 .repair-part-form-container .react-select__control {
                     border: 1.5px solid #e2e8f0 !important;
@@ -698,8 +698,8 @@ const RepairPartForm = () => {
                     transition: all 0.2s ease;
                 }
                 .repair-part-form-container .react-select__control--is-focused {
-                    border-color: #06b6d4 !important;
-                    box-shadow: 0 0 0 3px rgba(6,182,212,0.15) !important;
+                    border-color: #0a500f !important;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15) !important;
                 }
                 .repair-part-form-container .react-select__value-container {
                     padding: 2px 12px;
@@ -1006,9 +1006,20 @@ const RepairPartForm = () => {
                         </Col>
                     </Row>
 
-                    <div className="d-flex justify-content-end gap-2">
-                        <Button variant="secondary" onClick={() => navigate('/repair-part-list')}>Cancel</Button>
-                        <Button variant="primary" type="submit">Submit</Button>
+                    <div className="d-flex justify-content-end gap-2 mt-4 pt-3 border-top">
+                        <Button 
+                            className="btn-cancel-custom"
+                            style={{ backgroundColor: '#dc3545', borderColor: '#dc3545', color: '#ffffff' }}
+                            onClick={() => navigate('/repair-part-list')}
+                        >
+                            Cancel
+                        </Button>
+                        <Button 
+                            type="submit"
+                            style={{ backgroundColor: '#0a500f', borderColor: '#0a500f', color: '#ffffff' }}
+                        >
+                            Submit
+                        </Button>
                     </div>
                 </Form>
             </Card.Body>

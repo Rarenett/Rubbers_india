@@ -191,8 +191,8 @@ table tbody tr:hover,
 }
 
 .page-titles button:hover {
-  background-color: #7A70BA !important; /* theme primary brand color */
-  border-color: #7A70BA !important;
+  background-color: #0a500f !important; /* theme primary brand color */
+  border-color: #0a500f !important;
   color: #fff !important;
 }
 
@@ -203,8 +203,8 @@ table tbody tr:hover,
 }
 
 [data-theme-version="dark"] .page-titles button:hover {
-  background-color: #7A70BA !important;
-  border-color: #7A70BA !important;
+  background-color: #0a500f !important;
+  border-color: #0a500f !important;
   color: #fff !important;
 }
 
@@ -233,8 +233,8 @@ table tbody tr:hover,
 
 .journal-voucher-modal .form-control:focus,
 .journal-voucher-modal .form-select:focus {
-  border-color: #7A70BA !important;
-  box-shadow: 0 0 0 3px rgba(122, 112, 186, 0.15) !important;
+  border-color: #0a500f !important;
+  box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15) !important;
   background-color: #fff !important;
 }
 
@@ -281,8 +281,8 @@ table tbody tr:hover,
 
 /* Universal Save and Close Button styling */
 .btn-universal-close {
-  background-color: #7A70BA !important;
-  border-color: #7A70BA !important;
+  background-color: #dc3545 !important;
+  border-color: #dc3545 !important;
   color: #fff !important;
   height: 42px !important;
   padding: 0 24px !important;
@@ -296,15 +296,15 @@ table tbody tr:hover,
   border: none !important;
 }
 .btn-universal-close:hover {
-  background-color: #695fa3 !important;
-  border-color: #695fa3 !important;
+  background-color: #bb2d3b !important;
+  border-color: #bb2d3b !important;
   color: #fff !important;
   opacity: 0.9;
 }
 
 .btn-universal-save {
-  background-color: #2bc155 !important;
-  border-color: #2bc155 !important;
+  background-color: #0a500f !important;
+  border-color: #0a500f !important;
   color: #fff !important;
   height: 42px !important;
   padding: 0 24px !important;
@@ -486,11 +486,11 @@ table tbody tr:hover,
 
 .branch-toggle-card.active {
   background-color: #fbfdfc;
-  border-color: rgba(46, 206, 138, 0.4);
+  border-color: rgba(10, 80, 15, 0.4);
 }
 
 .branch-toggle-card.active:hover {
-  border-color: #2ece8a;
+  border-color: #0a500f;
 }
 
 .branch-toggle-icon {
@@ -508,7 +508,7 @@ table tbody tr:hover,
 }
 
 .branch-toggle-card.active .branch-toggle-icon {
-  background-color: rgba(46, 206, 138, 0.12);
+  background-color: rgba(10, 80, 15, 0.12);
   color: #10b981;
 }
 
@@ -539,7 +539,7 @@ table tbody tr:hover,
 }
 
 .branch-toggle-card.active .branch-toggle-switch {
-  background-color: #2ece8a;
+  background-color: #0a500f;
 }
 
 .branch-toggle-thumb {
@@ -572,11 +572,11 @@ table tbody tr:hover,
 
 [data-theme-version="dark"] .branch-toggle-card.active {
   background-color: #1f272e;
-  border-color: rgba(46, 206, 138, 0.35);
+  border-color: rgba(10, 80, 15, 0.35);
 }
 
 [data-theme-version="dark"] .branch-toggle-card.active:hover {
-  border-color: rgba(46, 206, 138, 0.6);
+  border-color: rgba(10, 80, 15, 0.6);
 }
 
 [data-theme-version="dark"] .branch-toggle-icon {
@@ -585,7 +585,7 @@ table tbody tr:hover,
 }
 
 [data-theme-version="dark"] .branch-toggle-card.active .branch-toggle-icon {
-  background-color: rgba(46, 206, 138, 0.15);
+  background-color: rgba(10, 80, 15, 0.15);
   color: #34d399;
 }
 
@@ -602,7 +602,7 @@ table tbody tr:hover,
 }
 
 [data-theme-version="dark"] .branch-toggle-card.active .branch-toggle-switch {
-  background-color: #2ece8a;
+  background-color: #0a500f;
 }
 
 /* =====================================================
@@ -711,8 +711,8 @@ input[type="password"]::-ms-clear {
 [data-theme-version="dark"] textarea:focus {
   background-color: #24292D !important;
   color: #ffffff !important;
-  border-color: #7A70BA !important;
-  box-shadow: 0 0 0 0.25rem rgba(122, 112, 186, 0.25) !important;
+  border-color: #0a500f !important;
+  box-shadow: 0 0 0 0.25rem rgba(10, 80, 15, 0.25) !important;
 }
 
 [data-theme-version="dark"] .form-control::placeholder,
@@ -842,7 +842,7 @@ input[type="datetime-local"]::-webkit-datetime-edit-year-field:focus {
 }
 
 [data-theme-version="dark"] .react-select__option--is-selected {
-  background-color: #2ece8a !important;
+  background-color: #0a500f !important;
   color: #ffffff !important;
 }
 
@@ -945,15 +945,15 @@ input[type="datetime-local"]::-webkit-datetime-edit-year-field:focus {
 [data-theme-version="dark"] .nav-tabs .nav-link.active,
 [data-theme-version="dark"] .nav-tabs .nav-item.show .nav-link {
   background-color: #24292D !important;
-  color: #2ece8a !important;
+  color: #0a500f !important;
   border-color: #3d464e #3d464e #24292D !important;
   font-weight: 600;
 }
 
 /* Global Factory Banner Box Dark Mode */
 [data-theme-version="dark"] .factory-banner-box {
-  background-color: rgba(122, 112, 186, 0.15) !important;
-  border-color: rgba(122, 112, 186, 0.4) !important;
+  background-color: rgba(10, 80, 15, 0.15) !important;
+  border-color: rgba(10, 80, 15, 0.4) !important;
 }
 
 [data-theme-version="dark"] .factory-banner-box span,
@@ -981,11 +981,11 @@ input[type="number"] {
 }
 
 /* =====================================================
-   Sidebar Active & Hover Menu Item - Glenda Brand Color (#1a3a72)
+   Sidebar Active & Hover Menu Item (#0a500f)
    ===================================================== */
 .deznav .metismenu > li.mm-active > a {
-  background: rgba(26, 58, 114, 0.1) !important;
-  color: #1a3a72 !important;
+  background: rgba(10, 80, 15, 0.1) !important;
+  color: #0a500f !important;
   font-weight: 500;
   box-shadow: none !important;
 }
@@ -993,19 +993,19 @@ input[type="number"] {
 .deznav .metismenu > li.mm-active > a i,
 .deznav .metismenu > li.mm-active > a svg,
 .deznav .metismenu > li.mm-active > a g [fill] {
-  color: #1a3a72 !important;
-  fill: #1a3a72 !important;
+  color: #0a500f !important;
+  fill: #0a500f !important;
 }
 
 .deznav .metismenu > li:hover > a,
 .deznav .metismenu > li:focus > a {
-  color: #1a3a72 !important;
+  color: #0a500f !important;
 }
 
 .deznav .metismenu > li:hover > a i,
 .deznav .metismenu > li:hover > a svg,
 .deznav .metismenu > li:hover > a g [fill] {
-  color: #1a3a72 !important;
+  color: #0a500f !important;
 }
 
 /* Global React-Select Dark Mode Styling */
@@ -1033,7 +1033,7 @@ input[type="number"] {
 }
 
 [data-theme-version="dark"] .react-select__option--is-selected {
-  background-color: #2ece8a !important;
+  background-color: #0a500f !important;
   color: #ffffff !important;
 }
 
@@ -1136,15 +1136,15 @@ input[type="number"] {
 [data-theme-version="dark"] .nav-tabs .nav-link.active,
 [data-theme-version="dark"] .nav-tabs .nav-item.show .nav-link {
   background-color: #24292D !important;
-  color: #2ece8a !important;
+  color: #0a500f !important;
   border-color: #3d464e #3d464e #24292D !important;
   font-weight: 600;
 }
 
 /* Global Factory Banner Box Dark Mode */
 [data-theme-version="dark"] .factory-banner-box {
-  background-color: rgba(122, 112, 186, 0.15) !important;
-  border-color: rgba(122, 112, 186, 0.4) !important;
+  background-color: rgba(10, 80, 15, 0.15) !important;
+  border-color: rgba(10, 80, 15, 0.4) !important;
 }
 
 [data-theme-version="dark"] .factory-banner-box span,
@@ -1172,11 +1172,11 @@ input[type="number"] {
 }
 
 /* =====================================================
-   Sidebar Active & Hover Menu Item - Glenda Brand Color (#1a3a72)
+   Sidebar Active & Hover Menu Item (#0a500f)
    ===================================================== */
 .deznav .metismenu > li.mm-active > a {
-  background: rgba(26, 58, 114, 0.1) !important;
-  color: #1a3a72 !important;
+  background: rgba(10, 80, 15, 0.1) !important;
+  color: #0a500f !important;
   font-weight: 500;
   box-shadow: none !important;
 }
@@ -1184,26 +1184,26 @@ input[type="number"] {
 .deznav .metismenu > li.mm-active > a i,
 .deznav .metismenu > li.mm-active > a svg,
 .deznav .metismenu > li.mm-active > a g [fill] {
-  color: #1a3a72 !important;
-  fill: #1a3a72 !important;
+  color: #0a500f !important;
+  fill: #0a500f !important;
 }
 
 .deznav .metismenu > li:hover > a,
 .deznav .metismenu > li:focus > a {
-  color: #1a3a72 !important;
+  color: #0a500f !important;
 }
 
 .deznav .metismenu > li:hover > a i,
 .deznav .metismenu > li:hover > a svg,
 .deznav .metismenu > li:hover > a g [fill] {
-  color: #1a3a72 !important;
-  fill: #1a3a72 !important;
+  color: #0a500f !important;
+  fill: #0a500f !important;
 }
 
 .deznav .metismenu ul a:hover,
 .deznav .metismenu ul a:focus,
 .deznav .metismenu ul a.mm-active {
-  color: #1a3a72 !important;
+  color: #0a500f !important;
 }
 
 .search-icon-input { padding-left: 40px !important; }
@@ -1271,3 +1271,203 @@ html {
   animation: none !important;
   transition: none !important;
 }
+
+/* ---- CLEAN HAMBURGER TOGGLE (NO RECTANGLE BACKGROUND) ---- */
+.nav-header .nav-control,
+.nav-control,
+[data-primary] .nav-control,
+[data-theme-version] .nav-control,
+[data-nav-headerbg] .nav-control {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+}
+
+.nav-header .nav-control .hamburger .line,
+.nav-control .hamburger .line,
+.hamburger .line {
+  background: #0a500f !important;
+  background-color: #0a500f !important;
+  border-radius: 3px !important;
+}
+
+/* In dark mode, ensure lines are clearly visible */
+[data-theme-version="dark"] .nav-header .nav-control .hamburger .line,
+[data-theme-version="dark"] .hamburger .line {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
+/* Hover effect */
+.nav-header .nav-control:hover,
+.nav-control:hover {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* ---- LIGHT BADGE PRIMARY OVERRIDE (SOFT BACKGROUND, DARK GREEN TEXT) ---- */
+.badge.light.badge-primary,
+.light.badge-primary {
+  background-color: rgba(10, 80, 15, 0.12) !important;
+  color: #0a500f !important;
+}
+.badge.light.badge-primary i,
+.light.badge-primary i {
+  color: #0a500f !important;
+}
+[data-theme-version="dark"] .badge.light.badge-primary,
+[data-theme-version="dark"] .light.badge-primary {
+  background-color: rgba(10, 80, 15, 0.25) !important;
+  color: #55db64 !important;
+}
+[data-theme-version="dark"] .badge.light.badge-primary i,
+[data-theme-version="dark"] .light.badge-primary i {
+  color: #55db64 !important;
+}
+
+/* ---- UNIFIED CANCEL BUTTON STYLES FOR MODALS (MATCHES DELETE / DANGER RED) ---- */
+.modal-footer .btn-danger.light,
+.modal-footer .btn.light.btn-danger,
+.modal-footer .btn-secondary,
+.modal-footer button.btn-danger.light,
+.item-custom-modal .btn-close-custom,
+.btn-close-custom,
+.btn-cancel-custom,
+.btn.btn-cancel-custom,
+[data-primary] .btn-cancel-custom,
+[data-primary] .btn.btn-cancel-custom,
+.btn-universal-close {
+  background-color: #dc3545 !important;
+  border-color: #dc3545 !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  padding: 10px 24px !important;
+  min-height: 42px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  box-shadow: none !important;
+}
+
+.modal-footer .btn-danger.light:hover,
+.modal-footer .btn.light.btn-danger:hover,
+.modal-footer .btn-secondary:hover,
+.modal-footer button.btn-danger.light:hover,
+.item-custom-modal .btn-close-custom:hover,
+.btn-close-custom:hover,
+.btn-cancel-custom:hover,
+.btn.btn-cancel-custom:hover,
+[data-primary] .btn-cancel-custom:hover,
+[data-primary] .btn.btn-cancel-custom:hover,
+.btn-universal-close:hover {
+  background-color: #bb2d3b !important;
+  border-color: #bb2d3b !important;
+  color: #ffffff !important;
+}
+
+/* ---- SWEETALERT2 NOTIFICATION THEME OVERRIDES (#0a500f) ---- */
+.swal2-styled.swal2-confirm {
+  background-color: #0a500f !important;
+  border-color: #0a500f !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}
+.swal2-styled.swal2-confirm:hover,
+.swal2-styled.swal2-confirm:focus {
+  background-color: #073d0b !important;
+  border-color: #073d0b !important;
+}
+.swal2-styled.swal2-cancel {
+  background-color: #dc3545 !important;
+  border-color: #dc3545 !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}
+.swal2-styled.swal2-cancel:hover,
+.swal2-styled.swal2-cancel:focus {
+  background-color: #bb2d3b !important;
+  border-color: #bb2d3b !important;
+}
+.swal2-icon.swal2-success {
+  border-color: #0a500f !important;
+  color: #0a500f !important;
+}
+.swal2-icon.swal2-success .swal2-success-ring {
+  border-color: rgba(10, 80, 15, 0.3) !important;
+}
+.swal2-icon.swal2-success [class^='swal2-success-line'] {
+  background-color: #0a500f !important;
+}
+
+/* Error & Warning Alert Confirmation Button in Red (#dc3545) */
+.swal2-icon-error ~ .swal2-actions .swal2-confirm,
+.swal2-icon-warning ~ .swal2-actions .swal2-confirm,
+.swal2-icon.swal2-error ~ .swal2-actions .swal2-confirm,
+.swal2-icon.swal2-warning ~ .swal2-actions .swal2-confirm,
+.swal2-icon-error ~ div .swal2-confirm,
+.swal2-icon-warning ~ div .swal2-confirm,
+.swal2-popup.swal2-icon-error .swal2-actions .swal2-confirm,
+.swal2-popup.swal2-icon-warning .swal2-actions .swal2-confirm,
+.swal2-popup.swal2-icon-error .swal2-styled.swal2-confirm,
+.swal2-popup.swal2-icon-warning .swal2-styled.swal2-confirm,
+.swal2-popup:has(.swal2-icon.swal2-error) .swal2-styled.swal2-confirm,
+.swal2-popup:has(.swal2-icon.swal2-warning) .swal2-styled.swal2-confirm,
+.swal2-popup:has(.swal2-icon-error) .swal2-styled.swal2-confirm,
+.swal2-popup:has(.swal2-icon-warning) .swal2-styled.swal2-confirm,
+.swal2-popup:has(.swal2-warning) .swal2-styled.swal2-confirm,
+.swal2-popup:has(.swal2-error) .swal2-styled.swal2-confirm {
+  background-color: #dc3545 !important;
+  border-color: #dc3545 !important;
+  color: #ffffff !important;
+}
+.swal2-icon-error ~ .swal2-actions .swal2-confirm:hover,
+.swal2-icon-warning ~ .swal2-actions .swal2-confirm:hover,
+.swal2-icon.swal2-error ~ .swal2-actions .swal2-confirm:hover,
+.swal2-icon.swal2-warning ~ .swal2-actions .swal2-confirm:hover,
+.swal2-icon-error ~ div .swal2-confirm:hover,
+.swal2-icon-warning ~ div .swal2-confirm:hover,
+.swal2-popup.swal2-icon-error .swal2-actions .swal2-confirm:hover,
+.swal2-popup.swal2-icon-warning .swal2-actions .swal2-confirm:hover,
+.swal2-popup.swal2-icon-error .swal2-styled.swal2-confirm:hover,
+.swal2-popup.swal2-icon-warning .swal2-styled.swal2-confirm:hover,
+.swal2-popup:has(.swal2-icon.swal2-error) .swal2-styled.swal2-confirm:hover,
+.swal2-popup:has(.swal2-icon.swal2-warning) .swal2-styled.swal2-confirm:hover,
+.swal2-popup:has(.swal2-icon-error) .swal2-styled.swal2-confirm:hover,
+.swal2-popup:has(.swal2-icon-warning) .swal2-styled.swal2-confirm:hover,
+.swal2-popup:has(.swal2-warning) .swal2-styled.swal2-confirm:hover,
+.swal2-popup:has(.swal2-error) .swal2-styled.swal2-confirm:hover {
+  background-color: #bb2d3b !important;
+  border-color: #bb2d3b !important;
+}
+
+/* Header Notification Badges & Header Elements (#0a500f) */
+.header-right .notification_dropdown .nav-link .badge,
+.header-right .notification_dropdown .nav-link .badge.light,
+.header-right .notification_dropdown .nav-link .badge.bg-primary {
+  background-color: #0a500f !important;
+  background: #0a500f !important;
+  color: #ffffff !important;
+  box-shadow: 0px 0px 10px 3px rgba(10, 80, 15, 0.35) !important;
+}
+.header-profile .dropdown-menu .dropdown-item svg#icon-inbox {
+  color: #0a500f !important;
+  stroke: #0a500f !important;
+}
+.header-profile .dropdown-menu .dropdown-item svg#icon-change-password {
+  color: #0d6efd !important;
+  stroke: #0d6efd !important;
+}
+.header-profile .dropdown-menu .dropdown-item svg#icon-logout {
+  color: #dc3545 !important;
+  stroke: #dc3545 !important;
+}
+
+
+
+

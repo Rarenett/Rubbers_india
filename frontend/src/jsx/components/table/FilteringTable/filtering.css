@@ -45,7 +45,7 @@
 	color: #7e7e7e;
 }
 .filter-pagination button:hover{
-	background:	#43dc80;
+	background:	#0a500f;
 	color:#fff;
 }
 .filter-pagination button[disabled]{

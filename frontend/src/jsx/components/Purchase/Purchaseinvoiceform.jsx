@@ -3185,9 +3185,9 @@ const PurchaseInvoiceForm = ({ formData = {}, setFormData, onSave, onCancel, isE
                                                     control: (base, state) => ({
                                                         ...base,
                                                         minHeight: '38px',
-                                                        borderColor: state.isFocused ? '#2ece8a' : '#cbd5e1',
-                                                        boxShadow: state.isFocused ? '0 0 0 2px rgba(46,206,138,0.18)' : 'none',
-                                                        '&:hover': { borderColor: '#2ece8a' },
+                                                        borderColor: state.isFocused ? '#0a500f' : '#cbd5e1',
+                                                        boxShadow: state.isFocused ? '0 0 0 2px rgba(10, 80, 15,0.18)' : 'none',
+                                                        '&:hover': { borderColor: '#0a500f' },
                                                         borderRadius: '6px',
                                                         fontSize: '13px'
                                                     }),
@@ -3209,7 +3209,7 @@ const PurchaseInvoiceForm = ({ formData = {}, setFormData, onSave, onCancel, isE
                                                     }),
                                                     option: (base, state) => ({
                                                         ...base,
-                                                        backgroundColor: state.isSelected ? '#2ece8a' : state.isFocused ? '#f0fdf4' : 'white',
+                                                        backgroundColor: state.isSelected ? '#0a500f' : state.isFocused ? '#f0fdf4' : 'white',
                                                         color: state.isSelected ? 'white' : '#334155',
                                                         fontSize: '13px'
                                                     }),

@@ -87,16 +87,16 @@ const CustomerList = () => {
         control: (provided, state) => ({
             ...provided,
             borderRadius: '10px',
-            borderColor: state.isFocused ? '#2ece8a' : '#cbd5e1',
+            borderColor: state.isFocused ? '#0a500f' : '#cbd5e1',
             minHeight: '42px',
-            boxShadow: state.isFocused ? '0 0 0 3px rgba(46, 206, 138, 0.15)' : 'none',
+            boxShadow: state.isFocused ? '0 0 0 3px rgba(10, 80, 15, 0.15)' : 'none',
             '&:hover': {
-                borderColor: state.isFocused ? '#2ece8a' : '#cbd5e1'
+                borderColor: state.isFocused ? '#0a500f' : '#cbd5e1'
             }
         }),
         option: (provided, state) => ({
             ...provided,
-            backgroundColor: state.isSelected ? '#2ece8a' : state.isFocused ? '#f8f9fa' : 'white',
+            backgroundColor: state.isSelected ? '#0a500f' : state.isFocused ? '#f8f9fa' : 'white',
             color: state.isSelected ? 'white' : '#334155',
         }),
         menu: (provided) => ({
@@ -479,12 +479,12 @@ const CustomerList = () => {
                 .cl-quick-type-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #2ece8a;
+                    background-color: #0a500f;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    box-shadow: 0 4px 10px rgba(46, 206, 138, 0.2);
+                    box-shadow: 0 4px 10px rgba(10, 80, 15, 0.2);
                 }
                 .cl-custom-modal .modal-close-x,
                 .cl-quick-type-modal .modal-close-x {
@@ -538,19 +538,19 @@ const CustomerList = () => {
                 .cl-custom-modal .form-control-custom:focus,
                 .cl-quick-type-modal .form-control-custom:focus {
                     outline: none;
-                    border-color: #2ece8a;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15);
+                    border-color: #0a500f;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
                 }
                 .cl-custom-modal .form-control-custom::placeholder,
                 .cl-quick-type-modal .form-control-custom::placeholder { color: #94a3b8; }
                 .cl-custom-modal .form-check-input:checked,
                 .cl-quick-type-modal .form-check-input:checked {
-                    background-color: #2ece8a;
-                    border-color: #2ece8a;
+                    background-color: #0a500f;
+                    border-color: #0a500f;
                 }
                 .cl-custom-modal .btn-close-custom,
                 .cl-quick-type-modal .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -561,7 +561,7 @@ const CustomerList = () => {
                     transition: background-color 0.2s;
                 }
                 .cl-custom-modal .btn-close-custom:hover,
-                .cl-quick-type-modal .btn-close-custom:hover { background-color: #6357a7 !important; }
+                .cl-quick-type-modal .btn-close-custom:hover { background-color: #bb2d3b !important; }
                 .cl-custom-modal .btn-close-custom:focus,
                 .cl-quick-type-modal .btn-close-custom:focus { 
                     outline: none !important;
@@ -569,7 +569,7 @@ const CustomerList = () => {
                 }
                 .cl-custom-modal .btn-save-custom,
                 .cl-quick-type-modal .btn-save-custom {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -580,11 +580,11 @@ const CustomerList = () => {
                     transition: background-color 0.2s, box-shadow 0.2s;
                 }
                 .cl-custom-modal .btn-save-custom:hover,
-                .cl-quick-type-modal .btn-save-custom:hover { background-color: #26b277 !important; }
+                .cl-quick-type-modal .btn-save-custom:hover { background-color: #073d0b !important; }
                 .cl-custom-modal .btn-save-custom:focus,
                 .cl-quick-type-modal .btn-save-custom:focus {
                     outline: none !important;
-                    box-shadow: 0 0 0 4px rgba(46, 206, 138, 0.3) !important;
+                    box-shadow: 0 0 0 4px rgba(10, 80, 15, 0.3) !important;
                 }
                 .quick-add-btn {
                     width: 38px;
@@ -594,7 +594,7 @@ const CustomerList = () => {
                     justify-content: center;
                     border-radius: 10px;
                     border: none;
-                    background-color: #2ece8a;
+                    background-color: #0a500f;
                     color: white;
                     font-size: 16px;
                     cursor: pointer;
@@ -603,10 +603,10 @@ const CustomerList = () => {
                 }
                 .quick-add-btn:focus {
                     outline: none;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.3);
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.3);
                 }
                 .quick-add-btn:hover {
-                    background-color: #26b277;
+                    background-color: #073d0b;
                     transform: scale(1.05);
                 }
             `}</style>
@@ -652,7 +652,7 @@ const CustomerList = () => {
                                         className="d-flex align-items-center justify-content-center"
                                         style={{
                                             height: '38px', borderRadius: '6px', whiteSpace: 'nowrap', padding: '0 16px',
-                                            backgroundColor: 'rgb(61, 53, 119)', borderColor: 'rgb(61, 53, 119)', fontSize: '13px'
+                                            backgroundColor: '#0a500f', borderColor: '#0a500f', fontSize: '13px'
                                         }}
                                     >
                                         <i className="fa fa-plus me-2"></i> Create Associate
@@ -1098,7 +1098,7 @@ const CustomerList = () => {
             <Modal show={showLoginAccessModal} onHide={() => setShowLoginAccessModal(false)} dialogClassName="cl-quick-type-modal" backdrop="static" keyboard={false} enforceFocus={false} centered>
                 <div className="modal-header-custom">
                     <div className="d-flex align-items-center gap-3">
-                        <div className="modal-icon-circle" style={{ backgroundColor: '#2ece8a' }}>
+                        <div className="modal-icon-circle" style={{ backgroundColor: '#0a500f' }}>
                             <i className="fa fa-key text-white" style={{ fontSize: '18px' }}></i>
                         </div>
                         <div>
@@ -1203,7 +1203,7 @@ const CustomerList = () => {
                                                 onClick={generatePassword}
                                                 title="Generate"
                                                 style={{ border: 'none', background: 'none', padding: '0', lineHeight: 1, cursor: 'pointer', color: '#b0b8c5', fontSize: '14px', transition: 'color 0.2s' }}
-                                                onMouseEnter={e => e.currentTarget.style.color = '#2ece8a'}
+                                                onMouseEnter={e => e.currentTarget.style.color = '#0a500f'}
                                                 onMouseLeave={e => e.currentTarget.style.color = '#b0b8c5'}
                                             >
                                                 <i className="fa fa-magic"></i>

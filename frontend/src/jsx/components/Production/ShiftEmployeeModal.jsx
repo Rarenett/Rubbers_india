@@ -138,7 +138,7 @@ const ShiftEmployeeModal = ({
                         text: `${response.data.message} Do you want to move the employee to this line?`,
                         icon: 'warning',
                         showCancelButton: true,
-                        confirmButtonColor: '#2ece8a',
+                        confirmButtonColor: '#0a500f',
                         cancelButtonColor: '#d33',
                         confirmButtonText: 'Yes, Move Employee',
                         cancelButtonText: 'No, Cancel'
@@ -180,10 +180,10 @@ const ShiftEmployeeModal = ({
         <Modal show={show} onHide={onHide} size="lg" centered>
             <style>{`
                 .sem-row-selected {
-                    background-color: rgba(46, 206, 138, 0.08) !important;
+                    background-color: rgba(10, 80, 15, 0.08) !important;
                 }
                 [data-theme-version="dark"] .sem-row-selected {
-                    background-color: rgba(46, 206, 138, 0.15) !important;
+                    background-color: rgba(10, 80, 15, 0.15) !important;
                 }
             `}</style>
             <Modal.Header closeButton className="border-0 pb-0">

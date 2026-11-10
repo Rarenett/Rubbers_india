@@ -231,7 +231,7 @@ const LeadList = () => {
                                 <button 
                                     type="button" 
                                     id="close-missing-data-modal-btn" 
-                                    style="padding: 6px 16px; font-size: 12px; font-weight: 600; background: #3d3577; color: #ffffff; border: none; border-radius: 6px; cursor: pointer;"
+                                    style="padding: 6px 16px; font-size: 12px; font-weight: 600; background: #0a500f; color: #ffffff; border: none; border-radius: 6px; cursor: pointer;"
                                 >
                                     Close
                                 </button>
@@ -352,7 +352,7 @@ const LeadList = () => {
                     width: '620px',
                     showConfirmButton: true,
                     confirmButtonText: 'Create missing & view staging',
-                    confirmButtonColor: '#3d3577',
+                    confirmButtonColor: '#0a500f',
                     showCancelButton: true,
                     cancelButtonText: 'Cancel import',
                     cancelButtonColor: '#dc3545',
@@ -652,7 +652,7 @@ const LeadList = () => {
                                         variant="primary"
                                         onClick={() => navigate('/crm_new/leads/create')}
                                         className="d-flex align-items-center justify-content-center lead-add-btn"
-                                        style={{ height: '38px', borderRadius: '6px', whiteSpace: 'nowrap', padding: '0 16px', backgroundColor: 'rgb(61, 53, 119)', borderColor: 'rgb(61, 53, 119)', color: 'white' }}
+                                        style={{ height: '38px', borderRadius: '6px', whiteSpace: 'nowrap', padding: '0 16px', backgroundColor: '#0a500f', borderColor: '#0a500f', color: 'white' }}
                                     >
                                         <i className="fa fa-plus me-2"></i>
                                         ADD LEAD

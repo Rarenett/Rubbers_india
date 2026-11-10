@@ -280,8 +280,8 @@ const RepairRequestReceiverList = () => {
                 }
                 .form-control-custom:focus {
                     outline: none;
-                    border-color: #2ece8a;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15);
+                    border-color: #0a500f;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
                 }
                 .form-label-custom {
                     font-size: 14px;
@@ -357,12 +357,12 @@ const RepairRequestReceiverList = () => {
                                         style={{
                                             background: 'none',
                                             border: 'none',
-                                            borderBottom: activeTab === tab.key ? '2px solid #2ece8a' : '2px solid transparent',
+                                            borderBottom: activeTab === tab.key ? '2px solid #0a500f' : '2px solid transparent',
                                             marginBottom: '-2px',
                                             padding: '14px 18px 12px',
                                             fontSize: '14px',
                                             fontWeight: activeTab === tab.key ? 600 : 400,
-                                            color: activeTab === tab.key ? '#2ece8a' : '#64748b',
+                                            color: activeTab === tab.key ? '#0a500f' : '#64748b',
                                             cursor: 'pointer',
                                             display: 'flex',
                                             alignItems: 'center',
@@ -646,7 +646,7 @@ const RepairRequestReceiverList = () => {
                                 {/* Right Column: Comment Action Feedback Form */}
                                 <div className="col-lg-7">
                                     <div className="bg-white p-4 rounded border" style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
-                                        <div className="feedback-panel-header" style={{ borderColor: '#2ece8a' }}>
+                                        <div className="feedback-panel-header" style={{ borderColor: '#0a500f' }}>
                                             <i className="fa fa-comment-dots text-success me-2"></i> Comment Action
                                         </div>
 

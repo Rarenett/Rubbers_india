@@ -10,16 +10,16 @@ const ContraForm = (props) => {
         control: (base, state) => ({
             ...base,
             minHeight: '38px',
-            borderColor: state.isFocused ? '#2ece8a' : '#cbd5e1',
-            boxShadow: state.isFocused ? '0 0 0 2px rgba(46,206,138,0.15)' : 'none',
-            '&:hover': { borderColor: '#2ece8a' },
+            borderColor: state.isFocused ? '#0a500f' : '#cbd5e1',
+            boxShadow: state.isFocused ? '0 0 0 2px rgba(10, 80, 15,0.15)' : 'none',
+            '&:hover': { borderColor: '#0a500f' },
             borderRadius: '10px',
             fontSize: '13px',
         }),
         menu: base => ({ ...base, zIndex: 9999, fontSize: '0.875rem' }),
         option: (base, state) => ({
             ...base,
-            backgroundColor: state.isSelected ? '#2ece8a' : state.isFocused ? '#f0fdf6' : 'white',
+            backgroundColor: state.isSelected ? '#0a500f' : state.isFocused ? '#f0fdf6' : 'white',
             color: state.isSelected ? 'white' : '#333',
             cursor: 'pointer',
         }),
@@ -130,7 +130,7 @@ keyboard={false}
                                                             ...selectStyles,
                                                             singleValue: (base) => ({
                                                                 ...base,
-                                                                color: row.entry_type === 'Dr' ? '#2ece8a' : '#f5365c',
+                                                                color: row.entry_type === 'Dr' ? '#0a500f' : '#f5365c',
                                                                 fontWeight: '600',
                                                                 textAlign: 'center'
                                                             }),
@@ -286,7 +286,7 @@ keyboard={false}
                                     {/* Summary Row */}
                                                                         <tr className="table-light fw-semibold">
                                         <td colSpan="2" className="text-end text-muted py-2" style={{ fontSize: '13px' }}>Total:</td>
-                                        <td className="text-end text-primary py-2" style={{ fontSize: '14px', color: '#2ece8a !important' }}>{totalDebit.toFixed(2)}</td>
+                                        <td className="text-end text-primary py-2" style={{ fontSize: '14px', color: '#0a500f !important' }}>{totalDebit.toFixed(2)}</td>
                                         <td className="text-end text-primary py-2" style={{ fontSize: '14px', color: '#f5365c !important' }}>{totalCredit.toFixed(2)}</td>
                                         {maintainNarration && <td></td>}
                                         <td className="text-center p-2">

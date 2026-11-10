@@ -84,7 +84,7 @@ const PostProductionEntryPage = () => {
                     className="btn btn-outline-secondary btn-sm d-flex align-items-center justify-content-between text-start spm-dropdown-btn"
                     style={{ width: '175px', height: '34px', fontSize: '13px', borderRadius: '6px', borderColor: '#e2e8f0', color: '#475569' }}>
                     <span className="d-flex align-items-center gap-1 text-truncate" style={{ maxWidth: '145px' }}>
-                        <i className="fa fa-industry" style={{ fontSize: '11px', color: '#7A70BA', flexShrink: 0 }}></i>
+                        <i className="fa fa-industry" style={{ fontSize: '11px', color: '#0a500f', flexShrink: 0 }}></i>
                         <span className="text-truncate font-w500">{selectedLabel}</span>
                     </span>
                 </Dropdown.Toggle>
@@ -163,11 +163,11 @@ const PostProductionEntryPage = () => {
                 }
                 .btn-entry-custom {
                     background-color: transparent !important;
-                    border: 1px solid #7A70BA !important;
-                    color: #7A70BA !important;
+                    border: 1px solid #0a500f !important;
+                    color: #0a500f !important;
                 }
                 .btn-entry-custom:hover {
-                    background-color: #7A70BA !important;
+                    background-color: #0a500f !important;
                     color: #ffffff !important;
                     box-shadow: 0 4px 12px rgba(122, 112, 186, 0.2) !important;
                 }
@@ -287,11 +287,11 @@ const PostProductionEntryPage = () => {
                                                                                                 variant="outline-success"
                                                                                                 size="sm"
                                                                                                 className="shadow-sm"
-                                                                                                style={{ padding: '4px 12px', fontSize: '12px', borderRadius: '6px', borderColor: '#2ece8a', color: '#2ece8a', backgroundColor: 'transparent' }}
+                                                                                                style={{ padding: '4px 12px', fontSize: '12px', borderRadius: '6px', borderColor: '#0a500f', color: '#0a500f', backgroundColor: 'transparent' }}
                                                                                                 onClick={() => handleAddEntry(line)}
                                                                                                 title="Edit Entry"
-                                                                                                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#2ece8a'; e.currentTarget.style.color = '#fff'; }}
-                                                                                                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#2ece8a'; }}
+                                                                                                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#0a500f'; e.currentTarget.style.color = '#fff'; }}
+                                                                                                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#0a500f'; }}
                                                                                             >
                                                                                                 <i className="fa fa-pen me-1"></i> Edit
                                                                                             </Button>

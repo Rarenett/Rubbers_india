@@ -175,7 +175,7 @@ const GateEntryDetail = () => {
     // Soft tag badge style generator (light theme)
     const getSoftTagBadgeStyle = (tagColour) => {
         if (!tagColour) {
-            return { backgroundColor: '#e8fdf4', color: '#047857', borderColor: '#a7f3d0', dotColor: '#2ece8a' };
+            return { backgroundColor: '#e8fdf4', color: '#047857', borderColor: '#a7f3d0', dotColor: '#0a500f' };
         }
         if (tagColour.startsWith('#') && (tagColour.length === 7 || tagColour.length === 9)) {
             const r = parseInt(tagColour.slice(1, 3), 16) || 0;
@@ -212,7 +212,7 @@ const GateEntryDetail = () => {
                 title: "Movement Completed",
                 text: "Host verification confirmed. The visitor is now cleared for campus checkout at the gate.",
                 icon: "success",
-                confirmButtonColor: "#2ece8a"
+                confirmButtonColor: "#0a500f"
             });
             setShowCompleteModal(false);
             setCompleteNotes('');
@@ -250,7 +250,7 @@ const GateEntryDetail = () => {
                 title: "Reallocation Request Sent",
                 text: "Transfer request sent to the new host. Responsibility transfers once approved. If declined, the visitor remains your responsibility.",
                 icon: "success",
-                confirmButtonColor: "#2ece8a"
+                confirmButtonColor: "#0a500f"
             });
             setShowReallocModal(false);
             setReallocReason('');
@@ -290,7 +290,7 @@ const GateEntryDetail = () => {
                 icon: 'question',
                 showCancelButton: true,
                 confirmButtonText: 'Accept & Take Over',
-                confirmButtonColor: '#2ece8a',
+                confirmButtonColor: '#0a500f',
                 cancelButtonText: 'Cancel'
             });
             if (!confirm.isConfirmed) return;
@@ -889,7 +889,7 @@ const GateEntryDetail = () => {
                                     </span>
                                 )}
                                 {(entry.company_name || entry.company || entry.visitor_company) && (
-                                    <span className="ged-chip"><i className="fa fa-building" style={{ color: '#7A70BA' }}></i>{entry.company_name || entry.company || entry.visitor_company}</span>
+                                    <span className="ged-chip"><i className="fa fa-building" style={{ color: '#0a500f' }}></i>{entry.company_name || entry.company || entry.visitor_company}</span>
                                 )}
                                 {entry.email && (
                                     <span className="ged-chip"><i className="fa fa-envelope" style={{ color: '#d97706' }}></i>{entry.email}</span>
@@ -899,7 +899,7 @@ const GateEntryDetail = () => {
                                     const isVehExited = isExited || !!vehicleExitStatusMap[vNum];
                                     return (
                                         <span key={idx} className="ged-chip" style={{ opacity: isVehExited ? 0.75 : 1 }}>
-                                            <i className="fa fa-car" style={{ color: isVehExited ? '#dc2626' : '#2ece8a' }}></i>
+                                            <i className="fa fa-car" style={{ color: isVehExited ? '#dc2626' : '#0a500f' }}></i>
                                             <span style={{ textDecoration: isVehExited ? 'line-through' : 'none' }}>{v.vehicle_number}</span>
                                             {isVehExited ? (
                                                 <span className="ged-pill ged-tone-bad" style={{ fontSize: '10px', padding: '1px 6px', marginLeft: '4px' }}>Exited</span>
@@ -1381,7 +1381,7 @@ const GateEntryDetail = () => {
                                 <div className="d-flex align-items-center gap-2">
                                     {(entry.park_area_name || entry.parking_location_display || entry.parking_location) && (
                                         <span className="ged-chip">
-                                            <i className="fa fa-square-parking" style={{ color: '#7A70BA' }}></i> {entry.park_area_name || entry.parking_location_display || entry.parking_location}
+                                            <i className="fa fa-square-parking" style={{ color: '#0a500f' }}></i> {entry.park_area_name || entry.parking_location_display || entry.parking_location}
                                         </span>
                                     )}
                                     {entry.parking_fee !== undefined && (
@@ -1774,7 +1774,7 @@ const GateEntryDetail = () => {
             {/* ── STYLESHEET (SCREEN & PRINT) ── */}
             <style dangerouslySetInnerHTML={{
                 __html: `
-                .ged { font-size:15px; --ink:#1b2430; --mute:#66727f; --line:#e6eaf0; --soft:#f3f5f9; --brand:#2ece8a; --brand-ink:#0f9d63; --primary:#7A70BA; --warn:#d97706; --bad:#dc2626; --info:#0284c7; color: var(--ink); }
+                .ged { font-size:15px; --ink:#1b2430; --mute:#66727f; --line:#e6eaf0; --soft:#f3f5f9; --brand:#0a500f; --brand-ink:#0f9d63; --primary:#0a500f; --warn:#d97706; --bad:#dc2626; --info:#0284c7; color: var(--ink); }
                 .ged * { box-sizing: border-box; }
                 .ged button { font-family: inherit; }
                 .ged-top { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:16px; }
@@ -1875,7 +1875,7 @@ const GateEntryDetail = () => {
                 @media (max-width: 991px) { .ged-stats { grid-template-columns:repeat(2,1fr); } .ged-stat:nth-child(2) { border-right:0; } .ged-stat:nth-child(-n+2) { border-bottom:1px solid var(--line); } }
                 @media (max-width: 575px) { .ged-step-text small { display:none; } .ged-step:not(:last-child)::after { margin:0 6px; } .ged-name { font-size:24px; } }
                 .hover-primary:hover {
-                    color: var(--primary, #7A70BA) !important;
+                    color: var(--primary, #0a500f) !important;
                     cursor: pointer;
                 }
                 .shadow-xs {

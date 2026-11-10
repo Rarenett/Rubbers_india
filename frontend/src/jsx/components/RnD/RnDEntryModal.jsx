@@ -156,12 +156,12 @@ const RnDEntryModal = ({ show, onHide, entry, onSuccess }) => {
                 .item-custom-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background: #2ece8a;
+                    background: #0a500f;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    box-shadow: 0 4px 10px rgba(46,206,138,.2);
+                    box-shadow: 0 4px 10px rgba(10, 80, 15,.2);
                 }
                 .item-custom-modal .modal-close-x {
                     border: none;
@@ -202,8 +202,8 @@ const RnDEntryModal = ({ show, onHide, entry, onSuccess }) => {
                 }
                 .item-custom-modal .form-control-custom:focus {
                     outline: none;
-                    border-color: #2ece8a;
-                    box-shadow: 0 0 0 3px rgba(46,206,138,.15);
+                    border-color: #0a500f;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15,.15);
                 }
                 .item-custom-modal .form-control-readonly {
                     background-color: #f8fafc !important;
@@ -212,7 +212,7 @@ const RnDEntryModal = ({ show, onHide, entry, onSuccess }) => {
                     cursor: not-allowed;
                 }
                 .item-custom-modal .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -223,10 +223,10 @@ const RnDEntryModal = ({ show, onHide, entry, onSuccess }) => {
                     transition: background-color 0.2s, transform 0.1s;
                 }
                 .item-custom-modal .btn-close-custom:hover {
-                    background-color: #6357a7 !important;
+                    background-color: #bb2d3b !important;
                 }
                 .item-custom-modal .btn-save-custom {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -237,7 +237,7 @@ const RnDEntryModal = ({ show, onHide, entry, onSuccess }) => {
                     transition: background-color 0.2s, transform 0.1s;
                 }
                 .item-custom-modal .btn-save-custom:hover:not(:disabled) {
-                    background-color: #26b277 !important;
+                    background-color: #073d0b !important;
                 }
                 .item-custom-modal .btn-save-custom:disabled {
                     opacity: 0.6;
@@ -250,7 +250,7 @@ const RnDEntryModal = ({ show, onHide, entry, onSuccess }) => {
                     transform: translateY(-50%);
                     font-size: 12px;
                     font-weight: 600;
-                    color: #7A70BA;
+                    color: #0a500f;
                     background: #f0eeff;
                     border: 1px solid #d1cdf5;
                     border-radius: 4px;

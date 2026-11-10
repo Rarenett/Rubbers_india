@@ -438,7 +438,7 @@ const ManagePermissions = () => {
                             <span 
                                 className="badge" 
                                 style={{ 
-                                    backgroundColor: allChecked ? '#2ece8a' : '#64748b', 
+                                    backgroundColor: allChecked ? '#0a500f' : '#64748b', 
                                     color: '#fff', 
                                     cursor: 'pointer', 
                                     fontSize: '10px',
@@ -664,9 +664,9 @@ const ManagePermissions = () => {
                                                                 control: (base, state) => ({
                                                                     ...base,
                                                                     minHeight: '38px',
-                                                                    borderColor: state.isFocused ? '#2ece8a' : '#cbd5e1',
-                                                                    boxShadow: state.isFocused ? '0 0 0 2px rgba(46, 206, 138, 0.15)' : 'none',
-                                                                    '&:hover': { borderColor: '#2ece8a' },
+                                                                    borderColor: state.isFocused ? '#0a500f' : '#cbd5e1',
+                                                                    boxShadow: state.isFocused ? '0 0 0 2px rgba(10, 80, 15, 0.15)' : 'none',
+                                                                    '&:hover': { borderColor: '#0a500f' },
                                                                     borderRadius: '10px',
                                                                     fontSize: '14px',
                                                                     color: '#334155',
@@ -674,7 +674,7 @@ const ManagePermissions = () => {
                                                                 menu: base => ({ ...base, zIndex: 9999, fontSize: '14px' }),
                                                                 option: (base, state) => ({
                                                                     ...base,
-                                                                    backgroundColor: state.isSelected ? '#2ece8a' : state.isFocused ? 'rgba(46, 206, 138, 0.1)' : 'white',
+                                                                    backgroundColor: state.isSelected ? '#0a500f' : state.isFocused ? 'rgba(10, 80, 15, 0.1)' : 'white',
                                                                     color: state.isSelected ? 'white' : '#334155',
                                                                     cursor: 'pointer',
                                                                 }),
@@ -715,8 +715,8 @@ const ManagePermissions = () => {
                                                     size="sm"
                                                     onClick={() => handleSelectAll('full')}
                                                     style={{
-                                                        backgroundColor: '#2ece8a',
-                                                        borderColor: '#2ece8a',
+                                                        backgroundColor: '#0a500f',
+                                                        borderColor: '#0a500f',
                                                         borderRadius: '8px',
                                                         fontWeight: 500,
                                                         fontSize: '13px',
@@ -903,7 +903,7 @@ const ManagePermissions = () => {
                                             onClick={() => navigate('/hr/roles')}
                                             disabled={loading}
                                             style={{
-                                                backgroundColor: '#7A70BA',
+                                                backgroundColor: '#0a500f',
                                                 color: 'white',
                                                 borderRadius: '8px',
                                                 fontWeight: 500,
@@ -913,8 +913,8 @@ const ManagePermissions = () => {
                                                 cursor: 'pointer',
                                                 transition: 'background-color 0.2s',
                                             }}
-                                            onMouseEnter={e => e.currentTarget.style.backgroundColor = '#6357a7'}
-                                            onMouseLeave={e => e.currentTarget.style.backgroundColor = '#7A70BA'}
+                                            onMouseEnter={e => e.currentTarget.style.backgroundColor = '#073d0b'}
+                                            onMouseLeave={e => e.currentTarget.style.backgroundColor = '#0a500f'}
                                         >
                                             Cancel
                                         </button>
@@ -923,7 +923,7 @@ const ManagePermissions = () => {
                                             onClick={handleSave}
                                             disabled={loading}
                                             style={{
-                                                backgroundColor: '#2ece8a',
+                                                backgroundColor: '#0a500f',
                                                 color: 'white',
                                                 borderRadius: '8px',
                                                 fontWeight: 500,
@@ -934,8 +934,8 @@ const ManagePermissions = () => {
                                                 opacity: loading ? 0.75 : 1,
                                                 transition: 'background-color 0.2s',
                                             }}
-                                            onMouseEnter={e => { if (!loading) e.currentTarget.style.backgroundColor = '#26b277'; }}
-                                            onMouseLeave={e => { if (!loading) e.currentTarget.style.backgroundColor = '#2ece8a'; }}
+                                            onMouseEnter={e => { if (!loading) e.currentTarget.style.backgroundColor = '#073d0b'; }}
+                                            onMouseLeave={e => { if (!loading) e.currentTarget.style.backgroundColor = '#0a500f'; }}
                                         >
                                             {loading ? (
                                                 <><span className="spinner-border spinner-border-sm me-2"></span>Saving...</>

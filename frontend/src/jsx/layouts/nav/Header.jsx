@@ -468,8 +468,8 @@ function Header({ onNote }) {
             </div>
             <ul className="navbar-nav header-right main-notification d-flex align-items-center gap-2 gap-sm-3">
               
-              {/* THEME TOGGLE */}
-              <li className="nav-item d-flex align-items-center">
+              {/* THEME TOGGLE (Commented out: only light theme needed) */}
+              {/* <li className="nav-item d-flex align-items-center">
                 <button
                   onClick={toggleTheme}
                   title={isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
@@ -517,7 +517,7 @@ function Header({ onNote }) {
                   )}
                   <span className="d-none d-md-inline">{isDark ? 'Light' : 'Dark'}</span>
                 </button>
-              </li>
+              </li> */}
 
               <Dropdown
                 as="li"
@@ -538,7 +538,12 @@ function Header({ onNote }) {
                     <path d="M17.3262 3.50003L14.7292 1.4222C14.5222 1.25653 14.2651 1.16626 14 1.16626C13.7349 1.16626 13.4777 1.25653 13.2708 1.4222L10.6738 3.50003H17.3262Z" fill="#67636D" />
                     <path d="M16.7358 18.3855L14.6008 19.6688C14.4194 19.7778 14.2117 19.8354 14 19.8354C13.7883 19.8354 13.5806 19.7778 13.3991 19.6688L11.2641 18.3855L3.16748 26.4833C3.63438 26.7117 4.14691 26.8313 4.66665 26.8333H23.3333C23.853 26.8313 24.3656 26.7117 24.8325 26.4833L16.7358 18.3855Z" fill="#67636D" />
                   </svg>
-                  <span className="badge light text-white bg-primary rounded-circle">6</span>
+                  <span 
+                    className="badge light text-white bg-primary rounded-circle"
+                    style={{ backgroundColor: '#0a500f', color: '#ffffff' }}
+                  >
+                    6
+                  </span>
                 </Dropdown.Toggle>
               </Dropdown>
               <Dropdown
@@ -558,7 +563,10 @@ function Header({ onNote }) {
                     <path d="M9.98193 24.5C10.3863 25.2088 10.971 25.7981 11.6767 26.2079C12.3823 26.6178 13.1839 26.8337 13.9999 26.8337C14.816 26.8337 15.6175 26.6178 16.3232 26.2079C17.0289 25.7981 17.6136 25.2088 18.0179 24.5H9.98193Z" fill="#67636D" />
                   </svg>
                   {unreadCount > 0 && (
-                    <span className="badge light text-white bg-primary rounded-circle">
+                    <span 
+                      className="badge light text-white bg-primary rounded-circle"
+                      style={{ backgroundColor: '#0a500f', color: '#ffffff' }}
+                    >
                       {unreadCount > 99 ? '99+' : unreadCount}
                     </span>
                   )}
@@ -573,7 +581,7 @@ function Header({ onNote }) {
                           style={{
                             cursor: notification.is_read ? 'default' : 'pointer',
                             opacity: notification.is_read ? 0.6 : 1,
-                            backgroundColor: notification.is_read ? 'transparent' : 'rgba(102, 126, 234, 0.05)',
+                            backgroundColor: notification.is_read ? 'transparent' : 'rgba(10, 80, 15, 0.08)',
                             transition: 'all 0.2s ease'
                           }}
                         >
@@ -654,13 +662,13 @@ function Header({ onNote }) {
                         width: '45px',
                         height: '45px',
                         borderRadius: '1.25rem',
-                        background: 'linear-gradient(135deg, #43dc80 0%, #2bb673 100%)',
+                        background: '#0a500f',
                         fontSize: '15px',
                         fontWeight: '700',
                         letterSpacing: '0.5px',
                         flexShrink: 0,
                         userSelect: 'none',
-                        boxShadow: '0 4px 12px rgba(43, 182, 115, 0.25)'
+                        boxShadow: '0 4px 12px rgba(10, 80, 15, 0.25)'
                       }}
                     >
                       {userInitials}
@@ -696,12 +704,12 @@ function Header({ onNote }) {
                     <svg
                       id="icon-inbox"
                       xmlns="http://www.w3.org/2000/svg"
-                      className="text-success"
+                      style={{ color: '#0a500f' }}
                       width={18}
                       height={18}
                       viewBox="0 0 24 24"
                       fill="none"
-                      stroke="currentColor"
+                      stroke="#0a500f"
                       strokeWidth={2}
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -717,13 +725,14 @@ function Header({ onNote }) {
                     style={{ background: 'none', border: 'none', width: '100%', textAlign: 'left', cursor: 'pointer' }}
                   >
                     <svg
+                      id="icon-change-password"
                       xmlns="http://www.w3.org/2000/svg"
-                      className="text-warning"
+                      style={{ color: '#0d6efd' }}
                       width={18}
                       height={18}
                       viewBox="0 0 24 24"
                       fill="none"
-                      stroke="currentColor"
+                      stroke="#0d6efd"
                       strokeWidth={2}
                       strokeLinecap="round"
                       strokeLinejoin="round"

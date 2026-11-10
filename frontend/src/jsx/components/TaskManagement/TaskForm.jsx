@@ -221,8 +221,21 @@ const TaskForm = ({ onClose, onSaved, existingTask = null }) => {
                     </Row>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="danger light" className="mr-2" onClick={onClose}>Cancel</Button>
-                    <Button variant="primary" type="submit" style={{ backgroundColor: 'rgb(61, 53, 119)', borderColor: 'rgb(61, 53, 119)' }}>Save</Button>
+                    <Button 
+                        className="mr-2 btn-cancel-custom" 
+                        style={{ 
+                            backgroundColor: '#dc3545', 
+                            borderColor: '#dc3545', 
+                            color: '#ffffff', 
+                            borderRadius: '8px', 
+                            fontWeight: 500, 
+                            padding: '8px 22px' 
+                        }} 
+                        onClick={onClose}
+                    >
+                        Cancel
+                    </Button>
+                    <Button variant="primary" type="submit" style={{ backgroundColor: '#0a500f', borderColor: '#0a500f', borderRadius: '8px', fontWeight: 500, padding: '8px 22px' }}>Save</Button>
                 </Modal.Footer>
             </Form>
         </Modal>

@@ -255,11 +255,11 @@ const LeaveRequestList = () => {
                     align-items: center;
                 }
                 .tab-nav-btn:hover {
-                    color: #7A70BA;
+                    color: #0a500f;
                 }
                 .tab-nav-btn.active {
-                    color: #7A70BA;
-                    border-bottom: 2px solid #7A70BA;
+                    color: #0a500f;
+                    border-bottom: 2px solid #0a500f;
                 }
                 .leave-requests-card {
                     height: auto !important;
@@ -370,8 +370,8 @@ const LeaveRequestList = () => {
                                             variant="primary"
                                             onClick={handleShowCreate}
                                             style={{
-                                                backgroundColor: 'rgb(61, 53, 119)',
-                                                borderColor: 'rgb(61, 53, 119)',
+                                                backgroundColor: '#0a500f',
+                                                borderColor: '#0a500f',
                                                 color: 'white',
                                                 height: '34px',
                                                 display: 'flex',

@@ -225,7 +225,12 @@ const SubtaskForm = ({ show, onHide, editId, formData, setFormData, onSubmit, sa
                 </div>
 
                 <div className="modal-footer-custom" style={{ display: 'flex', justifyContent: 'flex-end', gap: '10px' }}>
-                    <button type="button" className="btn-close-custom" onClick={onHide}>
+                    <button
+                        type="button"
+                        className="btn-close-custom btn-cancel-custom"
+                        style={{ backgroundColor: '#dc3545', borderColor: '#dc3545', color: '#ffffff' }}
+                        onClick={onHide}
+                    >
                         Cancel
                     </button>
                     <button type="submit" className="btn-save-custom" disabled={saving}>

@@ -53,7 +53,8 @@ const ResponsibilityReminderPopup = () => {
                                 showCancelButton: true,
                                 confirmButtonText: 'Go to Tasks',
                                 cancelButtonText: 'Close for now',
-                                confirmButtonColor: '#6259ca',
+                                confirmButtonColor: '#0a500f',
+                                cancelButtonColor: '#dc3545',
                                 allowOutsideClick: false,
                                 allowEscapeKey: false,
                                 focusConfirm: true

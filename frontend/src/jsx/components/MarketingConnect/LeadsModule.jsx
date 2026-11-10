@@ -968,7 +968,7 @@ const LeadsModule = () => {
                                                         >
                                                             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                                                                 <div style={{ background: '#e8fdf4', borderRadius: '8px', width: '32px', height: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                                                    <i className="fa fa-history" style={{ color: '#2ece8a', fontSize: '0.9rem' }}></i>
+                                                                    <i className="fa fa-history" style={{ color: '#0a500f', fontSize: '0.9rem' }}></i>
                                                                 </div>
                                                                 <div>
                                                                     <div style={{ color: isDark ? '#f8fafc' : '#1e293b', fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.3px' }}>Previous Engagements</div>
@@ -994,7 +994,7 @@ const LeadsModule = () => {
                                                                 </div>
                                                             ) : engagementHistory && engagementHistory.length > 0 ? (
                                                                 <div style={{ position: 'relative', paddingLeft: '22px' }}>
-                                                                    <div style={{ position: 'absolute', left: '8px', top: '8px', bottom: '8px', width: '2px', background: 'linear-gradient(to bottom, #2ece8a, #e2e8f0)' }}></div>
+                                                                    <div style={{ position: 'absolute', left: '8px', top: '8px', bottom: '8px', width: '2px', background: 'linear-gradient(to bottom, #0a500f, #e2e8f0)' }}></div>
                                                                     {engagementHistory.map((eng, idx) => {
                                                                         const dateRaw = eng.visit_date || eng.entry_time || eng.created_at;
                                                                         const dateStr = dateRaw ? new Date(dateRaw).toLocaleDateString('en-GB') : 'Unknown Date';
@@ -1011,7 +1011,7 @@ const LeadsModule = () => {
                                                                         const statusLabel = eng.status ? eng.status.toUpperCase() : (isOut ? 'EXITED' : 'ACTIVE');
                                                                         return (
                                                                             <div key={eng.id || idx} style={{ position: 'relative', marginBottom: '10px' }}>
-                                                                                <div style={{ position: 'absolute', left: '-18px', top: '12px', width: '9px', height: '9px', borderRadius: '50%', background: isOut ? '#2ece8a' : '#f59e0b', border: '2px solid #fff', boxShadow: `0 0 0 2px ${isOut ? '#2ece8a' : '#f59e0b'}44` }}></div>
+                                                                                <div style={{ position: 'absolute', left: '-18px', top: '12px', width: '9px', height: '9px', borderRadius: '50%', background: isOut ? '#0a500f' : '#f59e0b', border: '2px solid #fff', boxShadow: `0 0 0 2px ${isOut ? '#0a500f' : '#f59e0b'}44` }}></div>
                                                                                 <div style={{ background: isDark ? '#0f172a' : '#fff', borderRadius: '12px', border: `1px solid ${isDark ? '#334155' : '#e2e8f0'}`, overflow: 'hidden', boxShadow: '0 1px 6px rgba(0,0,0,0.04)' }}>
                                                                                     <div style={{ padding: '7px 10px', background: isOut ? (isDark ? 'rgba(34, 197, 94, 0.1)' : 'linear-gradient(90deg, #f0fdf4, #fff)') : (isDark ? 'rgba(245, 158, 11, 0.1)' : 'linear-gradient(90deg, #fffbeb, #fff)'), borderBottom: `1px solid ${isDark ? '#334155' : '#f1f5f9'}`, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                                                                                         <span style={{ fontWeight: 700, fontSize: '0.75rem', color: isDark ? '#f8fafc' : '#1e293b' }}>
@@ -1046,7 +1046,7 @@ const LeadsModule = () => {
                                                                                             <strong style={{ color: isDark ? '#cbd5e1' : '#334155' }}>{metPerson}</strong>
                                                                                         </div>
                                                                                         {purpose && (
-                                                                                            <div style={{ fontSize: '0.68rem', color: isDark ? '#94a3b8' : '#64748b', background: isDark ? '#1e293b' : '#f8fafc', borderRadius: '6px', padding: '3px 7px', borderLeft: '2px solid #2ece8a', marginTop: '2px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }} title={purpose}>
+                                                                                            <div style={{ fontSize: '0.68rem', color: isDark ? '#94a3b8' : '#64748b', background: isDark ? '#1e293b' : '#f8fafc', borderRadius: '6px', padding: '3px 7px', borderLeft: '2px solid #0a500f', marginTop: '2px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }} title={purpose}>
                                                                                                 <i className="fa fa-quote-left me-1" style={{ fontSize: '0.55rem', color: '#cbd5e1' }}></i>{purpose}
                                                                                             </div>
                                                                                         )}

@@ -8,17 +8,17 @@ const selectStyles = {
     control: (base, state) => ({
         ...base,
         minHeight: '40px',
-        borderColor: state.isFocused ? '#2ece8a' : '#cbd5e1',
+        borderColor: state.isFocused ? '#0a500f' : '#cbd5e1',
         borderRadius: '10px',
         fontSize: '14px',
-        boxShadow: state.isFocused ? '0 0 0 3px rgba(46,206,138,0.15)' : 'none',
-        '&:hover': { borderColor: '#2ece8a' },
+        boxShadow: state.isFocused ? '0 0 0 3px rgba(10, 80, 15,0.15)' : 'none',
+        '&:hover': { borderColor: '#0a500f' },
     }),
     menu: (base) => ({ ...base, fontSize: '14px', zIndex: 9999 }),
     menuPortal: (base) => ({ ...base, zIndex: 9999 }),
     option: (base, state) => ({
         ...base,
-        backgroundColor: state.isSelected ? '#2ece8a' : state.isFocused ? '#e8faf3' : 'white',
+        backgroundColor: state.isSelected ? '#0a500f' : state.isFocused ? '#e8faf3' : 'white',
         color: state.isSelected ? 'white' : '#333',
     }),
     placeholder: (base) => ({ ...base, color: '#94a3b8', fontSize: '14px' }),
@@ -175,7 +175,7 @@ const DepartmentContactModal = ({ show, onHide, department, onSuccess }) => {
 
                 .dept-custom-modal .btn-close-custom,
                 .dept-contact-modal .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -186,10 +186,10 @@ const DepartmentContactModal = ({ show, onHide, department, onSuccess }) => {
                     transition: background-color 0.2s;
                 }
                 .dept-custom-modal .btn-close-custom:hover,
-                .dept-contact-modal .btn-close-custom:hover { background-color: #6357a7 !important; }
+                .dept-contact-modal .btn-close-custom:hover { background-color: #bb2d3b !important; }
                 .dept-custom-modal .btn-save-custom,
                 .dept-contact-modal .btn-save-custom {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -200,7 +200,7 @@ const DepartmentContactModal = ({ show, onHide, department, onSuccess }) => {
                     transition: background-color 0.2s;
                 }
                 .dept-custom-modal .btn-save-custom:hover,
-                .dept-contact-modal .btn-save-custom:hover { background-color: #26b277 !important; }
+                .dept-contact-modal .btn-save-custom:hover { background-color: #073d0b !important; }
                 .dept-custom-modal .btn-save-custom:disabled,
                 .dept-contact-modal .btn-save-custom:disabled { opacity: 0.65; cursor: not-allowed; }
             `}</style>

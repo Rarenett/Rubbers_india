@@ -119,9 +119,9 @@ const SpotVisitorModal = ({
         control: (base, state) => ({
             ...base,
             minHeight: '38px',
-            borderColor: state.isFocused ? '#2ece8a' : '#cbd5e1',
-            boxShadow: state.isFocused ? '0 0 0 3px rgba(46, 206, 138, 0.15)' : 'none',
-            '&:hover': { borderColor: '#2ece8a' },
+            borderColor: state.isFocused ? '#0a500f' : '#cbd5e1',
+            boxShadow: state.isFocused ? '0 0 0 3px rgba(10, 80, 15, 0.15)' : 'none',
+            '&:hover': { borderColor: '#0a500f' },
             borderRadius: '10px',
             fontSize: '13px',
             backgroundColor: '#fff'
@@ -129,7 +129,7 @@ const SpotVisitorModal = ({
         menu: base => ({ ...base, zIndex: 9999, fontSize: '0.875rem' }),
         option: (base, state) => ({
             ...base,
-            backgroundColor: state.isSelected ? '#2ece8a' : state.isFocused ? '#e8fcf3' : 'white',
+            backgroundColor: state.isSelected ? '#0a500f' : state.isFocused ? '#e8fcf3' : 'white',
             color: state.isSelected ? 'white' : '#333',
             cursor: 'pointer',
         }),
@@ -363,7 +363,7 @@ const SpotVisitorModal = ({
                                 padding: '8px 32px', 
                                 fontSize: '14px', 
                                 fontWeight: activeTab === 'visitor' ? '600' : '500', 
-                                color: activeTab === 'visitor' ? '#2ece8a' : '#64748b', 
+                                color: activeTab === 'visitor' ? '#0a500f' : '#64748b', 
                                 transition: 'color 0.3s ease', 
                                 cursor: 'pointer' 
                             }} 
@@ -384,7 +384,7 @@ const SpotVisitorModal = ({
                                 padding: '8px 32px', 
                                 fontSize: '14px', 
                                 fontWeight: activeTab === 'vehicle' ? '600' : '500', 
-                                color: activeTab === 'vehicle' ? '#2ece8a' : '#64748b', 
+                                color: activeTab === 'vehicle' ? '#0a500f' : '#64748b', 
                                 transition: 'color 0.3s ease', 
                                 cursor: 'pointer' 
                             }} 
@@ -497,7 +497,7 @@ const SpotVisitorModal = ({
                                         type="button" 
                                         onClick={() => handleCameraCapture('visitor_photo')} 
                                         className="btn-camera-upload d-flex align-items-center gap-1 px-2 py-1" 
-                                        style={{ background: '#2ece8a', borderColor: '#2ece8a', color: '#fff', fontSize: '11px', borderRadius: '6px' }}
+                                        style={{ background: '#0a500f', borderColor: '#0a500f', color: '#fff', fontSize: '11px', borderRadius: '6px' }}
                                     >
                                         <i className="fa fa-camera"></i> Camera
                                     </Button>
@@ -550,7 +550,7 @@ const SpotVisitorModal = ({
                                         type="button" 
                                         onClick={() => handleCameraCapture('id_card_photo')} 
                                         className="btn-camera-upload d-flex align-items-center gap-1 px-2 py-1" 
-                                        style={{ background: '#2ece8a', borderColor: '#2ece8a', color: '#fff', fontSize: '11px', borderRadius: '6px' }}
+                                        style={{ background: '#0a500f', borderColor: '#0a500f', color: '#fff', fontSize: '11px', borderRadius: '6px' }}
                                     >
                                         <i className="fa fa-camera"></i> Camera
                                     </Button>
@@ -603,7 +603,7 @@ const SpotVisitorModal = ({
                                         type="button" 
                                         onClick={() => handleCameraCapture('visiting_card_photo')} 
                                         className="btn-camera-upload d-flex align-items-center gap-1 px-2 py-1" 
-                                        style={{ background: '#2ece8a', borderColor: '#2ece8a', color: '#fff', fontSize: '11px', borderRadius: '6px' }}
+                                        style={{ background: '#0a500f', borderColor: '#0a500f', color: '#fff', fontSize: '11px', borderRadius: '6px' }}
                                     >
                                         <i className="fa fa-camera"></i> Camera
                                     </Button>
@@ -737,7 +737,7 @@ const SpotVisitorModal = ({
                                         type="button" 
                                         onClick={() => handleCameraCapture('vehicle_photo')} 
                                         className="btn-camera-upload d-flex align-items-center gap-1 px-2 py-1" 
-                                        style={{ background: '#2ece8a', borderColor: '#2ece8a', color: '#fff', fontSize: '11px', borderRadius: '6px' }}
+                                        style={{ background: '#0a500f', borderColor: '#0a500f', color: '#fff', fontSize: '11px', borderRadius: '6px' }}
                                     >
                                         <i className="fa fa-camera"></i> Camera
                                     </Button>
@@ -834,12 +834,12 @@ const SpotVisitorModal = ({
                 .item-custom-modal .modal-icon-circle {
                     width: 48px !important;
                     height: 48px !important;
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     border-radius: 50% !important;
                     display: flex !important;
                     align-items: center !important;
                     justify-content: center !important;
-                    box-shadow: 0 4px 10px rgba(46, 206, 138, 0.2) !important;
+                    box-shadow: 0 4px 10px rgba(10, 80, 15, 0.2) !important;
                     flex-shrink: 0 !important;
                 }
                 .item-custom-modal .modal-close-x {
@@ -884,8 +884,8 @@ const SpotVisitorModal = ({
                 }
                 .item-custom-modal .form-control-custom:focus {
                     outline: none !important;
-                    border-color: #2ece8a !important;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15) !important;
+                    border-color: #0a500f !important;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15) !important;
                 }
                 .item-custom-modal .form-control-custom::placeholder {
                     color: #94a3b8 !important;
@@ -901,7 +901,7 @@ const SpotVisitorModal = ({
                     margin: 0 -28px -24px -28px !important;
                 }
                 .item-custom-modal .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -912,10 +912,10 @@ const SpotVisitorModal = ({
                     transition: background-color 0.2s, transform 0.1s !important;
                 }
                 .item-custom-modal .btn-close-custom:hover {
-                    background-color: #6357a7 !important;
+                    background-color: #bb2d3b !important;
                 }
                 .item-custom-modal .btn-save-custom {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -950,13 +950,13 @@ const SpotVisitorModal = ({
                     outline: none !important;
                 }
                 .item-custom-modal .dropzone-upload:hover {
-                    border-color: #2ece8a !important;
+                    border-color: #0a500f !important;
                     background-color: #f0fdf6 !important;
                 }
                 .item-custom-modal .dropzone-upload .dz-icon {
                     width: 30px !important;
                     height: 30px !important;
-                    color: #2ece8a !important;
+                    color: #0a500f !important;
                 }
                 .item-custom-modal .dropzone-upload .dz-title {
                     font-size: 13px !important;

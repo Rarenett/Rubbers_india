@@ -84,7 +84,7 @@ const PurposeList = () => {
                 icon: 'warning',
                 title: 'Validation Error',
                 text: 'Please enter a Purpose Name.',
-                confirmButtonColor: '#2ece8a'
+                confirmButtonColor: '#0a500f'
             });
             return;
         }
@@ -98,7 +98,7 @@ const PurposeList = () => {
                 icon: 'warning',
                 title: 'Duplicate Purpose',
                 text: `Purpose "${trimmedName}" already exists. Please choose a different purpose or edit the existing one.`,
-                confirmButtonColor: '#2ece8a'
+                confirmButtonColor: '#0a500f'
             });
             return;
         }
@@ -149,7 +149,7 @@ const PurposeList = () => {
                 icon: 'error',
                 title: 'Error',
                 text: msg,
-                confirmButtonColor: '#2ece8a'
+                confirmButtonColor: '#0a500f'
             });
         } finally {
             setSaving(false);
@@ -167,7 +167,7 @@ const PurposeList = () => {
                 icon: 'warning',
                 title: 'Cannot Delete Purpose',
                 html: `The Purpose <b>"${name}"</b> is already associated with <b>${count}</b> CRM follow-up ${count === 1 ? 'record' : 'records'}.<br/><br/><span class="text-muted small">Purposes associated with existing follow-ups cannot be deleted to preserve activity and audit history. Please deactivate it instead if no longer needed.</span>`,
-                confirmButtonColor: '#2ece8a',
+                confirmButtonColor: '#0a500f',
                 confirmButtonText: 'Understood'
             });
             return;
@@ -206,7 +206,7 @@ const PurposeList = () => {
                     icon: 'warning',
                     title: 'Cannot Delete',
                     text: msg,
-                    confirmButtonColor: '#2ece8a'
+                    confirmButtonColor: '#0a500f'
                 });
             }
         }
@@ -241,12 +241,12 @@ const PurposeList = () => {
                 .item-custom-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #2ece8a;
+                    background-color: #0a500f;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    box-shadow: 0 4px 10px rgba(46, 206, 138, 0.2);
+                    box-shadow: 0 4px 10px rgba(10, 80, 15, 0.2);
                 }
                 .item-custom-modal .modal-close-x {
                     border: none;
@@ -295,11 +295,11 @@ const PurposeList = () => {
                 }
                 .item-custom-modal .form-control-custom:focus {
                     outline: none;
-                    border-color: #2ece8a;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15);
+                    border-color: #0a500f;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
                 }
                 .item-custom-modal .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -310,10 +310,10 @@ const PurposeList = () => {
                     transition: background-color 0.2s, transform 0.1s;
                 }
                 .item-custom-modal .btn-close-custom:hover {
-                    background-color: #6357a7 !important;
+                    background-color: #bb2d3b !important;
                 }
                 .item-custom-modal .btn-save-custom {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -324,7 +324,7 @@ const PurposeList = () => {
                     transition: background-color 0.2s, transform 0.1s;
                 }
                 .item-custom-modal .btn-save-custom:hover {
-                    background-color: #26b277 !important;
+                    background-color: #073d0b !important;
                 }
                 .lead-industry-header-container {
                     display: flex !important;

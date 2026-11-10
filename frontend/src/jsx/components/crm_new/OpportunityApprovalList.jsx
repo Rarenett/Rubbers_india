@@ -56,7 +56,7 @@ const OpportunityApprovalList = () => {
                 icon: 'error',
                 title: 'Failed to load approvals',
                 text: err.response?.data?.detail || err.message || 'Something went wrong',
-                confirmButtonColor: 'rgb(61, 53, 119)'
+                confirmButtonColor: '#0a500f'
             });
         } finally {
             setLoading(false);
@@ -187,7 +187,7 @@ const OpportunityApprovalList = () => {
                 icon: 'error',
                 title: 'Action Failed',
                 text: err.response?.data?.error || err.response?.data?.detail || err.message || 'Failed to update approval status.',
-                confirmButtonColor: 'rgb(61, 53, 119)'
+                confirmButtonColor: '#0a500f'
             });
         } finally {
             setActionLoadingId(null);
@@ -277,7 +277,7 @@ const OpportunityApprovalList = () => {
                         <p><strong>Status:</strong> ${item.status}</p>
                     </div>
                 `,
-                confirmButtonColor: 'rgb(61, 53, 119)'
+                confirmButtonColor: '#0a500f'
             });
         }
     };
@@ -529,7 +529,7 @@ const OpportunityApprovalList = () => {
                                                                             fontSize: '11px',
                                                                             fontWeight: 600,
                                                                             padding: '4px 8px',
-                                                                            backgroundColor: isVendor ? '#864AD1' : '#3d3577',
+                                                                            backgroundColor: isVendor ? '#864AD1' : '#0a500f',
                                                                             color: '#ffffff'
                                                                         }}
                                                                     >

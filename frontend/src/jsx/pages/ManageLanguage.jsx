@@ -256,16 +256,16 @@ const ManageLanguage = () => {
         control: (base, state) => ({
             ...base,
             minHeight: '38px',
-            borderColor: state.isFocused ? '#2ece8a' : '#cbd5e1',
-            boxShadow: state.isFocused ? '0 0 0 3px rgba(46,206,138,0.15)' : 'none',
-            '&:hover': { borderColor: '#2ece8a' },
+            borderColor: state.isFocused ? '#0a500f' : '#cbd5e1',
+            boxShadow: state.isFocused ? '0 0 0 3px rgba(10, 80, 15,0.15)' : 'none',
+            '&:hover': { borderColor: '#0a500f' },
             borderRadius: '10px',
             fontSize: '13px',
         }),
         menu: base => ({ ...base, zIndex: 9999, fontSize: '13px' }),
         option: (base, state) => ({
             ...base,
-            backgroundColor: state.isSelected ? '#2ece8a' : state.isFocused ? '#eefdf6' : 'white',
+            backgroundColor: state.isSelected ? '#0a500f' : state.isFocused ? '#eefdf6' : 'white',
             color: state.isSelected ? 'white' : '#333',
             cursor: 'pointer',
         }),
@@ -357,16 +357,16 @@ const ManageLanguage = () => {
                 }
                 .language-custom-modal .form-control-custom:focus {
                     outline: none;
-                    border-color: #2ece8a;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15);
+                    border-color: #0a500f;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
                 }
                 .language-custom-modal .form-control-custom::placeholder { color: #94a3b8; }
                 .language-custom-modal .form-check-input:checked {
-                    background-color: #2ece8a;
-                    border-color: #2ece8a;
+                    background-color: #0a500f;
+                    border-color: #0a500f;
                 }
                 .language-custom-modal .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -376,9 +376,9 @@ const ManageLanguage = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .language-custom-modal .btn-close-custom:hover { background-color: #6357a7 !important; }
+                .language-custom-modal .btn-close-custom:hover { background-color: #bb2d3b !important; }
                 .language-custom-modal .btn-save-custom {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -388,7 +388,7 @@ const ManageLanguage = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .language-custom-modal .btn-save-custom:hover { background-color: #26b277 !important; }
+                .language-custom-modal .btn-save-custom:hover { background-color: #073d0b !important; }
                 .search-input-custom {
                     height: 38px !important;
                     border-radius: 6px !important;

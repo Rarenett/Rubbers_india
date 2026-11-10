@@ -93,7 +93,7 @@ const MyVisitorApprovals = () => {
             text: `Are you sure you want to ${action} the gate entry for "${name}"?`,
             icon: 'question',
             showCancelButton: true,
-            confirmButtonColor: isApprove ? '#2ece8a' : '#d33',
+            confirmButtonColor: isApprove ? '#0a500f' : '#d33',
             confirmButtonText: `Yes, ${action} it`
         });
 
@@ -125,7 +125,7 @@ const MyVisitorApprovals = () => {
             text: `Confirm ${action} for appointment with "${visitorName}"? Once approved, the visitor will be authorized at the security gate.`,
             icon: 'question',
             showCancelButton: true,
-            confirmButtonColor: isApprove ? '#2ece8a' : '#d33',
+            confirmButtonColor: isApprove ? '#0a500f' : '#d33',
             confirmButtonText: `Yes, ${action} it`
         });
 
@@ -305,10 +305,10 @@ const MyVisitorApprovals = () => {
                                                     padding: '4px 14px',
                                                     fontSize: '12px',
                                                     fontWeight: dateFilter === 'today' ? '600' : '500',
-                                                    background: dateFilter === 'today' ? '#2ece8a' : 'transparent',
+                                                    background: dateFilter === 'today' ? '#0a500f' : 'transparent',
                                                     color: dateFilter === 'today' ? '#ffffff' : (isDark ? '#94a3b8' : '#64748b'),
                                                     transition: 'all 0.2s ease',
-                                                    boxShadow: dateFilter === 'today' ? '0 1px 3px rgba(46, 206, 138, 0.3)' : 'none'
+                                                    boxShadow: dateFilter === 'today' ? '0 1px 3px rgba(10, 80, 15, 0.3)' : 'none'
                                                 }}
                                             >
                                                 Today
@@ -323,10 +323,10 @@ const MyVisitorApprovals = () => {
                                                     padding: '4px 14px',
                                                     fontSize: '12px',
                                                     fontWeight: dateFilter === 'all' ? '600' : '500',
-                                                    background: dateFilter === 'all' ? '#2ece8a' : 'transparent',
+                                                    background: dateFilter === 'all' ? '#0a500f' : 'transparent',
                                                     color: dateFilter === 'all' ? '#ffffff' : (isDark ? '#94a3b8' : '#64748b'),
                                                     transition: 'all 0.2s ease',
-                                                    boxShadow: dateFilter === 'all' ? '0 1px 3px rgba(46, 206, 138, 0.3)' : 'none'
+                                                    boxShadow: dateFilter === 'all' ? '0 1px 3px rgba(10, 80, 15, 0.3)' : 'none'
                                                 }}
                                             >
                                                 All
@@ -341,10 +341,10 @@ const MyVisitorApprovals = () => {
                                                 fontSize: '12px',
                                                 maxWidth: '135px',
                                                 borderRadius: '6px',
-                                                border: `1px solid ${(dateFilter !== 'today' && dateFilter !== 'all') ? '#2ece8a' : (isDark ? '#334155' : '#e2e8f0')}`,
+                                                border: `1px solid ${(dateFilter !== 'today' && dateFilter !== 'all') ? '#0a500f' : (isDark ? '#334155' : '#e2e8f0')}`,
                                                 backgroundColor: isDark ? '#1e293b' : '#ffffff',
                                                 color: isDark ? '#f8fafc' : '#1e293b',
-                                                boxShadow: (dateFilter !== 'today' && dateFilter !== 'all') ? '0 0 0 2px rgba(46, 206, 138, 0.15)' : 'none',
+                                                boxShadow: (dateFilter !== 'today' && dateFilter !== 'all') ? '0 0 0 2px rgba(10, 80, 15, 0.15)' : 'none',
                                                 fontWeight: (dateFilter !== 'today' && dateFilter !== 'all') ? '600' : 'normal'
                                             }}
                                             value={customDate}
@@ -1049,8 +1049,8 @@ const MyVisitorApprovals = () => {
                                 <div
                                     className="modal-icon-circle"
                                     style={{
-                                        background: 'linear-gradient(135deg, #2ece8a 0%, #20b876 100%)',
-                                        boxShadow: '0 4px 14px rgba(46, 206, 138, 0.3)',
+                                        background: 'linear-gradient(135deg, #0a500f 0%, #20b876 100%)',
+                                        boxShadow: '0 4px 14px rgba(10, 80, 15, 0.3)',
                                         width: '52px',
                                         height: '52px'
                                     }}
@@ -1224,8 +1224,8 @@ const MyVisitorApprovals = () => {
                 }
                 .item-custom-modal .form-control-custom:focus {
                     outline: none !important;
-                    border-color: #2ece8a !important;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15) !important;
+                    border-color: #0a500f !important;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15) !important;
                 }
                 .item-custom-modal .form-control-custom::placeholder {
                     color: #94a3b8 !important;
@@ -1241,7 +1241,7 @@ const MyVisitorApprovals = () => {
                 }
 
                 .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     border: none !important;
                     color: #ffffff !important;
                     font-weight: 500 !important;
@@ -1256,13 +1256,13 @@ const MyVisitorApprovals = () => {
                     justify-content: center !important;
                 }
                 .btn-close-custom:hover:not(:disabled) {
-                    background-color: #6357a7 !important;
+                    background-color: #bb2d3b !important;
                     color: #ffffff !important;
                     transform: translateY(-1px) !important;
                 }
 
                 .btn-all-exit-custom {
-                    background: linear-gradient(135deg, #2ece8a 0%, #20b876 100%) !important;
+                    background: linear-gradient(135deg, #0a500f 0%, #20b876 100%) !important;
                     border: none !important;
                     color: #ffffff !important;
                     font-weight: 600 !important;
@@ -1272,7 +1272,7 @@ const MyVisitorApprovals = () => {
                     border-radius: 10px !important;
                     transition: all 0.2s ease !important;
                     cursor: pointer !important;
-                    box-shadow: 0 4px 12px rgba(46, 206, 138, 0.3) !important;
+                    box-shadow: 0 4px 12px rgba(10, 80, 15, 0.3) !important;
                     display: inline-flex !important;
                     align-items: center !important;
                     justify-content: center !important;
@@ -1280,7 +1280,7 @@ const MyVisitorApprovals = () => {
                 .btn-all-exit-custom:hover:not(:disabled) {
                     background: linear-gradient(135deg, #20b876 0%, #179b61 100%) !important;
                     color: #ffffff !important;
-                    box-shadow: 0 6px 16px rgba(46, 206, 138, 0.4) !important;
+                    box-shadow: 0 6px 16px rgba(10, 80, 15, 0.4) !important;
                     transform: translateY(-1px) !important;
                 }
 

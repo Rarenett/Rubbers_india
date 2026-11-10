@@ -777,17 +777,17 @@ const FolderCreation = () => {
                   control: (base, state) => ({
                     ...base,
                     borderRadius: "8px",
-                    borderColor: state.isFocused ? "#3d3577" : "#cbd5e1",
-                    boxShadow: state.isFocused ? "0 0 0 1px #3d3577" : "none",
+                    borderColor: state.isFocused ? "#0a500f" : "#cbd5e1",
+                    boxShadow: state.isFocused ? "0 0 0 1px #0a500f" : "none",
                     minHeight: "42px",
                     "&:hover": {
-                      borderColor: "#3d3577",
+                      borderColor: "#0a500f",
                     },
                   }),
                   option: (base, state) => ({
                     ...base,
                     backgroundColor: state.isSelected
-                      ? "rgb(61, 53, 119)"
+                      ? "#0a500f"
                       : state.isFocused
                       ? "rgba(61, 53, 119, 0.08)"
                       : "transparent",
@@ -910,8 +910,8 @@ const FolderCreation = () => {
               type="submit"
               disabled={submitting}
               style={{
-                backgroundColor: "rgb(61, 53, 119)",
-                borderColor: "rgb(61, 53, 119)",
+                backgroundColor: "#0a500f",
+                borderColor: "#0a500f",
               }}
             >
               {submitting
@@ -996,8 +996,8 @@ const FolderCreation = () => {
                 type="submit"
                 disabled={savingSettings || !editingDefaultEmail.trim()}
                 style={{
-                  backgroundColor: 'rgb(61, 53, 119)',
-                  borderColor: 'rgb(61, 53, 119)',
+                  backgroundColor: '#0a500f',
+                  borderColor: '#0a500f',
                 }}
               >
                 {savingSettings ? 'Saving...' : 'Save Default Email'}

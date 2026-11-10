@@ -233,7 +233,7 @@ const ProductionComponent = ({ rows, onRowsChange, stockItems = [], productConfi
                     align-items: center;
                     gap: 6px;
                     background: none;
-                    border: 1.5px dashed #2ece8a;
+                    border: 1.5px dashed #0a500f;
                     color: #16a34a;
                     border-radius: 8px;
                     padding: 8px 16px;
@@ -244,7 +244,7 @@ const ProductionComponent = ({ rows, onRowsChange, stockItems = [], productConfi
                 }
                 .btn-add-item-row:hover {
                     background: #f0fdf4;
-                    border-color: #26b277;
+                    border-color: #073d0b;
                 }
                 .btn-remove-item-row {
                     background: none;
@@ -261,7 +261,7 @@ const ProductionComponent = ({ rows, onRowsChange, stockItems = [], productConfi
                     background: #fef2f2;
                 }
                 .btn-details-fill {
-                    background-color: #7A70BA !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border: none !important;
                     border-radius: 6px !important;
@@ -272,10 +272,10 @@ const ProductionComponent = ({ rows, onRowsChange, stockItems = [], productConfi
                     transition: background-color 0.2s;
                 }
                 .btn-details-fill:hover {
-                    background-color: #6357a7 !important;
+                    background-color: #073d0b !important;
                 }
                 .btn-details-filled {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border: none !important;
                     border-radius: 6px !important;
@@ -286,7 +286,7 @@ const ProductionComponent = ({ rows, onRowsChange, stockItems = [], productConfi
                     transition: background-color 0.2s;
                 }
                 .btn-details-filled:hover {
-                    background-color: #26b277 !important;
+                    background-color: #073d0b !important;
                 }
                 .info-banner-production {
                     display: flex;
@@ -454,9 +454,9 @@ const ProductionComponent = ({ rows, onRowsChange, stockItems = [], productConfi
                                                     minHeight: '36px',
                                                     fontSize: '13px',
                                                     borderRadius: '8px',
-                                                    borderColor: state.isFocused ? '#2ece8a' : '#cbd5e1',
-                                                    boxShadow: state.isFocused ? '0 0 0 3px rgba(46,206,138,0.15)' : 'none',
-                                                    '&:hover': { borderColor: '#2ece8a' },
+                                                    borderColor: state.isFocused ? '#0a500f' : '#cbd5e1',
+                                                    boxShadow: state.isFocused ? '0 0 0 3px rgba(10, 80, 15,0.15)' : 'none',
+                                                    '&:hover': { borderColor: '#0a500f' },
                                                 }),
                                                 menu: base => ({ ...base, zIndex: 9999, fontSize: '13px' }),
                                                 menuPortal: base => ({ ...base, zIndex: 99999 }),
@@ -467,14 +467,14 @@ const ProductionComponent = ({ rows, onRowsChange, stockItems = [], productConfi
                                                 option: (base, state) => ({
                                                     ...base,
                                                     backgroundColor: state.isSelected
-                                                        ? '#2ece8a'
+                                                        ? '#0a500f'
                                                         : (state.isFocused && isKeyboard)
                                                             ? '#f0fdf4'
                                                             : 'white',
                                                     color: state.isSelected ? 'white' : '#334155',
                                                     cursor: 'pointer',
                                                     '&:hover': {
-                                                        backgroundColor: state.isSelected ? '#2ece8a' : '#f0fdf4',
+                                                        backgroundColor: state.isSelected ? '#0a500f' : '#f0fdf4',
                                                         color: state.isSelected ? 'white' : '#334155',
                                                     }
                                                 }),

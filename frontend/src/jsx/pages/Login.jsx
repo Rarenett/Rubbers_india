@@ -27,7 +27,7 @@ function Login(props) {
 	const cached = getCachedCompanySettings();
 	const [companyLogo, setCompanyLogo] = useState(cached.logo || '');
 	const [companyName, setCompanyName] = useState(cached.displayName || '');
-	const [loginPanelColor, setLoginPanelColor] = useState(cached.loginPanelColor || '#1a3a72');
+	const [loginPanelColor, setLoginPanelColor] = useState(cached.loginPanelColor || '#0a500f');
 	const [companyDescription, setCompanyDescription] = useState(cached.description || '');
 	const [companyVision, setCompanyVision] = useState(cached.vision || '');
 	const [companyMission, setCompanyMission] = useState(cached.mission || '');
@@ -42,7 +42,7 @@ function Login(props) {
 				if (data) {
 					setCompanyLogo(data.logo || '');
 					setCompanyName(data.display_name || '');
-					setLoginPanelColor(data.login_panel_color || '#1a3a72');
+					setLoginPanelColor(data.login_panel_color || '#0a500f');
 					setCompanyDescription(data.description || '');
 					setCompanyVision(data.vision || '');
 					setCompanyMission(data.mission || '');
@@ -52,7 +52,7 @@ function Login(props) {
 						...prev,
 						logo: data.logo || '',
 						displayName: data.display_name || '',
-						loginPanelColor: data.login_panel_color || '#1a3a72',
+						loginPanelColor: data.login_panel_color || '#0a500f',
 						description: data.description || '',
 						vision: data.vision || '',
 						mission: data.mission || '',
@@ -64,7 +64,7 @@ function Login(props) {
 					const settings = getCachedCompanySettings();
 					setCompanyLogo(settings.logo || '');
 					setCompanyName(settings.displayName || '');
-					setLoginPanelColor(settings.loginPanelColor || '#1a3a72');
+					setLoginPanelColor(settings.loginPanelColor || '#0a500f');
 					setCompanyDescription(settings.description || '');
 					setCompanyVision(settings.vision || '');
 					setCompanyMission(settings.mission || '');
@@ -75,7 +75,7 @@ function Login(props) {
 				const settings = getCachedCompanySettings();
 				setCompanyLogo(settings.logo || '');
 				setCompanyName(settings.displayName || '');
-				setLoginPanelColor(settings.loginPanelColor || '#1a3a72');
+				setLoginPanelColor(settings.loginPanelColor || '#0a500f');
 				setCompanyDescription(settings.description || '');
 				setCompanyVision(settings.vision || '');
 				setCompanyMission(settings.mission || '');
@@ -365,7 +365,7 @@ function Login(props) {
 											<div style={{ color: '#596882', fontSize: '1.2rem', fontWeight: 500, marginBottom: '2px' }}>
 												Welcome to
 											</div>
-											<h1 style={{ color: '#1a3a72', fontWeight: 700, margin: 0 }}>
+											<h1 style={{ color: '#0a500f', fontWeight: 700, margin: 0 }}>
 												{companyName || 'ERP'}
 											</h1>
 										</div>
@@ -422,14 +422,14 @@ function Login(props) {
 													disabled={props.showLoading}
 													className="btn btn-block"
 													style={{
-														background: 'linear-gradient(135deg, #0f2147 0%, #1a3a72 60%, #1e4587 100%)',
+														background: 'linear-gradient(135deg, #073d0b 0%, #0a500f 60%, #126818 100%)',
 														border: 'none',
 														color: '#fff',
 														fontWeight: 600,
 														fontSize: '1.1rem',
 														padding: '12px 24px',
 														letterSpacing: '0.04em',
-														boxShadow: '0 4px 15px rgba(26,58,114,0.4)',
+														boxShadow: '0 4px 15px rgba(10,80,15,0.4)',
 														cursor: props.showLoading ? 'not-allowed' : 'pointer',
 														opacity: props.showLoading ? 0.75 : 1
 													}}

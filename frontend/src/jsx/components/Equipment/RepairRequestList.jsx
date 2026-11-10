@@ -354,14 +354,14 @@ const RepairRequestList = () => {
     const selectStyles = {
         control: (base, state) => ({
             ...base,
-            border: state.isFocused ? '1px solid #2ece8a' : '1px solid #cbd5e1',
-            boxShadow: state.isFocused ? '0 0 0 3px rgba(46, 206, 138, 0.15)' : 'none',
+            border: state.isFocused ? '1px solid #0a500f' : '1px solid #cbd5e1',
+            boxShadow: state.isFocused ? '0 0 0 3px rgba(10, 80, 15, 0.15)' : 'none',
             borderRadius: '10px',
             minHeight: '44px',
             fontSize: '14px',
             backgroundColor: '#fff',
             '&:hover': {
-                borderColor: state.isFocused ? '#2ece8a' : '#cbd5e1'
+                borderColor: state.isFocused ? '#0a500f' : '#cbd5e1'
             }
         })
     };
@@ -385,12 +385,12 @@ const RepairRequestList = () => {
                 .sgfm-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #2ece8a;
+                    background-color: #0a500f;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    box-shadow: 0 4px 10px rgba(46, 206, 138, 0.2);
+                    box-shadow: 0 4px 10px rgba(10, 80, 15, 0.2);
                 }
                 .sgfm-modal .modal-close-x {
                     border: none;
@@ -433,12 +433,12 @@ const RepairRequestList = () => {
                 }
                 .sgfm-modal .form-control-custom:focus {
                     outline: none;
-                    border-color: #2ece8a;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15);
+                    border-color: #0a500f;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
                 }
                 .sgfm-modal .form-control-custom::placeholder { color: #94a3b8; }
                 .sgfm-modal .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -448,9 +448,9 @@ const RepairRequestList = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .sgfm-modal .btn-close-custom:hover { background-color: #6357a7 !important; }
+                .sgfm-modal .btn-close-custom:hover { background-color: #bb2d3b !important; }
                 .sgfm-modal .btn-save-custom {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -460,7 +460,7 @@ const RepairRequestList = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .sgfm-modal .btn-save-custom:hover { background-color: #26b277 !important; }
+                .sgfm-modal .btn-save-custom:hover { background-color: #073d0b !important; }
                 @keyframes modalFeedback {
                     0%, 100% { transform: scale(1); }
                     20%, 60% { transform: scale(0.99) translateX(-4px); }
@@ -522,12 +522,12 @@ const RepairRequestList = () => {
                                         style={{
                                             background: 'none',
                                             border: 'none',
-                                            borderBottom: activeTab === tab.key ? '2px solid #2ece8a' : '2px solid transparent',
+                                            borderBottom: activeTab === tab.key ? '2px solid #0a500f' : '2px solid transparent',
                                             marginBottom: '-2px',
                                             padding: '14px 18px 12px',
                                             fontSize: '14px',
                                             fontWeight: activeTab === tab.key ? 600 : 400,
-                                            color: activeTab === tab.key ? '#2ece8a' : '#64748b',
+                                            color: activeTab === tab.key ? '#0a500f' : '#64748b',
                                             cursor: 'pointer',
                                             display: 'flex',
                                             alignItems: 'center',

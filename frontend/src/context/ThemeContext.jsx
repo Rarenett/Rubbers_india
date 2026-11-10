@@ -552,7 +552,7 @@ const ThemeContextProvider = (props) => {
         theme_bg_color: '',
         theme_font_color: '',
         theme_form_icon_color: '',
-        login_panel_color: '#1a3a72',
+        login_panel_color: '#0a500f',
       });
 
       // 7. Reset formIconColor state
@@ -562,7 +562,7 @@ const ThemeContextProvider = (props) => {
 
       // 8. Reset login panel color in companySettings localStorage
       const settings = JSON.parse(localStorage.getItem('companySettings') || '{}');
-      localStorage.setItem('companySettings', JSON.stringify({ ...settings, loginPanelColor: '#1a3a72' }));
+      localStorage.setItem('companySettings', JSON.stringify({ ...settings, loginPanelColor: '#0a500f' }));
       window.dispatchEvent(new Event('companySettingsUpdate'));
     };
     const changeSideBarPostion = (name) => {

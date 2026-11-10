@@ -451,7 +451,7 @@ const PriceListMapping = () => {
             ...provided,
             backgroundColor: isDark ? '#24292D' : '#ffffff',
             borderColor: state.isFocused 
-                ? 'var(--cc-primary, #2bc155)' 
+                ? 'var(--cc-primary, #0a500f)' 
                 : (isDark ? '#636363' : '#ececec'),
             color: isDark ? '#ffffff' : '#2f3f50',
             minHeight: '45px',
@@ -459,7 +459,7 @@ const PriceListMapping = () => {
             borderRadius: '0.5rem',
             boxShadow: 'none',
             '&:hover': {
-                borderColor: state.isFocused ? 'var(--cc-primary, #2bc155)' : (isDark ? '#636363' : '#ececec'),
+                borderColor: state.isFocused ? 'var(--cc-primary, #0a500f)' : (isDark ? '#636363' : '#ececec'),
             }
         }),
         valueContainer: (provided) => ({
@@ -485,7 +485,7 @@ const PriceListMapping = () => {
         option: (provided, state) => ({
             ...provided,
             backgroundColor: state.isSelected
-                ? 'var(--cc-primary, #2bc155)'
+                ? 'var(--cc-primary, #0a500f)'
                 : state.isFocused
                     ? (isDark ? '#24292D' : '#f8f9fa')
                     : 'transparent',
@@ -494,7 +494,7 @@ const PriceListMapping = () => {
                 : (isDark ? '#ffffff' : '#2f3f50'),
             cursor: 'pointer',
             '&:active': {
-                backgroundColor: 'var(--cc-primary, #2bc155)',
+                backgroundColor: 'var(--cc-primary, #0a500f)',
                 color: '#ffffff'
             }
         }),
@@ -837,7 +837,7 @@ const PriceListMapping = () => {
                             onClick={handleSaveBulkUpdate}
                             disabled={submitting || !selectedPriceList || !applicableDate}
                             className="text-white"
-                            style={{ backgroundColor: '#2bc155', borderColor: '#2bc155' }}
+                            style={{ backgroundColor: '#0a500f', borderColor: '#0a500f' }}
                         >
                             {submitting ? 'Updating...' : 'Update'}
                         </Button>

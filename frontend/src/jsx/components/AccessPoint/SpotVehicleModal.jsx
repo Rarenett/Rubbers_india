@@ -148,9 +148,9 @@ const SpotVehicleModal = ({ show, onHide, onVehicleCreated, initialVehicleNumber
         control: (base, state) => ({
             ...base,
             minHeight: '38px',
-            borderColor: state.isFocused ? '#2ece8a' : (isDark ? '#334155' : '#cbd5e1'),
-            boxShadow: state.isFocused ? '0 0 0 3px rgba(46, 206, 138, 0.15)' : 'none',
-            '&:hover': { borderColor: '#2ece8a' },
+            borderColor: state.isFocused ? '#0a500f' : (isDark ? '#334155' : '#cbd5e1'),
+            boxShadow: state.isFocused ? '0 0 0 3px rgba(10, 80, 15, 0.15)' : 'none',
+            '&:hover': { borderColor: '#0a500f' },
             borderRadius: '10px',
             fontSize: '13px',
             backgroundColor: isDark ? '#0f172a' : '#fff',
@@ -164,7 +164,7 @@ const SpotVehicleModal = ({ show, onHide, onVehicleCreated, initialVehicleNumber
         }),
         option: (base, state) => ({
             ...base,
-            backgroundColor: state.isSelected ? '#2ece8a' : state.isFocused ? (isDark ? '#334155' : '#e8fcf3') : 'transparent',
+            backgroundColor: state.isSelected ? '#0a500f' : state.isFocused ? (isDark ? '#334155' : '#e8fcf3') : 'transparent',
             color: state.isSelected ? 'white' : (isDark ? '#f8fafc' : '#333'),
             cursor: 'pointer',
         }),
@@ -285,7 +285,7 @@ const SpotVehicleModal = ({ show, onHide, onVehicleCreated, initialVehicleNumber
                                     type="button" 
                                     onClick={() => setShowCamera(true)} 
                                     className="btn-camera-upload d-flex align-items-center gap-1 px-2.5 py-1 text-white border-0 shadow-xs" 
-                                    style={{ background: '#2ece8a', fontSize: '11px', borderRadius: '6px' }}
+                                    style={{ background: '#0a500f', fontSize: '11px', borderRadius: '6px' }}
                                 >
                                     <i className="fa fa-camera"></i> Camera
                                 </Button>
@@ -386,13 +386,13 @@ const SpotVehicleModal = ({ show, onHide, onVehicleCreated, initialVehicleNumber
                     min-height: 95px !important;
                 }
                 .spot-vehicle-modal .dropzone-upload:hover {
-                    border-color: #2ece8a !important;
+                    border-color: #0a500f !important;
                     background-color: #f0fdf6 !important;
                 }
                 .spot-vehicle-modal .dropzone-upload .dz-icon {
                     width: 28px !important;
                     height: 28px !important;
-                    color: #2ece8a !important;
+                    color: #0a500f !important;
                 }
                 .spot-vehicle-modal .dropzone-upload .dz-title {
                     font-size: 13px !important;

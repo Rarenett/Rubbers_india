@@ -307,14 +307,14 @@ const MachineOutputList = () => {
     const selectStyles = {
         control: (base, state) => ({
             ...base,
-            border: state.isFocused ? '1px solid #2ece8a' : '1px solid #cbd5e1',
-            boxShadow: state.isFocused ? '0 0 0 3px rgba(46, 206, 138, 0.15)' : 'none',
+            border: state.isFocused ? '1px solid #0a500f' : '1px solid #cbd5e1',
+            boxShadow: state.isFocused ? '0 0 0 3px rgba(10, 80, 15, 0.15)' : 'none',
             borderRadius: '10px',
             minHeight: '44px',
             fontSize: '14px',
             backgroundColor: '#fff',
             '&:hover': {
-                borderColor: state.isFocused ? '#2ece8a' : '#cbd5e1'
+                borderColor: state.isFocused ? '#0a500f' : '#cbd5e1'
             }
         }),
         menuPortal: base => ({ ...base, zIndex: 9999 })
@@ -337,12 +337,12 @@ const MachineOutputList = () => {
                 .sgfm-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #2ece8a;
+                    background-color: #0a500f;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    box-shadow: 0 4px 10px rgba(46, 206, 138, 0.2);
+                    box-shadow: 0 4px 10px rgba(10, 80, 15, 0.2);
                 }
                 .sgfm-modal .modal-close-x {
                     border: none;
@@ -374,7 +374,7 @@ const MachineOutputList = () => {
                     margin-bottom: 8px;
                 }
                 .sgfm-modal .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -384,9 +384,9 @@ const MachineOutputList = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .sgfm-modal .btn-close-custom:hover { background-color: #6357a7 !important; }
+                .sgfm-modal .btn-close-custom:hover { background-color: #bb2d3b !important; }
                 .sgfm-modal .btn-save-custom {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -396,7 +396,7 @@ const MachineOutputList = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .sgfm-modal .btn-save-custom:hover { background-color: #26b277 !important; }
+                .sgfm-modal .btn-save-custom:hover { background-color: #073d0b !important; }
                 @keyframes modalFeedback {
                     0%, 100% { transform: scale(1); }
                     20%, 60% { transform: scale(0.99) translateX(-4px); }

@@ -473,12 +473,12 @@ const ItemDetailPopup = ({
                 .item-custom-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #2ece8a;
+                    background-color: #0a500f;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    box-shadow: 0 4px 10px rgba(46, 206, 138, 0.2);
+                    box-shadow: 0 4px 10px rgba(10, 80, 15, 0.2);
                 }
                 .item-custom-modal .modal-close-x {
                     border: none;
@@ -523,15 +523,15 @@ const ItemDetailPopup = ({
                 }
                 .item-custom-modal .bm-input:focus {
                     outline: none;
-                    border-color: #2ece8a;
-                    box-shadow: 0 0 0 3px rgba(46,206,138,0.15);
+                    border-color: #0a500f;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15,0.15);
                 }
                 .item-custom-modal .btn-add-row {
                     display: inline-flex;
                     align-items: center;
                     gap: 6px;
                     background: none;
-                    border: 1.5px dashed #2ece8a;
+                    border: 1.5px dashed #0a500f;
                     color: #16a34a;
                     border-radius: 8px;
                     padding: 7px 14px;
@@ -555,7 +555,7 @@ const ItemDetailPopup = ({
                 .item-custom-modal .btn-remove-row:hover { background: #fef2f2; }
                 .item-custom-modal .btn-remove-row:disabled { opacity: 0.3; cursor: not-allowed; }
                 .item-custom-modal .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -566,10 +566,10 @@ const ItemDetailPopup = ({
                     transition: background-color 0.2s;
                 }
                 .item-custom-modal .btn-close-custom:hover {
-                    background-color: #6357a7 !important;
+                    background-color: #bb2d3b !important;
                 }
                 .item-custom-modal .btn-save-custom {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -580,7 +580,7 @@ const ItemDetailPopup = ({
                     transition: background-color 0.2s;
                 }
                 .item-custom-modal .btn-save-custom:hover {
-                    background-color: #26b277 !important;
+                    background-color: #073d0b !important;
                 }
                 .item-custom-modal .popup-table {
                     width: 100%;
@@ -783,9 +783,9 @@ const ItemDetailPopup = ({
                                                                             minHeight: '36px',
                                                                             fontSize: '13px',
                                                                             borderRadius: '8px',
-                                                                            borderColor: state.isFocused ? '#2ece8a' : '#cbd5e1',
-                                                                            boxShadow: state.isFocused ? '0 0 0 3px rgba(46,206,138,0.15)' : 'none',
-                                                                            '&:hover': { borderColor: '#2ece8a' },
+                                                                            borderColor: state.isFocused ? '#0a500f' : '#cbd5e1',
+                                                                            boxShadow: state.isFocused ? '0 0 0 3px rgba(10, 80, 15,0.15)' : 'none',
+                                                                            '&:hover': { borderColor: '#0a500f' },
                                                                         }),
                                                                         menu: base => ({ ...base, zIndex: 9999, fontSize: '13px' }),
                                                                         menuPortal: base => ({ ...base, zIndex: 99999 }),
@@ -796,14 +796,14 @@ const ItemDetailPopup = ({
                                                                         option: (base, state) => ({
                                                                             ...base,
                                                                             backgroundColor: state.isSelected
-                                                                                ? '#2ece8a'
+                                                                                ? '#0a500f'
                                                                                 : (state.isFocused && isKeyboard)
                                                                                     ? '#f0fdf4'
                                                                                     : 'white',
                                                                             color: state.isSelected ? 'white' : '#334155',
                                                                             cursor: 'pointer',
                                                                             '&:hover': {
-                                                                                backgroundColor: state.isSelected ? '#2ece8a' : '#f0fdf4',
+                                                                                backgroundColor: state.isSelected ? '#0a500f' : '#f0fdf4',
                                                                                 color: state.isSelected ? 'white' : '#334155',
                                                                             }
                                                                         }),
@@ -875,9 +875,9 @@ const ItemDetailPopup = ({
                                                                             minHeight: '36px',
                                                                             fontSize: '13px',
                                                                             borderRadius: '8px',
-                                                                            borderColor: state.isFocused ? '#2ece8a' : '#cbd5e1',
-                                                                            boxShadow: state.isFocused ? '0 0 0 3px rgba(46,206,138,0.15)' : 'none',
-                                                                            '&:hover': { borderColor: '#2ece8a' },
+                                                                            borderColor: state.isFocused ? '#0a500f' : '#cbd5e1',
+                                                                            boxShadow: state.isFocused ? '0 0 0 3px rgba(10, 80, 15,0.15)' : 'none',
+                                                                            '&:hover': { borderColor: '#0a500f' },
                                                                         }),
                                                                         menu: base => ({ ...base, zIndex: 9999, fontSize: '13px' }),
                                                                         menuPortal: base => ({ ...base, zIndex: 99999 }),
@@ -888,14 +888,14 @@ const ItemDetailPopup = ({
                                                                         option: (base, state) => ({
                                                                             ...base,
                                                                             backgroundColor: state.isSelected
-                                                                                ? '#2ece8a'
+                                                                                ? '#0a500f'
                                                                                 : (state.isFocused && isKeyboard)
                                                                                     ? '#f0fdf4'
                                                                                     : 'white',
                                                                             color: state.isSelected ? 'white' : '#334155',
                                                                             cursor: 'pointer',
                                                                             '&:hover': {
-                                                                                backgroundColor: state.isSelected ? '#2ece8a' : '#f0fdf4',
+                                                                                backgroundColor: state.isSelected ? '#0a500f' : '#f0fdf4',
                                                                                 color: state.isSelected ? 'white' : '#334155',
                                                                             }
                                                                         }),

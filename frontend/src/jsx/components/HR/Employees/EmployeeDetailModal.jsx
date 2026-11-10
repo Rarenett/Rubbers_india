@@ -1780,12 +1780,12 @@ const EmployeeDetailModal = ({ show, onHide, candidateId, employeeId, employeeNa
                 .emp-custom-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #2ece8a;
+                    background-color: #0a500f;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    box-shadow: 0 4px 10px rgba(46, 206, 138, 0.2);
+                    box-shadow: 0 4px 10px rgba(10, 80, 15, 0.2);
                 }
                 .emp-custom-modal .modal-close-x {
                     border: none;
@@ -1830,9 +1830,9 @@ const EmployeeDetailModal = ({ show, onHide, candidateId, employeeId, employeeNa
                 }
                 .emp-custom-tabs .nav-link:hover { color: #475569; border-bottom-color: #cbd5e1; }
                 .emp-custom-tabs .nav-link.active {
-                    color: #2ece8a;
+                    color: #0a500f;
                     background: transparent;
-                    border-bottom-color: #2ece8a;
+                    border-bottom-color: #0a500f;
                 }
                 .emp-tab-content { padding: 24px 28px; overflow-x: hidden; }
                 .emp-custom-modal .modal-footer-custom {
@@ -1862,18 +1862,18 @@ const EmployeeDetailModal = ({ show, onHide, candidateId, employeeId, employeeNa
                 }
                 .emp-custom-modal .form-control-custom:focus {
                     outline: none;
-                    border-color: #2ece8a;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15);
+                    border-color: #0a500f;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
                 }
                 .emp-custom-modal .form-control-custom::placeholder {
                     color: #94a3b8;
                 }
                 .emp-custom-modal .form-check-input:checked {
-                    background-color: #2ece8a;
-                    border-color: #2ece8a;
+                    background-color: #0a500f;
+                    border-color: #0a500f;
                 }
                 .emp-custom-modal .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -1884,10 +1884,10 @@ const EmployeeDetailModal = ({ show, onHide, candidateId, employeeId, employeeNa
                     transition: background-color 0.2s, transform 0.1s;
                 }
                 .emp-custom-modal .btn-close-custom:hover {
-                    background-color: #6357a7 !important;
+                    background-color: #bb2d3b !important;
                 }
                 .emp-custom-modal .btn-save-custom {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -1898,7 +1898,7 @@ const EmployeeDetailModal = ({ show, onHide, candidateId, employeeId, employeeNa
                     transition: background-color 0.2s, transform 0.1s;
                 }
                 .emp-custom-modal .btn-save-custom:hover {
-                    background-color: #26b277 !important;
+                    background-color: #073d0b !important;
                 }
                 
                 /* Extra styles for Employee forms */
@@ -1914,13 +1914,13 @@ const EmployeeDetailModal = ({ show, onHide, candidateId, employeeId, employeeNa
                     border-radius: 10px; border: 1px solid #e2e8f0; margin-bottom: 8px;
                 }
                 .emp-doc-item .doc-name { flex: 1; font-size: 13px; font-weight: 500; color: #334155; }
-                .emp-doc-item a { font-size: 12px; color: #2ece8a; text-decoration: none; }
+                .emp-doc-item a { font-size: 12px; color: #0a500f; text-decoration: none; }
                 .emp-doc-item a:hover { text-decoration: underline; }
                 .emp-loading {
                     display: flex; flex-direction: column; align-items: center;
                     justify-content: center; min-height: 280px; gap: 12px;
                 }
-                .emp-loading .spinner-border { width: 2.2rem; height: 2.2rem; color: #2ece8a; border-width: 3px; }
+                .emp-loading .spinner-border { width: 2.2rem; height: 2.2rem; color: #0a500f; border-width: 3px; }
                 .emp-loading p { font-size: 13px; color: #94a3b8; margin: 0; }
                 .emp-empty-state {
                     text-align: center; padding: 36px 20px;
@@ -1930,9 +1930,9 @@ const EmployeeDetailModal = ({ show, onHide, candidateId, employeeId, employeeNa
                 .emp-empty-state i { font-size: 2rem; color: #cbd5e1; margin-bottom: 10px; display: block; }
                 .emp-empty-state p { color: #94a3b8; font-size: 13px; margin: 0; }
                 .emp-payhead-date-badge {
-                    font-size: 12px; font-weight: 600; color: #2ece8a;
+                    font-size: 12px; font-weight: 600; color: #0a500f;
                     padding: 5px 12px; background: #e6fcf1;
-                    border-radius: 8px; border-left: 3px solid #2ece8a; margin-bottom: 10px;
+                    border-radius: 8px; border-left: 3px solid #0a500f; margin-bottom: 10px;
                 }
             `}</style>
 
@@ -2071,9 +2071,9 @@ const EmployeeDetailModal = ({ show, onHide, candidateId, employeeId, employeeNa
                                             <div className="d-flex align-items-center gap-2">
                                                 <div style={{
                                                     width: '32px', height: '32px', borderRadius: '8px',
-                                                    background: 'linear-gradient(135deg, #2ece8a 0%, #10b981 100%)',
+                                                    background: 'linear-gradient(135deg, #0a500f 0%, #10b981 100%)',
                                                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                                    color: '#fff', fontSize: '14px', boxShadow: '0 2px 8px rgba(46, 206, 138, 0.25)'
+                                                    color: '#fff', fontSize: '14px', boxShadow: '0 2px 8px rgba(10, 80, 15, 0.25)'
                                                 }}>
                                                     <i className="fa fa-sitemap" />
                                                 </div>
@@ -2151,7 +2151,7 @@ const EmployeeDetailModal = ({ show, onHide, candidateId, employeeId, employeeNa
                                                             borderRadius: '8px',
                                                             backgroundColor: (!deptChangeForm.department || !deptChangeForm.designation || !deptChangeForm.effective_from)
                                                                 ? '#e2e8f0'
-                                                                : '#2ece8a',
+                                                                : '#0a500f',
                                                             color: (!deptChangeForm.department || !deptChangeForm.designation || !deptChangeForm.effective_from)
                                                                 ? '#94a3b8'
                                                                 : '#ffffff',
@@ -2160,7 +2160,7 @@ const EmployeeDetailModal = ({ show, onHide, candidateId, employeeId, employeeNa
                                                             border: 'none',
                                                             boxShadow: (!deptChangeForm.department || !deptChangeForm.designation || !deptChangeForm.effective_from)
                                                                 ? 'none'
-                                                                : '0 2px 6px rgba(46, 206, 138, 0.25)',
+                                                                : '0 2px 6px rgba(10, 80, 15, 0.25)',
                                                             display: 'flex',
                                                             alignItems: 'center',
                                                             justifyContent: 'center',
@@ -2172,12 +2172,12 @@ const EmployeeDetailModal = ({ show, onHide, candidateId, employeeId, employeeNa
                                                         }}
                                                         onMouseEnter={(e) => {
                                                             if (deptChangeForm.department && deptChangeForm.designation && deptChangeForm.effective_from) {
-                                                                e.currentTarget.style.backgroundColor = '#26b277';
+                                                                e.currentTarget.style.backgroundColor = '#073d0b';
                                                             }
                                                         }}
                                                         onMouseLeave={(e) => {
                                                             if (deptChangeForm.department && deptChangeForm.designation && deptChangeForm.effective_from) {
-                                                                e.currentTarget.style.backgroundColor = '#2ece8a';
+                                                                e.currentTarget.style.backgroundColor = '#0a500f';
                                                             }
                                                         }}
                                                     >
@@ -2243,7 +2243,7 @@ const EmployeeDetailModal = ({ show, onHide, candidateId, employeeId, employeeNa
                                                                     </td>
                                                                     <td style={{ padding: '10px 14px' }}>
                                                                         {item.status === 'active' ? (
-                                                                            <span className="badge" style={{ backgroundColor: 'rgba(46, 206, 138, 0.15)', color: '#0d9488', border: '1px solid rgba(46, 206, 138, 0.3)', padding: '5px 9px', borderRadius: '6px', fontWeight: 600, fontSize: '11px', display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+                                                                            <span className="badge" style={{ backgroundColor: 'rgba(10, 80, 15, 0.15)', color: '#0d9488', border: '1px solid rgba(10, 80, 15, 0.3)', padding: '5px 9px', borderRadius: '6px', fontWeight: 600, fontSize: '11px', display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
                                                                                 <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#0d9488' }} />
                                                                                 Active
                                                                             </span>
@@ -2989,7 +2989,7 @@ const EmployeeDetailModal = ({ show, onHide, candidateId, employeeId, employeeNa
                                                 </Row>
 
                                                 <div className="d-flex justify-content-end mb-2 mt-3">
-                                                    <button type="button" className="btn btn-sm" style={{ background: '#2ece8a', color: 'white', borderRadius: '6px' }} onClick={handleAddWorkExperienceRow}>
+                                                    <button type="button" className="btn btn-sm" style={{ background: '#0a500f', color: 'white', borderRadius: '6px' }} onClick={handleAddWorkExperienceRow}>
                                                         <i className="fa fa-plus me-1"></i> Add Experience
                                                     </button>
                                                 </div>
@@ -3073,7 +3073,7 @@ const EmployeeDetailModal = ({ show, onHide, candidateId, employeeId, employeeNa
                                             <div className="emp-section-label">Uploaded Documents</div>
                                             {documents.map((doc) => (
                                                 <div key={doc.id} className="emp-doc-item">
-                                                    <i className="fa fa-file-alt" style={{ color: '#2ece8a', fontSize: '15px' }}></i>
+                                                    <i className="fa fa-file-alt" style={{ color: '#0a500f', fontSize: '15px' }}></i>
                                                     <span className="doc-name">{doc.document_type}</span>
                                                     {doc.is_signed && <span className="badge bg-success" style={{ fontSize: '11px' }}>Signed</span>}
                                                     <a href={doc.document_file} target="_blank" rel="noopener noreferrer">

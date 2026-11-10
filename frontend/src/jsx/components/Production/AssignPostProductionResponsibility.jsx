@@ -166,7 +166,7 @@ const AssignPostProductionResponsibility = () => {
                     className="btn btn-outline-secondary btn-sm d-flex align-items-center justify-content-between text-start spm-dropdown-btn"
                     style={{ width: '175px', height: '34px', fontSize: '13px', borderRadius: '6px', borderColor: '#e2e8f0', color: '#475569' }}>
                     <span className="d-flex align-items-center gap-1 text-truncate" style={{ maxWidth: '145px' }}>
-                        <i className="fa fa-industry" style={{ fontSize: '11px', color: '#7A70BA', flexShrink: 0 }}></i>
+                        <i className="fa fa-industry" style={{ fontSize: '11px', color: '#0a500f', flexShrink: 0 }}></i>
                         <span className="text-truncate font-w500">{selectedLabel}</span>
                     </span>
                 </Dropdown.Toggle>
@@ -219,8 +219,8 @@ const AssignPostProductionResponsibility = () => {
         control: (provided, state) => ({
             ...provided,
             borderRadius: '6px',
-            border: state.isFocused ? '1px solid #7A70BA' : '1px solid #e2e8f0',
-            boxShadow: state.isFocused ? '0 0 0 1px #7A70BA' : 'none',
+            border: state.isFocused ? '1px solid #0a500f' : '1px solid #e2e8f0',
+            boxShadow: state.isFocused ? '0 0 0 1px #0a500f' : 'none',
             minHeight: '34px',
             fontSize: '13px'
         }),

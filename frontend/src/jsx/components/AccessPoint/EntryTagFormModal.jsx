@@ -11,10 +11,10 @@ const selectStyles = {
         minHeight: '38px',
         height: '38px',
         borderRadius: '10px',
-        borderColor: state.isFocused ? '#2ece8a' : '#cbd5e1',
-        boxShadow: state.isFocused ? '0 0 0 3px rgba(46, 206, 138, 0.15)' : 'none',
+        borderColor: state.isFocused ? '#0a500f' : '#cbd5e1',
+        boxShadow: state.isFocused ? '0 0 0 3px rgba(10, 80, 15, 0.15)' : 'none',
         '&:hover': {
-            borderColor: state.isFocused ? '#2ece8a' : '#94a3b8'
+            borderColor: state.isFocused ? '#0a500f' : '#94a3b8'
         },
         fontSize: '13px'
     }),
@@ -41,10 +41,10 @@ const selectStyles = {
     option: (base, state) => ({
         ...base,
         fontSize: '13px',
-        backgroundColor: state.isSelected ? '#2ece8a' : state.isFocused ? 'rgba(46, 206, 138, 0.1)' : 'transparent',
+        backgroundColor: state.isSelected ? '#0a500f' : state.isFocused ? 'rgba(10, 80, 15, 0.1)' : 'transparent',
         color: state.isSelected ? 'white' : '#334155',
         '&:active': {
-            backgroundColor: '#2ece8a',
+            backgroundColor: '#0a500f',
             color: 'white'
         }
     })

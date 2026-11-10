@@ -196,7 +196,7 @@ const WarehouseDetails = () => {
             width: 56px;
             height: 56px;
             border-radius: 12px;
-            background: linear-gradient(135deg, #7A70BA 0%, #58d68d 100%);
+            background: linear-gradient(135deg, #0a500f 0%, #58d68d 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -281,10 +281,10 @@ const WarehouseDetails = () => {
             align-items: center;
             gap: 8px;
         }
-        .custom-tab-link:hover { color: #7A70BA !important; background-color: #f8fafc !important; }
+        .custom-tab-link:hover { color: #0a500f !important; background-color: #f8fafc !important; }
         .custom-tab-link.active {
-            color: #7A70BA !important;
-            border-bottom-color: #7A70BA !important;
+            color: #0a500f !important;
+            border-bottom-color: #0a500f !important;
             background-color: transparent !important;
             box-shadow: none !important;
         }
@@ -292,7 +292,7 @@ const WarehouseDetails = () => {
         [data-theme-version="dark"] .custom-tab-link.active {
             color: #c4b5fd !important;
             background-color: #24292D !important;
-            border-bottom-color: #7A70BA !important;
+            border-bottom-color: #0a500f !important;
         }
         .table-custom thead th {
             background-color: #fcfdfe !important;
@@ -436,13 +436,13 @@ const WarehouseDetails = () => {
         }
         .form-control-custom:focus {
             outline: none;
-            border-color: #2ece8a;
-            box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15);
+            border-color: #0a500f;
+            box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
         }
         .form-control-custom::placeholder { color: #94a3b8; }
         
         .btn-close-custom {
-            background-color: #7A70BA !important;
+            background-color: #dc3545 !important;
             color: white !important;
             border-radius: 8px !important;
             font-weight: 500 !important;
@@ -452,10 +452,10 @@ const WarehouseDetails = () => {
             cursor: pointer;
             transition: background-color 0.2s;
         }
-        .btn-close-custom:hover { background-color: #6357a7 !important; }
+        .btn-close-custom:hover { background-color: #bb2d3b !important; }
         
         .btn-save-custom {
-            background-color: #2ece8a !important;
+            background-color: #0a500f !important;
             color: white !important;
             border-radius: 8px !important;
             font-weight: 500 !important;
@@ -465,7 +465,7 @@ const WarehouseDetails = () => {
             cursor: pointer;
             transition: background-color 0.2s;
         }
-        .btn-save-custom:hover { background-color: #26b277 !important; }
+        .btn-save-custom:hover { background-color: #073d0b !important; }
 
         /* ===== DARK MODE SUPPORT ===== */
         [data-theme-version="dark"] .modal-content {
@@ -500,7 +500,7 @@ const WarehouseDetails = () => {
         }
         [data-theme-version="dark"] .form-control-custom:focus,
         [data-theme-version="dark"] .modal-body-custom .form-control:focus {
-            border-color: #2ece8a !important;
+            border-color: #0a500f !important;
             background-color: #24292D !important;
             color: #fff !important;
         }
@@ -527,7 +527,7 @@ const WarehouseDetails = () => {
                             <span className="text-muted">/</span>
                             <span className="text-muted" style={{ fontSize: '14px' }}>Company</span>
                             <span className="text-muted">/</span>
-                            <span style={{ fontSize: '14px', color: '#7A70BA', fontWeight: '600' }}>
+                            <span style={{ fontSize: '14px', color: '#0a500f', fontWeight: '600' }}>
                                 {warehouse.name}
                             </span>
                         </div>

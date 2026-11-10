@@ -138,7 +138,7 @@ const NavHader = () => {
             <span style={{
               fontSize: '1.3rem',
               fontWeight: 800,
-              color: background.value === 'dark' ? '#fff' : '#1a3a72',
+              color: background.value === 'dark' ? '#fff' : '#0a500f',
               letterSpacing: '-0.01em',
               whiteSpace: 'nowrap',
             }}>
@@ -159,6 +159,12 @@ const NavHader = () => {
 
       <div
         className="nav-control"
+        style={{
+          background: 'transparent',
+          backgroundColor: 'transparent',
+          boxShadow: 'none',
+          border: 'none',
+        }}
         onClick={() => { handleToogle(); }}
       >
         <div className={`hamburger ${sideMenu ? "is-active" : ""}`}>

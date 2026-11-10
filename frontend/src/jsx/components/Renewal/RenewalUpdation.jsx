@@ -21,15 +21,15 @@ const selectStyles = {
         ...base,
         minHeight: '40px',
         height: 'auto',
-        borderColor: state.isFocused ? '#2ece8a' : '#cbd5e1',
-        boxShadow: state.isFocused ? '0 0 0 3px rgba(46, 206, 138, 0.15)' : 'none',
+        borderColor: state.isFocused ? '#0a500f' : '#cbd5e1',
+        boxShadow: state.isFocused ? '0 0 0 3px rgba(10, 80, 15, 0.15)' : 'none',
         borderRadius: '10px',
         backgroundColor: '#fff',
         fontSize: '13px',
         fontWeight: '500',
         transition: 'all 0.2s ease',
         '&:hover': {
-            borderColor: state.isFocused ? '#2ece8a' : '#94a3b8'
+            borderColor: state.isFocused ? '#0a500f' : '#94a3b8'
         }
     }),
     valueContainer: (base) => ({
@@ -41,8 +41,8 @@ const selectStyles = {
     }),
     multiValue: (base) => ({
         ...base,
-        backgroundColor: 'rgba(46, 206, 138, 0.12)',
-        border: '1px solid rgba(46, 206, 138, 0.3)',
+        backgroundColor: 'rgba(10, 80, 15, 0.12)',
+        border: '1px solid rgba(10, 80, 15, 0.3)',
         borderRadius: '6px',
         margin: 0
     }),
@@ -56,7 +56,7 @@ const selectStyles = {
         ...base,
         color: '#0f5132',
         '&:hover': {
-            backgroundColor: '#2ece8a',
+            backgroundColor: '#0a500f',
             color: '#fff',
             borderRadius: '0 6px 6px 0'
         }
@@ -74,9 +74,9 @@ const selectStyles = {
         fontSize: '13px',
         fontWeight: '500',
         backgroundColor: state.isSelected
-            ? '#2ece8a'
+            ? '#0a500f'
             : state.isFocused
-                ? 'rgba(46, 206, 138, 0.1)'
+                ? 'rgba(10, 80, 15, 0.1)'
                 : '#fff',
         color: state.isSelected ? '#fff' : '#1e293b',
         padding: '10px 14px',
@@ -95,7 +95,7 @@ const CheckboxOption = (props) => {
                     onChange={() => null}
                     style={{
                         marginRight: '10px',
-                        accentColor: '#2ece8a',
+                        accentColor: '#0a500f',
                         cursor: 'pointer',
                         width: '15px',
                         height: '15px',
@@ -269,7 +269,7 @@ const RenewalUpdation = () => {
                     icon: 'info',
                     title: 'No Active Renewal Found',
                     text: 'No active renewal reminder (status 1) was found for the selected criteria.',
-                    confirmButtonColor: '#2ece8a'
+                    confirmButtonColor: '#0a500f'
                 });
             }
         } catch (err) {
@@ -534,7 +534,7 @@ const RenewalUpdation = () => {
                 icon: 'warning',
                 title: 'Missing Required Field',
                 text: 'Please specify the new Renewal Date.',
-                confirmButtonColor: '#2ece8a'
+                confirmButtonColor: '#0a500f'
             });
             return;
         }
@@ -544,7 +544,7 @@ const RenewalUpdation = () => {
                 icon: 'warning',
                 title: 'Missing Required Field',
                 text: 'Please specify the Reminder Days Before.',
-                confirmButtonColor: '#2ece8a'
+                confirmButtonColor: '#0a500f'
             });
             return;
         }
@@ -554,7 +554,7 @@ const RenewalUpdation = () => {
                 icon: 'warning',
                 title: 'Missing Required Field',
                 text: 'Please select at least one employee in Allocated To.',
-                confirmButtonColor: '#2ece8a'
+                confirmButtonColor: '#0a500f'
             });
             return;
         }
@@ -578,7 +578,7 @@ const RenewalUpdation = () => {
                 icon: 'success',
                 title: 'Renewal Updated Successfully!',
                 text: `Renewal "${selectName.value}" has been updated. Previous record is archived (status 0) and the new record is now active (status 1).`,
-                confirmButtonColor: '#2ece8a'
+                confirmButtonColor: '#0a500f'
             });
 
             handleReset();
@@ -626,8 +626,8 @@ const RenewalUpdation = () => {
                                     style={{
                                         width: '44px',
                                         height: '44px',
-                                        backgroundColor: 'rgba(46, 206, 138, 0.15)',
-                                        color: '#2ece8a',
+                                        backgroundColor: 'rgba(10, 80, 15, 0.15)',
+                                        color: '#0a500f',
                                         fontSize: '20px'
                                     }}
                                 >
@@ -782,7 +782,7 @@ const RenewalUpdation = () => {
                             style={{
                                 borderRadius: '16px',
                                 background: '#ffffff',
-                                borderTop: '4px solid #2ece8a'
+                                borderTop: '4px solid #0a500f'
                             }}
                         >
                             <Card.Header
@@ -795,8 +795,8 @@ const RenewalUpdation = () => {
                                         style={{
                                             width: '40px',
                                             height: '40px',
-                                            backgroundColor: '#ebf3fe',
-                                            color: '#1a3a72',
+                                            backgroundColor: 'rgba(10, 80, 15, 0.12)',
+                                            color: '#0a500f',
                                             fontSize: '18px'
                                         }}
                                     >
@@ -811,7 +811,7 @@ const RenewalUpdation = () => {
                                                 fontSize: '1.1rem'
                                             }}
                                         >
-                                            Update Renewal: <span style={{ color: '#2ece8a' }}>{selectedReminder.name}</span>
+                                            Update Renewal: <span style={{ color: '#0a500f' }}>{selectedReminder.name}</span>
                                         </h5>
                                         <small className="text-muted">
                                             Original Renewal Date: {selectedReminder.renewal_date ? formatDate(selectedReminder.renewal_date) : '-'} | Previous Status: Active (1)
@@ -1001,13 +1001,13 @@ const RenewalUpdation = () => {
                                                 type="submit"
                                                 className="btn btn-save-custom px-4 py-2"
                                                 style={{
-                                                    backgroundColor: '#2ece8a',
-                                                    borderColor: '#2ece8a',
+                                                    backgroundColor: '#0a500f',
+                                                    borderColor: '#0a500f',
                                                     color: '#ffffff',
                                                     borderRadius: '10px',
                                                     fontWeight: '600',
                                                     fontSize: '13px',
-                                                    boxShadow: '0 4px 12px rgba(46, 206, 138, 0.25)'
+                                                    boxShadow: '0 4px 12px rgba(10, 80, 15, 0.25)'
                                                 }}
                                             >
                                                 <i className="fa fa-check me-2"></i>

@@ -371,7 +371,7 @@ const CalculationTypeList = () => {
                     color: #475569;
                 }
                 .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -381,9 +381,9 @@ const CalculationTypeList = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .btn-close-custom:hover { background-color: #6357a7 !important; }
+                .btn-close-custom:hover { background-color: #bb2d3b !important; }
                 .btn-save-custom {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -393,7 +393,7 @@ const CalculationTypeList = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .btn-save-custom:hover:not(:disabled) { background-color: #26b277 !important; }
+                .btn-save-custom:hover:not(:disabled) { background-color: #073d0b !important; }
                 .btn-save-custom:disabled {
                     opacity: 0.6 !important;
                 }

@@ -771,12 +771,12 @@ const MeetingList = () => {
                         width: 48px;
                         height: 48px;
                         border-radius: 12px;
-                        background: #2ece8a;
+                        background: #0a500f;
                         display: flex;
                         align-items: center;
                         justify-content: center;
                         flex-shrink: 0;
-                        box-shadow: 0 4px 12px rgba(46, 206, 138, 0.25);
+                        box-shadow: 0 4px 12px rgba(10, 80, 15, 0.25);
                     }
                     .mc-modal .modal-close-x {
                         width: 36px;
@@ -819,8 +819,8 @@ const MeetingList = () => {
                     }
                     .mc-modal .form-control-custom:focus,
                     .mc-modal .form-select-custom:focus {
-                        border-color: #2ece8a;
-                        box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15);
+                        border-color: #0a500f;
+                        box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
                         outline: none;
                     }
                     .mc-modal .modal-footer-custom {
@@ -835,28 +835,30 @@ const MeetingList = () => {
                     .mc-modal .btn-close-custom {
                         height: 42px;
                         padding: 0 24px;
-                        border-radius: 10px;
+                        border-radius: 8px;
                         border: none;
-                        background: #7A70BA;
-                        color: white;
-                        font-weight: 600;
+                        background: #dc3545 !important;
+                        background-color: #dc3545 !important;
+                        color: white !important;
+                        font-weight: 500;
                         font-size: 14px;
                         transition: all 0.2s;
                     }
                     .mc-modal .btn-close-custom:hover {
-                        background: #685ea6;
-                        color: white;
+                        background: #bb2d3b !important;
+                        background-color: #bb2d3b !important;
+                        color: white !important;
                     }
                     .mc-modal .btn-save-custom {
                         height: 42px;
                         padding: 0 28px;
                         border-radius: 10px;
                         border: none;
-                        background: #2ece8a;
+                        background: #0a500f;
                         color: white;
                         font-weight: 600;
                         font-size: 14px;
-                        box-shadow: 0 4px 14px rgba(46, 206, 138, 0.25);
+                        box-shadow: 0 4px 14px rgba(10, 80, 15, 0.25);
                         transition: all 0.2s;
                     }
                     .mc-modal .btn-save-custom:hover {

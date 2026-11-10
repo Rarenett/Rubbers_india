@@ -467,7 +467,7 @@ const ConvertedOpportunities = () => {
                 icon: 'error',
                 title: 'Submission Failed',
                 text: err.response?.data?.error || err.response?.data?.detail || err.message || 'Failed to submit opportunity.',
-                confirmButtonColor: 'rgb(61, 53, 119)'
+                confirmButtonColor: '#0a500f'
             });
         } finally {
             setApprovingLeadId(null);
@@ -889,8 +889,8 @@ const ConvertedOpportunities = () => {
                                                                                                 fontSize: '12px',
                                                                                                 fontWeight: 600,
                                                                                                 padding: '0 12px',
-                                                                                                backgroundColor: 'rgb(61, 53, 119)',
-                                                                                                borderColor: 'rgb(61, 53, 119)',
+                                                                                                backgroundColor: '#0a500f',
+                                                                                                borderColor: '#0a500f',
                                                                                                 whiteSpace: 'nowrap'
                                                                                             }}
                                                                                             title="Opportunity Details — Click to fill Opportunity Profile"

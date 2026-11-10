@@ -471,7 +471,7 @@ const StockItemFormModal = ({
                     width: 32px;
                     height: 32px;
                     border-radius: 8px;
-                    background: linear-gradient(135deg, #2ece8a, #26b277);
+                    background: linear-gradient(135deg, #0a500f, #073d0b);
                     border: none;
                     color: white;
                     font-size: 18px;
@@ -480,7 +480,7 @@ const StockItemFormModal = ({
                     cursor: pointer;
                     flex-shrink: 0;
                     transition: opacity 0.2s, transform 0.15s;
-                    box-shadow: 0 2px 6px rgba(46,206,138,0.35);
+                    box-shadow: 0 2px 6px rgba(10, 80, 15,0.35);
                     margin-top: 1px;
                 }
                 .quick-add-btn:hover {
@@ -505,12 +505,12 @@ const StockItemFormModal = ({
                 .item-custom-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #2ece8a;
+                    background-color: #0a500f;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    box-shadow: 0 4px 10px rgba(46, 206, 138, 0.2);
+                    box-shadow: 0 4px 10px rgba(10, 80, 15, 0.2);
                 }
                 .item-custom-modal .modal-close-x {
                     border: none;
@@ -548,9 +548,9 @@ const StockItemFormModal = ({
                 }
                 .item-custom-tabs .nav-link:hover { color: #475569; border-bottom-color: #cbd5e1; }
                 .item-custom-tabs .nav-link.active {
-                    color: #2ece8a;
+                    color: #0a500f;
                     background: transparent;
-                    border-bottom-color: #2ece8a;
+                    border-bottom-color: #0a500f;
                 }
                 .item-tab-content { padding: 24px 28px; }
                 .item-custom-modal .modal-footer-custom {
@@ -580,18 +580,18 @@ const StockItemFormModal = ({
                 }
                 .item-custom-modal .form-control-custom:focus {
                     outline: none;
-                    border-color: #2ece8a;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15);
+                    border-color: #0a500f;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
                 }
                 .item-custom-modal .form-control-custom::placeholder {
                     color: #94a3b8;
                 }
                 .item-custom-modal .form-check-input:checked {
-                    background-color: #2ece8a;
-                    border-color: #2ece8a;
+                    background-color: #0a500f;
+                    border-color: #0a500f;
                 }
                 .item-custom-modal .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -602,10 +602,10 @@ const StockItemFormModal = ({
                     transition: background-color 0.2s, transform 0.1s;
                 }
                 .item-custom-modal .btn-close-custom:hover {
-                    background-color: #6357a7 !important;
+                    background-color: #bb2d3b !important;
                 }
                 .item-custom-modal .btn-save-custom {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -616,7 +616,7 @@ const StockItemFormModal = ({
                     transition: background-color 0.2s, transform 0.1s;
                 }
                 .item-custom-modal .btn-save-custom:hover {
-                    background-color: #26b277 !important;
+                    background-color: #073d0b !important;
                 }
                 .item-custom-modal .dropzone-upload {
                     display: flex;
@@ -634,12 +634,12 @@ const StockItemFormModal = ({
                     outline: none;
                 }
                 .item-custom-modal .dropzone-upload:hover {
-                    border-color: #2ece8a;
+                    border-color: #0a500f;
                     background-color: #f0fdf6;
                 }
                 .item-custom-modal .dropzone-upload:focus-visible {
-                    border-color: #2ece8a;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15);
+                    border-color: #0a500f;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
                 }
                 .item-custom-modal .dropzone-upload.dragging {
                     border-color: #16a34a;
@@ -650,7 +650,7 @@ const StockItemFormModal = ({
                 .item-custom-modal .dropzone-upload .dz-icon {
                     width: 36px;
                     height: 36px;
-                    color: #2ece8a;
+                    color: #0a500f;
                 }
                 .item-custom-modal .dropzone-upload .dz-title {
                     font-size: 13.5px;
@@ -1014,7 +1014,7 @@ const StockItemFormModal = ({
                                                     style={{
                                                         marginTop: 6,
                                                         background: 'none',
-                                                        border: '1px solid #2ece8a',
+                                                        border: '1px solid #0a500f',
                                                         borderRadius: 6,
                                                         color: '#16a34a',
                                                         fontSize: 12,

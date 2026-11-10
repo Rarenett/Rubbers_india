@@ -467,7 +467,7 @@ const ShiftPlanManagement = () => {
                 <Dropdown.Toggle as="button"
                     style={{ width: '175px', height: '34px', fontSize: '13px', borderRadius: '6px', borderColor: '#e2e8f0', color: '#475569' }} className="btn btn-outline-secondary btn-sm d-flex align-items-center justify-content-between text-start spm-dropdown-btn">
                     <span className="d-flex align-items-center gap-1 text-truncate" style={{ maxWidth: '145px' }}>
-                        <i className="fa fa-industry" style={{ fontSize: '11px', color: '#7A70BA', flexShrink: 0 }}></i>
+                        <i className="fa fa-industry" style={{ fontSize: '11px', color: '#0a500f', flexShrink: 0 }}></i>
                         <span className="text-truncate font-w500">{selectedLabel}</span>
                     </span>
                 </Dropdown.Toggle>
@@ -868,7 +868,7 @@ const ShiftPlanManagement = () => {
                                                 onClick(e);
                                             }}
                                             className="btn btn-outline-primary btn-sm d-flex align-items-center justify-content-between text-start spm-dropdown-btn"
-                                            style={{ width: '220px', height: '34px', fontSize: '13px', borderRadius: '6px', color: '#7A70BA', borderColor: '#e2e8f0' }}
+                                            style={{ width: '220px', height: '34px', fontSize: '13px', borderRadius: '6px', color: '#0a500f', borderColor: '#e2e8f0' }}
                                         >
                                             <span className="text-truncate" style={{ maxWidth: '180px', fontWeight: '500' }}>{children}</span>
                                             <i className="fa fa-chevron-down ms-2" style={{ fontSize: '10px', color: '#94a3b8' }}></i>
@@ -1021,7 +1021,7 @@ const ShiftPlanManagement = () => {
                                                 const planFColor = getFactoryColor(planDetails.factory, factoryColorMap);
                                                 return (
                                                     <div className="mb-4 p-4 spm-plan-card d-flex justify-content-between align-items-center flex-wrap gap-3"
-                                                        style={{ borderRadius: '10px', border: '1px solid #e2e8f0', borderLeft: `4px solid ${planDetails.factory ? planFColor.border : '#7A70BA'}`, boxShadow: '0 4px 6px -1px rgba(0,0,0,.05)' }}>
+                                                        style={{ borderRadius: '10px', border: '1px solid #e2e8f0', borderLeft: `4px solid ${planDetails.factory ? planFColor.border : '#0a500f'}`, boxShadow: '0 4px 6px -1px rgba(0,0,0,.05)' }}>
                                                         <div>
                                                             <div className="d-flex align-items-center gap-2 mb-2 flex-wrap">
                                                                 <h4 className="mb-0 font-w600 text-dark" style={{ fontSize: '18px' }}>{planDetails.plan_name}</h4>

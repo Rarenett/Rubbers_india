@@ -118,7 +118,7 @@ const WalletSchemes = () => {
         control: (provided, state) => ({
             ...provided,
             backgroundColor: isDark ? '#24292D' : '#ffffff',
-            borderColor: state.isFocused ? '#2ece8a' : (isDark ? '#636363' : '#EEEEEE'),
+            borderColor: state.isFocused ? '#0a500f' : (isDark ? '#636363' : '#EEEEEE'),
             borderWidth: '0.0625rem',
             borderStyle: 'solid',
             minHeight: '56px',
@@ -132,7 +132,7 @@ const WalletSchemes = () => {
             display: 'flex',
             alignItems: 'center',
             '&:hover': {
-                borderColor: state.isFocused ? '#2ece8a' : (isDark ? '#636363' : '#cbd5e1')
+                borderColor: state.isFocused ? '#0a500f' : (isDark ? '#636363' : '#cbd5e1')
             }
         }),
         valueContainer: (provided) => ({
@@ -178,7 +178,7 @@ const WalletSchemes = () => {
             ...provided,
             fontSize: '13px',
             backgroundColor: state.isSelected
-                ? '#2ece8a'
+                ? '#0a500f'
                 : state.isFocused
                     ? (isDark ? '#334155' : '#f1f5f9')
                     : 'transparent',
@@ -210,7 +210,7 @@ const WalletSchemes = () => {
             alignItems: 'center',
             justifyContent: 'center',
             '&:hover': {
-                color: '#2ece8a'
+                color: '#0a500f'
             }
         }),
         clearIndicator: (provided) => ({
@@ -754,7 +754,7 @@ const WalletSchemes = () => {
                 icon: 'warning',
                 title: 'Validation Error',
                 text: errors.criteria,
-                confirmButtonColor: '#2ece8a'
+                confirmButtonColor: '#0a500f'
             });
         } else if (errors.criteria_2) {
             setActiveTab('criteria_2');
@@ -762,7 +762,7 @@ const WalletSchemes = () => {
                 icon: 'warning',
                 title: 'Validation Error',
                 text: errors.criteria_2,
-                confirmButtonColor: '#2ece8a'
+                confirmButtonColor: '#0a500f'
             });
         }
 
@@ -936,7 +936,7 @@ const WalletSchemes = () => {
                 icon: 'warning',
                 title: 'Cannot Delete Scheme',
                 html: `The scheme <b>"${item.name}"</b> has already been used for <b>${item.points_entries_count}</b> point ${item.points_entries_count === 1 ? 'entry' : 'entries'}.<br/><br/><span class="text-muted small">Schemes associated with existing point entries cannot be deleted to preserve transaction and audit history.</span>`,
-                confirmButtonColor: '#2ece8a',
+                confirmButtonColor: '#0a500f',
                 confirmButtonText: 'Understood'
             });
             return;
@@ -981,7 +981,7 @@ const WalletSchemes = () => {
                 icon: 'warning',
                 title: 'Scheme Expired',
                 text: `Cannot activate expired scheme "${item.name}". Its End Date (${formatDate(item.end_date)}) has passed. Please edit the scheme and extend the End Date first.`,
-                confirmButtonColor: '#2ece8a'
+                confirmButtonColor: '#0a500f'
             });
             return;
         }
@@ -996,7 +996,7 @@ const WalletSchemes = () => {
             showCancelButton: true,
             confirmButtonText: `Yes, ${actionLabel}`,
             cancelButtonText: 'Cancel',
-            confirmButtonColor: '#2ece8a'
+            confirmButtonColor: '#0a500f'
         });
 
         if (result.isConfirmed) {
@@ -1017,7 +1017,7 @@ const WalletSchemes = () => {
                     icon: 'error',
                     title: 'Action Failed',
                     text: errMsg,
-                    confirmButtonColor: '#2ece8a'
+                    confirmButtonColor: '#0a500f'
                 });
             }
         }
@@ -1896,12 +1896,12 @@ const WalletSchemes = () => {
                 .wallet-scheme-modal .modal-icon-circle {
                     width: 42px;
                     height: 42px;
-                    background-color: #2ece8a;
+                    background-color: #0a500f;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    box-shadow: 0 4px 10px rgba(46, 206, 138, 0.2);
+                    box-shadow: 0 4px 10px rgba(10, 80, 15, 0.2);
                     flex-shrink: 0;
                 }
                 .wallet-scheme-modal .modal-close-x {
@@ -1955,16 +1955,16 @@ const WalletSchemes = () => {
                 }
                 .wallet-scheme-modal .scheme-custom-tabs .nav-link:hover {
                     text-decoration: none !important;
-                    color: #2ece8a;
+                    color: #0a500f;
                     border-bottom-color: #cbd5e1 !important;
                 }
                 .wallet-scheme-modal .scheme-custom-tabs .nav-link.active {
                     text-decoration: none !important;
-                    color: #2ece8a !important;
+                    color: #0a500f !important;
                     font-weight: 600;
                     background-color: transparent !important;
                     border: none !important;
-                    border-bottom: 2px solid #2ece8a !important;
+                    border-bottom: 2px solid #0a500f !important;
                 }
                 .wallet-scheme-modal .scheme-tab-content {
                     flex: 1 1 auto !important;
@@ -2018,14 +2018,14 @@ const WalletSchemes = () => {
                 }
                 .wallet-scheme-modal .form-control-custom:focus {
                     outline: none;
-                    border-color: #2ece8a;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15);
+                    border-color: #0a500f;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
                 }
                 .wallet-scheme-modal .form-control-custom::placeholder {
                     color: #94a3b8;
                 }
                 .wallet-scheme-modal .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -2036,10 +2036,10 @@ const WalletSchemes = () => {
                     transition: background-color 0.2s, transform 0.1s;
                 }
                 .wallet-scheme-modal .btn-close-custom:hover {
-                    background-color: #6357a7 !important;
+                    background-color: #bb2d3b !important;
                 }
                 .wallet-scheme-modal .btn-save-custom {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -2050,7 +2050,7 @@ const WalletSchemes = () => {
                     transition: background-color 0.2s, transform 0.1s;
                 }
                 .wallet-scheme-modal .btn-save-custom:hover {
-                    background-color: #26b277 !important;
+                    background-color: #073d0b !important;
                 }
                 
                 /* Criteria Table Product Select Dimension & Sizing Matching */
@@ -2132,8 +2132,8 @@ const WalletSchemes = () => {
                 }
                 .park-area-page .search-bar-container .search-input:focus {
                     outline: none;
-                    border-color: #2ece8a;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15);
+                    border-color: #0a500f;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
                 }
 
                 /* Responsive Scoped Styles for Park Area */

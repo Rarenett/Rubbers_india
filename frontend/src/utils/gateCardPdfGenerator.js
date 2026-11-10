@@ -231,7 +231,7 @@ export const generateEntryCardHtml = (data) => {
     return `
     <div class="card-page" style="width: 50mm; height: 80mm; box-sizing: border-box; margin: 0 auto; padding: 2.8mm 3mm; background: #ffffff; color: #000000; display: flex; flex-direction: column; position: relative; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; overflow: hidden;">
         <!-- Top Emerald Stripe -->
-        <div style="position: absolute; top: 0; left: 0; right: 0; height: 2.8mm; background: #2ece8a;"></div>
+        <div style="position: absolute; top: 0; left: 0; right: 0; height: 2.8mm; background: #0a500f;"></div>
         
         <!-- Header -->
         <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 1.2mm; margin-bottom: 0.8mm;">
@@ -521,7 +521,7 @@ export const downloadEntryCardPDF = (data, customFileName = null) => {
         doc.roundedRect(1.5, 1.5, 47, 77, 2, 2, 'S');
 
         // 2. Top Emerald Header Stripe
-        doc.setFillColor(46, 206, 138); // #2ece8a
+        doc.setFillColor(46, 206, 138); // #0a500f
         doc.roundedRect(1.5, 1.5, 47, 2.5, 2, 2, 'F');
         doc.rect(1.5, 2.8, 47, 1.2, 'F');
 

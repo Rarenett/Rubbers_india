@@ -597,12 +597,12 @@ const ContraList = () => {
         control: (provided, state) => ({
             ...provided,
             backgroundColor: isDark ? '#24292D' : '#ffffff',
-            borderColor: state.isFocused ? '#2ece8a' : (isDark ? '#475569' : '#cbd5e1'),
+            borderColor: state.isFocused ? '#0a500f' : (isDark ? '#475569' : '#cbd5e1'),
             color: isDark ? '#ffffff' : '#2f3f50',
             minHeight: '36px',
             borderRadius: '8px',
-            boxShadow: state.isFocused ? '0 0 0 3px rgba(46,206,138,0.15)' : 'none',
-            '&:hover': { borderColor: '#2ece8a' },
+            boxShadow: state.isFocused ? '0 0 0 3px rgba(10, 80, 15,0.15)' : 'none',
+            '&:hover': { borderColor: '#0a500f' },
             fontSize: '13px',
         }),
         valueContainer: (provided) => ({
@@ -624,7 +624,7 @@ const ContraList = () => {
             ...provided,
             padding: '4px 8px',
             color: isDark ? '#94a3b8' : '#64748b',
-            '&:hover': { color: '#2ece8a' }
+            '&:hover': { color: '#0a500f' }
         }),
         clearIndicator: (provided) => ({
             ...provided,
@@ -647,7 +647,7 @@ const ContraList = () => {
         option: (provided, state) => ({
             ...provided,
             backgroundColor: state.isSelected ? (isDark ? '#334155' : '#f1f5f9') : state.isFocused ? (isDark ? '#383F47' : '#f8fafc') : 'transparent',
-            color: state.isSelected ? '#2ece8a' : (isDark ? '#ffffff' : '#334155'),
+            color: state.isSelected ? '#0a500f' : (isDark ? '#ffffff' : '#334155'),
             cursor: 'pointer',
             fontWeight: state.isSelected ? '600' : 'normal',
             padding: '8px 12px',

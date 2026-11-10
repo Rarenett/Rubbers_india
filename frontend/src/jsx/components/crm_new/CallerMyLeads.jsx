@@ -169,7 +169,7 @@ const CallTimer = ({ onEnd }) => {
         <div className="text-center py-2">
             <div style={{
                 fontSize: '2.4rem', fontWeight: 900, letterSpacing: '2px',
-                color: '#2ece8a', fontVariantNumeric: 'tabular-nums', lineHeight: 1
+                color: '#0a500f', fontVariantNumeric: 'tabular-nums', lineHeight: 1
             }}>
                 {format(seconds)}
             </div>
@@ -583,7 +583,7 @@ const CallerMyLeads = () => {
                 icon: 'warning',
                 title: 'No Phone Number',
                 text: 'This lead does not have a phone number specified.',
-                confirmButtonColor: '#2ece8a'
+                confirmButtonColor: '#0a500f'
             });
             return;
         }
@@ -593,7 +593,7 @@ const CallerMyLeads = () => {
                 icon: 'info',
                 title: 'Already Contacted',
                 text: `This lead has already been contacted by ${item.contacted_caller_name || 'another team member'}.`,
-                confirmButtonColor: '#2ece8a'
+                confirmButtonColor: '#0a500f'
             });
             return;
         }
@@ -607,7 +607,7 @@ const CallerMyLeads = () => {
                 icon: 'warning',
                 title: 'Call in Progress',
                 text: errorMsg,
-                confirmButtonColor: '#2ece8a'
+                confirmButtonColor: '#0a500f'
             });
             fetchLeadsSilently();
             return;
@@ -686,7 +686,7 @@ const CallerMyLeads = () => {
                 icon: 'warning',
                 title: 'Mandatory Call Details Required',
                 text: 'The call has ended. You must fill in the mandatory fields (Outcome, Duration, Notes, Follow-up Date) and save the call log.',
-                confirmButtonColor: '#2ece8a'
+                confirmButtonColor: '#0a500f'
             });
             return;
         }
@@ -708,7 +708,7 @@ const CallerMyLeads = () => {
                 icon: 'warning',
                 title: 'Mandatory Fields Required',
                 text: 'Please fill in all mandatory fields: Call Outcome, Duration, and Discussion Notes.',
-                confirmButtonColor: '#2ece8a'
+                confirmButtonColor: '#0a500f'
             });
             return;
         }
@@ -772,7 +772,7 @@ const CallerMyLeads = () => {
                 text: reassignTarget?.team_name
                     ? 'Please enter a reason for reassigning to team leader.'
                     : 'Please enter a reason for reassigning to original assigner.',
-                confirmButtonColor: '#2ece8a'
+                confirmButtonColor: '#0a500f'
             });
             return;
         }
@@ -788,7 +788,7 @@ const CallerMyLeads = () => {
                 text: reassignTarget?.team_name
                     ? 'Call has been successfully requested for reassignment to your team leader.'
                     : 'Call has been successfully requested for reassignment to your assigner.',
-                confirmButtonColor: '#2ece8a'
+                confirmButtonColor: '#0a500f'
             });
             handleCloseReassignModal();
             fetchLeadsSilently();
@@ -814,7 +814,7 @@ const CallerMyLeads = () => {
                 text: reassignTarget?.team_members?.length > 0
                     ? 'Please select a team member to reassign this call to.'
                     : 'Please select a telecalling member to reassign this call to.',
-                confirmButtonColor: '#2ece8a'
+                confirmButtonColor: '#0a500f'
             });
             return;
         }
@@ -829,7 +829,7 @@ const CallerMyLeads = () => {
                 icon: 'success',
                 title: 'Lead Reassigned',
                 text: res.data?.message || 'Lead has been successfully reassigned.',
-                confirmButtonColor: '#2ece8a'
+                confirmButtonColor: '#0a500f'
             });
             handleCloseReassignModal();
             fetchAllLeads();
@@ -1224,7 +1224,7 @@ const CallerMyLeads = () => {
                                         border: 'none',
                                         transition: 'all 0.2s',
                                         background: assignmentTab === 'individual' ? '#fff' : 'transparent',
-                                        color: assignmentTab === 'individual' ? '#00b8d9' : '#8a8f98',
+                                        color: assignmentTab === 'individual' ? '#0a500f' : '#8a8f98',
                                         boxShadow: assignmentTab === 'individual' ? '0 1px 3px rgba(0,0,0,0.12)' : 'none',
                                         whiteSpace: 'nowrap'
                                     }}
@@ -1243,7 +1243,7 @@ const CallerMyLeads = () => {
                                         border: 'none',
                                         transition: 'all 0.2s',
                                         background: assignmentTab === 'team' ? '#fff' : 'transparent',
-                                        color: assignmentTab === 'team' ? '#00b8d9' : '#8a8f98',
+                                        color: assignmentTab === 'team' ? '#0a500f' : '#8a8f98',
                                         boxShadow: assignmentTab === 'team' ? '0 1px 3px rgba(0,0,0,0.12)' : 'none',
                                         whiteSpace: 'nowrap'
                                     }}
@@ -1263,7 +1263,7 @@ const CallerMyLeads = () => {
                                             border: 'none',
                                             transition: 'all 0.2s',
                                             background: assignmentTab === 'reassigned' ? '#fff' : 'transparent',
-                                            color: assignmentTab === 'reassigned' ? '#00b8d9' : '#8a8f98',
+                                            color: assignmentTab === 'reassigned' ? '#0a500f' : '#8a8f98',
                                             boxShadow: assignmentTab === 'reassigned' ? '0 1px 3px rgba(0,0,0,0.12)' : 'none',
                                             whiteSpace: 'nowrap'
                                         }}
@@ -1597,9 +1597,9 @@ const CallerMyLeads = () => {
                                                                     <span
                                                                         className="badge"
                                                                         style={{
-                                                                            background: '#ede9fe',
-                                                                            color: '#6d28d9',
-                                                                            border: '1px solid #ddd6fe',
+                                                                            background: 'rgba(10, 80, 15, 0.12)',
+                                                                            color: '#0a500f',
+                                                                            border: '1px solid rgba(10, 80, 15, 0.25)',
                                                                             borderRadius: '8px',
                                                                             fontSize: '10px',
                                                                             padding: '3px 8px',
@@ -1618,9 +1618,9 @@ const CallerMyLeads = () => {
                                                                     <span
                                                                         className="badge"
                                                                         style={{
-                                                                            background: '#ede9fe',
-                                                                            color: '#6d28d9',
-                                                                            border: '1px solid #ddd6fe',
+                                                                            background: 'rgba(10, 80, 15, 0.12)',
+                                                                            color: '#0a500f',
+                                                                            border: '1px solid rgba(10, 80, 15, 0.25)',
                                                                             borderRadius: '8px',
                                                                             fontSize: '10px',
                                                                             padding: '3px 8px',
@@ -1785,9 +1785,9 @@ const CallerMyLeads = () => {
                                                                     gap: '4px',
                                                                     opacity: 0.85,
                                                                     cursor: 'not-allowed',
-                                                                    border: '1px solid #ddd6fe',
-                                                                    color: '#6d28d9',
-                                                                    backgroundColor: '#ede9fe'
+                                                                    border: '1px solid rgba(10, 80, 15, 0.25)',
+                                                                    color: '#0a500f',
+                                                                    backgroundColor: 'rgba(10, 80, 15, 0.12)'
                                                                 }}
                                                                 title={`Reassignment requested: "${item.reassignment_reason}"`}
                                                             >
@@ -1831,10 +1831,10 @@ const CallerMyLeads = () => {
                                                                     display: 'inline-flex',
                                                                     alignItems: 'center',
                                                                     gap: '4px',
-                                                                    border: '1px solid #6d28d9',
-                                                                    backgroundColor: '#7c3aed',
+                                                                    border: '1px solid #0a500f',
+                                                                    backgroundColor: '#0a500f',
                                                                     color: '#ffffff',
-                                                                    boxShadow: '0 1px 2px rgba(124, 58, 237, 0.25)'
+                                                                    boxShadow: '0 1px 2px rgba(10, 80, 15, 0.25)'
                                                                 }}
                                                                 title={
                                                                     isLeaderOrAssigner
@@ -1868,7 +1868,7 @@ const CallerMyLeads = () => {
                     >
                         <div style={{
                             width: '42px', height: '42px', borderRadius: '50%',
-                            background: 'rgba(46, 206, 138, 0.2)', color: '#2ece8a',
+                            background: 'rgba(10, 80, 15, 0.2)', color: '#0a500f',
                             display: 'flex', alignItems: 'center', justifyContent: 'center',
                             fontSize: '1.2rem'
                         }}>
@@ -1887,7 +1887,7 @@ const CallerMyLeads = () => {
                     <div className="text-center py-2">
                         <div style={{
                             fontSize: '2.4rem', fontWeight: 900, letterSpacing: '2px',
-                            color: '#2ece8a', fontVariantNumeric: 'tabular-nums', lineHeight: 1
+                            color: '#0a500f', fontVariantNumeric: 'tabular-nums', lineHeight: 1
                         }}>
                             {formatSeconds(callSeconds)}
                         </div>
@@ -2603,7 +2603,7 @@ const CallerMyLeads = () => {
                         <>
                             <Modal.Header closeButton style={{ borderBottom: '1px solid #e2e8f0', backgroundColor: '#f8fafc' }}>
                                 <Modal.Title style={{ fontSize: '16px', fontWeight: 700, color: '#1e293b' }}>
-                                    <i className="fa fa-exchange me-2" style={{ color: '#7c3aed' }}></i>
+                                    <i className="fa fa-exchange me-2" style={{ color: '#0a500f' }}></i>
                                     {isManagerTarget 
                                         ? (isTeamAssignment ? 'Reassign Lead to Team Member' : 'Reassign Lead to Telecalling Member') 
                                         : (isTeamAssignment ? 'Reassign Call to Team Leader' : 'Reassign Call to Assigner')}
@@ -2746,7 +2746,12 @@ const CallerMyLeads = () => {
                                 )}
                             </Modal.Body>
                             <Modal.Footer style={{ borderTop: '1px solid #e2e8f0' }}>
-                                <Button variant="secondary" onClick={handleCloseReassignModal} disabled={reassignSubmitting} style={{ borderRadius: '6px', fontSize: '12px' }}>
+                                <Button 
+                                    className="btn-cancel-custom"
+                                    style={{ backgroundColor: '#dc3545', borderColor: '#dc3545', color: '#ffffff' }}
+                                    onClick={handleCloseReassignModal} 
+                                    disabled={reassignSubmitting} 
+                                >
                                     Cancel
                                 </Button>
                                 {isManagerTarget ? (
@@ -2754,7 +2759,7 @@ const CallerMyLeads = () => {
                                         onClick={handleSubmitTeamLeadReassign}
                                         disabled={reassignSubmitting}
                                         className="font-w600"
-                                        style={{ borderRadius: '6px', fontSize: '12px', backgroundColor: '#7c3aed', borderColor: '#6d28d9', color: '#ffffff' }}
+                                        style={{ borderRadius: '6px', fontSize: '12px', backgroundColor: '#0a500f', borderColor: '#0a500f', color: '#ffffff' }}
                                     >
                                         {reassignSubmitting ? (
                                             <>
@@ -2771,7 +2776,7 @@ const CallerMyLeads = () => {
                                     <Button
                                         onClick={handleSubmitReassignRequest}
                                         disabled={reassignSubmitting}
-                                        style={{ borderRadius: '6px', fontSize: '12px', fontWeight: 600, backgroundColor: '#7c3aed', borderColor: '#6d28d9', color: '#ffffff' }}
+                                        style={{ borderRadius: '6px', fontSize: '12px', fontWeight: 600, backgroundColor: '#0a500f', borderColor: '#0a500f', color: '#ffffff' }}
                                     >
                                         {reassignSubmitting ? (
                                             <>
@@ -2882,7 +2887,7 @@ const CallerMyLeads = () => {
                                                 <tr>
                                                     <td className="text-muted font-w600" style={{ padding: '10px 12px' }}>Status:</td>
                                                     <td style={{ padding: '10px 12px' }}>
-                                                        <span className="badge" style={{ backgroundColor: '#ede9fe', color: '#6d28d9', border: '1px solid #ddd6fe' }}>
+                                                        <span className="badge" style={{ backgroundColor: 'rgba(10, 80, 15, 0.12)', color: '#0a500f', border: '1px solid rgba(10, 80, 15, 0.25)' }}>
                                                             {viewReassignTarget.reassignment_status === 'REQUESTED' ? 'Reassignment Requested' : 'Reassigned'}
                                                         </span>
                                                     </td>
@@ -2914,9 +2919,9 @@ const CallerMyLeads = () => {
                             </Modal.Body>
                             <Modal.Footer style={{ borderTop: '1px solid #e2e8f0', backgroundColor: '#f8fafc' }}>
                                 <Button
-                                    variant="secondary"
+                                    className="btn-cancel-custom"
+                                    style={{ backgroundColor: '#dc3545', borderColor: '#dc3545', color: '#ffffff' }}
                                     onClick={() => setViewReassignTarget(null)}
-                                    style={{ borderRadius: '6px', fontSize: '12px', fontWeight: 600 }}
                                 >
                                     Close
                                 </Button>
@@ -2930,8 +2935,8 @@ const CallerMyLeads = () => {
                                         borderRadius: '6px',
                                         fontSize: '12px',
                                         fontWeight: 600,
-                                        backgroundColor: '#7c3aed',
-                                        borderColor: '#6d28d9',
+                                        backgroundColor: '#0a500f',
+                                        borderColor: '#0a500f',
                                         color: '#ffffff'
                                     }}
                                 >

@@ -54,7 +54,7 @@ class RadialChart extends React.Component {
 			stroke: {
 			},
 			fill: {
-				colors: ['#43DC80'],
+				colors: ['#0a500f'],
 			},
             labels: [""],
          },

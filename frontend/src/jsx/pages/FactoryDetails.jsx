@@ -375,7 +375,7 @@ const FactoryDetails = () => {
             left: 0;
             width: 6px;
             height: 100%;
-            background: linear-gradient(180deg, #7A70BA 0%, #2ece8a 100%);
+            background: linear-gradient(180deg, #0a500f 0%, #0a500f 100%);
             border-top-left-radius: 16px;
             border-bottom-left-radius: 16px;
         }
@@ -383,7 +383,7 @@ const FactoryDetails = () => {
             width: 64px;
             height: 64px;
             border-radius: 16px;
-            background: linear-gradient(135deg, #7A70BA 0%, #5d539e 100%);
+            background: linear-gradient(135deg, #0a500f 0%, #5d539e 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -437,13 +437,13 @@ const FactoryDetails = () => {
             gap: 8px;
         }
         .factory-tab-link:hover:not(.active) {
-            color: #7A70BA !important;
+            color: #0a500f !important;
             background-color: rgba(122, 112, 186, 0.05) !important;
         }
         .factory-tab-link.active {
-            color: #7A70BA !important;
+            color: #0a500f !important;
             background-color: #ffffff !important;
-            border-bottom: 3px solid #7A70BA !important;
+            border-bottom: 3px solid #0a500f !important;
             box-shadow: none !important;
         }
 
@@ -585,7 +585,7 @@ const FactoryDetails = () => {
         .addr-custom-modal .modal-icon-circle { background-color: #3b82f6; }
         .contact-custom-modal .modal-icon-circle { background-color: #10b981; }
         .warehouse-custom-modal .modal-icon-circle { background-color: #8b5cf6; }
-        .factory-custom-modal .modal-icon-circle { background-color: #7A70BA; }
+        .factory-custom-modal .modal-icon-circle { background-color: #0a500f; }
 
         .modal-close-x {
             border: none;
@@ -633,11 +633,11 @@ const FactoryDetails = () => {
         }
         .form-control-custom:focus {
             outline: none;
-            border-color: #2ece8a;
-            box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15);
+            border-color: #0a500f;
+            box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
         }
         .btn-close-custom {
-            background-color: #7A70BA !important;
+            background-color: #dc3545 !important;
             color: white !important;
             border-radius: 8px !important;
             font-weight: 500 !important;
@@ -647,9 +647,9 @@ const FactoryDetails = () => {
             cursor: pointer;
             transition: background-color 0.2s;
         }
-        .btn-close-custom:hover { background-color: #6357a7 !important; }
+        .btn-close-custom:hover { background-color: #bb2d3b !important; }
         .btn-save-custom {
-            background-color: #2ece8a !important;
+            background-color: #0a500f !important;
             color: white !important;
             border-radius: 8px !important;
             font-weight: 500 !important;
@@ -659,7 +659,7 @@ const FactoryDetails = () => {
             cursor: pointer;
             transition: background-color 0.2s;
         }
-        .btn-save-custom:hover { background-color: #26b277 !important; }
+        .btn-save-custom:hover { background-color: #073d0b !important; }
 
         /* Search input styling */
         .search-input-custom {
@@ -673,8 +673,8 @@ const FactoryDetails = () => {
         }
         .search-input-custom:focus {
             outline: none !important;
-            border-color: #2ece8a !important;
-            box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15) !important;
+            border-color: #0a500f !important;
+            box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15) !important;
         }
 
         /* ===== DARK MODE OVERRIDES ===== */
@@ -700,7 +700,7 @@ const FactoryDetails = () => {
         [data-theme-version="dark"] .factory-tab-link.active {
             color: #c4b5fd !important;
             background-color: #24292D !important;
-            border-bottom-color: #7A70BA !important;
+            border-bottom-color: #0a500f !important;
         }
         [data-theme-version="dark"] .table-custom thead th {
             background-color: #1e2630 !important;
@@ -757,7 +757,7 @@ const FactoryDetails = () => {
                             <span className="text-muted">/</span>
                             <span className="text-muted" style={{ fontSize: '14px' }}>Company</span>
                             <span className="text-muted">/</span>
-                            <span style={{ fontSize: '14px', color: '#7A70BA', fontWeight: '600' }}>
+                            <span style={{ fontSize: '14px', color: '#0a500f', fontWeight: '600' }}>
                                 {factory.name}
                             </span>
                         </div>
@@ -1533,7 +1533,7 @@ const FactoryDetails = () => {
             <Modal show={showLicenseModal} onHide={() => setShowLicenseModal(false)} dialogClassName="factory-custom-modal" centered size="xl">
                 <div className="modal-header-custom">
                     <div className="d-flex align-items-center gap-3">
-                        <div className="modal-icon-circle" style={{ backgroundColor: '#7A70BA', width: '44px', height: '44px', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <div className="modal-icon-circle" style={{ backgroundColor: '#0a500f', width: '44px', height: '44px', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                             <i className="fa fa-id-card text-white fs-4"></i>
                         </div>
                         <div>

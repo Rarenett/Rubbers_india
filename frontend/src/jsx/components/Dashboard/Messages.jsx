@@ -25,7 +25,7 @@ const Messages = () =>{
 												<Dropdown.Toggle variant="" as="div" className="i-false">
 													<Link to={"#"} className="text-primary" data-toggle="dropdown" aria-expanded="false">
 														<svg className="me-1" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-															<circle cx="4" cy="4" r="4" fill="#43DC80"/>
+															<circle cx="4" cy="4" r="4" fill="#0a500f"/>
 														</svg>
 														Available
 														<i className="las la-angle-down text-dark ms-2"></i>

@@ -98,7 +98,7 @@ const EmployeeCheckoutModal = ({
                 title: isEmployeeOnly && hasVehicle ? '🚶‍♂️ Employee Only Exit Recorded' : '🔵 Employee Checked OUT',
                 html: `
                     <div style="text-align: center; padding: 4px 0;">
-                        <h5 style="margin: 0 0 6px 0; font-weight: 700; color: #2ece8a;">
+                        <h5 style="margin: 0 0 6px 0; font-weight: 700; color: #0a500f;">
                             ${updated.employee_name || entry.employee_name || 'Employee'}
                         </h5>
                         <div style="font-size: 13px; color: #64748b; margin-bottom: 8px;">
@@ -122,7 +122,7 @@ const EmployeeCheckoutModal = ({
                         ` : ''}
                     </div>
                 `,
-                confirmButtonColor: '#2ece8a',
+                confirmButtonColor: '#0a500f',
                 confirmButtonText: 'OK',
                 timer: 2600
             });
@@ -136,7 +136,7 @@ const EmployeeCheckoutModal = ({
                 icon: 'error',
                 title: 'Checkout Failed',
                 text: typeof errorMsg === 'string' ? errorMsg : JSON.stringify(errorMsg),
-                confirmButtonColor: '#7A70BA'
+                confirmButtonColor: '#0a500f'
             });
         } finally {
             setIsSubmitting(false);
@@ -189,15 +189,15 @@ const EmployeeCheckoutModal = ({
                                 width: '46px',
                                 height: '46px',
                                 borderRadius: '50%',
-                                backgroundColor: isDark ? 'rgba(46, 206, 138, 0.18)' : '#ecfdf5',
-                                border: '1.5px solid rgba(46, 206, 138, 0.35)',
+                                backgroundColor: isDark ? 'rgba(10, 80, 15, 0.18)' : '#ecfdf5',
+                                border: '1.5px solid rgba(10, 80, 15, 0.35)',
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
                                 flexShrink: 0
                             }}
                         >
-                            <i className="fa fa-sign-out-alt" style={{ color: '#2ece8a', fontSize: '20px' }}></i>
+                            <i className="fa fa-sign-out-alt" style={{ color: '#0a500f', fontSize: '20px' }}></i>
                         </div>
                         <div>
                             <h5
@@ -273,7 +273,7 @@ const EmployeeCheckoutModal = ({
                                         height: '44px',
                                         borderRadius: '50%',
                                         objectFit: 'cover',
-                                        border: '2px solid #2ece8a',
+                                        border: '2px solid #0a500f',
                                         flexShrink: 0
                                     }}
                                 />
@@ -283,7 +283,7 @@ const EmployeeCheckoutModal = ({
                                         width: '44px',
                                         height: '44px',
                                         borderRadius: '50%',
-                                        backgroundColor: '#2ece8a',
+                                        backgroundColor: '#0a500f',
                                         color: '#ffffff',
                                         display: 'flex',
                                         alignItems: 'center',
@@ -327,7 +327,7 @@ const EmployeeCheckoutModal = ({
                             {hasVehicle && (
                                 <span
                                     style={{
-                                        backgroundColor: isDark ? 'rgba(46, 206, 138, 0.14)' : '#ecfdf5',
+                                        backgroundColor: isDark ? 'rgba(10, 80, 15, 0.14)' : '#ecfdf5',
                                         color: '#059669',
                                         border: '1px solid #a7f3d0',
                                         fontSize: '12.5px',
@@ -389,12 +389,12 @@ const EmployeeCheckoutModal = ({
                                         borderRadius: '12px',
                                         cursor: 'pointer',
                                         border: exitMode === 'employee_only'
-                                            ? '2px solid #2ece8a'
+                                            ? '2px solid #0a500f'
                                             : `1.5px solid ${isDark ? '#2d2d3f' : '#e2e8f0'}`,
                                         backgroundColor: exitMode === 'employee_only'
-                                            ? (isDark ? 'rgba(46, 206, 138, 0.12)' : '#f0fdf4')
+                                            ? (isDark ? 'rgba(10, 80, 15, 0.12)' : '#f0fdf4')
                                             : (isDark ? '#151521' : '#ffffff'),
-                                        boxShadow: exitMode === 'employee_only' ? '0 4px 14px rgba(46, 206, 138, 0.18)' : 'none',
+                                        boxShadow: exitMode === 'employee_only' ? '0 4px 14px rgba(10, 80, 15, 0.18)' : 'none',
                                         transition: 'all 0.2s ease',
                                         display: 'flex',
                                         alignItems: 'flex-start',
@@ -406,7 +406,7 @@ const EmployeeCheckoutModal = ({
                                             width: '18px',
                                             height: '18px',
                                             borderRadius: '50%',
-                                            border: exitMode === 'employee_only' ? '6px solid #2ece8a' : `2px solid ${isDark ? '#64748b' : '#cbd5e1'}`,
+                                            border: exitMode === 'employee_only' ? '6px solid #0a500f' : `2px solid ${isDark ? '#64748b' : '#cbd5e1'}`,
                                             backgroundColor: '#ffffff',
                                             marginTop: '2px',
                                             flexShrink: 0,
@@ -421,7 +421,7 @@ const EmployeeCheckoutModal = ({
                                             <span
                                                 className="badge"
                                                 style={{
-                                                    backgroundColor: exitMode === 'employee_only' ? '#2ece8a' : (isDark ? '#2d2d3f' : '#e2e8f0'),
+                                                    backgroundColor: exitMode === 'employee_only' ? '#0a500f' : (isDark ? '#2d2d3f' : '#e2e8f0'),
                                                     color: exitMode === 'employee_only' ? '#ffffff' : (isDark ? '#94a3b8' : '#64748b'),
                                                     fontSize: '10.5px',
                                                     fontWeight: 600,
@@ -602,7 +602,7 @@ const EmployeeCheckoutModal = ({
                         onClick={() => !isSubmitting && onHide()}
                         disabled={isSubmitting}
                         style={{
-                            backgroundColor: '#7A70BA',
+                            backgroundColor: '#0a500f',
                             border: 'none',
                             color: '#ffffff',
                             fontWeight: 500,
@@ -625,7 +625,7 @@ const EmployeeCheckoutModal = ({
                         onClick={handleSubmitCheckout}
                         disabled={isSubmitting}
                         style={{
-                            backgroundColor: hasVehicle && exitMode === 'with_vehicle' ? '#3b82f6' : '#2ece8a',
+                            backgroundColor: hasVehicle && exitMode === 'with_vehicle' ? '#3b82f6' : '#0a500f',
                             border: 'none',
                             color: '#ffffff',
                             fontWeight: 600,
@@ -635,7 +635,7 @@ const EmployeeCheckoutModal = ({
                             borderRadius: '8px',
                             boxShadow: hasVehicle && exitMode === 'with_vehicle'
                                 ? '0 3px 12px rgba(59, 130, 246, 0.3)'
-                                : '0 3px 12px rgba(46, 206, 138, 0.3)',
+                                : '0 3px 12px rgba(10, 80, 15, 0.3)',
                             display: 'inline-flex',
                             alignItems: 'center',
                             cursor: isSubmitting ? 'not-allowed' : 'pointer',

@@ -36,7 +36,7 @@ const printLedgerData = (wallet, summary, ledger, fromDate, toDate) => {
                 <title>${title}</title>
                 <style>
                     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 24px; color: #1e293b; }
-                    .header { margin-bottom: 20px; border-bottom: 2px solid #2ece8a; padding-bottom: 12px; }
+                    .header { margin-bottom: 20px; border-bottom: 2px solid #0a500f; padding-bottom: 12px; }
                     h1 { margin: 0 0 6px 0; font-size: 20px; color: #0f172a; }
                     .meta { color: #64748b; font-size: 13px; margin-bottom: 16px; }
                     .summary-grid { display: flex; gap: 12px; margin-bottom: 20px; }
@@ -153,7 +153,7 @@ const printReportData = (wallets, summary, fromDate, toDate) => {
                 <title>${title}</title>
                 <style>
                     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 24px; color: #1e293b; }
-                    .header { margin-bottom: 20px; border-bottom: 2px solid #2ece8a; padding-bottom: 12px; }
+                    .header { margin-bottom: 20px; border-bottom: 2px solid #0a500f; padding-bottom: 12px; }
                     h1 { margin: 0 0 6px 0; font-size: 20px; color: #0f172a; }
                     .meta { color: #64748b; font-size: 13px; margin-bottom: 16px; }
                     .summary-grid { display: flex; gap: 12px; margin-bottom: 20px; }
@@ -395,12 +395,12 @@ const WalletLedgerModal = ({ wallet, ledgerData: initialLedgerData, loading: ini
                 .wallet-ledger-modal .modal-icon-circle {
                     width: 44px;
                     height: 44px;
-                    background-color: #2ece8a;
+                    background-color: #0a500f;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    box-shadow: 0 4px 10px rgba(46, 206, 138, 0.2);
+                    box-shadow: 0 4px 10px rgba(10, 80, 15, 0.2);
                     flex-shrink: 0;
                 }
                 .wallet-ledger-modal .modal-close-x {
@@ -433,7 +433,7 @@ const WalletLedgerModal = ({ wallet, ledgerData: initialLedgerData, loading: ini
                     background-color: #fafbfc;
                 }
                 .wallet-ledger-modal .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     color: #ffffff !important;
                     border: none !important;
                     border-radius: 8px !important;

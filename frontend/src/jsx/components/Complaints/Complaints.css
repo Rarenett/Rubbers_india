@@ -1,8 +1,8 @@
 :root {
     --cm-bg: #f8fafd;
     --cm-card-bg: #ffffff;
-    --cm-accent: #2ece8a;
-    --cm-accent-soft: rgba(46, 206, 138, 0.1);
+    --cm-accent: #0a500f;
+    --cm-accent-soft: rgba(10, 80, 15, 0.1);
     --cm-text-primary: #1e293b;
     --cm-text-secondary: #64748b;
     --cm-border: #e2e8f0;
@@ -790,8 +790,8 @@
 }
 
 .sof-input:focus {
-    border-color: #2ece8a;
-    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15);
+    border-color: #0a500f;
+    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
     background: #ffffff;
 }
 

@@ -226,12 +226,12 @@ const CandidateLoginModal = ({ show, onHide, candidate, onSaved }) => {
                 .cfm-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #2ece8a;
+                    background-color: #0a500f;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    box-shadow: 0 4px 10px rgba(46, 206, 138, 0.2);
+                    box-shadow: 0 4px 10px rgba(10, 80, 15, 0.2);
                 }
                 .cfm-modal .modal-close-x {
                     border: none;
@@ -257,7 +257,7 @@ const CandidateLoginModal = ({ show, onHide, candidate, onSaved }) => {
                     gap: 12px;
                 }
                 .cfm-modal .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -267,9 +267,9 @@ const CandidateLoginModal = ({ show, onHide, candidate, onSaved }) => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .cfm-modal .btn-close-custom:hover { background-color: #6357a7 !important; }
+                .cfm-modal .btn-close-custom:hover { background-color: #bb2d3b !important; }
                 .cfm-modal .btn-save-custom {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -279,7 +279,7 @@ const CandidateLoginModal = ({ show, onHide, candidate, onSaved }) => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .cfm-modal .btn-save-custom:hover { background-color: #26b277 !important; }
+                .cfm-modal .btn-save-custom:hover { background-color: #073d0b !important; }
                 .cfm-modal .btn-save-custom:disabled { opacity: 0.65; cursor: not-allowed; }
             `}</style>
 
@@ -380,8 +380,8 @@ const CandidateLoginModal = ({ show, onHide, candidate, onSaved }) => {
                                 onChange={(e) => setIsActive(e.target.checked)}
                                 style={{
                                     cursor: 'pointer',
-                                    backgroundColor: isActive ? '#2ece8a' : undefined,
-                                    borderColor: isActive ? '#2ece8a' : undefined,
+                                    backgroundColor: isActive ? '#0a500f' : undefined,
+                                    borderColor: isActive ? '#0a500f' : undefined,
                                 }}
                             />
                         </div>
@@ -459,7 +459,7 @@ const CandidateLoginModal = ({ show, onHide, candidate, onSaved }) => {
                                             onClick={generateEmail}
                                             title="Generate"
                                             style={{ border: 'none', background: 'none', padding: '0', lineHeight: 1, cursor: 'pointer', color: '#b0b8c5', fontSize: '14px', transition: 'color 0.2s' }}
-                                            onMouseEnter={e => e.currentTarget.style.color = '#2ece8a'}
+                                            onMouseEnter={e => e.currentTarget.style.color = '#0a500f'}
                                             onMouseLeave={e => e.currentTarget.style.color = '#b0b8c5'}
                                         >
                                             <i className="fa fa-magic"></i>
@@ -496,8 +496,8 @@ const CandidateLoginModal = ({ show, onHide, candidate, onSaved }) => {
                                             }}
                                             style={{
                                                 cursor: 'pointer',
-                                                backgroundColor: changePassword ? '#2ece8a' : undefined,
-                                                borderColor: changePassword ? '#2ece8a' : undefined,
+                                                backgroundColor: changePassword ? '#0a500f' : undefined,
+                                                borderColor: changePassword ? '#0a500f' : undefined,
                                             }}
                                         />
                                     </div>
@@ -544,7 +544,7 @@ const CandidateLoginModal = ({ show, onHide, candidate, onSaved }) => {
                                                         onClick={generatePassword}
                                                         title="Generate strong password"
                                                         style={{ border: 'none', background: 'none', padding: '0', lineHeight: 1, cursor: 'pointer', color: '#b0b8c5', fontSize: '14px', transition: 'color 0.2s' }}
-                                                        onMouseEnter={e => e.currentTarget.style.color = '#2ece8a'}
+                                                        onMouseEnter={e => e.currentTarget.style.color = '#0a500f'}
                                                         onMouseLeave={e => e.currentTarget.style.color = '#b0b8c5'}
                                                     >
                                                         <i className="fa fa-magic"></i>
@@ -598,7 +598,7 @@ const CandidateLoginModal = ({ show, onHide, candidate, onSaved }) => {
                                             onClick={generatePassword}
                                             title="Generate strong password"
                                             style={{ border: 'none', background: 'none', padding: '0', lineHeight: 1, cursor: 'pointer', color: '#b0b8c5', fontSize: '14px', transition: 'color 0.2s' }}
-                                            onMouseEnter={e => e.currentTarget.style.color = '#2ece8a'}
+                                            onMouseEnter={e => e.currentTarget.style.color = '#0a500f'}
                                             onMouseLeave={e => e.currentTarget.style.color = '#b0b8c5'}
                                         >
                                             <i className="fa fa-magic"></i>

@@ -115,8 +115,8 @@ const TableList = () => {
           module="database_designer"
           onClick={() => navigate('/dynamic-db/tables/create')}
           style={{
-            backgroundColor: 'rgb(61, 53, 119)',
-            borderColor: 'rgb(61, 53, 119)',
+            backgroundColor: '#0a500f',
+            borderColor: '#0a500f',
             color: 'white',
             height: '34px',
             display: 'inline-flex',

@@ -430,7 +430,7 @@ const CommentPattern = () => {
                                         variant="primary"
                                         onClick={() => handleShowPatternModal()}
                                         className="d-flex align-items-center justify-content-center pattern-add-btn"
-                                        style={{ height: '38px', borderRadius: '6px', whiteSpace: 'nowrap', padding: '0 16px', backgroundColor: 'rgb(61, 53, 119)', borderColor: 'rgb(61, 53, 119)', color: 'white' }}
+                                        style={{ height: '38px', borderRadius: '6px', whiteSpace: 'nowrap', padding: '0 16px', backgroundColor: '#0a500f', borderColor: '#0a500f', color: 'white' }}
                                     >
                                         <i className="fa fa-plus me-2"></i>
                                         ADD PATTERN
@@ -583,7 +583,7 @@ const CommentPattern = () => {
                                                     width: '32px', height: '32px', borderRadius: '50%',
                                                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                                                     fontSize: '0.85rem', fontWeight: 700,
-                                                    background: isActive ? 'rgb(61, 53, 119)' : isDone ? '#2ece8a' : '#f1f5f9',
+                                                    background: isActive ? '#0a500f' : isDone ? '#0a500f' : '#f1f5f9',
                                                     color: (isActive || isDone) ? '#fff' : '#94a3b8',
                                                     border: (isActive || isDone) ? 'none' : '1px solid #e2e8f0',
                                                     transition: 'all 0.2s'
@@ -593,7 +593,7 @@ const CommentPattern = () => {
                                                 <span style={{ fontSize: '0.75rem', marginTop: '0.4rem', fontWeight: isActive ? 700 : 500, color: isActive ? '#1e293b' : '#94a3b8' }}>{s.label}</span>
                                             </div>
                                             {idx < WIZARD_STEPS.length - 1 && (
-                                                <div style={{ flex: 1, height: '2px', background: s.n < formStep ? '#2ece8a' : '#e2e8f0', marginBottom: '1.4rem', transition: 'background 0.2s' }}></div>
+                                                <div style={{ flex: 1, height: '2px', background: s.n < formStep ? '#0a500f' : '#e2e8f0', marginBottom: '1.4rem', transition: 'background 0.2s' }}></div>
                                             )}
                                         </React.Fragment>
                                     );
@@ -1339,7 +1339,12 @@ const CommentPattern = () => {
                             )}
                             
                             <div className="d-flex justify-content-end align-items-center gap-2 mt-5 pt-4 border-top">
-                                <Button type="button" onClick={handleClosePatternModal} style={{ borderRadius: '8px', fontWeight: 600, padding: '0.6rem 2rem', backgroundColor: '#7A70BA', borderColor: '#7A70BA', color: 'white' }}>
+                                <Button 
+                                    type="button" 
+                                    className="btn-cancel-custom"
+                                    onClick={handleClosePatternModal} 
+                                    style={{ borderRadius: '8px', fontWeight: 600, padding: '0.6rem 2rem', backgroundColor: '#dc3545', borderColor: '#dc3545', color: '#ffffff' }}
+                                >
                                     Cancel
                                 </Button>
                                 {/* {formStep > 1 && (
@@ -1348,11 +1353,11 @@ const CommentPattern = () => {
                                     </Button>
                                 )} */}
                                 {formStep < WIZARD_STEPS.length ? (
-                                    <Button type="button" onClick={() => goToStep(formStep + 1)} style={{ fontWeight: '700', padding: '0.6rem 2.2rem', borderRadius: '8px', backgroundColor: '#2ece8a', borderColor: '#2ece8a', color: 'white' }}>
+                                    <Button type="button" onClick={() => goToStep(formStep + 1)} style={{ fontWeight: '700', padding: '0.6rem 2.2rem', borderRadius: '8px', backgroundColor: '#0a500f', borderColor: '#0a500f', color: 'white' }}>
                                         Continue
                                     </Button>
                                 ) : (
-                                    <Button type="button" onClick={handleSavePattern} style={{ fontWeight: '700', padding: '0.6rem 2.2rem', borderRadius: '8px', backgroundColor: '#2ece8a', borderColor: '#2ece8a' }}>
+                                    <Button type="button" onClick={handleSavePattern} style={{ fontWeight: '700', padding: '0.6rem 2.2rem', borderRadius: '8px', backgroundColor: '#0a500f', borderColor: '#0a500f' }}>
                                         {editPatternId ? 'Update pattern' : 'Save pattern'}
                                     </Button>
                                 )}

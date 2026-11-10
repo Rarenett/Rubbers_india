@@ -306,12 +306,12 @@ select option {
 .item-custom-modal .modal-icon-circle {
     width: 44px !important;
     height: 44px !important;
-    background-color: #2ece8a !important;
+    background-color: #0a500f !important;
     border-radius: 12px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    box-shadow: 0 4px 10px rgba(46, 206, 138, 0.25) !important;
+    box-shadow: 0 4px 10px rgba(10, 80, 15, 0.25) !important;
     flex-shrink: 0 !important;
 }
 
@@ -406,8 +406,8 @@ select option {
 .gate-custom-modal .form-control-custom:focus,
 .item-custom-modal .form-control-custom:focus {
     outline: none !important;
-    border-color: #2ece8a !important;
-    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15) !important;
+    border-color: #0a500f !important;
+    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15) !important;
 }
 
 .gate-custom-modal .form-control-custom::placeholder,
@@ -417,8 +417,8 @@ select option {
 
 .gate-custom-modal .btn-close-custom,
 .item-custom-modal .btn-close-custom {
-    background-color: #7A70BA !important;
-    border-color: #7A70BA !important;
+    background-color: #dc3545 !important;
+    border-color: #0a500f !important;
     color: white !important;
     border-radius: 8px !important;
     font-weight: 600 !important;
@@ -431,14 +431,14 @@ select option {
 
 .gate-custom-modal .btn-close-custom:hover,
 .item-custom-modal .btn-close-custom:hover {
-    background-color: #695fa3 !important;
+    background-color: #bb2d3b !important;
     color: white !important;
 }
 
 .gate-custom-modal .btn-save-custom,
 .item-custom-modal .btn-save-custom {
-    background-color: #2ece8a !important;
-    border-color: #2ece8a !important;
+    background-color: #0a500f !important;
+    border-color: #0a500f !important;
     color: white !important;
     border-radius: 8px !important;
     font-weight: 600 !important;
@@ -447,12 +447,12 @@ select option {
     border: 1px solid transparent !important;
     cursor: pointer !important;
     transition: background-color 0.2s, box-shadow 0.2s, transform 0.15s !important;
-    box-shadow: 0 2px 6px rgba(46, 206, 138, 0.25) !important;
+    box-shadow: 0 2px 6px rgba(10, 80, 15, 0.25) !important;
 }
 
 .gate-custom-modal .btn-save-custom:hover,
 .item-custom-modal .btn-save-custom:hover {
-    background-color: #25b87a !important;
+    background-color: #073d0b !important;
     color: white !important;
 }
 
@@ -481,7 +481,7 @@ select option {
 
 .gem-node.active {
     transform: scale(1.2) !important;
-    border: 2px solid #2ece8a !important;
+    border: 2px solid #0a500f !important;
     box-shadow: 0 0 8px var(--gem-color) !important;
 }
 

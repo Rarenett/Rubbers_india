@@ -1772,7 +1772,7 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                     confirmButtonText: 'View Active Entry',
                     showCancelButton: true,
                     cancelButtonText: 'Stay on Form',
-                    confirmButtonColor: '#2ece8a'
+                    confirmButtonColor: '#0a500f'
                 }).then((r) => {
                     if (r.isConfirmed) {
                         navigate(`/access-point/gate-entries/${unclosedRes.active_entry.id}`);
@@ -1875,7 +1875,7 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                         icon: 'warning',
                         title: 'Invalid Exit Time',
                         html: `Expected Time of Exit cannot be in the past (<b>${formatTime12Hour(value)}</b>).<br/><span style="font-size: 13px; color: #64748b; margin-top: 6px; display: inline-block;">Please select a time later than the current time (<b>${formatTime12Hour(nowTime)}</b>).</span>`,
-                        confirmButtonColor: '#2ece8a',
+                        confirmButtonColor: '#0a500f',
                         confirmButtonText: 'OK',
                         timer: 2000,
                         timerProgressBar: true,
@@ -2091,7 +2091,7 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                     icon: 'warning',
                     title: 'Invalid Exit Time',
                     text: `Expected Time of Exit cannot be in the past (${formatTime12Hour(formData.expected_time_of_exit)}). Current time is ${formatTime12Hour(nowTime)}.`,
-                    confirmButtonColor: '#2ece8a',
+                    confirmButtonColor: '#0a500f',
                     confirmButtonText: 'OK',
                     timer: 2000,
                     timerProgressBar: true
@@ -2290,7 +2290,7 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                 title: 'Visitor Already Inside Campus',
                 html: `This visitor is currently active inside campus (<b>Entry #${currentlyInsideEntry.id}</b>, Pass: <b>#${currentlyInsideEntry.tag_code || currentlyInsideEntry.tag_number || 'N/A'}</b>).<br/><br/>They have not exited campus yet. A new gate pass cannot be created while already inside campus.`,
                 confirmButtonText: 'View Active Entry',
-                confirmButtonColor: '#2ece8a'
+                confirmButtonColor: '#0a500f'
             }).then(() => {
                 navigate(`/access-point/gate-entries/${currentlyInsideEntry.id}`);
             });
@@ -2336,7 +2336,7 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                     icon: 'warning',
                     title: 'Invalid Exit Time',
                     text: `Expected Time of Exit cannot be in the past (${formatTime12Hour(formData.expected_time_of_exit)}). Current time is ${formatTime12Hour(nowTime)}.`,
-                    confirmButtonColor: '#2ece8a',
+                    confirmButtonColor: '#0a500f',
                     confirmButtonText: 'OK',
                     timer: 2000,
                     timerProgressBar: true
@@ -2810,16 +2810,16 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
         control: (base, state) => ({
             ...base,
             minHeight: '38px',
-            borderColor: state.isFocused ? '#2ece8a' : '#cbd5e1',
-            boxShadow: state.isFocused ? '0 0 0 3px rgba(46, 206, 138, 0.15)' : 'none',
-            '&:hover': { borderColor: '#2ece8a' },
+            borderColor: state.isFocused ? '#0a500f' : '#cbd5e1',
+            boxShadow: state.isFocused ? '0 0 0 3px rgba(10, 80, 15, 0.15)' : 'none',
+            '&:hover': { borderColor: '#0a500f' },
             borderRadius: '10px',
             fontSize: '14px',
         }),
         menu: base => ({ ...base, zIndex: 9999, fontSize: '0.875rem' }),
         option: (base, state) => ({
             ...base,
-            backgroundColor: state.isSelected ? '#2ece8a' : state.isFocused ? '#f0fdf4' : 'white',
+            backgroundColor: state.isSelected ? '#0a500f' : state.isFocused ? '#f0fdf4' : 'white',
             color: state.isSelected ? 'white' : '#333',
             cursor: 'pointer',
         }),
@@ -2831,9 +2831,9 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
             ...base,
             minHeight: '38px',
             maxHeight: '44px',
-            borderColor: state.isFocused ? '#2ece8a' : '#cbd5e1',
-            boxShadow: state.isFocused ? '0 0 0 3px rgba(46, 206, 138, 0.15)' : 'none',
-            '&:hover': { borderColor: '#2ece8a' },
+            borderColor: state.isFocused ? '#0a500f' : '#cbd5e1',
+            boxShadow: state.isFocused ? '0 0 0 3px rgba(10, 80, 15, 0.15)' : 'none',
+            '&:hover': { borderColor: '#0a500f' },
             borderRadius: '10px',
             fontSize: '13px',
             overflow: 'hidden',
@@ -2909,8 +2909,8 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                             fontSize: '13px', 
                             padding: '6px 16px',
                             background: mainTab === 'gate_entry' ? (isDark ? '#334155' : '#ffffff') : 'transparent',
-                            color: mainTab === 'gate_entry' ? '#2ece8a' : (isDark ? '#94a3b8' : '#64748b'),
-                            boxShadow: mainTab === 'gate_entry' ? '0 1px 3px rgba(46, 206, 138, 0.2)' : 'none',
+                            color: mainTab === 'gate_entry' ? '#0a500f' : (isDark ? '#94a3b8' : '#64748b'),
+                            boxShadow: mainTab === 'gate_entry' ? '0 1px 3px rgba(10, 80, 15, 0.2)' : 'none',
                             transition: 'all 0.15s ease'
                         }}
                         onClick={() => {
@@ -2928,8 +2928,8 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                             fontSize: '13px', 
                             padding: '6px 16px',
                             background: mainTab === 'fast_pass' ? (isDark ? '#334155' : '#ffffff') : 'transparent',
-                            color: mainTab === 'fast_pass' ? '#2ece8a' : (isDark ? '#94a3b8' : '#64748b'),
-                            boxShadow: mainTab === 'fast_pass' ? '0 1px 3px rgba(46, 206, 138, 0.2)' : 'none',
+                            color: mainTab === 'fast_pass' ? '#0a500f' : (isDark ? '#94a3b8' : '#64748b'),
+                            boxShadow: mainTab === 'fast_pass' ? '0 1px 3px rgba(10, 80, 15, 0.2)' : 'none',
                             transition: 'all 0.15s ease'
                         }}
                         onClick={() => {
@@ -2975,7 +2975,7 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                             <button
                                 type="button"
                                 className={`btn btn-xs py-1 px-2.5 rounded-2 border-0 fw-semibold d-inline-flex align-items-center gap-1.5 transition-all ${employeeEntryMode === 'face' ? 'text-white shadow-xs' : 'text-muted'}`}
-                                style={{ fontSize: '12px', backgroundColor: employeeEntryMode === 'face' ? '#2ece8a' : 'transparent' }}
+                                style={{ fontSize: '12px', backgroundColor: employeeEntryMode === 'face' ? '#0a500f' : 'transparent' }}
                                 onClick={() => {
                                     setEmployeeEntryMode('face');
                                     setEmployeeScanResult(null);
@@ -3195,7 +3195,7 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                                 height: '38px', 
                                 borderRadius: '8px', 
                                 fontSize: '13px', 
-                                backgroundColor: '#2ece8a' 
+                                backgroundColor: '#0a500f' 
                             }}
                             onClick={handleSearch}
                             disabled={isSearching || isScanningEmployee}
@@ -3270,7 +3270,7 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                                 </div>
                             </div>
                             <span className="badge rounded-pill bg-light text-muted border px-2.5 py-1" style={{ fontSize: '11px', fontWeight: 500 }}>
-                                <i className="fa fa-info-circle me-1" style={{ color: '#2ece8a' }}></i>
+                                <i className="fa fa-info-circle me-1" style={{ color: '#0a500f' }}></i>
                                 {fastPassType === 'Owner Vehicle' 
                                     ? 'Auto-registers owner car if new. Zero form filling.' 
                                     : 'Registered company vehicles & delivery fleet.'}
@@ -3313,7 +3313,7 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                                     height: '38px',
                                     borderRadius: '8px',
                                     fontSize: '13px',
-                                    backgroundColor: '#2ece8a'
+                                    backgroundColor: '#0a500f'
                                 }}
                                 onClick={() => handleFastPassScan()}
                                 disabled={fastPassLoading}
@@ -3354,15 +3354,15 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                                                     fontSize: '12px',
                                                     fontWeight: 600,
                                                     letterSpacing: '0.3px',
-                                                    backgroundColor: isInside ? (isDark ? 'rgba(46, 206, 138, 0.15)' : '#e8faf2') : (isDark ? '#1e293b' : '#ffffff'),
-                                                    borderColor: isInside ? '#2ece8a' : (isDark ? '#475569' : '#cbd5e1'),
+                                                    backgroundColor: isInside ? (isDark ? 'rgba(10, 80, 15, 0.15)' : '#e8faf2') : (isDark ? '#1e293b' : '#ffffff'),
+                                                    borderColor: isInside ? '#0a500f' : (isDark ? '#475569' : '#cbd5e1'),
                                                     color: isInside ? '#16a34a' : (isDark ? '#e2e8f0' : '#334155'),
-                                                    border: `1px solid ${isInside ? '#2ece8a' : (isDark ? '#475569' : '#cbd5e1')}`
+                                                    border: `1px solid ${isInside ? '#0a500f' : (isDark ? '#475569' : '#cbd5e1')}`
                                                 }}
                                                 onClick={() => handleFastPassScan(v.vehicle_number, 'Company Vehicle')}
                                                 title={isInside ? "Currently Inside - Click to Check OUT" : "Currently Outside - Click to Check IN"}
                                             >
-                                                <span className="rounded-circle d-inline-block" style={{ width: '6px', height: '6px', backgroundColor: isInside ? '#2ece8a' : '#94a3b8' }}></span>
+                                                <span className="rounded-circle d-inline-block" style={{ width: '6px', height: '6px', backgroundColor: isInside ? '#0a500f' : '#94a3b8' }}></span>
                                                 <span>{v.vehicle_number}</span>
                                                 {isInside && <span className="badge bg-success-subtle text-success border border-success-subtle py-0 px-1" style={{ fontSize: '10px' }}>Inside</span>}
                                             </button>
@@ -3393,15 +3393,15 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                                                     fontSize: '12px',
                                                     fontWeight: 600,
                                                     letterSpacing: '0.3px',
-                                                    backgroundColor: isInside ? (isDark ? 'rgba(46, 206, 138, 0.15)' : '#e8faf2') : (isDark ? '#1e293b' : '#ffffff'),
-                                                    borderColor: isInside ? '#2ece8a' : (isDark ? '#475569' : '#cbd5e1'),
+                                                    backgroundColor: isInside ? (isDark ? 'rgba(10, 80, 15, 0.15)' : '#e8faf2') : (isDark ? '#1e293b' : '#ffffff'),
+                                                    borderColor: isInside ? '#0a500f' : (isDark ? '#475569' : '#cbd5e1'),
                                                     color: isInside ? '#16a34a' : (isDark ? '#e2e8f0' : '#334155'),
-                                                    border: `1px solid ${isInside ? '#2ece8a' : (isDark ? '#475569' : '#cbd5e1')}`
+                                                    border: `1px solid ${isInside ? '#0a500f' : (isDark ? '#475569' : '#cbd5e1')}`
                                                 }}
                                                 onClick={() => handleFastPassScan(v.vehicle_number, 'Owner Vehicle')}
                                                 title={isInside ? "Currently Inside - Click to Check OUT" : "Currently Outside - Click to Check IN"}
                                             >
-                                                <span className="rounded-circle d-inline-block" style={{ width: '6px', height: '6px', backgroundColor: isInside ? '#2ece8a' : '#94a3b8' }}></span>
+                                                <span className="rounded-circle d-inline-block" style={{ width: '6px', height: '6px', backgroundColor: isInside ? '#0a500f' : '#94a3b8' }}></span>
                                                 <span>{v.vehicle_number}</span>
                                                 {isInside && <span className="badge bg-success-subtle text-success border border-success-subtle py-0 px-1" style={{ fontSize: '10px' }}>Inside</span>}
                                             </button>
@@ -3428,8 +3428,8 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                                     style={{
                                         width: '26px',
                                         height: '26px',
-                                        background: isDark ? 'rgba(46, 206, 138, 0.15)' : '#e8faf2',
-                                        color: '#2ece8a',
+                                        background: isDark ? 'rgba(10, 80, 15, 0.15)' : '#e8faf2',
+                                        color: '#0a500f',
                                         fontSize: '12px'
                                     }}
                                 >
@@ -3484,7 +3484,7 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                                                 transition: 'all 0.15s ease'
                                             }}
                                             onMouseEnter={(e) => {
-                                                e.currentTarget.style.borderColor = isDark ? '#475569' : '#2ece8a';
+                                                e.currentTarget.style.borderColor = isDark ? '#475569' : '#0a500f';
                                                 e.currentTarget.style.boxShadow = '0 3px 10px rgba(0, 0, 0, 0.05)';
                                             }}
                                             onMouseLeave={(e) => {
@@ -3823,7 +3823,7 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                                         variant="success" 
                                         size="sm" 
                                         className="rounded-pill px-3 py-1.5 text-white fw-semibold d-inline-flex align-items-center gap-1.5 shadow-sm border-0"
-                                        style={{ backgroundColor: '#2ece8a', fontSize: '12px' }}
+                                        style={{ backgroundColor: '#0a500f', fontSize: '12px' }}
                                         onClick={() => {
                                             setEmployeeScanResult(null);
                                             setEmployeeEntryMode('barcode');
@@ -5167,7 +5167,7 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                                 fontWeight: 600,
                                 transition: 'all 0.2s ease'
                             }}
-                            onMouseEnter={(e) => { e.currentTarget.style.background = '#2ece8a'; e.currentTarget.style.color = '#fff'; }}
+                            onMouseEnter={(e) => { e.currentTarget.style.background = '#0a500f'; e.currentTarget.style.color = '#fff'; }}
                             onMouseLeave={(e) => { e.currentTarget.style.background = '#e8fdf4'; e.currentTarget.style.color = '#16a34a'; }}
                             onClick={handleAddVehicle}
                         >
@@ -5392,7 +5392,7 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                                                                     fontWeight: 600,
                                                                     transition: 'all 0.2s ease'
                                                                 }}
-                                                                onMouseEnter={(e) => { e.currentTarget.style.background = '#2ece8a'; e.currentTarget.style.color = '#fff'; e.currentTarget.style.borderColor = '#2ece8a'; }}
+                                                                onMouseEnter={(e) => { e.currentTarget.style.background = '#0a500f'; e.currentTarget.style.color = '#fff'; e.currentTarget.style.borderColor = '#0a500f'; }}
                                                                 onMouseLeave={(e) => { e.currentTarget.style.background = '#f0fdf4'; e.currentTarget.style.color = '#15803d'; e.currentTarget.style.borderColor = '#86efac'; }}
                                                                 onClick={() => handleOpenVehicleCamera(index)}
                                                             >
@@ -5687,7 +5687,7 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                                 fontWeight: 600,
                                 transition: 'all 0.2s ease'
                             }}
-                            onMouseEnter={(e) => { e.currentTarget.style.background = '#2ece8a'; e.currentTarget.style.color = '#fff'; }}
+                            onMouseEnter={(e) => { e.currentTarget.style.background = '#0a500f'; e.currentTarget.style.color = '#fff'; }}
                             onMouseLeave={(e) => { e.currentTarget.style.background = '#e8fdf4'; e.currentTarget.style.color = '#16a34a'; }}
                             onClick={() => setShowEquipmentModal(true)}
                         >
@@ -5777,11 +5777,11 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                                             width: '38px',
                                             height: '38px',
                                             borderRadius: '8px',
-                                            background: '#2ece8a',
+                                            background: '#0a500f',
                                             color: '#ffffff',
                                             border: 'none',
                                             transition: 'all 0.2s ease',
-                                            boxShadow: '0 2px 4px rgba(46, 206, 138, 0.2)'
+                                            boxShadow: '0 2px 4px rgba(10, 80, 15, 0.2)'
                                         }}
                                         onClick={() => setShowEquipmentModal(true)}
                                         title="Quick Add New Tool to Master"
@@ -6086,7 +6086,7 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                         ) : (
                             <Button
                                 className="px-3.5 py-1.5 fw-semibold text-white shadow-sm d-flex align-items-center gap-2 border-0"
-                                style={{ borderRadius: '7px', fontSize: '13px', backgroundColor: 'rgb(61, 53, 119)' }}
+                                style={{ borderRadius: '7px', fontSize: '13px', backgroundColor: '#0a500f' }}
                                 onClick={() => loadAppointmentData(selectedAppointmentData.id)}
                                 disabled={loading}
                             >
@@ -6162,9 +6162,9 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                         style={{ 
                             width: '48px', 
                             height: '48px', 
-                            background: isDark ? 'rgba(46, 206, 138, 0.15)' : '#e8faf2', 
-                            color: '#2ece8a', 
-                            border: `1.5px solid ${isDark ? 'rgba(46, 206, 138, 0.3)' : '#bbf0d8'}` 
+                            background: isDark ? 'rgba(10, 80, 15, 0.15)' : '#e8faf2', 
+                            color: '#0a500f', 
+                            border: `1.5px solid ${isDark ? 'rgba(10, 80, 15, 0.3)' : '#bbf0d8'}` 
                         }}
                     >
                         <i className="fa fa-calendar-check fs-5"></i>
@@ -6186,7 +6186,7 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                     <div className="d-flex align-items-center justify-content-center gap-2 flex-wrap mb-2">
                         <Button
                             className="px-3.5 py-2 fw-semibold text-white shadow-sm d-flex align-items-center gap-2 border-0"
-                            style={{ borderRadius: '8px', fontSize: '13px', backgroundColor: '#2ece8a' }}
+                            style={{ borderRadius: '8px', fontSize: '13px', backgroundColor: '#0a500f' }}
                             onClick={() => handleShowAppointments(visitorData?.mobile_no || selectedVehicles?.[0]?.vehicle_number || searchMobile)}
                         >
                             <i className="fa fa-calendar-alt opacity-75"></i>
@@ -6392,7 +6392,7 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                                 type="button"
                                 className="d-flex align-items-center gap-2 border-0"
                                 style={{
-                                    background: 'linear-gradient(135deg, #2ece8a 0%, #20b876 100%)',
+                                    background: 'linear-gradient(135deg, #0a500f 0%, #20b876 100%)',
                                     color: '#ffffff',
                                     borderRadius: '8px',
                                     padding: '7px 16px',
@@ -6400,15 +6400,15 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                                     fontWeight: '600',
                                     cursor: 'pointer',
                                     transition: 'all 0.2s ease',
-                                    boxShadow: '0 2px 6px rgba(46, 206, 138, 0.25)'
+                                    boxShadow: '0 2px 6px rgba(10, 80, 15, 0.25)'
                                 }}
                                 onMouseEnter={(e) => {
                                     e.currentTarget.style.transform = 'translateY(-1px)';
-                                    e.currentTarget.style.boxShadow = '0 4px 10px rgba(46, 206, 138, 0.35)';
+                                    e.currentTarget.style.boxShadow = '0 4px 10px rgba(10, 80, 15, 0.35)';
                                 }}
                                 onMouseLeave={(e) => {
                                     e.currentTarget.style.transform = 'none';
-                                    e.currentTarget.style.boxShadow = '0 2px 6px rgba(46, 206, 138, 0.25)';
+                                    e.currentTarget.style.boxShadow = '0 2px 6px rgba(10, 80, 15, 0.25)';
                                 }}
                                 onClick={() => setAppointmentModalView('create')}
                             >
@@ -6433,10 +6433,10 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                                 }}
                                 onMouseEnter={(e) => {
                                     e.currentTarget.style.background = '#f0fdf6';
-                                    e.currentTarget.style.borderColor = '#2ece8a';
+                                    e.currentTarget.style.borderColor = '#0a500f';
                                     e.currentTarget.style.color = '#15803d';
                                     e.currentTarget.style.transform = 'translateY(-1px)';
-                                    e.currentTarget.style.boxShadow = '0 3px 8px rgba(46, 206, 138, 0.15)';
+                                    e.currentTarget.style.boxShadow = '0 3px 8px rgba(10, 80, 15, 0.15)';
                                 }}
                                 onMouseLeave={(e) => {
                                     e.currentTarget.style.background = '#ffffff';
@@ -6527,7 +6527,7 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                                         <Button
                                             variant="success"
                                             className="px-3 py-2 fw-bold shadow-sm"
-                                            style={{ borderRadius: '8px', fontSize: '13px', background: '#2ece8a', borderColor: '#2ece8a' }}
+                                            style={{ borderRadius: '8px', fontSize: '13px', background: '#0a500f', borderColor: '#0a500f' }}
                                             onClick={() => setAppointmentModalView('create')}
                                         >
                                             <i className="fa fa-plus-circle me-2"></i>
@@ -6838,7 +6838,7 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                     <form onSubmit={handleConfirmSwitchVehicle}>
                         <style>{`
                             .pkg-close-btn {
-                                background-color: #7A70BA !important;
+                                background-color: #dc3545 !important;
                                 color: white !important;
                                 border-radius: 8px !important;
                                 font-weight: 500 !important;
@@ -6849,10 +6849,10 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                                 transition: background-color 0.2s, transform 0.1s !important;
                             }
                             .pkg-close-btn:hover {
-                                background-color: #6357a7 !important;
+                                background-color: #bb2d3b !important;
                             }
                             .pkg-submit-btn {
-                                background-color: #2ece8a !important;
+                                background-color: #0a500f !important;
                                 color: white !important;
                                 border-radius: 8px !important;
                                 font-weight: 500 !important;
@@ -6863,8 +6863,8 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                                 transition: background-color 0.2s, transform 0.1s !important;
                             }
                             .pkg-submit-btn:hover, .pkg-submit-btn:focus {
-                                background-color: #26b277 !important;
-                                box-shadow: 0 0 0 4px rgba(46, 206, 138, 0.4) !important;
+                                background-color: #073d0b !important;
+                                box-shadow: 0 0 0 4px rgba(10, 80, 15, 0.4) !important;
                                 outline: none !important;
                             }
                             .veh-tab-btn {
@@ -6877,10 +6877,10 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                                 cursor: pointer;
                             }
                             .veh-tab-btn.active {
-                                background-color: #2ece8a !important;
-                                border-color: #2ece8a !important;
+                                background-color: #0a500f !important;
+                                border-color: #0a500f !important;
                                 color: #ffffff !important;
-                                box-shadow: 0 2px 6px rgba(46, 206, 138, 0.3) !important;
+                                box-shadow: 0 2px 6px rgba(10, 80, 15, 0.3) !important;
                             }
                             .veh-tab-btn:not(.active) {
                                 background-color: ${isDark ? '#0f172a' : '#f8fafc'} !important;
@@ -6899,7 +6899,7 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                                 <div className="d-flex align-items-center gap-3">
                                     <div style={{
                                         width: '48px', height: '48px', borderRadius: '50%',
-                                        background: '#2ece8a',
+                                        background: '#0a500f',
                                         display: 'flex', alignItems: 'center', justifyContent: 'center',
                                         flexShrink: 0,
                                     }}>
@@ -6938,7 +6938,7 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                                 <div>
                                     <div className="fw-bold" style={{ color: isDark ? '#fff' : '#1e293b', fontSize: '0.95rem' }}>{targetEntryForVehicleSwitch.employee_name || 'Employee'}</div>
                                     <div className="text-muted" style={{ fontSize: '12px' }}>
-                                        ID: <span className="fw-semibold" style={{ color: isDark ? '#cbd5e1' : '#1e293b' }}>{targetEntryForVehicleSwitch.employment_no || '—'}</span> &bull; Current: <strong style={{ color: '#2ece8a' }}>{targetEntryForVehicleSwitch.vehicle_number || 'No Vehicle'}</strong>
+                                        ID: <span className="fw-semibold" style={{ color: isDark ? '#cbd5e1' : '#1e293b' }}>{targetEntryForVehicleSwitch.employment_no || '—'}</span> &bull; Current: <strong style={{ color: '#0a500f' }}>{targetEntryForVehicleSwitch.vehicle_number || 'No Vehicle'}</strong>
                                     </div>
                                 </div>
                                 <div>
@@ -6987,7 +6987,7 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                                             <button
                                                 type="button"
                                                 className="btn btn-sm btn-link text-decoration-none fw-semibold"
-                                                style={{ color: '#2ece8a' }}
+                                                style={{ color: '#0a500f' }}
                                                 onClick={() => setSwitchMode('new')}
                                             >
                                                 + Click here to register a new vehicle &rarr;
@@ -7589,8 +7589,8 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                     transition: border-color 0.2s, box-shadow 0.2s;
                 }
                 .unified-search-box:focus-within {
-                    border-color: #2ece8a !important;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15) !important;
+                    border-color: #0a500f !important;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15) !important;
                 }
                 input.form-control-custom,
                 select.form-control-custom {
@@ -7598,8 +7598,8 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                     min-height: 38px !important;
                 }
                 .form-control-custom:focus {
-                    border-color: #2ece8a !important;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15) !important;
+                    border-color: #0a500f !important;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15) !important;
                     outline: none;
                 }
                 .form-control-custom.is-invalid,
@@ -7632,7 +7632,7 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                     width: 32px;
                     height: 32px;
                     border-radius: 8px;
-                    background: linear-gradient(135deg, #2ece8a, #26b277);
+                    background: linear-gradient(135deg, #0a500f, #073d0b);
                     border: none;
                     color: white;
                     font-size: 18px;
@@ -7641,7 +7641,7 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                     cursor: pointer;
                     flex-shrink: 0;
                     transition: opacity 0.2s, transform 0.15s;
-                    box-shadow: 0 2px 6px rgba(46,206,138,0.35);
+                    box-shadow: 0 2px 6px rgba(10, 80, 15,0.35);
                     margin-top: 1px;
                 }
                 .quick-add-btn:hover {
@@ -7650,8 +7650,8 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                 }
                 .quick-add-btn:active { transform: scale(0.96); }
                 .btn-close-custom {
-                    background-color: #7A70BA !important;
-                    border-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
+                    border-color: #0a500f !important;
                     color: #fff !important;
                     font-weight: 500;
                     font-size: 14px !important;
@@ -7659,13 +7659,13 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                     border-radius: 8px;
                 }
                 .btn-close-custom:hover {
-                    background-color: #6357a7 !important;
-                    border-color: #6357a7 !important;
+                    background-color: #bb2d3b !important;
+                    border-color: #073d0b !important;
                     color: #fff !important;
                 }
                 .btn-save-custom {
-                    background-color: #2ece8a !important;
-                    border-color: #2ece8a !important;
+                    background-color: #0a500f !important;
+                    border-color: #0a500f !important;
                     color: #fff !important;
                     font-weight: 500;
                     font-size: 14px !important;
@@ -7673,8 +7673,8 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                     border-radius: 8px;
                 }
                 .btn-save-custom:hover {
-                    background-color: #25b87a !important;
-                    border-color: #25b87a !important;
+                    background-color: #073d0b !important;
+                    border-color: #073d0b !important;
                     color: #fff !important;
                 }
                 .appointment-custom-modal .modal-content,
@@ -7705,12 +7705,12 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                 .item-custom-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #2ece8a;
+                    background-color: #0a500f;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    box-shadow: 0 4px 10px rgba(46, 206, 138, 0.2);
+                    box-shadow: 0 4px 10px rgba(10, 80, 15, 0.2);
                     flex-shrink: 0;
                 }
                 .appointment-custom-modal .modal-close-x,
@@ -7764,7 +7764,7 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
             >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                     <div style={{ background: '#e8fdf4', borderRadius: '8px', width: '32px', height: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <i className="fa fa-history" style={{ color: '#2ece8a', fontSize: '0.9rem' }}></i>
+                        <i className="fa fa-history" style={{ color: '#0a500f', fontSize: '0.9rem' }}></i>
                     </div>
                     <div>
                         <div style={{ color: isDark ? '#f8fafc' : '#1e293b', fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.3px' }}>Previous Engagements</div>
@@ -7789,7 +7789,7 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                     </div>
                 ) : engagementHistory && engagementHistory.length > 0 ? (
                     <div style={{ position: 'relative', paddingLeft: '22px' }}>
-                        <div style={{ position: 'absolute', left: '8px', top: '8px', bottom: '8px', width: '2px', background: 'linear-gradient(to bottom, #2ece8a, #e2e8f0)' }}></div>
+                        <div style={{ position: 'absolute', left: '8px', top: '8px', bottom: '8px', width: '2px', background: 'linear-gradient(to bottom, #0a500f, #e2e8f0)' }}></div>
                         {engagementHistory.map((eng, idx) => {
                             const dateStr = eng.entry_time ? new Date(eng.entry_time).toLocaleDateString('en-GB') : 'Unknown Date';
                             const inTime = eng.entry_time ? new Date(eng.entry_time).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) : '-';
@@ -7804,7 +7804,7 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                             }
                             return (
                                 <div key={idx} style={{ position: 'relative', marginBottom: '10px' }}>
-                                    <div style={{ position: 'absolute', left: '-18px', top: '12px', width: '9px', height: '9px', borderRadius: '50%', background: isOut ? '#2ece8a' : '#f59e0b', border: '2px solid #fff', boxShadow: `0 0 0 2px ${isOut ? '#2ece8a' : '#f59e0b'}44` }}></div>
+                                    <div style={{ position: 'absolute', left: '-18px', top: '12px', width: '9px', height: '9px', borderRadius: '50%', background: isOut ? '#0a500f' : '#f59e0b', border: '2px solid #fff', boxShadow: `0 0 0 2px ${isOut ? '#0a500f' : '#f59e0b'}44` }}></div>
                                     <div style={{ background: isDark ? '#0f172a' : '#fff', borderRadius: '12px', border: `1px solid ${isDark ? '#334155' : '#e2e8f0'}`, overflow: 'hidden', boxShadow: '0 1px 6px rgba(0,0,0,0.04)' }}>
                                         <div style={{ padding: '7px 10px', background: isOut ? (isDark ? 'rgba(34, 197, 94, 0.1)' : 'linear-gradient(90deg, #f0fdf4, #fff)') : (isDark ? 'rgba(245, 158, 11, 0.1)' : 'linear-gradient(90deg, #fffbeb, #fff)'), borderBottom: `1px solid ${isDark ? '#334155' : '#f1f5f9'}`, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                                             <span style={{ fontWeight: 700, fontSize: '0.75rem', color: isDark ? '#f8fafc' : '#1e293b' }}>
@@ -7839,7 +7839,7 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                                                 <strong style={{ color: isDark ? '#cbd5e1' : '#334155' }}>{metPerson}</strong>
                                             </div>
                                             {purpose && (
-                                                <div style={{ fontSize: '0.68rem', color: isDark ? '#94a3b8' : '#64748b', background: isDark ? '#1e293b' : '#f8fafc', borderRadius: '6px', padding: '3px 7px', borderLeft: '2px solid #2ece8a', marginTop: '2px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }} title={purpose}>
+                                                <div style={{ fontSize: '0.68rem', color: isDark ? '#94a3b8' : '#64748b', background: isDark ? '#1e293b' : '#f8fafc', borderRadius: '6px', padding: '3px 7px', borderLeft: '2px solid #0a500f', marginTop: '2px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }} title={purpose}>
                                                     <i className="fa fa-quote-left me-1" style={{ fontSize: '0.55rem', color: '#cbd5e1' }}></i>{purpose}
                                                 </div>
                                             )}

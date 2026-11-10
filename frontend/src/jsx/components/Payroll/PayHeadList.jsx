@@ -17,10 +17,10 @@ import EditButton from '../../../components/permissions/EditButton';
 import DeleteButton from '../../../components/permissions/DeleteButton';
 
 export const PAY_HEAD_TYPES = [
-    { value: 'EARNING', label: 'Employee Earnings', badgeClass: 'badge-success', color: '#2ece8a' },
+    { value: 'EARNING', label: 'Employee Earnings', badgeClass: 'badge-success', color: '#0a500f' },
     { value: 'DEDUCTION', label: 'Employee Deductions', badgeClass: 'badge-danger', color: '#ff5c75' },
     { value: 'EMPLOYEE_STATUTORY_DEDUCTION', label: 'Statutory Deductions (Employee)', badgeClass: 'badge-warning', color: '#ffaa2b' },
-    { value: 'EMPLOYER_STATUTORY_CONTRIBUTION', label: 'Statutory Contributions (Employer)', badgeClass: 'badge-primary', color: '#7a70ba' },
+    { value: 'EMPLOYER_STATUTORY_CONTRIBUTION', label: 'Statutory Contributions (Employer)', badgeClass: 'badge-primary', color: '#0a500f' },
     { value: 'GRATUITY', label: 'Gratuity Benefit', badgeClass: 'badge-info', color: '#2b98d6' },
     { value: 'LOAN_ADVANCE', label: 'Loan & Advance Recoveries', badgeClass: 'badge-secondary', color: '#6c757d' },
     { value: 'REIMBURSEMENT', label: 'Employee Reimbursements', badgeClass: 'badge-dark', color: '#343a40' },
@@ -125,9 +125,9 @@ const selectStyles = {
     control: (base, state) => ({
         ...base,
         minHeight: '42px',
-        borderColor: state.isFocused ? '#2ece8a' : '#cbd5e1',
-        boxShadow: state.isFocused ? '0 0 0 2px rgba(46, 206, 138, 0.2)' : 'none',
-        '&:hover': { borderColor: '#2ece8a' },
+        borderColor: state.isFocused ? '#0a500f' : '#cbd5e1',
+        boxShadow: state.isFocused ? '0 0 0 2px rgba(10, 80, 15, 0.2)' : 'none',
+        '&:hover': { borderColor: '#0a500f' },
         borderRadius: '8px',
         fontSize: '14px',
         backgroundColor: '#fff',
@@ -144,9 +144,9 @@ const selectStyles = {
     option: (base, state) => ({
         ...base,
         backgroundColor: state.isSelected
-            ? '#2ece8a'
+            ? '#0a500f'
             : state.isFocused
-            ? 'rgba(46, 206, 138, 0.1)'
+            ? 'rgba(10, 80, 15, 0.1)'
             : 'transparent',
         color: state.isSelected ? '#fff' : '#334155',
         cursor: state.isDisabled ? 'not-allowed' : 'pointer',
@@ -871,7 +871,7 @@ const PayHeadList = () => {
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#ff5c75',
-            cancelButtonColor: '#7a70ba',
+            cancelButtonColor: '#0a500f',
             confirmButtonText: 'Yes, delete it!'
         }).then(async (result) => {
             if (result.isConfirmed) {
@@ -1029,8 +1029,8 @@ const PayHeadList = () => {
                 confirmButtonText: '<i class="fa fa-copy me-1"></i> Copy from above',
                 denyButtonText: '<i class="fa fa-refresh me-1"></i> Start fresh',
                 cancelButtonText: 'Cancel',
-                confirmButtonColor: '#2ece8a',
-                denyButtonColor: '#7A70BA',
+                confirmButtonColor: '#0a500f',
+                denyButtonColor: '#0a500f',
                 cancelButtonColor: '#94a3b8',
                 focusConfirm: true,
             });
@@ -1451,12 +1451,12 @@ const PayHeadList = () => {
                 .payhead-custom-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #2ece8a;
+                    background-color: #0a500f;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    box-shadow: 0 4px 10px rgba(46, 206, 138, 0.2);
+                    box-shadow: 0 4px 10px rgba(10, 80, 15, 0.2);
                 }
                 .payhead-custom-modal .modal-close-x {
                     border: none;
@@ -1484,7 +1484,7 @@ const PayHeadList = () => {
                     gap: 12px;
                 }
                 .payhead-custom-modal .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -1494,9 +1494,9 @@ const PayHeadList = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .payhead-custom-modal .btn-close-custom:hover { background-color: #6357a7 !important; }
+                .payhead-custom-modal .btn-close-custom:hover { background-color: #bb2d3b !important; }
                 .payhead-custom-modal .btn-save-custom {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -1506,7 +1506,7 @@ const PayHeadList = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .payhead-custom-modal .btn-save-custom:hover { background-color: #26b277 !important; }
+                .payhead-custom-modal .btn-save-custom:hover { background-color: #073d0b !important; }
 
                 .choice-pill {
                     display: inline-flex;
@@ -1523,18 +1523,18 @@ const PayHeadList = () => {
                 }
                 .choice-pill:focus, .choice-pill:focus-visible {
                     outline: none;
-                    border-color: #2ece8a;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.25);
+                    border-color: #0a500f;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.25);
                 }
                 .choice-pill.active {
                     background-color: #e6f9f1;
-                    border-color: #2ece8a;
+                    border-color: #0a500f;
                     color: #1a7f53;
                     font-weight: 600;
                 }
                 .form-check-input:focus {
-                    border-color: #2ece8a !important;
-                    box-shadow: 0 0 0 0.25rem rgba(46, 206, 138, 0.25) !important;
+                    border-color: #0a500f !important;
+                    box-shadow: 0 0 0 0.25rem rgba(10, 80, 15, 0.25) !important;
                 }
             `}</style>
 
@@ -1912,7 +1912,7 @@ const PayHeadList = () => {
                             <div className="col-md-12 pt-1">
                                 <div className="card p-3 mb-0" style={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '10px' }}>
                                     <div className="d-flex align-items-center gap-2 mb-3 pb-2 border-bottom">
-                                        <div style={{ width: '28px', height: '28px', borderRadius: '6px', backgroundColor: 'rgba(46, 206, 138, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#2ece8a' }}>
+                                        <div style={{ width: '28px', height: '28px', borderRadius: '6px', backgroundColor: 'rgba(10, 80, 15, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#0a500f' }}>
                                             <i className="fa fa-calculator" style={{ fontSize: '13px' }}></i>
                                         </div>
                                         <div>

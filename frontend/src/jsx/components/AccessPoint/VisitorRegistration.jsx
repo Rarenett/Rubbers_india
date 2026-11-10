@@ -217,7 +217,7 @@ const VisitorRegistration = ({ embedded = false }) => {
             icon: 'warning',
             title,
             text,
-            confirmButtonColor: '#2ece8a',
+            confirmButtonColor: '#0a500f',
             focusConfirm: true,
             returnFocus: false,
             didOpen: (popup) => {
@@ -348,16 +348,16 @@ const VisitorRegistration = ({ embedded = false }) => {
         control: (base, state) => ({
             ...base,
             minHeight: '38px',
-            borderColor: state.isFocused ? '#2ece8a' : '#cbd5e1',
-            boxShadow: state.isFocused ? '0 0 0 3px rgba(46, 206, 138, 0.15)' : 'none',
-            '&:hover': { borderColor: '#2ece8a' },
+            borderColor: state.isFocused ? '#0a500f' : '#cbd5e1',
+            boxShadow: state.isFocused ? '0 0 0 3px rgba(10, 80, 15, 0.15)' : 'none',
+            '&:hover': { borderColor: '#0a500f' },
             borderRadius: '10px',
             fontSize: '13px',
         }),
         menu: base => ({ ...base, zIndex: 9999, fontSize: '0.875rem' }),
         option: (base, state) => ({
             ...base,
-            backgroundColor: state.isSelected ? '#2ece8a' : state.isFocused ? '#e8fcf3' : 'white',
+            backgroundColor: state.isSelected ? '#0a500f' : state.isFocused ? '#e8fcf3' : 'white',
             color: state.isSelected ? 'white' : '#333',
             cursor: 'pointer',
         }),
@@ -707,9 +707,9 @@ const VisitorRegistration = ({ embedded = false }) => {
                                             borderRadius: '8px',
                                             padding: '6px 16px',
                                             fontWeight: activeTab === 'visitors' ? '600' : '500',
-                                            background: activeTab === 'visitors' ? '#2ece8a' : 'transparent',
+                                            background: activeTab === 'visitors' ? '#0a500f' : 'transparent',
                                             color: activeTab === 'visitors' ? '#fff' : '#64748b',
-                                            boxShadow: activeTab === 'visitors' ? '0 2px 8px rgba(46, 206, 138, 0.3)' : 'none',
+                                            boxShadow: activeTab === 'visitors' ? '0 2px 8px rgba(10, 80, 15, 0.3)' : 'none',
                                             transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                                             fontSize: '13px'
                                         }}
@@ -724,9 +724,9 @@ const VisitorRegistration = ({ embedded = false }) => {
                                             borderRadius: '8px',
                                             padding: '6px 16px',
                                             fontWeight: activeTab === 'vehicles' ? '600' : '500',
-                                            background: activeTab === 'vehicles' ? '#2ece8a' : 'transparent',
+                                            background: activeTab === 'vehicles' ? '#0a500f' : 'transparent',
                                             color: activeTab === 'vehicles' ? '#fff' : '#64748b',
-                                            boxShadow: activeTab === 'vehicles' ? '0 2px 8px rgba(46, 206, 138, 0.3)' : 'none',
+                                            boxShadow: activeTab === 'vehicles' ? '0 2px 8px rgba(10, 80, 15, 0.3)' : 'none',
                                             transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                                             fontSize: '13px'
                                         }}
@@ -888,9 +888,9 @@ const VisitorRegistration = ({ embedded = false }) => {
                                                                             fontWeight: '600', 
                                                                             padding: '4px 10px', 
                                                                             borderRadius: '6px',
-                                                                            backgroundColor: isDark ? 'rgba(46, 206, 138, 0.15)' : '#ecfdf5',
+                                                                            backgroundColor: isDark ? 'rgba(10, 80, 15, 0.15)' : '#ecfdf5',
                                                                             color: isDark ? '#4ade80' : '#059669',
-                                                                            border: isDark ? '1px solid rgba(46, 206, 138, 0.3)' : '1px solid #a7f3d0'
+                                                                            border: isDark ? '1px solid rgba(10, 80, 15, 0.3)' : '1px solid #a7f3d0'
                                                                         }}
                                                                     >
                                                                         <i className="fa fa-star text-warning" style={{ fontSize: '11px' }}></i>
@@ -1060,14 +1060,14 @@ const VisitorRegistration = ({ embedded = false }) => {
                                     />
                                     <button 
                                         type="button" 
-                                        style={{ position: 'relative', zIndex: 1, border: 'none', background: 'transparent', padding: '6px 30px', fontSize: '14px', fontWeight: registrationType === 'visitor' ? '600' : '500', color: registrationType === 'visitor' ? '#2ece8a' : '#64748b', transition: 'color 0.3s ease', cursor: 'pointer' }} 
+                                        style={{ position: 'relative', zIndex: 1, border: 'none', background: 'transparent', padding: '6px 30px', fontSize: '14px', fontWeight: registrationType === 'visitor' ? '600' : '500', color: registrationType === 'visitor' ? '#0a500f' : '#64748b', transition: 'color 0.3s ease', cursor: 'pointer' }} 
                                         onClick={() => setRegistrationType('visitor')}
                                     >
                                         <i className="fa fa-user me-2"></i>Visitor
                                     </button>
                                     <button 
                                         type="button" 
-                                        style={{ position: 'relative', zIndex: 1, border: 'none', background: 'transparent', padding: '6px 30px', fontSize: '14px', fontWeight: registrationType === 'vehicle' ? '600' : '500', color: registrationType === 'vehicle' ? '#2ece8a' : '#64748b', transition: 'color 0.3s ease', cursor: 'pointer' }} 
+                                        style={{ position: 'relative', zIndex: 1, border: 'none', background: 'transparent', padding: '6px 30px', fontSize: '14px', fontWeight: registrationType === 'vehicle' ? '600' : '500', color: registrationType === 'vehicle' ? '#0a500f' : '#64748b', transition: 'color 0.3s ease', cursor: 'pointer' }} 
                                         onClick={() => setRegistrationType('vehicle')}
                                     >
                                         <i className="fa fa-car me-2"></i>Vehicle
@@ -1124,7 +1124,7 @@ const VisitorRegistration = ({ embedded = false }) => {
                                     <div className="col-md-4 mb-3">
                                         <div className="d-flex justify-content-between align-items-center mb-1">
                                             <Form.Label className="form-label-custom mb-0">Visitor Photo <span className="text-danger">*</span></Form.Label>
-                                            <Button id="btn_camera_visitor_photo" size="sm" type="button" onClick={() => setCameraField('visitor_photo')} className="btn-camera-upload d-flex align-items-center gap-1 px-2 py-1" style={{ background: '#2ece8a', borderColor: '#2ece8a', color: '#fff', fontSize: '11px', borderRadius: '6px' }} onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); e.stopPropagation(); setCameraField('visitor_photo'); } }}>
+                                            <Button id="btn_camera_visitor_photo" size="sm" type="button" onClick={() => setCameraField('visitor_photo')} className="btn-camera-upload d-flex align-items-center gap-1 px-2 py-1" style={{ background: '#0a500f', borderColor: '#0a500f', color: '#fff', fontSize: '11px', borderRadius: '6px' }} onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); e.stopPropagation(); setCameraField('visitor_photo'); } }}>
                                                 <i className="fa fa-camera"></i> Camera
                                             </Button>
                                         </div>
@@ -1145,7 +1145,7 @@ const VisitorRegistration = ({ embedded = false }) => {
                                     <div className="col-md-4 mb-3">
                                         <div className="d-flex justify-content-between align-items-center mb-1">
                                             <Form.Label className="form-label-custom mb-0">ID Card Photo <span className="text-danger">*</span></Form.Label>
-                                            <Button id="btn_camera_id_card_photo" size="sm" type="button" onClick={() => setCameraField('id_card_photo')} className="btn-camera-upload d-flex align-items-center gap-1 px-2 py-1" style={{ background: '#2ece8a', borderColor: '#2ece8a', color: '#fff', fontSize: '11px', borderRadius: '6px' }} onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); e.stopPropagation(); setCameraField('id_card_photo'); } }}>
+                                            <Button id="btn_camera_id_card_photo" size="sm" type="button" onClick={() => setCameraField('id_card_photo')} className="btn-camera-upload d-flex align-items-center gap-1 px-2 py-1" style={{ background: '#0a500f', borderColor: '#0a500f', color: '#fff', fontSize: '11px', borderRadius: '6px' }} onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); e.stopPropagation(); setCameraField('id_card_photo'); } }}>
                                                 <i className="fa fa-camera"></i> Camera
                                             </Button>
                                         </div>
@@ -1166,7 +1166,7 @@ const VisitorRegistration = ({ embedded = false }) => {
                                     <div className="col-md-4 mb-3">
                                         <div className="d-flex justify-content-between align-items-center mb-1">
                                             <Form.Label className="form-label-custom mb-0">Visiting Card</Form.Label>
-                                            <Button id="btn_camera_visiting_card_photo" size="sm" type="button" onClick={() => setCameraField('visiting_card_photo')} className="btn-camera-upload d-flex align-items-center gap-1 px-2 py-1" style={{ background: '#2ece8a', borderColor: '#2ece8a', color: '#fff', fontSize: '11px', borderRadius: '6px' }} onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); e.stopPropagation(); setCameraField('visiting_card_photo'); } }}>
+                                            <Button id="btn_camera_visiting_card_photo" size="sm" type="button" onClick={() => setCameraField('visiting_card_photo')} className="btn-camera-upload d-flex align-items-center gap-1 px-2 py-1" style={{ background: '#0a500f', borderColor: '#0a500f', color: '#fff', fontSize: '11px', borderRadius: '6px' }} onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); e.stopPropagation(); setCameraField('visiting_card_photo'); } }}>
                                                 <i className="fa fa-camera"></i> Camera
                                             </Button>
                                         </div>
@@ -1304,9 +1304,9 @@ const VisitorRegistration = ({ embedded = false }) => {
                                                             fontWeight: '600', 
                                                             padding: '4px 10px', 
                                                             borderRadius: '6px',
-                                                            backgroundColor: isDark ? 'rgba(46, 206, 138, 0.15)' : '#ecfdf5',
+                                                            backgroundColor: isDark ? 'rgba(10, 80, 15, 0.15)' : '#ecfdf5',
                                                             color: isDark ? '#4ade80' : '#059669',
-                                                            border: isDark ? '1px solid rgba(46, 206, 138, 0.3)' : '1px solid #a7f3d0'
+                                                            border: isDark ? '1px solid rgba(10, 80, 15, 0.3)' : '1px solid #a7f3d0'
                                                         }}
                                                     >
                                                         <i className="fa fa-star text-warning" style={{ fontSize: '10px' }}></i>
@@ -1324,7 +1324,7 @@ const VisitorRegistration = ({ embedded = false }) => {
                                     <div className="col-md-4 mb-3">
                                         <div className="d-flex justify-content-between align-items-center mb-1">
                                             <Form.Label className="form-label-custom mb-0">Vehicle Photo <span className="text-danger">*</span></Form.Label>
-                                            <Button id="btn_camera_vehicle_photo" size="sm" type="button" onClick={() => setCameraField('vehicle_photo')} className="btn-camera-upload d-flex align-items-center gap-1 px-2 py-1" style={{ background: '#2ece8a', borderColor: '#2ece8a', color: '#fff', fontSize: '11px', borderRadius: '6px' }} onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); e.stopPropagation(); setCameraField('vehicle_photo'); } }}>
+                                            <Button id="btn_camera_vehicle_photo" size="sm" type="button" onClick={() => setCameraField('vehicle_photo')} className="btn-camera-upload d-flex align-items-center gap-1 px-2 py-1" style={{ background: '#0a500f', borderColor: '#0a500f', color: '#fff', fontSize: '11px', borderRadius: '6px' }} onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); e.stopPropagation(); setCameraField('vehicle_photo'); } }}>
                                                 <i className="fa fa-camera"></i> Camera
                                             </Button>
                                         </div>
@@ -1399,12 +1399,12 @@ const VisitorRegistration = ({ embedded = false }) => {
                 .item-custom-modal .modal-icon-circle {
                     width: 48px !important;
                     height: 48px !important;
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     border-radius: 50% !important;
                     display: flex !important;
                     align-items: center !important;
                     justify-content: center !important;
-                    box-shadow: 0 4px 10px rgba(46, 206, 138, 0.2) !important;
+                    box-shadow: 0 4px 10px rgba(10, 80, 15, 0.2) !important;
                     flex-shrink: 0 !important;
                 }
                 .item-custom-modal .modal-close-x {
@@ -1449,8 +1449,8 @@ const VisitorRegistration = ({ embedded = false }) => {
                 }
                 .item-custom-modal .form-control-custom:focus {
                     outline: none !important;
-                    border-color: #2ece8a !important;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15) !important;
+                    border-color: #0a500f !important;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15) !important;
                 }
                 .item-custom-modal .form-control-custom::placeholder {
                     color: #94a3b8 !important;
@@ -1465,7 +1465,7 @@ const VisitorRegistration = ({ embedded = false }) => {
                     gap: 12px !important;
                 }
                 .item-custom-modal .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -1476,10 +1476,10 @@ const VisitorRegistration = ({ embedded = false }) => {
                     transition: background-color 0.2s, transform 0.1s !important;
                 }
                 .item-custom-modal .btn-close-custom:hover {
-                    background-color: #6357a7 !important;
+                    background-color: #bb2d3b !important;
                 }
                 .item-custom-modal .btn-save-custom {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -1514,12 +1514,12 @@ const VisitorRegistration = ({ embedded = false }) => {
                     outline: none !important;
                 }
                 .item-custom-modal .dropzone-upload:hover {
-                    border-color: #2ece8a !important;
+                    border-color: #0a500f !important;
                     background-color: #f0fdf6 !important;
                 }
                 .item-custom-modal .dropzone-upload:focus-visible {
-                    border-color: #2ece8a !important;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15) !important;
+                    border-color: #0a500f !important;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15) !important;
                 }
                 .item-custom-modal .dropzone-upload.dragging {
                     border-color: #16a34a !important;
@@ -1530,7 +1530,7 @@ const VisitorRegistration = ({ embedded = false }) => {
                 .item-custom-modal .dropzone-upload .dz-icon {
                     width: 30px !important;
                     height: 30px !important;
-                    color: #2ece8a !important;
+                    color: #0a500f !important;
                 }
                 .item-custom-modal .dropzone-upload .dz-title {
                     font-size: 13px !important;

@@ -345,7 +345,7 @@ const DailyEntryForm = ({ entryData = null, isEditing = false, onSave, onCancel 
             ...provided,
             backgroundColor: isDark ? '#24292D' : '#ffffff',
             borderColor: state.isFocused 
-                ? 'var(--cc-primary, #7A70BA)' 
+                ? 'var(--cc-primary, #0a500f)' 
                 : (isDark ? '#636363' : '#ececec'),
             color: isDark ? '#ffffff' : '#2f3f50',
             minHeight: '38px',
@@ -353,7 +353,7 @@ const DailyEntryForm = ({ entryData = null, isEditing = false, onSave, onCancel 
             borderRadius: '6px',
             boxShadow: 'none',
             '&:hover': {
-                borderColor: state.isFocused ? 'var(--cc-primary, #7A70BA)' : (isDark ? '#636363' : '#ececec'),
+                borderColor: state.isFocused ? 'var(--cc-primary, #0a500f)' : (isDark ? '#636363' : '#ececec'),
             }
         }),
         valueContainer: (provided) => ({
@@ -384,7 +384,7 @@ const DailyEntryForm = ({ entryData = null, isEditing = false, onSave, onCancel 
         option: (provided, state) => ({
             ...provided,
             backgroundColor: state.isSelected
-                ? 'var(--cc-primary, #7A70BA)'
+                ? 'var(--cc-primary, #0a500f)'
                 : state.isFocused
                     ? (isDark ? '#383F47' : '#f8f9fa')
                     : 'transparent',
@@ -394,7 +394,7 @@ const DailyEntryForm = ({ entryData = null, isEditing = false, onSave, onCancel 
             fontSize: '14px',
             cursor: 'pointer',
             '&:active': {
-                backgroundColor: 'var(--cc-primary, #7A70BA)',
+                backgroundColor: 'var(--cc-primary, #0a500f)',
                 color: '#ffffff'
             }
         }),
@@ -632,7 +632,8 @@ const DailyEntryForm = ({ entryData = null, isEditing = false, onSave, onCancel 
                     {/* ── Actions ── */}
                     <div className="d-flex justify-content-end gap-2">
                         <Button
-                            className="btn-universal-close"
+                            className="btn-universal-close btn-cancel-custom"
+                            style={{ backgroundColor: '#dc3545', borderColor: '#dc3545', color: '#ffffff' }}
                             onClick={onCancel}
                         >
                             Cancel

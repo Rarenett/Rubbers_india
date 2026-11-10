@@ -315,9 +315,9 @@ const MeetingCategoryList = () => {
         control: (base, state) => ({
             ...base,
             minHeight: '42px',
-            borderColor: state.isFocused ? '#2ece8a' : '#cbd5e1',
-            boxShadow: state.isFocused ? '0 0 0 3px rgba(46, 206, 138, 0.15)' : 'none',
-            '&:hover': { borderColor: state.isFocused ? '#2ece8a' : '#94a3b8' },
+            borderColor: state.isFocused ? '#0a500f' : '#cbd5e1',
+            boxShadow: state.isFocused ? '0 0 0 3px rgba(10, 80, 15, 0.15)' : 'none',
+            '&:hover': { borderColor: state.isFocused ? '#0a500f' : '#94a3b8' },
             borderRadius: '10px',
             fontSize: '14px',
             backgroundColor: '#fff',
@@ -333,7 +333,7 @@ const MeetingCategoryList = () => {
         option: (base, state) => ({
             ...base,
             backgroundColor: state.isSelected
-                ? '#2ece8a'
+                ? '#0a500f'
                 : state.isFocused
                 ? '#f0fdf4'
                 : 'white',
@@ -380,12 +380,12 @@ const MeetingCategoryList = () => {
                 .mc-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #2ece8a;
+                    background-color: #0a500f;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    box-shadow: 0 4px 10px rgba(46, 206, 138, 0.2);
+                    box-shadow: 0 4px 10px rgba(10, 80, 15, 0.2);
                 }
                 .mc-modal .modal-close-x {
                     border: none;
@@ -434,14 +434,14 @@ const MeetingCategoryList = () => {
                 .mc-modal .form-control-custom:focus,
                 .mc-modal .form-select-custom:focus {
                     outline: none;
-                    border-color: #2ece8a;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15);
+                    border-color: #0a500f;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
                 }
                 .mc-modal .form-control-custom::placeholder {
                     color: #94a3b8;
                 }
                 .mc-modal .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -452,10 +452,10 @@ const MeetingCategoryList = () => {
                     transition: background-color 0.2s, transform 0.1s;
                 }
                 .mc-modal .btn-close-custom:hover {
-                    background-color: #6357a7 !important;
+                    background-color: #bb2d3b !important;
                 }
                 .mc-modal .btn-save-custom {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -466,7 +466,7 @@ const MeetingCategoryList = () => {
                     transition: background-color 0.2s, transform 0.1s;
                 }
                 .mc-modal .btn-save-custom:hover {
-                    background-color: #26b277 !important;
+                    background-color: #073d0b !important;
                 }
 
                 /* ── StockItem Matched Category Box Styling ── */
@@ -482,7 +482,7 @@ const MeetingCategoryList = () => {
                     flex-direction: column;
                 }
                 .card-category-box:hover {
-                    box-shadow: 0 10px 28px rgba(46, 206, 138, 0.12);
+                    box-shadow: 0 10px 28px rgba(10, 80, 15, 0.12);
                     border-color: #99f6e4;
                     transform: translateY(-2px);
                 }
@@ -500,14 +500,14 @@ const MeetingCategoryList = () => {
                     height: 40px;
                     border-radius: 10px;
                     background-color: #e6fcf5;
-                    color: #2ece8a;
+                    color: #0a500f;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     margin-right: 12px;
                     flex-shrink: 0;
                     font-size: 17px;
-                    box-shadow: 0 2px 8px rgba(46, 206, 138, 0.18);
+                    box-shadow: 0 2px 8px rgba(10, 80, 15, 0.18);
                 }
                 .subcategory-item {
                     padding: 10px 14px;
@@ -524,7 +524,7 @@ const MeetingCategoryList = () => {
                     width: 6px;
                     height: 6px;
                     border-radius: 50%;
-                    background-color: #2ece8a;
+                    background-color: #0a500f;
                     flex-shrink: 0;
                 }
                 .btn-add-subcat-box {
@@ -534,7 +534,7 @@ const MeetingCategoryList = () => {
                     width: 100%;
                     padding: 8px 14px;
                     background-color: #f0fdf4;
-                    border: 1px dashed #2ece8a;
+                    border: 1px dashed #0a500f;
                     color: #16a34a;
                     border-radius: 8px;
                     font-size: 13px;
@@ -546,7 +546,7 @@ const MeetingCategoryList = () => {
                     background-color: #dcfce7;
                     border-style: solid;
                     transform: translateY(-1px);
-                    box-shadow: 0 2px 8px rgba(46, 206, 138, 0.2);
+                    box-shadow: 0 2px 8px rgba(10, 80, 15, 0.2);
                 }
             `}</style>
 

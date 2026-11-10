@@ -737,7 +737,7 @@ const ShiftPlanForm = () => {
                     border-color: #3d464e !important;
                 }
                 [data-theme-version="dark"] .list-group-item.active {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: #ffffff !important;
                 }
             `}</style>
@@ -1102,7 +1102,7 @@ const ShiftPlanForm = () => {
                 <Card.Footer className="d-flex justify-content-end gap-2 flex-wrap">
                     <style>{`
                         .btn-cancel-custom {
-                            background-color: #7A70BA !important;
+                            background-color: #dc3545 !important;
                             color: white !important;
                             border-radius: 8px !important;
                             font-weight: 500 !important;
@@ -1113,10 +1113,10 @@ const ShiftPlanForm = () => {
                             transition: background-color 0.2s;
                         }
                         .btn-cancel-custom:hover {
-                            background-color: #6357a7 !important;
+                            background-color: #bb2d3b !important;
                         }
                         .btn-generate-custom {
-                            background-color: #2ece8a !important;
+                            background-color: #0a500f !important;
                             color: white !important;
                             border-radius: 8px !important;
                             font-weight: 500 !important;
@@ -1127,7 +1127,7 @@ const ShiftPlanForm = () => {
                             transition: background-color 0.2s;
                         }
                         .btn-generate-custom:hover {
-                            background-color: #26b277 !important;
+                            background-color: #073d0b !important;
                         }
                         @media (max-width: 576px) {
                             .btn-cancel-custom,

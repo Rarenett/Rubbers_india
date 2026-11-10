@@ -256,7 +256,7 @@ const AdjustmentModal = ({ show, onHide, onSuccess, adjustment = null }) => {
             showCancelButton: true,
             confirmButtonText: isEdit ? 'Update' : 'Save',
             cancelButtonText: 'Cancel',
-            confirmButtonColor: '#2ece8a',
+            confirmButtonColor: '#0a500f',
             cancelButtonColor: '#d33'
         });
 
@@ -335,12 +335,12 @@ const AdjustmentModal = ({ show, onHide, onSuccess, adjustment = null }) => {
                 .adj-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background: #2ece8a;
+                    background: #0a500f;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    box-shadow: 0 4px 10px rgba(46,206,138,.2);
+                    box-shadow: 0 4px 10px rgba(10, 80, 15,.2);
                 }
                 .adj-modal .modal-close-x {
                     border: none;
@@ -381,11 +381,11 @@ const AdjustmentModal = ({ show, onHide, onSuccess, adjustment = null }) => {
                 }
                 .adj-modal .form-control-custom:focus {
                     outline: none;
-                    border-color: #2ece8a;
-                    box-shadow: 0 0 0 3px rgba(46,206,138,.15);
+                    border-color: #0a500f;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15,.15);
                 }
                 .adj-modal .btn-close-custom {
-                    background: #7A70BA !important;
+                    background: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -395,7 +395,7 @@ const AdjustmentModal = ({ show, onHide, onSuccess, adjustment = null }) => {
                     cursor: pointer;
                 }
                 .adj-modal .btn-save-custom {
-                    background: #2ece8a !important;
+                    background: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -421,8 +421,8 @@ const AdjustmentModal = ({ show, onHide, onSuccess, adjustment = null }) => {
                     overflow: hidden;
                 }
                 .adj-qty-control:focus-within {
-                    border-color: #2ece8a;
-                    box-shadow: 0 0 0 2px rgba(46, 206, 138, 0.2);
+                    border-color: #0a500f;
+                    box-shadow: 0 0 0 2px rgba(10, 80, 15, 0.2);
                 }
                 .adj-qty-control.is-partial {
                     border-color: #f59e0b;
@@ -470,7 +470,7 @@ const AdjustmentModal = ({ show, onHide, onSuccess, adjustment = null }) => {
                     user-select: none;
                 }
                 .adj-qty-max-btn:hover {
-                    background: #2ece8a;
+                    background: #0a500f;
                     color: #ffffff;
                 }
                 .adj-qty-control.is-partial .adj-qty-max-btn:hover {
@@ -521,7 +521,7 @@ const AdjustmentModal = ({ show, onHide, onSuccess, adjustment = null }) => {
                     color: #94a3b8 !important;
                 }
                 [data-theme-version="dark"] .adj-qty-max-btn:hover {
-                    background: #2ece8a !important;
+                    background: #0a500f !important;
                     color: #ffffff !important;
                 }
             `}</style>

@@ -937,8 +937,15 @@ const TaskAdminDashboard = () => {
             <Row>
               <Col md="12" className="d-flex justify-content-end mt-3">
                 <Button
-                  variant="danger light"
-                  className="me-2"
+                  className="me-2 btn-cancel-custom"
+                  style={{
+                    backgroundColor: "#dc3545",
+                    borderColor: "#dc3545",
+                    color: "#ffffff",
+                    borderRadius: "8px",
+                    fontWeight: 500,
+                    padding: "8px 22px",
+                  }}
                   onClick={() => {
                     setShowModal(false);
                     setEditTaskId(null);
@@ -950,8 +957,11 @@ const TaskAdminDashboard = () => {
                   variant="primary"
                   type="submit"
                   style={{
-                    backgroundColor: "rgb(61, 53, 119)",
-                    borderColor: "rgb(61, 53, 119)",
+                    backgroundColor: "#0a500f",
+                    borderColor: "#0a500f",
+                    borderRadius: "8px",
+                    fontWeight: 500,
+                    padding: "8px 22px",
                   }}
                 >
                   {editTaskId ? "Update Task" : "Assign Task"}

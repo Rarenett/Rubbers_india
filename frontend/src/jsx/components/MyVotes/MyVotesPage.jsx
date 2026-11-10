@@ -1029,7 +1029,7 @@ const FeedbackPanel = ({ item, onClose, onSaved }) => {
                 title: 'Updated!',
                 text: `Cutoff date for CMP-${c.id} updated successfully.`,
                 icon: 'success',
-                confirmButtonColor: '#2ece8a',
+                confirmButtonColor: '#0a500f',
                 timer: 1500,
                 showConfirmButton: false,
             });

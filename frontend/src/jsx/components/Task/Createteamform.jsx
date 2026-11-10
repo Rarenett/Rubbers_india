@@ -491,7 +491,12 @@ const CreateTeamForm = ({
             </div>
 
             <div className="modal-footer-custom" style={{ display: 'flex', justifyContent: 'flex-end', gap: '10px' }}>
-                <button type="button" className="btn-close-custom" onClick={handleClose}>
+                <button
+                    type="button"
+                    className="btn-close-custom btn-cancel-custom"
+                    style={{ backgroundColor: '#dc3545', borderColor: '#dc3545', color: '#ffffff' }}
+                    onClick={handleClose}
+                >
                     Cancel
                 </button>
                 <button type="button" className="btn-save-custom" disabled={saving} onClick={handleSave}>

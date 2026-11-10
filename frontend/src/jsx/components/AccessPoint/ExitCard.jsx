@@ -242,7 +242,7 @@ const ExitCard = () => {
             overflow: 'hidden'
         }}>
             <div style={{ textAlign: 'left', fontWeight: '700', fontSize: '14px', marginBottom: '0.15cm', color: '#1F2937' }}>
-                GLENDA
+                RubbersIndia
             </div>
             {/* Header */}
             <div className="exit-card-header" style={{ width: '100%', textAlign: 'center', marginBottom: '0.15cm' }}>
@@ -521,14 +521,14 @@ const ExitCard = () => {
                                     styles={{
                                         control: (base, state) => ({
                                             ...base,
-                                            border: state.isFocused ? '1px solid #2ece8a' : '1px solid #cbd5e1',
-                                            boxShadow: state.isFocused ? '0 0 0 3px rgba(46, 206, 138, 0.15)' : 'none',
+                                            border: state.isFocused ? '1px solid #0a500f' : '1px solid #cbd5e1',
+                                            boxShadow: state.isFocused ? '0 0 0 3px rgba(10, 80, 15, 0.15)' : 'none',
                                             borderRadius: '10px',
                                             minHeight: '41px',
                                             fontSize: '13px',
                                             color: '#334155',
                                             '&:hover': {
-                                                borderColor: state.isFocused ? '#2ece8a' : '#cbd5e1'
+                                                borderColor: state.isFocused ? '#0a500f' : '#cbd5e1'
                                             }
                                         }),
                                         menu: (base) => ({
@@ -663,12 +663,12 @@ const ExitCard = () => {
                 .gate-custom-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #2ece8a;
+                    background-color: #0a500f;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    box-shadow: 0 4px 10px rgba(46, 206, 138, 0.2);
+                    box-shadow: 0 4px 10px rgba(10, 80, 15, 0.2);
                 }
                 .gate-custom-modal .modal-close-x {
                     border: none;
@@ -731,8 +731,8 @@ const ExitCard = () => {
                 }
                 .gate-custom-modal .form-control-custom:focus {
                     outline: none;
-                    border-color: #2ece8a;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15);
+                    border-color: #0a500f;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
                 }
                 .gate-custom-modal .form-control-custom::placeholder {
                     color: #94a3b8;
@@ -743,7 +743,7 @@ const ExitCard = () => {
                     color: #64748b;
                 }
                 .gate-custom-modal .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -754,10 +754,10 @@ const ExitCard = () => {
                     transition: background-color 0.2s, transform 0.1s;
                 }
                 .gate-custom-modal .btn-close-custom:hover {
-                    background-color: #6357a7 !important;
+                    background-color: #bb2d3b !important;
                 }
                 .gate-custom-modal .btn-save-custom {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -768,7 +768,7 @@ const ExitCard = () => {
                     transition: background-color 0.2s, transform 0.1s;
                 }
                 .gate-custom-modal .btn-save-custom:hover {
-                    background-color: #26b277 !important;
+                    background-color: #073d0b !important;
                 }
 
                 .exit-card-print-area {

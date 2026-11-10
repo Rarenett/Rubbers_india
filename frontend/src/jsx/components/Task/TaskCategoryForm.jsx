@@ -60,7 +60,12 @@ const TaskCategoryForm = ({ show, onHide, editId, formData, setFormData, onSubmi
 
                 </div>
                 <div className="modal-footer-custom">
-                    <Button type="button" className="btn-close-custom" onClick={onHide}>
+                    <Button
+                        type="button"
+                        className="btn-close-custom btn-cancel-custom"
+                        style={{ backgroundColor: '#dc3545', borderColor: '#dc3545', color: '#ffffff' }}
+                        onClick={onHide}
+                    >
                         Close
                     </Button>
                     <Button type="submit" className="btn-save-custom">

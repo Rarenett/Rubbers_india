@@ -830,7 +830,7 @@ const DigiLockerAccess = () => {
                     width: "56px",
                     height: "56px",
                     borderRadius: "10px",
-                    borderColor: digit ? "#3d3577" : "#cbd5e1",
+                    borderColor: digit ? "#0a500f" : "#cbd5e1",
                     backgroundColor: "#f8fafc",
                   }}
                   autoFocus={idx === 0}
@@ -880,8 +880,8 @@ const DigiLockerAccess = () => {
               type="submit"
               disabled={otpVerifying || countdown === 0 || otpDigits.join("").length !== 4}
               style={{
-                backgroundColor: "rgb(61, 53, 119)",
-                borderColor: "rgb(61, 53, 119)",
+                backgroundColor: "#0a500f",
+                borderColor: "#0a500f",
               }}
             >
               {otpVerifying ? (
@@ -956,8 +956,8 @@ const DigiLockerAccess = () => {
                   handleInitiateAccess(previewDoc, "download");
                 }}
                 style={{
-                  backgroundColor: "rgb(61, 53, 119)",
-                  borderColor: "rgb(61, 53, 119)",
+                  backgroundColor: "#0a500f",
+                  borderColor: "#0a500f",
                 }}
               >
                 <i className="fa fa-download me-1"></i> Download Document

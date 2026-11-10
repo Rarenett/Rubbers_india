@@ -245,7 +245,7 @@ const ManufacturalJournalList = () => {
                                                             <td style={{ padding: '10px 16px', verticalAlign: 'middle' }}><strong>{item.journal_no_display || '—'}</strong></td>
                                                             <td style={{ padding: '10px 16px', verticalAlign: 'middle' }}>{formatDate(item.journal_date)}</td>
                                                             <td style={{ padding: '10px 16px', verticalAlign: 'middle' }}>{item.manufactural_journal_type_name || '—'}</td>
-                                                            <td style={{ padding: '10px 16px', verticalAlign: 'middle' }}>{item.batch_number ? <span className="badge badge-light border font-w600" style={{ color: '#7A70BA' }}>{item.batch_number}</span> : '—'}</td>
+                                                            <td style={{ padding: '10px 16px', verticalAlign: 'middle' }}>{item.batch_number ? <span className="badge badge-light border font-w600" style={{ color: '#0a500f' }}>{item.batch_number}</span> : '—'}</td>
                                                             <td style={{ padding: '10px 16px', verticalAlign: 'middle' }}>
                                                                 <span className={`badge badge-${item.movement_type === 'IN' ? 'success' : item.movement_type === 'OUT' ? 'warning' : 'info'} light`}>
                                                                     {item.movement_type === 'IN' ? 'Production' : item.movement_type === 'OUT' ? 'Consumption' : 'Production/Consumption'}

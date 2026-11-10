@@ -223,10 +223,10 @@ const EquipmentFormModal = ({ show, onHide, onSaved, isDark = false }) => {
                                     width: '38px',
                                     height: '38px',
                                     borderRadius: '8px',
-                                    background: '#2ece8a',
+                                    background: '#0a500f',
                                     color: '#ffffff',
                                     border: 'none',
-                                    boxShadow: '0 2px 4px rgba(46, 206, 138, 0.25)',
+                                    boxShadow: '0 2px 4px rgba(10, 80, 15, 0.25)',
                                     cursor: 'pointer'
                                 }}
                                 onClick={() => setShowCamera(true)}
@@ -246,7 +246,7 @@ const EquipmentFormModal = ({ show, onHide, onSaved, isDark = false }) => {
                                         height: '46px',
                                         borderRadius: '6px',
                                         objectFit: 'cover',
-                                        border: '1.5px solid #2ece8a'
+                                        border: '1.5px solid #0a500f'
                                     }}
                                 />
                                 <div className="flex-grow-1" style={{ minWidth: 0 }}>

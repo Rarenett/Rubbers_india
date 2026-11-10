@@ -32,10 +32,10 @@ const getSoftTagBadgeStyle = (tagColour, isDark) => {
     // If no custom tag colour is assigned, use the primary Glenda theme soft emerald
     if (!tagColour) {
         return {
-            backgroundColor: isDark ? 'rgba(46, 206, 138, 0.15)' : '#e8fdf4',
+            backgroundColor: isDark ? 'rgba(10, 80, 15, 0.15)' : '#e8fdf4',
             color: isDark ? '#6ee7b7' : '#047857',
-            borderColor: isDark ? 'rgba(46, 206, 138, 0.35)' : '#a7f3d0',
-            dotColor: '#2ece8a'
+            borderColor: isDark ? 'rgba(10, 80, 15, 0.35)' : '#a7f3d0',
+            dotColor: '#0a500f'
         };
     }
 
@@ -385,7 +385,7 @@ const CheckoutModal = ({
     const isTagNA = !rawTagNumber || rawTagNumber === 'N/A' || rawTagNumber === 'n/a' || rawTagNumber === 'NA';
     const tagNumber = isTagNA ? null : rawTagNumber;
     const tagCategory = entry?.tag_category_name || (entry?.generated_tag?.entry_tag?.category?.name) || (isVisitor ? 'Visitor Pass' : 'Vehicle Pass');
-    const tagColor = entry?.tag_colour || (entry?.generated_tag?.entry_tag?.category?.colour_code) || '#2ece8a';
+    const tagColor = entry?.tag_colour || (entry?.generated_tag?.entry_tag?.category?.colour_code) || '#0a500f';
 
     const entryTags = React.useMemo(() => {
         if (!entry) return [];
@@ -399,7 +399,7 @@ const CheckoutModal = ({
                         id: t.id,
                         tag_number: t.tag_number,
                         category_name: t.category_name || (isVisitor ? 'Visitor Pass' : 'Vehicle Pass'),
-                        colour: t.colour || '#2ece8a',
+                        colour: t.colour || '#0a500f',
                         status: t.status
                     });
                 }
@@ -926,7 +926,7 @@ const CheckoutModal = ({
                       (returnedTagNames ? `<div class="mt-2.5 p-2.5 rounded-3" style="background:#ecfdf5; border:1px solid #a7f3d0; color:#065f46; font-size:13px; text-align:left;"><i class="fa fa-check-circle me-1.5 text-success"></i>Physical pass <b>${returnedTagNames}</b> returned to gate and released to Available pool.</div>` : '') +
                       `<br/><span style="color:#059669; font-weight:600;">${remaining} person(s) still inside campus.</span><br/>` +
                       `<small class="text-muted">A new physical tag will be issued if any visitor returns to campus.</small>`,
-                confirmButtonColor: '#2ece8a',
+                confirmButtonColor: '#0a500f',
                 background: isDark ? '#1a1a2e' : '#fff',
                 color: isDark ? '#fff' : '#000'
             });
@@ -1176,19 +1176,19 @@ const CheckoutModal = ({
             } else if (isPedestrianExit) {
                 const parkedVehs = availableVehicles.map(v => v.vehicle_number).join(', ');
                 successTitle = 'Pedestrian Exit Recorded';
-                successHtml = `Successfully recorded <b>${count}</b> person(s) exiting on foot as pedestrian.<br/><br/><span style="color:#2ece8a; font-weight:600;">${remaining} person(s) still inside campus.</span><br/><span style="color:#059669; font-weight:600;">Vehicle(s) ${parkedVehs} remain parked on campus.</span>`;
+                successHtml = `Successfully recorded <b>${count}</b> person(s) exiting on foot as pedestrian.<br/><br/><span style="color:#0a500f; font-weight:600;">${remaining} person(s) still inside campus.</span><br/><span style="color:#059669; font-weight:600;">Vehicle(s) ${parkedVehs} remain parked on campus.</span>`;
             } else if (isVehOnly) {
                 successTitle = 'Vehicle(s) Exited';
                 successHtml = `Vehicle(s) <b>${exitingVehiclesList.join(', ')}</b> marked as exited.<br/><br/><span style="color:#059669; font-weight:600;">All ${currentInside} person(s) remain inside campus.</span><br/><small class="text-muted">Visitor entry remains active.</small>`;
             } else if (includePerson && includeVehicle) {
                 successTitle = 'Persons & Vehicle(s) Exited';
-                successHtml = `Recorded <b>${count}</b> person(s) exiting with vehicle(s) <b>${exitingVehiclesList.join(', ')}</b>.<br/><br/><span style="color:#2ece8a; font-weight:600;">${remaining} person(s) still inside campus.</span>`;
+                successHtml = `Recorded <b>${count}</b> person(s) exiting with vehicle(s) <b>${exitingVehiclesList.join(', ')}</b>.<br/><br/><span style="color:#0a500f; font-weight:600;">${remaining} person(s) still inside campus.</span>`;
             } else if (!includePerson && !includeVehicle && includeEquipment) {
                 successTitle = 'Tools Departure Recorded';
-                successHtml = `Successfully recorded tools departure.<br/><br/><span style="color:#2ece8a; font-weight:600;">All ${currentInside} person(s) remain inside campus.</span>`;
+                successHtml = `Successfully recorded tools departure.<br/><br/><span style="color:#0a500f; font-weight:600;">All ${currentInside} person(s) remain inside campus.</span>`;
             } else {
                 successTitle = 'Person(s) Exited';
-                successHtml = `Successfully recorded <b>${count}</b> person(s) exiting.<br/><br/><span style="color:#2ece8a; font-weight:600;">${remaining} person(s) still inside campus.</span>`;
+                successHtml = `Successfully recorded <b>${count}</b> person(s) exiting.<br/><br/><span style="color:#0a500f; font-weight:600;">${remaining} person(s) still inside campus.</span>`;
             }
 
             if (exitingEquipmentNames.length > 0) {
@@ -1199,7 +1199,7 @@ const CheckoutModal = ({
                 icon: 'success',
                 title: successTitle,
                 html: successHtml,
-                confirmButtonColor: '#2ece8a',
+                confirmButtonColor: '#0a500f',
                 background: isDark ? '#1a1a2e' : '#fff',
                 color: isDark ? '#fff' : '#000'
             });
@@ -1250,10 +1250,10 @@ const CheckoutModal = ({
                         style={{ 
                             background: mode === 'questions' 
                                 ? 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)' 
-                                : 'linear-gradient(135deg, #2ece8a 0%, #20b876 100%)',
+                                : 'linear-gradient(135deg, #0a500f 0%, #20b876 100%)',
                             boxShadow: mode === 'questions'
                                 ? '0 4px 14px rgba(245, 158, 11, 0.3)'
-                                : '0 4px 14px rgba(46, 206, 138, 0.3)',
+                                : '0 4px 14px rgba(10, 80, 15, 0.3)',
                             width: '52px',
                             height: '52px'
                         }}
@@ -1306,8 +1306,8 @@ const CheckoutModal = ({
                                     overflow: 'hidden', 
                                     flexShrink: 0,
                                     marginRight: '6px',
-                                    border: '2.5px solid #2ece8a',
-                                    boxShadow: '0 4px 14px rgba(46, 206, 138, 0.25)',
+                                    border: '2.5px solid #0a500f',
+                                    boxShadow: '0 4px 14px rgba(10, 80, 15, 0.25)',
                                     backgroundColor: isDark ? '#1e293b' : '#f1f5f9',
                                     display: 'flex',
                                     alignItems: 'center',
@@ -1604,7 +1604,7 @@ const CheckoutModal = ({
                         className="p-3 mb-3 rounded-3" 
                         style={{ 
                             backgroundColor: isDark ? 'rgba(255, 255, 255, 0.03)' : '#f8fafc',
-                            border: `1.5px solid ${allTagsReturned ? (isDark ? '#059669' : '#2ece8a') : (isDark ? '#334155' : '#e2e8f0')}`,
+                            border: `1.5px solid ${allTagsReturned ? (isDark ? '#059669' : '#0a500f') : (isDark ? '#334155' : '#e2e8f0')}`,
                             transition: 'border-color 0.2s ease'
                         }}
                     >
@@ -1667,10 +1667,10 @@ const CheckoutModal = ({
                                             className="d-flex align-items-center gap-2 px-3 py-2 rounded-2 transition-all"
                                             style={{
                                                 backgroundColor: isSelected 
-                                                    ? (isDark ? 'rgba(46, 206, 138, 0.15)' : '#ecfdf5')
+                                                    ? (isDark ? 'rgba(10, 80, 15, 0.15)' : '#ecfdf5')
                                                     : (isDark ? '#1e293b' : '#ffffff'),
-                                                border: `1.5px solid ${isSelected ? '#2ece8a' : (isDark ? '#334155' : '#cbd5e1')}`,
-                                                boxShadow: isSelected ? '0 2px 6px rgba(46, 206, 138, 0.2)' : 'none',
+                                                border: `1.5px solid ${isSelected ? '#0a500f' : (isDark ? '#334155' : '#cbd5e1')}`,
+                                                boxShadow: isSelected ? '0 2px 6px rgba(10, 80, 15, 0.2)' : 'none',
                                                 cursor: 'pointer',
                                                 userSelect: 'none'
                                             }}
@@ -1679,11 +1679,11 @@ const CheckoutModal = ({
                                                 type="checkbox"
                                                 checked={isSelected}
                                                 onChange={() => {}}
-                                                style={{ cursor: 'pointer', width: '15px', height: '15px', accentColor: '#2ece8a' }}
+                                                style={{ cursor: 'pointer', width: '15px', height: '15px', accentColor: '#0a500f' }}
                                             />
                                             <div
                                                 className="rounded-circle flex-shrink-0"
-                                                style={{ width: '10px', height: '10px', backgroundColor: tag.colour || '#2ece8a' }}
+                                                style={{ width: '10px', height: '10px', backgroundColor: tag.colour || '#0a500f' }}
                                             />
                                             <span className="fw-semibold" style={{ fontSize: '13px', color: isDark ? '#f8fafc' : '#0f172a' }}>
                                                 Tag #{tag.tag_number}
@@ -1994,7 +1994,7 @@ const CheckoutModal = ({
                                                                             <span className="d-flex align-items-center gap-1.5" style={{ fontSize: '11px', color: isDark ? '#94a3b8' : '#64748b', fontWeight: 600 }}>
                                                                                 <span 
                                                                                     className="rounded-circle d-inline-block flex-shrink-0" 
-                                                                                    style={{ width: '8px', height: '8px', backgroundColor: tag.colour || '#2ece8a' }} 
+                                                                                    style={{ width: '8px', height: '8px', backgroundColor: tag.colour || '#0a500f' }} 
                                                                                 />
                                                                                 {tag.category_name || (isVisitor ? 'Visitor Pass' : 'Vehicle Pass')}
                                                                             </span>
@@ -2204,8 +2204,8 @@ const CheckoutModal = ({
                                                     style={{ 
                                                         fontSize: '13px', 
                                                         padding: '6px 16px',
-                                                        background: isSelected ? '#2ece8a' : undefined,
-                                                        borderColor: isSelected ? '#2ece8a' : undefined
+                                                        background: isSelected ? '#0a500f' : undefined,
+                                                        borderColor: isSelected ? '#0a500f' : undefined
                                                     }}
                                                     onClick={() => toggleVehicleSelection(v.vehicle_number)}
                                                 >
@@ -2248,9 +2248,9 @@ const CheckoutModal = ({
 
                             {/* Parking Fee & Exit Card Notification */}
                             {(includeVehicle || selectedVehicles.length > 0 || (vehicleNumber && vehicleNumber.trim())) && (entry?.park_area_name || entry?.parking_fee !== undefined) && (
-                                <div className="mb-4 p-3 rounded-3 d-flex align-items-center justify-content-between" style={{ backgroundColor: isDark ? 'rgba(46, 206, 138, 0.12)' : '#f0fdf4', border: `1px solid ${isDark ? 'rgba(46, 206, 138, 0.25)' : '#bbf7d0'}` }}>
+                                <div className="mb-4 p-3 rounded-3 d-flex align-items-center justify-content-between" style={{ backgroundColor: isDark ? 'rgba(10, 80, 15, 0.12)' : '#f0fdf4', border: `1px solid ${isDark ? 'rgba(10, 80, 15, 0.25)' : '#bbf7d0'}` }}>
                                     <div className="d-flex align-items-center gap-2.5">
-                                        <div className="p-2 rounded-circle" style={{ backgroundColor: isDark ? 'rgba(46, 206, 138, 0.2)' : '#dcfce7', color: '#16a34a' }}>
+                                        <div className="p-2 rounded-circle" style={{ backgroundColor: isDark ? 'rgba(10, 80, 15, 0.2)' : '#dcfce7', color: '#16a34a' }}>
                                             <i className="fa fa-receipt"></i>
                                         </div>
                                         <div>
@@ -2349,7 +2349,7 @@ const CheckoutModal = ({
                                             </span>
                                         }
                                         className="mb-0 cursor-pointer"
-                                        style={{ accentColor: '#2ece8a' }}
+                                        style={{ accentColor: '#0a500f' }}
                                     />
                                     <span 
                                         className="badge rounded-pill px-2.5 py-1 ms-2" 
@@ -2522,9 +2522,9 @@ const CheckoutModal = ({
                                                                     cursor: 'pointer',
                                                                     userSelect: 'none',
                                                                     padding: '5px 12px',
-                                                                    backgroundColor: isSelected ? (isDark ? 'rgba(46, 206, 138, 0.15)' : '#ecfdf5') : (isDark ? '#1e293b' : '#ffffff'),
+                                                                    backgroundColor: isSelected ? (isDark ? 'rgba(10, 80, 15, 0.15)' : '#ecfdf5') : (isDark ? '#1e293b' : '#ffffff'),
                                                                     color: isSelected ? '#10b981' : (isDark ? '#94a3b8' : '#475569'),
-                                                                    border: `1px solid ${isSelected ? '#2ece8a' : (isDark ? '#334155' : '#e2e8f0')}`,
+                                                                    border: `1px solid ${isSelected ? '#0a500f' : (isDark ? '#334155' : '#e2e8f0')}`,
                                                                     fontSize: '11.5px',
                                                                     fontWeight: isSelected ? 600 : 500,
                                                                     transition: 'all 0.15s ease'
@@ -2630,7 +2630,7 @@ const CheckoutModal = ({
                                             </span>
                                         }
                                         className="mb-0 cursor-pointer"
-                                        style={{ accentColor: '#2ece8a' }}
+                                        style={{ accentColor: '#0a500f' }}
                                     />
                                     {availableVehicles.length > 0 && (
                                         <span className="badge rounded-pill px-2.5 py-1 ms-2" style={{ fontSize: '11px', fontWeight: 500, backgroundColor: isDark ? '#1e293b' : '#f1f5f9', color: isDark ? '#94a3b8' : '#64748b' }}>
@@ -2691,8 +2691,8 @@ const CheckoutModal = ({
                                                                 fontSize: '12.5px', 
                                                                 fontWeight: 600,
                                                                 letterSpacing: '0.3px',
-                                                                border: `1.5px solid ${isSelected ? '#2ece8a' : (isDark ? '#334155' : '#e2e8f0')}`,
-                                                                backgroundColor: isSelected ? (isDark ? 'rgba(46, 206, 138, 0.15)' : '#ecfdf5') : (isDark ? '#1e293b' : '#ffffff'),
+                                                                border: `1.5px solid ${isSelected ? '#0a500f' : (isDark ? '#334155' : '#e2e8f0')}`,
+                                                                backgroundColor: isSelected ? (isDark ? 'rgba(10, 80, 15, 0.15)' : '#ecfdf5') : (isDark ? '#1e293b' : '#ffffff'),
                                                                 color: isSelected ? (isDark ? '#34d399' : '#059669') : (isDark ? '#cbd5e1' : '#475569'),
                                                                 transition: 'all 0.15s ease'
                                                             }}
@@ -2769,7 +2769,7 @@ const CheckoutModal = ({
                                         <div 
                                             className="mt-3 p-2.5 px-3 rounded-3 d-flex align-items-center justify-content-between"
                                             style={{
-                                                backgroundColor: isDark ? 'rgba(46, 206, 138, 0.12)' : '#f0fdf4',
+                                                backgroundColor: isDark ? 'rgba(10, 80, 15, 0.12)' : '#f0fdf4',
                                                 border: `1px solid ${isDark ? '#059669' : '#bbf7d0'}`
                                             }}
                                         >
@@ -2848,7 +2848,7 @@ const CheckoutModal = ({
                                             padding: '6px 14px',
                                             fontSize: '12px', 
                                             fontWeight: 600,
-                                            border: `1px solid ${isDark ? 'rgba(46, 206, 138, 0.4)' : '#a7f3d0'}`,
+                                            border: `1px solid ${isDark ? 'rgba(10, 80, 15, 0.4)' : '#a7f3d0'}`,
                                             backgroundColor: isDark ? '#1e293b' : '#ffffff',
                                             color: isDark ? '#34d399' : '#059669',
                                             boxShadow: isDark ? 'none' : '0 1px 3px rgba(16, 185, 129, 0.1)',
@@ -2896,7 +2896,7 @@ const CheckoutModal = ({
                                             </span>
                                         }
                                         className="mb-0 cursor-pointer"
-                                        style={{ accentColor: '#2ece8a' }}
+                                        style={{ accentColor: '#0a500f' }}
                                     />
                                     {availableEquipments.length > 0 && (
                                         <span className="badge rounded-pill px-2.5 py-1 ms-2" style={{ fontSize: '11px', fontWeight: 500, backgroundColor: isDark ? '#1e293b' : '#f1f5f9', color: isDark ? '#94a3b8' : '#64748b' }}>
@@ -2962,12 +2962,12 @@ const CheckoutModal = ({
                                                                     cursor: 'pointer',
                                                                     transition: 'all 0.18s ease',
                                                                     backgroundColor: isSelected 
-                                                                        ? (isDark ? 'rgba(46, 206, 138, 0.12)' : '#f0fdf4')
+                                                                        ? (isDark ? 'rgba(10, 80, 15, 0.12)' : '#f0fdf4')
                                                                         : (isDark ? '#1e293b' : '#f8fafc'),
                                                                     border: `1.5px solid ${isSelected 
-                                                                        ? (isDark ? '#059669' : '#2ece8a')
+                                                                        ? (isDark ? '#059669' : '#0a500f')
                                                                         : (isDark ? '#334155' : '#e2e8f0')}`,
-                                                                    boxShadow: isSelected ? '0 2px 8px rgba(46, 206, 138, 0.18)' : 'none'
+                                                                    boxShadow: isSelected ? '0 2px 8px rgba(10, 80, 15, 0.18)' : 'none'
                                                                 }}
                                                             >
                                                                 {/* Thumbnail */}
@@ -3186,9 +3186,9 @@ const CheckoutModal = ({
                                             padding: '4px 9px', 
                                             fontSize: '11.5px', 
                                             fontWeight: 600,
-                                            backgroundColor: isDark ? 'rgba(46, 206, 138, 0.12)' : '#ecfdf5',
+                                            backgroundColor: isDark ? 'rgba(10, 80, 15, 0.12)' : '#ecfdf5',
                                             color: isDark ? '#34d399' : '#059669',
-                                            border: `1px solid ${isDark ? 'rgba(46, 206, 138, 0.3)' : '#a7f3d0'}`
+                                            border: `1px solid ${isDark ? 'rgba(10, 80, 15, 0.3)' : '#a7f3d0'}`
                                         }}
                                     >
                                         <i className={`fa ${!includeVehicle ? 'fa-walking' : 'fa-users'}`} style={{ marginRight: '5px' }}></i>
@@ -3202,9 +3202,9 @@ const CheckoutModal = ({
                                             padding: '4px 9px', 
                                             fontSize: '11.5px', 
                                             fontWeight: 600,
-                                            backgroundColor: isDark ? 'rgba(46, 206, 138, 0.12)' : '#ecfdf5',
+                                            backgroundColor: isDark ? 'rgba(10, 80, 15, 0.12)' : '#ecfdf5',
                                             color: isDark ? '#34d399' : '#059669',
-                                            border: `1px solid ${isDark ? 'rgba(46, 206, 138, 0.3)' : '#a7f3d0'}`
+                                            border: `1px solid ${isDark ? 'rgba(10, 80, 15, 0.3)' : '#a7f3d0'}`
                                         }}
                                     >
                                         <i className="fa fa-car" style={{ marginRight: '5px' }}></i>
@@ -3234,9 +3234,9 @@ const CheckoutModal = ({
                                             padding: '4px 9px', 
                                             fontSize: '11.5px', 
                                             fontWeight: 600,
-                                            backgroundColor: isDark ? 'rgba(46, 206, 138, 0.12)' : '#ecfdf5',
+                                            backgroundColor: isDark ? 'rgba(10, 80, 15, 0.12)' : '#ecfdf5',
                                             color: isDark ? '#34d399' : '#059669',
-                                            border: `1px solid ${isDark ? 'rgba(46, 206, 138, 0.3)' : '#a7f3d0'}`
+                                            border: `1px solid ${isDark ? 'rgba(10, 80, 15, 0.3)' : '#a7f3d0'}`
                                         }}
                                     >
                                         <i className="fa fa-tools" style={{ marginRight: '5px' }}></i>
@@ -3462,11 +3462,11 @@ const CheckoutModal = ({
                                                 width: '40px', 
                                                 height: '40px', 
                                                 borderRadius: '12px', 
-                                                background: isDark ? 'rgba(46, 206, 138, 0.15)' : '#e8fdf4',
+                                                background: isDark ? 'rgba(10, 80, 15, 0.15)' : '#e8fdf4',
                                                 display: 'flex', 
                                                 alignItems: 'center', 
                                                 justifyContent: 'center',
-                                                color: '#2ece8a',
+                                                color: '#0a500f',
                                                 flexShrink: 0
                                             }}
                                         >
@@ -3528,10 +3528,10 @@ const CheckoutModal = ({
                                 className="p-4 mb-2 rounded-4" 
                                 style={{ 
                                     background: isDark 
-                                        ? 'rgba(46, 206, 138, 0.08)' 
+                                        ? 'rgba(10, 80, 15, 0.08)' 
                                         : 'linear-gradient(135deg, #f0fdf4 0%, #e6faf1 100%)',
                                     border: `1.5px solid ${isDark ? '#059669' : '#a7f3d0'}`,
-                                    boxShadow: '0 4px 18px rgba(46, 206, 138, 0.08)'
+                                    boxShadow: '0 4px 18px rgba(10, 80, 15, 0.08)'
                                 }}
                             >
                                 <div className="d-flex align-items-center" style={{ gap: '18px' }}>
@@ -3703,9 +3703,9 @@ const CheckoutModal = ({
                                         padding: '6px 12px',
                                         fontSize: '12px',
                                         fontWeight: 600,
-                                        backgroundColor: isDark ? 'rgba(46, 206, 138, 0.12)' : '#ecfdf5',
+                                        backgroundColor: isDark ? 'rgba(10, 80, 15, 0.12)' : '#ecfdf5',
                                         color: isDark ? '#34d399' : '#059669',
-                                        border: `1px solid ${isDark ? 'rgba(46, 206, 138, 0.3)' : '#a7f3d0'}`
+                                        border: `1px solid ${isDark ? 'rgba(10, 80, 15, 0.3)' : '#a7f3d0'}`
                                     }}
                                 >
                                     <i className={`fa ${!includeVehicle ? 'fa-walking' : 'fa-users'}`} style={{ marginRight: '6px' }}></i>
@@ -3720,9 +3720,9 @@ const CheckoutModal = ({
                                         padding: '6px 12px',
                                         fontSize: '12px',
                                         fontWeight: 600,
-                                        backgroundColor: isDark ? 'rgba(46, 206, 138, 0.12)' : '#ecfdf5',
+                                        backgroundColor: isDark ? 'rgba(10, 80, 15, 0.12)' : '#ecfdf5',
                                         color: isDark ? '#34d399' : '#059669',
-                                        border: `1px solid ${isDark ? 'rgba(46, 206, 138, 0.3)' : '#a7f3d0'}`
+                                        border: `1px solid ${isDark ? 'rgba(10, 80, 15, 0.3)' : '#a7f3d0'}`
                                     }}
                                 >
                                     <i className="fa fa-car" style={{ marginRight: '6px' }}></i>
@@ -3753,9 +3753,9 @@ const CheckoutModal = ({
                                         padding: '6px 12px',
                                         fontSize: '12px',
                                         fontWeight: 600,
-                                        backgroundColor: isDark ? 'rgba(46, 206, 138, 0.12)' : '#ecfdf5',
+                                        backgroundColor: isDark ? 'rgba(10, 80, 15, 0.12)' : '#ecfdf5',
                                         color: isDark ? '#34d399' : '#059669',
-                                        border: `1px solid ${isDark ? 'rgba(46, 206, 138, 0.3)' : '#a7f3d0'}`
+                                        border: `1px solid ${isDark ? 'rgba(10, 80, 15, 0.3)' : '#a7f3d0'}`
                                     }}
                                 >
                                     <i className="fa fa-tools" style={{ marginRight: '6px' }}></i>
@@ -3813,7 +3813,7 @@ const CheckoutModal = ({
                                 style={{ 
                                     background: (!isMovementDone || (includePerson && currentInside > 0 && entryTags.length > 0 && selectedReturnedTagIds.length !== Math.min(parseInt(selectivePersonCount, 10) || 1, entryTags.length)))
                                         ? (isDark ? '#334155' : '#cbd5e1')
-                                        : 'linear-gradient(135deg, #2ece8a 0%, #20b876 100%)',
+                                        : 'linear-gradient(135deg, #0a500f 0%, #20b876 100%)',
                                     border: 'none',
                                     color: '#ffffff',
                                     borderRadius: '8px', 
@@ -3823,7 +3823,7 @@ const CheckoutModal = ({
                                     fontSize: '14px',
                                     boxShadow: (!isMovementDone || (includePerson && currentInside > 0 && entryTags.length > 0 && selectedReturnedTagIds.length !== Math.min(parseInt(selectivePersonCount, 10) || 1, entryTags.length)))
                                         ? 'none'
-                                        : '0 4px 14px rgba(46, 206, 138, 0.28)',
+                                        : '0 4px 14px rgba(10, 80, 15, 0.28)',
                                     display: 'inline-flex',
                                     alignItems: 'center',
                                     opacity: (!isMovementDone || (includePerson && currentInside > 0 && entryTags.length > 0 && selectedReturnedTagIds.length !== Math.min(parseInt(selectivePersonCount, 10) || 1, entryTags.length))) ? 0.65 : 1,
@@ -3853,7 +3853,7 @@ const CheckoutModal = ({
                             onClick={onHide}
                             disabled={submitting}
                             style={{
-                                backgroundColor: '#7A70BA',
+                                backgroundColor: '#0a500f',
                                 border: 'none',
                                 color: '#ffffff',
                                 fontWeight: 500,
@@ -3970,7 +3970,7 @@ const CheckoutModal = ({
                                         : undefined)
                             }
                             style={{
-                                background: 'linear-gradient(135deg, #2ece8a 0%, #20b876 100%)',
+                                background: 'linear-gradient(135deg, #0a500f 0%, #20b876 100%)',
                                 border: 'none',
                                 color: '#ffffff',
                                 fontWeight: 600,
@@ -3978,7 +3978,7 @@ const CheckoutModal = ({
                                 padding: '12px 32px',
                                 minHeight: '46px',
                                 borderRadius: '10px',
-                                boxShadow: '0 4px 14px rgba(46, 206, 138, 0.28)',
+                                boxShadow: '0 4px 14px rgba(10, 80, 15, 0.28)',
                                 display: 'inline-flex',
                                 alignItems: 'center',
                                 ...((!isMovementDone || (entryTags.length > 0 && !allTagsReturned) || (isCompanyVehicle && ((checkoutPurpose === 'other' && !purposeNote.trim()) || (checkoutPurpose === 'delivery' && !deliveryNoteNumber.trim())))) ? { opacity: 0.55, cursor: 'not-allowed' } : {})
@@ -4081,8 +4081,8 @@ const CheckoutModal = ({
                 }
                 .item-custom-modal .form-control-custom:focus {
                     outline: none !important;
-                    border-color: #2ece8a !important;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15) !important;
+                    border-color: #0a500f !important;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15) !important;
                 }
                 .item-custom-modal .modal-footer-custom {
                     display: flex !important;
@@ -4096,7 +4096,7 @@ const CheckoutModal = ({
 
                 /* ── Theme Buttons ── */
                 .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     border: none !important;
                     color: #ffffff !important;
                     font-weight: 500 !important;
@@ -4108,7 +4108,7 @@ const CheckoutModal = ({
                     cursor: pointer !important;
                 }
                 .btn-close-custom:hover:not(:disabled) {
-                    background-color: #6357a7 !important;
+                    background-color: #bb2d3b !important;
                     color: #ffffff !important;
                     transform: translateY(-1px) !important;
                 }
@@ -4143,7 +4143,7 @@ const CheckoutModal = ({
                 }
 
                 .btn-all-exit-custom {
-                    background: linear-gradient(135deg, #2ece8a 0%, #20b876 100%) !important;
+                    background: linear-gradient(135deg, #0a500f 0%, #20b876 100%) !important;
                     border: none !important;
                     color: #ffffff !important;
                     font-weight: 600 !important;
@@ -4151,7 +4151,7 @@ const CheckoutModal = ({
                     padding: 12px 32px !important;
                     min-height: 46px !important;
                     border-radius: 10px !important;
-                    box-shadow: 0 4px 14px rgba(46, 206, 138, 0.28) !important;
+                    box-shadow: 0 4px 14px rgba(10, 80, 15, 0.28) !important;
                     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
                     display: inline-flex !important;
                     align-items: center !important;
@@ -4159,7 +4159,7 @@ const CheckoutModal = ({
                 }
                 .btn-all-exit-custom:hover:not(:disabled) {
                     transform: translateY(-1px) !important;
-                    box-shadow: 0 6px 18px rgba(46, 206, 138, 0.38) !important;
+                    box-shadow: 0 6px 18px rgba(10, 80, 15, 0.38) !important;
                     color: #ffffff !important;
                 }
                 .btn-all-exit-custom:disabled {

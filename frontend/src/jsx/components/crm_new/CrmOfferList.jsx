@@ -73,12 +73,12 @@ const tableSelectStyles = {
         minHeight: '34px',
         height: '34px',
         fontSize: '12.5px',
-        borderColor: state.isFocused ? '#2ece8a' : '#cbd5e1',
+        borderColor: state.isFocused ? '#0a500f' : '#cbd5e1',
         borderRadius: '6px',
         backgroundColor: '#ffffff',
-        boxShadow: state.isFocused ? '0 0 0 2px rgba(46, 206, 138, 0.2)' : 'none',
+        boxShadow: state.isFocused ? '0 0 0 2px rgba(10, 80, 15, 0.2)' : 'none',
         '&:hover': {
-            borderColor: state.isFocused ? '#2ece8a' : '#94a3b8'
+            borderColor: state.isFocused ? '#0a500f' : '#94a3b8'
         }
     }),
     valueContainer: (base) => ({
@@ -126,11 +126,11 @@ const tableSelectStyles = {
         fontSize: '12.5px',
         padding: '6px 12px',
         borderRadius: '4px',
-        backgroundColor: state.isSelected ? '#2ece8a' : state.isFocused ? '#f1f5f9' : 'transparent',
+        backgroundColor: state.isSelected ? '#0a500f' : state.isFocused ? '#f1f5f9' : 'transparent',
         color: state.isSelected ? '#ffffff' : '#334155',
         cursor: 'pointer',
         '&:active': {
-            backgroundColor: '#2ece8a',
+            backgroundColor: '#0a500f',
             color: '#ffffff'
         }
     })
@@ -528,7 +528,7 @@ const CrmOfferList = () => {
         control: (provided, state) => ({
             ...provided,
             backgroundColor: '#ffffff',
-            borderColor: state.isFocused ? '#2ece8a' : '#cbd5e1',
+            borderColor: state.isFocused ? '#0a500f' : '#cbd5e1',
             borderRadius: '6px',
             fontSize: '12.5px',
             minHeight: '34px',
@@ -580,12 +580,12 @@ const CrmOfferList = () => {
                 .item-custom-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #2ece8a;
+                    background-color: #0a500f;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    box-shadow: 0 4px 10px rgba(46, 206, 138, 0.2);
+                    box-shadow: 0 4px 10px rgba(10, 80, 15, 0.2);
                 }
                 .item-custom-modal .modal-close-x {
                     border: none;
@@ -634,11 +634,11 @@ const CrmOfferList = () => {
                 }
                 .item-custom-modal .form-control-custom:focus {
                     outline: none;
-                    border-color: #2ece8a;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15);
+                    border-color: #0a500f;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
                 }
                 .item-custom-modal .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -649,10 +649,10 @@ const CrmOfferList = () => {
                     transition: background-color 0.2s, transform 0.1s;
                 }
                 .item-custom-modal .btn-close-custom:hover {
-                    background-color: #6357a7 !important;
+                    background-color: #bb2d3b !important;
                 }
                 .item-custom-modal .btn-save-custom {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -663,7 +663,7 @@ const CrmOfferList = () => {
                     transition: background-color 0.2s, transform 0.1s;
                 }
                 .item-custom-modal .btn-save-custom:hover {
-                    background-color: #26b277 !important;
+                    background-color: #073d0b !important;
                 }
                 .lead-category-header-container {
                     display: flex !important;
@@ -696,8 +696,8 @@ const CrmOfferList = () => {
                     background: transparent;
                 }
                 .scheme-modal-nav .nav-link.active {
-                    color: #2ece8a !important;
-                    border-bottom: 2px solid #2ece8a !important;
+                    color: #0a500f !important;
+                    border-bottom: 2px solid #0a500f !important;
                     background: transparent !important;
                 }
                 .criteria-table th {
@@ -738,7 +738,7 @@ const CrmOfferList = () => {
                                         variant="primary"
                                         onClick={() => handleShowModal()}
                                         className="d-flex align-items-center justify-content-center lead-category-add-btn"
-                                        style={{ height: '38px', borderRadius: '6px', whiteSpace: 'nowrap', padding: '0 16px', backgroundColor: 'rgb(61, 53, 119)', borderColor: 'rgb(61, 53, 119)', color: 'white' }}
+                                        style={{ height: '38px', borderRadius: '6px', whiteSpace: 'nowrap', padding: '0 16px', backgroundColor: '#0a500f', borderColor: '#0a500f', color: 'white' }}
                                     >
                                         <i className="fa fa-plus me-2"></i>
                                         ADD OFFER

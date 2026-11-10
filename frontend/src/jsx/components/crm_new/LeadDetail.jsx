@@ -121,7 +121,7 @@ const LeadDetail = () => {
                         type="button"
                         onClick={() => navigate(`/crm_new/leads/edit/${lead.id}`)}
                         className="btn btn-primary btn-sm"
-                        style={{ backgroundColor: 'rgb(61, 53, 119)', borderColor: 'rgb(61, 53, 119)', borderRadius: '6px' }}
+                        style={{ backgroundColor: '#0a500f', borderColor: '#0a500f', borderRadius: '6px' }}
                     >
                         <i className="fa fa-pencil-alt me-1"></i> Edit Lead
                     </button>

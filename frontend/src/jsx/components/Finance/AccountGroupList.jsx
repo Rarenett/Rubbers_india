@@ -262,7 +262,7 @@ const AccountGroupList = () => {
             ...provided,
             backgroundColor: isDark ? '#24292D' : '#ffffff',
             borderColor: state.isFocused 
-                ? 'var(--cc-primary, #2bc155)' 
+                ? 'var(--cc-primary, #0a500f)' 
                 : (isDark ? '#636363' : '#ececec'),
             color: isDark ? '#ffffff' : '#2f3f50',
             minHeight: '56px',
@@ -270,7 +270,7 @@ const AccountGroupList = () => {
             borderRadius: '0.5rem',
             boxShadow: 'none',
             '&:hover': {
-                borderColor: state.isFocused ? 'var(--cc-primary, #2bc155)' : (isDark ? '#636363' : '#ececec'),
+                borderColor: state.isFocused ? 'var(--cc-primary, #0a500f)' : (isDark ? '#636363' : '#ececec'),
             }
         }),
         valueContainer: (provided) => ({
@@ -296,7 +296,7 @@ const AccountGroupList = () => {
         option: (provided, state) => ({
             ...provided,
             backgroundColor: state.isSelected
-                ? 'var(--cc-primary, #2bc155)'
+                ? 'var(--cc-primary, #0a500f)'
                 : state.isFocused
                     ? (isDark ? '#24292D' : '#f8f9fa')
                     : 'transparent',
@@ -305,7 +305,7 @@ const AccountGroupList = () => {
                 : (isDark ? '#ffffff' : '#2f3f50'),
             cursor: 'pointer',
             '&:active': {
-                backgroundColor: 'var(--cc-primary, #2bc155)',
+                backgroundColor: 'var(--cc-primary, #0a500f)',
                 color: '#ffffff'
             }
         }),
@@ -676,7 +676,8 @@ const AccountGroupList = () => {
                     </Modal.Body>
                     <Modal.Footer>
                         <Button 
-                            className="btn-universal-close" 
+                            className="btn-universal-close btn-cancel-custom"
+                            style={{ backgroundColor: '#dc3545', borderColor: '#dc3545', color: '#ffffff' }}
                             onClick={() => setShowModal(false)}
                         >
                             Close

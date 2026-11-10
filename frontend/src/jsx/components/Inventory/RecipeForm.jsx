@@ -36,9 +36,9 @@ const RecipeForm = ({ stockItem, onCancel, mode, onSaveSuccess }) => {
             minHeight: '38px',
             fontSize: '13px',
             borderRadius: '10px',
-            borderColor: state.isFocused ? '#2ece8a' : '#cbd5e1',
-            boxShadow: state.isFocused ? '0 0 0 3px rgba(46, 206, 138, 0.15)' : 'none',
-            '&:hover': { borderColor: '#2ece8a' },
+            borderColor: state.isFocused ? '#0a500f' : '#cbd5e1',
+            boxShadow: state.isFocused ? '0 0 0 3px rgba(10, 80, 15, 0.15)' : 'none',
+            '&:hover': { borderColor: '#0a500f' },
         }),
         menu: base => ({ ...base, zIndex: 9999, fontSize: '13px' }),
         singleValue: (base, state) => ({
@@ -50,7 +50,7 @@ const RecipeForm = ({ stockItem, onCancel, mode, onSaveSuccess }) => {
             backgroundColor: state.data.isDivider
                 ? 'white'
                 : state.isSelected
-                    ? '#2ece8a'
+                    ? '#0a500f'
                     : state.isFocused
                         ? '#f0fdf4'
                         : 'white',
@@ -64,7 +64,7 @@ const RecipeForm = ({ stockItem, onCancel, mode, onSaveSuccess }) => {
                 backgroundColor: state.data.isDivider
                     ? 'white'
                     : state.isSelected
-                        ? '#2ece8a'
+                        ? '#0a500f'
                         : '#f0fdf4',
                 color: state.data.isDivider ? '#94a3b8' : state.isSelected ? 'white' : '#334155',
             }
@@ -744,7 +744,7 @@ const styles = `
         font-weight: 500;
     }
     .item-custom-modal .btn-close-custom:hover {
-        background-color: #6357a7 !important;
+        background-color: #bb2d3b !important;
     }
     .item-custom-modal .btn-save-custom {
         background-color: #45D08B !important;
@@ -755,7 +755,7 @@ const styles = `
         font-weight: 500;
     }
     .item-custom-modal .btn-save-custom:hover:not(:disabled) {
-        background-color: #26b277 !important;
+        background-color: #073d0b !important;
     }
     .item-custom-modal .btn-save-custom:disabled {
         opacity: 0.7;

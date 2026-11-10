@@ -242,16 +242,16 @@ const EmployeeGroupForm = ({ show, onHide, groupId, onSuccess }) => {
         control: (base, state) => ({
             ...base,
             minHeight: '46px',
-            borderColor: state.isFocused ? '#2ece8a' : '#cbd5e1',
-            boxShadow: state.isFocused ? '0 0 0 3px rgba(46, 206, 138, 0.15)' : 'none',
-            '&:hover': { borderColor: '#2ece8a' },
+            borderColor: state.isFocused ? '#0a500f' : '#cbd5e1',
+            boxShadow: state.isFocused ? '0 0 0 3px rgba(10, 80, 15, 0.15)' : 'none',
+            '&:hover': { borderColor: '#0a500f' },
             borderRadius: '10px',
             fontSize: '14px',
         }),
         menu: base => ({ ...base, zIndex: 99999, fontSize: '14px' }),
         option: (base, state) => ({
             ...base,
-            backgroundColor: state.isSelected ? '#2ece8a' : state.isFocused ? '#e9fbf3' : 'white',
+            backgroundColor: state.isSelected ? '#0a500f' : state.isFocused ? '#e9fbf3' : 'white',
             color: state.isSelected ? 'white' : '#334155',
             cursor: 'pointer',
         }),
@@ -281,12 +281,12 @@ const EmployeeGroupForm = ({ show, onHide, groupId, onSuccess }) => {
                 .egfm-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #2ece8a;
+                    background-color: #0a500f;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    box-shadow: 0 4px 10px rgba(46, 206, 138, 0.2);
+                    box-shadow: 0 4px 10px rgba(10, 80, 15, 0.2);
                 }
                 .egfm-modal .modal-close-x {
                     border: none;
@@ -329,12 +329,12 @@ const EmployeeGroupForm = ({ show, onHide, groupId, onSuccess }) => {
                 }
                 .egfm-modal .form-control-custom:focus {
                     outline: none;
-                    border-color: #2ece8a;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15);
+                    border-color: #0a500f;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
                 }
                 .egfm-modal .form-control-custom::placeholder { color: #94a3b8; }
                 .egfm-modal .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -344,9 +344,9 @@ const EmployeeGroupForm = ({ show, onHide, groupId, onSuccess }) => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .egfm-modal .btn-close-custom:hover { background-color: #6357a7 !important; }
+                .egfm-modal .btn-close-custom:hover { background-color: #bb2d3b !important; }
                 .egfm-modal .btn-save-custom {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -356,7 +356,7 @@ const EmployeeGroupForm = ({ show, onHide, groupId, onSuccess }) => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .egfm-modal .btn-save-custom:hover { background-color: #26b277 !important; }
+                .egfm-modal .btn-save-custom:hover { background-color: #073d0b !important; }
                 .egfm-selected-container {
                     background-color: #ffffff;
                 }
@@ -381,7 +381,7 @@ const EmployeeGroupForm = ({ show, onHide, groupId, onSuccess }) => {
                 [data-theme-version="dark"] .egfm-selected-container { background-color: #24292D !important; border-color: #3d464e !important; }
                 [data-theme-version="dark"] .egfm-selected-item { background-color: #2F363E !important; border-color: #3d464e !important; color: #fff !important; }
                 [data-theme-version="dark"] .egfm-employee-card { background-color: #24292D !important; border-color: #3d464e !important; }
-                [data-theme-version="dark"] .egfm-row-selected { background-color: rgba(46, 206, 138, 0.15) !important; color: #fff !important; }
+                [data-theme-version="dark"] .egfm-row-selected { background-color: rgba(10, 80, 15, 0.15) !important; color: #fff !important; }
             `}</style>
 
             <Modal show={show} onHide={onHide} size="xl" centered dialogClassName="egfm-modal modal-90w">

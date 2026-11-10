@@ -79,7 +79,12 @@ export const TaskReminderProvider = ({ children }) => {
                     // Send subscription to backend
                     if (isAuthenticated) {
                         await axiosInstance.post('/api/task-management/tasks/subscribe_push/', subscription.toJSON());
-                        Swal.fire("Success", "Push Notifications Enabled!", "success");
+                        Swal.fire({
+                            title: "Success",
+                            text: "Push Notifications Enabled!",
+                            icon: "success",
+                            confirmButtonColor: "#0a500f",
+                        });
                     }
                 } else {
                     Swal.fire("Blocked", "You have blocked notifications in your browser settings. Please click the icon in your address bar to allow them.", "error");
@@ -173,6 +178,7 @@ export const TaskReminderProvider = ({ children }) => {
                         text: text,
                         icon: icon,
                         confirmButtonText: "Acknowledge",
+                        confirmButtonColor: "#0a500f",
                     });
 
                     const processSwalQueue = async () => {

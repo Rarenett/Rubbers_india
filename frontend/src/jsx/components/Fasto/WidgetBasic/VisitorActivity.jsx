@@ -20,7 +20,7 @@ class VisitorActivity extends Component {
           data: activityData[this.props.dataActive],
           borderColor: "rgba(67, 220, 128, 1)",
           borderWidth: "0",
-          backgroundColor: "#43DC80",
+          backgroundColor: "#0a500f",
         },
       ],
     };

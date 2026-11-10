@@ -1139,7 +1139,7 @@ const UploadFiles = () => {
                               style={{
                                 cursor: "pointer",
                                 borderLeftWidth: isSelected ? "4px" : "1px",
-                                borderLeftColor: isSelected ? "rgb(61, 53, 119)" : undefined,
+                                borderLeftColor: isSelected ? "#0a500f" : undefined,
                               }}
                             >
                               <div className="d-flex align-items-center text-truncate me-2" style={{ minWidth: 0 }}>
@@ -1441,8 +1441,8 @@ const UploadFiles = () => {
               type="submit"
               disabled={uploading}
               style={{
-                backgroundColor: "rgb(61, 53, 119)",
-                borderColor: "rgb(61, 53, 119)",
+                backgroundColor: "#0a500f",
+                borderColor: "#0a500f",
               }}
             >
               {uploading ? (
@@ -1564,7 +1564,7 @@ const UploadFiles = () => {
                           style={{
                             cursor: "pointer",
                             borderLeftWidth: editPreviewSelection.type === "existing" ? "4px" : "1px",
-                            borderLeftColor: editPreviewSelection.type === "existing" ? "rgb(61, 53, 119)" : undefined,
+                            borderLeftColor: editPreviewSelection.type === "existing" ? "#0a500f" : undefined,
                           }}
                         >
                           <div className="d-flex align-items-center text-truncate me-2" style={{ minWidth: 0 }}>
@@ -1653,7 +1653,7 @@ const UploadFiles = () => {
                             style={{
                               cursor: "pointer",
                               borderLeftWidth: isSelected ? "4px" : "1px",
-                              borderLeftColor: isSelected ? "rgb(61, 53, 119)" : undefined,
+                              borderLeftColor: isSelected ? "#0a500f" : undefined,
                             }}
                           >
                             <div className="d-flex align-items-center text-truncate me-2" style={{ minWidth: 0 }}>
@@ -1942,8 +1942,8 @@ const UploadFiles = () => {
               type="submit"
               disabled={updating}
               style={{
-                backgroundColor: "rgb(61, 53, 119)",
-                borderColor: "rgb(61, 53, 119)",
+                backgroundColor: "#0a500f",
+                borderColor: "#0a500f",
               }}
             >
               {updating ? (
@@ -2087,8 +2087,8 @@ const UploadFiles = () => {
                   handleDownloadDocument(previewDoc);
                 }}
                 style={{
-                  backgroundColor: "rgb(61, 53, 119)",
-                  borderColor: "rgb(61, 53, 119)",
+                  backgroundColor: "#0a500f",
+                  borderColor: "#0a500f",
                 }}
               >
                 <i className="fa fa-download me-1"></i> Download Document

@@ -121,9 +121,9 @@ const ComplaintFinalDecisionList = () => {
                                 <button 
                                     className="btn decision-filter-btn"
                                     style={{
-                                        backgroundColor: filterType === 'Pending' ? 'rgb(61, 53, 119)' : 'transparent',
-                                        borderColor: 'rgb(61, 53, 119)',
-                                        color: filterType === 'Pending' ? 'white' : 'rgb(61, 53, 119)',
+                                        backgroundColor: filterType === 'Pending' ? '#0a500f' : 'transparent',
+                                        borderColor: '#0a500f',
+                                        color: filterType === 'Pending' ? 'white' : '#0a500f',
                                         borderRadius: '10px',
                                         height: '34px',
                                         display: 'flex',
@@ -138,9 +138,9 @@ const ComplaintFinalDecisionList = () => {
                                 <button 
                                     className="btn decision-filter-btn"
                                     style={{
-                                        backgroundColor: filterType === 'All' ? 'rgb(61, 53, 119)' : 'transparent',
-                                        borderColor: 'rgb(61, 53, 119)',
-                                        color: filterType === 'All' ? 'white' : 'rgb(61, 53, 119)',
+                                        backgroundColor: filterType === 'All' ? '#0a500f' : 'transparent',
+                                        borderColor: '#0a500f',
+                                        color: filterType === 'All' ? 'white' : '#0a500f',
                                         borderRadius: '10px',
                                         height: '34px',
                                         display: 'flex',

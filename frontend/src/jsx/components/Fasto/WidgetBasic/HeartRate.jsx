@@ -52,9 +52,9 @@ class HeartRate extends Component {
             10,
             21,
           ],
-          borderColor: "#43DC80",
+          borderColor: "#0a500f",
           borderWidth: "0",
-          backgroundColor: "#43DC80",
+          backgroundColor: "#0a500f",
         },
       ],
     };

@@ -41,9 +41,9 @@ const selectStyles = {
     control: (base, state) => ({
         ...base,
         minHeight: '42px',
-        borderColor: state.isFocused ? '#2ece8a' : '#cbd5e1',
-        boxShadow: state.isFocused ? '0 0 0 2px rgba(46, 206, 138, 0.2)' : 'none',
-        '&:hover': { borderColor: '#2ece8a' },
+        borderColor: state.isFocused ? '#0a500f' : '#cbd5e1',
+        boxShadow: state.isFocused ? '0 0 0 2px rgba(10, 80, 15, 0.2)' : 'none',
+        '&:hover': { borderColor: '#0a500f' },
         borderRadius: '8px',
         fontSize: '14px',
         backgroundColor: '#fff',
@@ -60,9 +60,9 @@ const selectStyles = {
     option: (base, state) => ({
         ...base,
         backgroundColor: state.isSelected
-            ? '#2ece8a'
+            ? '#0a500f'
             : state.isFocused
-            ? 'rgba(46, 206, 138, 0.1)'
+            ? 'rgba(10, 80, 15, 0.1)'
             : 'transparent',
         color: state.isSelected ? '#fff' : '#334155',
         cursor: state.isDisabled ? 'not-allowed' : 'pointer',
@@ -421,12 +421,12 @@ const AttendanceProductionTypeList = () => {
                 .type-custom-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #2ece8a;
+                    background-color: #0a500f;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    box-shadow: 0 4px 10px rgba(46, 206, 138, 0.2);
+                    box-shadow: 0 4px 10px rgba(10, 80, 15, 0.2);
                 }
                 .type-custom-modal .modal-close-x {
                     border: none;
@@ -454,7 +454,7 @@ const AttendanceProductionTypeList = () => {
                     gap: 12px;
                 }
                 .type-custom-modal .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -464,9 +464,9 @@ const AttendanceProductionTypeList = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .type-custom-modal .btn-close-custom:hover { background-color: #6357a7 !important; }
+                .type-custom-modal .btn-close-custom:hover { background-color: #bb2d3b !important; }
                 .type-custom-modal .btn-save-custom {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -476,7 +476,7 @@ const AttendanceProductionTypeList = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .type-custom-modal .btn-save-custom:hover { background-color: #26b277 !important; }
+                .type-custom-modal .btn-save-custom:hover { background-color: #073d0b !important; }
 
                 .unit-type-option {
                     cursor: pointer;
@@ -489,15 +489,15 @@ const AttendanceProductionTypeList = () => {
                     transition: all 0.15s;
                 }
                 .unit-type-option.active {
-                    border-color: #2ece8a;
+                    border-color: #0a500f;
                     background-color: #e6f9f1;
                     color: #1a7f53;
                     font-weight: 600;
                 }
                 .unit-type-option:focus {
                     outline: none;
-                    border-color: #2ece8a !important;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.25) !important;
+                    border-color: #0a500f !important;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.25) !important;
                 }
             `}</style>
 

@@ -110,7 +110,7 @@ export const showRequiredFieldsWarning = (missingFields, options = {}) => {
             </div>
         `,
         confirmButtonText: 'OK',
-        confirmButtonColor: '#2ece8a',
+        confirmButtonColor: '#0a500f',
         ...options.swalOptions,
     });
 

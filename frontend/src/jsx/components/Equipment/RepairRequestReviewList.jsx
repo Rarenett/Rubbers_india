@@ -749,12 +749,12 @@ const RepairRequestReviewList = () => {
                 .item-custom-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #2ece8a;
+                    background-color: #0a500f;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    box-shadow: 0 4px 10px rgba(46, 206, 138, 0.2);
+                    box-shadow: 0 4px 10px rgba(10, 80, 15, 0.2);
                 }
                 .item-custom-modal .modal-close-x {
                     border: none;
@@ -795,14 +795,14 @@ const RepairRequestReviewList = () => {
                 }
                 .item-custom-modal .form-control-custom:focus {
                     outline: none;
-                    border-color: #2ece8a;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15);
+                    border-color: #0a500f;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
                 }
                 .item-custom-modal .form-control-custom::placeholder {
                     color: #94a3b8;
                 }
                 .item-custom-modal .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -813,7 +813,7 @@ const RepairRequestReviewList = () => {
                     transition: background-color 0.2s;
                 }
                 .item-custom-modal .btn-close-custom:hover {
-                    background-color: #6357a7 !important;
+                    background-color: #bb2d3b !important;
                 }
                 .item-custom-modal .modal-footer-custom {
                     display: flex;
@@ -825,7 +825,7 @@ const RepairRequestReviewList = () => {
                     gap: 12px;
                 }
                 .item-custom-modal .btn-save-custom {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -836,7 +836,7 @@ const RepairRequestReviewList = () => {
                     transition: background-color 0.2s;
                 }
                 .item-custom-modal .btn-save-custom:hover {
-                    background-color: #26b277 !important;
+                    background-color: #073d0b !important;
                 }
             `}</style>
         </div>

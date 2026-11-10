@@ -9,13 +9,13 @@ form#step-form-horizontal .form-group .text-label {
   /* padding-top: 2rem; */
 }
 [data-primary="color_2"] .wizard > .steps li.current a {
-  background-color: #43DC80;
+  background-color: #0a500f;
 }
 [data-primary="color_2"] .wizard .skip-email a {
   color: #363062;
 }
 [data-primary="color_2"] .wizard > .actions li:not(.disabled) a {
-  background-color: #43DC80;
+  background-color: #0a500f;
 }
 
 .step-form-horizontal .wizard {
@@ -45,7 +45,7 @@ form#step-form-horizontal .form-group .text-label {
 
 .step-form-horizontal .wizard .steps li.done a .number {
   color: #fff;
-  background: #43DC80;
+  background: #0a500f;
   border-color: transparent;
 }
 
@@ -56,7 +56,7 @@ form#step-form-horizontal .form-group .text-label {
   li.done
   a
   .number {
-  border-color: #43DC80;
+  border-color: #0a500f;
 }
 
 .step-form-horizontal .wizard .steps li.current a,
@@ -77,11 +77,11 @@ form#step-form-horizontal .form-group .text-label {
 .step-form-horizontal .wizard .steps li.current a .number {
   color: #363062;
   background: #fff;
-  border: 2px solid #43DC80;
+  border: 2px solid #0a500f;
 }
 
 .step-form-horizontal .wizard .steps li.disabled a .number {
-  color: #43DC80;
+  color: #0a500f;
 }
 
 .step-form-horizontal .wizard .steps li a {
@@ -148,7 +148,7 @@ form#step-form-horizontal .form-group .text-label {
   content: "";
   left: 50%;
   top: -2.1rem;
-  background-color: #43DC80;
+  background-color: #0a500f;
   z-index: -1;
 }
 
@@ -225,7 +225,7 @@ form#step-form-horizontal .form-group .text-label {
   left: 0;
   top: 23px;
   position: absolute;
-  background: #43DC80;
+  background: #0a500f;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   z-index: 1;
@@ -254,12 +254,12 @@ form#step-form-horizontal .form-group .text-label {
 
 .step-form-horizontal ol li.go767851704 span {
   color: #fff;
-  background: #43DC80;
+  background: #0a500f;
   border-color: transparent;
 }
 
 [data-theme-version="dark"] .step-form-horizontal ol li.go767851704 span {
-  border-color: #43DC80;
+  border-color: #0a500f;
 }
 
 .step-form-horizontal ol li.active,
@@ -283,13 +283,13 @@ form#step-form-horizontal .form-group .text-label {
 
 .step-form-horizontal ol li.active span,
 .step-form-horizontal ol li.go2478912419 span {
-  color: #43DC80;
+  color: #0a500f;
   background: #fff;
-  border: 2px solid #43DC80;
+  border: 2px solid #0a500f;
 }
 
 .step-form-horizontal ol li.disabled span {
-  color: #43DC80;
+  color: #0a500f;
 }
 
 @media (max-width: 767.98px) {
@@ -333,7 +333,7 @@ form#step-form-horizontal .form-group .text-label {
 [data-theme-version="dark"] .step-form-horizontal ol li span {
   border-color: #fff;
   color: #000;
-  box-shadow: 0 0 0 3px #43DC80;
+  box-shadow: 0 0 0 3px #0a500f;
 }
 [data-theme-version="dark"] .step-form-horizontal ol::after{
 	background-color: #5f5f5f;

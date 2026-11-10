@@ -175,7 +175,7 @@ const LeaveRequestFormModal = ({ show, onHide, onSuccess, editMode = false, leav
                 icon: 'warning',
                 title: 'Dates Adjusted',
                 text: msg,
-                confirmButtonColor: '#2ece8a'
+                confirmButtonColor: '#0a500f'
             });
         }
 
@@ -217,7 +217,7 @@ const LeaveRequestFormModal = ({ show, onHide, onSuccess, editMode = false, leav
                 icon: 'warning',
                 title: 'Not Possible',
                 text: msg,
-                confirmButtonColor: '#2ece8a'
+                confirmButtonColor: '#0a500f'
             });
             return;
         }
@@ -238,7 +238,7 @@ const LeaveRequestFormModal = ({ show, onHide, onSuccess, editMode = false, leav
                     icon: 'warning',
                     title: 'Invalid Date Range',
                     text: msg,
-                    confirmButtonColor: '#2ece8a'
+                    confirmButtonColor: '#0a500f'
                 });
                 return;
             }
@@ -266,7 +266,7 @@ const LeaveRequestFormModal = ({ show, onHide, onSuccess, editMode = false, leav
                 icon: 'warning',
                 title: 'Not Possible',
                 text: msg,
-                confirmButtonColor: '#2ece8a'
+                confirmButtonColor: '#0a500f'
             });
         }
     };
@@ -334,7 +334,7 @@ const LeaveRequestFormModal = ({ show, onHide, onSuccess, editMode = false, leav
                 icon: 'warning',
                 title: 'Not Possible',
                 text: msg,
-                confirmButtonColor: '#2ece8a'
+                confirmButtonColor: '#0a500f'
             });
             return;
         }
@@ -371,7 +371,7 @@ const LeaveRequestFormModal = ({ show, onHide, onSuccess, editMode = false, leav
                 icon: 'warning',
                 title: 'Not Possible',
                 text: msg,
-                confirmButtonColor: '#2ece8a'
+                confirmButtonColor: '#0a500f'
             });
             return;
         }
@@ -392,7 +392,7 @@ const LeaveRequestFormModal = ({ show, onHide, onSuccess, editMode = false, leav
                 icon: 'warning',
                 title: 'Not Possible',
                 text: msg,
-                confirmButtonColor: '#2ece8a'
+                confirmButtonColor: '#0a500f'
             });
             return;
         }
@@ -428,7 +428,7 @@ const LeaveRequestFormModal = ({ show, onHide, onSuccess, editMode = false, leav
                 icon: 'error',
                 title: 'Not Possible',
                 text: msg,
-                confirmButtonColor: '#2ece8a'
+                confirmButtonColor: '#0a500f'
             });
             return;
         }
@@ -504,12 +504,12 @@ const LeaveRequestFormModal = ({ show, onHide, onSuccess, editMode = false, leav
                 .leave-custom-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #2ece8a;
+                    background-color: #0a500f;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    box-shadow: 0 4px 10px rgba(46, 206, 138, 0.2);
+                    box-shadow: 0 4px 10px rgba(10, 80, 15, 0.2);
                 }
                 .leave-custom-modal .modal-close-x {
                     border: none;
@@ -552,8 +552,8 @@ const LeaveRequestFormModal = ({ show, onHide, onSuccess, editMode = false, leav
                 }
                 .leave-custom-modal .form-control-custom:focus {
                     outline: none;
-                    border-color: #2ece8a;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15);
+                    border-color: #0a500f;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
                 }
                 .leave-custom-modal input[type="date"]::-webkit-calendar-picker-indicator {
                     display: inline-block !important;
@@ -574,7 +574,7 @@ const LeaveRequestFormModal = ({ show, onHide, onSuccess, editMode = false, leav
                     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%232ece8a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E") !important;
                 }
                 .leave-custom-modal .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -584,9 +584,9 @@ const LeaveRequestFormModal = ({ show, onHide, onSuccess, editMode = false, leav
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .leave-custom-modal .btn-close-custom:hover { background-color: #6357a7 !important; }
+                .leave-custom-modal .btn-close-custom:hover { background-color: #bb2d3b !important; }
                 .leave-custom-modal .btn-save-custom {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -596,7 +596,7 @@ const LeaveRequestFormModal = ({ show, onHide, onSuccess, editMode = false, leav
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .leave-custom-modal .btn-save-custom:hover { background-color: #26b277 !important; }
+                .leave-custom-modal .btn-save-custom:hover { background-color: #073d0b !important; }
                 .date-badge-pill {
                     display: inline-flex;
                     align-items: center;
@@ -626,7 +626,7 @@ const LeaveRequestFormModal = ({ show, onHide, onSuccess, editMode = false, leav
                     padding: 0;
                     font-size: 13px;
                     font-weight: 500;
-                    color: #2ece8a;
+                    color: #0a500f;
                     text-decoration: none;
                     cursor: pointer;
                     transition: color 0.15s ease-in-out, opacity 0.15s ease-in-out;
@@ -643,7 +643,7 @@ const LeaveRequestFormModal = ({ show, onHide, onSuccess, editMode = false, leav
                 }
                 .leave-custom-modal .btn-action-add-link i {
                     font-size: 14px;
-                    color: #2ece8a;
+                    color: #0a500f;
                 }
                 .leave-custom-modal .btn-action-add-link:hover:not(:disabled) i {
                     color: #24ab72;
@@ -785,7 +785,7 @@ const LeaveRequestFormModal = ({ show, onHide, onSuccess, editMode = false, leav
                                     height: '26px',
                                     borderRadius: '6px',
                                     backgroundColor: '#e8faf2',
-                                    color: '#2ece8a',
+                                    color: '#0a500f',
                                     display: 'flex',
                                     alignItems: 'center',
                                     justifyContent: 'center',

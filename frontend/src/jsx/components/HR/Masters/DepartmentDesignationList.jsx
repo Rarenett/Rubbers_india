@@ -159,9 +159,9 @@ const DepartmentDesignationList = () => {
         control: (base, state) => ({
             ...base,
             minHeight: '38px',
-            borderColor: state.isFocused ? '#2ece8a' : '#cbd5e1',
-            boxShadow: state.isFocused ? '0 0 0 2px rgba(46, 206, 138, 0.15)' : 'none',
-            '&:hover': { borderColor: '#2ece8a' },
+            borderColor: state.isFocused ? '#0a500f' : '#cbd5e1',
+            boxShadow: state.isFocused ? '0 0 0 2px rgba(10, 80, 15, 0.15)' : 'none',
+            '&:hover': { borderColor: '#0a500f' },
             borderRadius: '10px',
             fontSize: '14px',
             color: '#334155',
@@ -169,7 +169,7 @@ const DepartmentDesignationList = () => {
         menu: base => ({ ...base, zIndex: 99999, fontSize: '14px' }),
         option: (base, state) => ({
             ...base,
-            backgroundColor: state.isSelected ? '#2ece8a' : state.isFocused ? 'rgba(46, 206, 138, 0.1)' : 'white',
+            backgroundColor: state.isSelected ? '#0a500f' : state.isFocused ? 'rgba(10, 80, 15, 0.1)' : 'white',
             color: state.isSelected ? 'white' : '#334155',
             cursor: 'pointer',
         }),
@@ -460,12 +460,12 @@ const DepartmentDesignationList = () => {
                 .assign-custom-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #2ece8a;
+                    background-color: #0a500f;
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    box-shadow: 0 4px 10px rgba(46, 206, 138, 0.2);
+                    box-shadow: 0 4px 10px rgba(10, 80, 15, 0.2);
                 }
                 .assign-custom-modal .modal-close-x {
                     border: none;
@@ -509,7 +509,7 @@ const DepartmentDesignationList = () => {
                 }
                 .assign-custom-modal .btn-close-custom:hover { background-color: #475569 !important; }
                 .assign-custom-modal .btn-save-custom {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -519,7 +519,7 @@ const DepartmentDesignationList = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .assign-custom-modal .btn-save-custom:hover { background-color: #26b277 !important; }
+                .assign-custom-modal .btn-save-custom:hover { background-color: #073d0b !important; }
                 .search-input-custom {
                     height: 38px !important;
                     border-radius: 6px !important;
@@ -530,7 +530,7 @@ const DepartmentDesignationList = () => {
                     transition: background-color 0.2s, color 0.2s;
                 }
                 .quick-add-btn:hover {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: white !important;
                 }
             `}</style>
@@ -646,7 +646,7 @@ const DepartmentDesignationList = () => {
                                                         style={{
                                                             border: 'none',
                                                             background: 'transparent',
-                                                            color: currentPage === 1 ? '#cbd5e1' : '#2ece8a',
+                                                            color: currentPage === 1 ? '#cbd5e1' : '#0a500f',
                                                             fontSize: '13px',
                                                             padding: '6px 10px',
                                                             cursor: currentPage === 1 ? 'not-allowed' : 'pointer',
@@ -680,9 +680,9 @@ const DepartmentDesignationList = () => {
                                                                         fontSize: '13px',
                                                                         fontWeight: '500',
                                                                         cursor: 'pointer',
-                                                                        backgroundColor: isActive ? '#2ece8a' : 'transparent',
-                                                                        color: isActive ? '#ffffff' : '#2ece8a',
-                                                                        boxShadow: isActive ? '0 4px 10px rgba(46, 206, 138, 0.3)' : 'none',
+                                                                        backgroundColor: isActive ? '#0a500f' : 'transparent',
+                                                                        color: isActive ? '#ffffff' : '#0a500f',
+                                                                        boxShadow: isActive ? '0 4px 10px rgba(10, 80, 15, 0.3)' : 'none',
                                                                         transition: 'all 0.2s ease'
                                                                     }}
                                                                 >
@@ -707,7 +707,7 @@ const DepartmentDesignationList = () => {
                                                         style={{
                                                             border: 'none',
                                                             background: 'transparent',
-                                                            color: currentPage === totalPages ? '#cbd5e1' : '#2ece8a',
+                                                            color: currentPage === totalPages ? '#cbd5e1' : '#0a500f',
                                                             fontSize: '13px',
                                                             padding: '6px 10px',
                                                             cursor: currentPage === totalPages ? 'not-allowed' : 'pointer',
@@ -778,8 +778,8 @@ const DepartmentDesignationList = () => {
                                             alignItems: 'center',
                                             justifyContent: 'center',
                                             borderRadius: '10px',
-                                            borderColor: '#2ece8a',
-                                            color: '#2ece8a',
+                                            borderColor: '#0a500f',
+                                            color: '#0a500f',
                                             backgroundColor: 'transparent',
                                             padding: 0
                                         }}
@@ -805,9 +805,9 @@ const DepartmentDesignationList = () => {
                                         style={{ 
                                             fontSize: '13px', 
                                             padding: '6px 14px',
-                                            backgroundColor: 'rgba(46, 206, 138, 0.12)',
+                                            backgroundColor: 'rgba(10, 80, 15, 0.12)',
                                             color: '#15803d',
-                                            border: '1px solid rgba(46, 206, 138, 0.3)'
+                                            border: '1px solid rgba(10, 80, 15, 0.3)'
                                         }}
                                     >
                                         {selectedDesignations.length} Designation{selectedDesignations.length !== 1 ? 's' : ''} Selected
@@ -834,9 +834,9 @@ const DepartmentDesignationList = () => {
                                                 fontSize: '12.5px', 
                                                 fontWeight: 500, 
                                                 whiteSpace: 'nowrap',
-                                                backgroundColor: desigFilterMode === 'selected' ? '#2ece8a' : '#ffffff',
-                                                borderColor: '#2ece8a',
-                                                color: desigFilterMode === 'selected' ? '#ffffff' : '#2ece8a'
+                                                backgroundColor: desigFilterMode === 'selected' ? '#0a500f' : '#ffffff',
+                                                borderColor: '#0a500f',
+                                                color: desigFilterMode === 'selected' ? '#ffffff' : '#0a500f'
                                             }}
                                         >
                                             Selected Only ({selectedDesignations.length})
@@ -849,9 +849,9 @@ const DepartmentDesignationList = () => {
                                                 fontSize: '12.5px', 
                                                 fontWeight: 500, 
                                                 whiteSpace: 'nowrap',
-                                                backgroundColor: desigFilterMode === 'all' ? '#2ece8a' : '#ffffff',
-                                                borderColor: '#2ece8a',
-                                                color: desigFilterMode === 'all' ? '#ffffff' : '#2ece8a'
+                                                backgroundColor: desigFilterMode === 'all' ? '#0a500f' : '#ffffff',
+                                                borderColor: '#0a500f',
+                                                color: desigFilterMode === 'all' ? '#ffffff' : '#0a500f'
                                             }}
                                         >
                                             Show All ({designations.length})
@@ -869,8 +869,8 @@ const DepartmentDesignationList = () => {
                                                 whiteSpace: 'nowrap', 
                                                 fontWeight: 500,
                                                 backgroundColor: '#ffffff',
-                                                borderColor: '#2ece8a',
-                                                color: '#2ece8a'
+                                                borderColor: '#0a500f',
+                                                color: '#0a500f'
                                             }}
                                         >
                                             {isAllVisibleSelected ? 'Deselect All' : 'Select All'}
@@ -886,8 +886,8 @@ const DepartmentDesignationList = () => {
                                                 fontSize: '13px', 
                                                 whiteSpace: 'nowrap', 
                                                 fontWeight: 500,
-                                                backgroundColor: '#2ece8a',
-                                                borderColor: '#2ece8a',
+                                                backgroundColor: '#0a500f',
+                                                borderColor: '#0a500f',
                                                 color: '#ffffff'
                                             }}
                                             className="quick-add-btn"
@@ -922,7 +922,7 @@ const DepartmentDesignationList = () => {
                                                             style={{ 
                                                                 cursor: 'pointer',
                                                                 transition: 'all 0.15s ease',
-                                                                borderColor: isChecked ? '#2ece8a' : '#e2e8f0',
+                                                                borderColor: isChecked ? '#0a500f' : '#e2e8f0',
                                                                 backgroundColor: isChecked ? '#f0fdf4' : '#ffffff'
                                                             }}
                                                             onClick={() => handleToggleDesignation(desig.id)}
@@ -962,7 +962,7 @@ const DepartmentDesignationList = () => {
                                                                                 color: '#334155',
                                                                                 outline: 'none'
                                                                             }}
-                                                                            onFocus={(e) => e.target.style.borderColor = '#2ece8a'}
+                                                                            onFocus={(e) => e.target.style.borderColor = '#0a500f'}
                                                                             onBlur={(e) => e.target.style.borderColor = '#cbd5e1'}
                                                                         />
                                                                     </div>
@@ -970,7 +970,7 @@ const DepartmentDesignationList = () => {
                                                                 {isChecked && (
                                                                     <span 
                                                                         className="badge badge-sm font-w600" 
-                                                                        style={{ backgroundColor: '#2ece8a', color: '#ffffff', fontSize: '10px', padding: '4px 6px' }}
+                                                                        style={{ backgroundColor: '#0a500f', color: '#ffffff', fontSize: '10px', padding: '4px 6px' }}
                                                                     >
                                                                         Selected
                                                                     </span>

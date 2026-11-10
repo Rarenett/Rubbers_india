@@ -58,10 +58,10 @@ const formatReadyToExitTime = (dateStr) => {
 const getSoftTagBadgeStyle = (tagColour, isDark) => {
     if (!tagColour) {
         return {
-            backgroundColor: isDark ? 'rgba(46, 206, 138, 0.15)' : '#e8fdf4',
+            backgroundColor: isDark ? 'rgba(10, 80, 15, 0.15)' : '#e8fdf4',
             color: isDark ? '#6ee7b7' : '#047857',
-            borderColor: isDark ? 'rgba(46, 206, 138, 0.35)' : '#a7f3d0',
-            dotColor: '#2ece8a'
+            borderColor: isDark ? 'rgba(10, 80, 15, 0.35)' : '#a7f3d0',
+            dotColor: '#0a500f'
         };
     }
     if (tagColour.startsWith('#') && (tagColour.length === 7 || tagColour.length === 9)) {
@@ -341,7 +341,7 @@ const VisitorReallocation = ({ embedded = false }) => {
                 icon: 'success',
                 title: 'Reallocation Request Sent',
                 text: `Transfer request sent to ${targetEmployee.label}. Awaiting their approval before responsibility transfers. If rejected, the visitor remains your responsibility.`,
-                confirmButtonColor: '#2ece8a'
+                confirmButtonColor: '#0a500f'
             });
 
             setShowReallocateModal(false);
@@ -577,10 +577,10 @@ const VisitorReallocation = ({ embedded = false }) => {
         control: (base, state) => ({
             ...base,
             backgroundColor: isDark ? '#1e293b' : '#ffffff',
-            borderColor: state.isFocused ? '#2ece8a' : (isDark ? '#334155' : '#cbd5e1'),
-            boxShadow: state.isFocused ? '0 0 0 3px rgba(46, 206, 138, 0.15)' : 'none',
+            borderColor: state.isFocused ? '#0a500f' : (isDark ? '#334155' : '#cbd5e1'),
+            boxShadow: state.isFocused ? '0 0 0 3px rgba(10, 80, 15, 0.15)' : 'none',
             '&:hover': {
-                borderColor: '#2ece8a'
+                borderColor: '#0a500f'
             },
             borderRadius: '6px',
             fontSize: '13px',
@@ -614,7 +614,7 @@ const VisitorReallocation = ({ embedded = false }) => {
         option: (base, state) => ({
             ...base,
             backgroundColor: state.isSelected 
-                ? '#2ece8a' 
+                ? '#0a500f' 
                 : state.isFocused 
                     ? (isDark ? '#334155' : '#f0fdf4') 
                     : 'transparent',
@@ -688,7 +688,7 @@ const VisitorReallocation = ({ embedded = false }) => {
                                         padding: '4px 14px',
                                         fontSize: '12px',
                                         fontWeight: activeStatusTab === 'active' ? '600' : '500',
-                                        background: activeStatusTab === 'active' ? '#2ece8a' : 'transparent',
+                                        background: activeStatusTab === 'active' ? '#0a500f' : 'transparent',
                                         color: activeStatusTab === 'active' ? '#ffffff' : '#64748b',
                                         transition: 'all 0.2s ease'
                                     }}
@@ -705,7 +705,7 @@ const VisitorReallocation = ({ embedded = false }) => {
                                         padding: '4px 14px',
                                         fontSize: '12px',
                                         fontWeight: activeStatusTab === 'completed' ? '600' : '500',
-                                        background: activeStatusTab === 'completed' ? '#2ece8a' : 'transparent',
+                                        background: activeStatusTab === 'completed' ? '#0a500f' : 'transparent',
                                         color: activeStatusTab === 'completed' ? '#ffffff' : '#64748b',
                                         transition: 'all 0.2s ease'
                                     }}
@@ -722,7 +722,7 @@ const VisitorReallocation = ({ embedded = false }) => {
                                         padding: '4px 14px',
                                         fontSize: '12px',
                                         fontWeight: activeStatusTab === 'reassigned' ? '600' : '500',
-                                        background: activeStatusTab === 'reassigned' ? '#2ece8a' : 'transparent',
+                                        background: activeStatusTab === 'reassigned' ? '#0a500f' : 'transparent',
                                         color: activeStatusTab === 'reassigned' ? '#ffffff' : '#64748b',
                                         transition: 'all 0.2s ease'
                                     }}
@@ -756,7 +756,7 @@ const VisitorReallocation = ({ embedded = false }) => {
                                         padding: '4px 14px',
                                         fontSize: '12px',
                                         fontWeight: activeStatusTab === 'all' ? '600' : '500',
-                                        background: activeStatusTab === 'all' ? '#2ece8a' : 'transparent',
+                                        background: activeStatusTab === 'all' ? '#0a500f' : 'transparent',
                                         color: activeStatusTab === 'all' ? '#ffffff' : '#64748b',
                                         transition: 'all 0.2s ease'
                                     }}
@@ -1240,8 +1240,8 @@ const VisitorReallocation = ({ embedded = false }) => {
                                             borderRadius: '18px', 
                                             overflow: 'hidden', 
                                             flexShrink: 0,
-                                            border: '2.5px solid #2ece8a',
-                                            boxShadow: '0 4px 14px rgba(46, 206, 138, 0.25)',
+                                            border: '2.5px solid #0a500f',
+                                            boxShadow: '0 4px 14px rgba(10, 80, 15, 0.25)',
                                             backgroundColor: isDark ? '#1e293b' : '#f1f5f9',
                                             display: 'flex',
                                             alignItems: 'center',
@@ -1566,7 +1566,7 @@ const VisitorReallocation = ({ embedded = false }) => {
                                 <div 
                                     className="p-3 border rounded-3 mb-2" 
                                     style={{ 
-                                        background: isDark ? 'rgba(46, 206, 138, 0.08)' : '#f0fdf4', 
+                                        background: isDark ? 'rgba(10, 80, 15, 0.08)' : '#f0fdf4', 
                                         borderColor: isDark ? '#059669' : '#a7f3d0' 
                                     }}
                                 >
@@ -1853,8 +1853,8 @@ const VisitorReallocation = ({ embedded = false }) => {
                                 <div 
                                     className="modal-icon-circle" 
                                     style={{ 
-                                        background: 'linear-gradient(135deg, #2ece8a 0%, #20b876 100%)',
-                                        boxShadow: '0 4px 14px rgba(46, 206, 138, 0.3)',
+                                        background: 'linear-gradient(135deg, #0a500f 0%, #20b876 100%)',
+                                        boxShadow: '0 4px 14px rgba(10, 80, 15, 0.3)',
                                         width: '52px',
                                         height: '52px'
                                     }}
@@ -1937,7 +1937,7 @@ const VisitorReallocation = ({ embedded = false }) => {
                             <div 
                                 className="p-3 mb-3 rounded-4" 
                                 style={{ 
-                                    background: isDark ? 'rgba(46, 206, 138, 0.08)' : '#f0fdf4',
+                                    background: isDark ? 'rgba(10, 80, 15, 0.08)' : '#f0fdf4',
                                     border: `1.5px solid ${isDark ? '#059669' : '#a7f3d0'}`
                                 }}
                             >
@@ -2171,8 +2171,8 @@ const VisitorReallocation = ({ embedded = false }) => {
                                 <div 
                                     className="modal-icon-circle" 
                                     style={{ 
-                                        background: 'linear-gradient(135deg, #2ece8a 0%, #20b876 100%)',
-                                        boxShadow: '0 4px 14px rgba(46, 206, 138, 0.3)',
+                                        background: 'linear-gradient(135deg, #0a500f 0%, #20b876 100%)',
+                                        boxShadow: '0 4px 14px rgba(10, 80, 15, 0.3)',
                                         width: '52px',
                                         height: '52px'
                                     }}
@@ -2437,9 +2437,9 @@ const VisitorReallocation = ({ embedded = false }) => {
                     transition: all 0.2s ease;
                 }
                 .nav-pills-custom .nav-link.active {
-                    background-color: #2ece8a !important;
+                    background-color: #0a500f !important;
                     color: #ffffff !important;
-                    box-shadow: 0 2px 4px rgba(46, 206, 138, 0.25);
+                    box-shadow: 0 2px 4px rgba(10, 80, 15, 0.25);
                 }
                 .last-border-none:last-child {
                     border-bottom: none !important;
@@ -2516,8 +2516,8 @@ const VisitorReallocation = ({ embedded = false }) => {
                 }
                 .item-custom-modal .form-control-custom:focus {
                     outline: none !important;
-                    border-color: #2ece8a !important;
-                    box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15) !important;
+                    border-color: #0a500f !important;
+                    box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15) !important;
                 }
                 .item-custom-modal .form-control-custom::placeholder {
                     color: #94a3b8 !important;
@@ -2534,7 +2534,7 @@ const VisitorReallocation = ({ embedded = false }) => {
 
                 /* ── Theme Buttons matching CheckoutModal ── */
                 .btn-close-custom {
-                    background-color: #7A70BA !important;
+                    background-color: #dc3545 !important;
                     border: none !important;
                     color: #ffffff !important;
                     font-weight: 500 !important;
@@ -2549,7 +2549,7 @@ const VisitorReallocation = ({ embedded = false }) => {
                     justify-content: center !important;
                 }
                 .btn-close-custom:hover:not(:disabled) {
-                    background-color: #6357a7 !important;
+                    background-color: #bb2d3b !important;
                     color: #ffffff !important;
                     transform: translateY(-1px) !important;
                 }
@@ -2586,7 +2586,7 @@ const VisitorReallocation = ({ embedded = false }) => {
                 }
 
                 .btn-all-exit-custom {
-                    background: linear-gradient(135deg, #2ece8a 0%, #20b876 100%) !important;
+                    background: linear-gradient(135deg, #0a500f 0%, #20b876 100%) !important;
                     border: none !important;
                     color: #ffffff !important;
                     font-weight: 600 !important;
@@ -2596,7 +2596,7 @@ const VisitorReallocation = ({ embedded = false }) => {
                     border-radius: 10px !important;
                     transition: all 0.2s ease !important;
                     cursor: pointer !important;
-                    box-shadow: 0 4px 12px rgba(46, 206, 138, 0.3) !important;
+                    box-shadow: 0 4px 12px rgba(10, 80, 15, 0.3) !important;
                     display: inline-flex !important;
                     align-items: center !important;
                     justify-content: center !important;
@@ -2604,7 +2604,7 @@ const VisitorReallocation = ({ embedded = false }) => {
                 .btn-all-exit-custom:hover:not(:disabled) {
                     background: linear-gradient(135deg, #20b876 0%, #179b61 100%) !important;
                     color: #ffffff !important;
-                    box-shadow: 0 6px 16px rgba(46, 206, 138, 0.4) !important;
+                    box-shadow: 0 6px 16px rgba(10, 80, 15, 0.4) !important;
                     transform: translateY(-1px) !important;
                 }
                 .btn-all-exit-custom:disabled {

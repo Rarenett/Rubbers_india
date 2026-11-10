@@ -412,7 +412,7 @@ const WalletPointsEntry = () => {
           icon: 'warning',
           title: 'Cannot Delete Entry',
           text: msg,
-          confirmButtonColor: '#2ece8a',
+          confirmButtonColor: '#0a500f',
         });
       }
     }
@@ -1120,7 +1120,7 @@ const WalletPointsEntry = () => {
           icon: 'success',
           title: 'Points Entry Updated!',
           text: `Entry "${response?.entry_number || entryNumber}" updated successfully.`,
-          confirmButtonColor: '#2ece8a',
+          confirmButtonColor: '#0a500f',
         });
       } else {
         response = await WalletService.createPointsEntry(payload);
@@ -1138,7 +1138,7 @@ const WalletPointsEntry = () => {
               <p style="margin-bottom: 0;"><strong>New Balance:</strong> <strong>${parseFloat(response?.current_balance || balanceAfter).toFixed(2)}</strong></p>
             </div>
           `,
-          confirmButtonColor: '#2ece8a',
+          confirmButtonColor: '#0a500f',
           confirmButtonText: 'Done',
         });
       }
@@ -1166,7 +1166,7 @@ const WalletPointsEntry = () => {
         icon: 'error',
         title: 'Transaction Failed',
         html: errorMsg,
-        confirmButtonColor: '#2ece8a',
+        confirmButtonColor: '#0a500f',
       });
     } finally {
       setSubmitting(false);
@@ -1280,9 +1280,9 @@ const WalletPointsEntry = () => {
       ...base,
       height: '38px',
       minHeight: '38px',
-      borderColor: hasError ? '#dc3545' : state.isFocused ? '#2ece8a' : '#cbd5e1',
-      boxShadow: state.isFocused ? '0 0 0 2px rgba(46, 206, 138, 0.2)' : 'none',
-      '&:hover': { borderColor: '#2ece8a' },
+      borderColor: hasError ? '#dc3545' : state.isFocused ? '#0a500f' : '#cbd5e1',
+      boxShadow: state.isFocused ? '0 0 0 2px rgba(10, 80, 15, 0.2)' : 'none',
+      '&:hover': { borderColor: '#0a500f' },
       borderRadius: '8px',
       fontSize: '13px',
       backgroundColor: '#ffffff',
@@ -1308,7 +1308,7 @@ const WalletPointsEntry = () => {
     }),
     option: (base, state) => ({
       ...base,
-      backgroundColor: state.isSelected ? '#2ece8a' : state.isFocused ? '#eefdf6' : 'white',
+      backgroundColor: state.isSelected ? '#0a500f' : state.isFocused ? '#eefdf6' : 'white',
       color: state.isDisabled ? '#94a3b8' : state.isSelected ? '#ffffff' : '#334155',
       cursor: state.isDisabled ? 'not-allowed' : 'pointer',
       padding: '8px 14px',
@@ -1406,12 +1406,12 @@ const WalletPointsEntry = () => {
         .item-custom-modal .modal-icon-circle {
           width: 44px;
           height: 44px;
-          background-color: #2ece8a;
+          background-color: #0a500f;
           border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
-          box-shadow: 0 4px 10px rgba(46, 206, 138, 0.2);
+          box-shadow: 0 4px 10px rgba(10, 80, 15, 0.2);
           color: white;
           font-size: 18px;
         }
@@ -1463,11 +1463,11 @@ const WalletPointsEntry = () => {
         }
         .item-custom-modal .form-control-custom:focus {
           outline: none;
-          border-color: #2ece8a;
-          box-shadow: 0 0 0 3px rgba(46, 206, 138, 0.15);
+          border-color: #0a500f;
+          box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
         }
         .item-custom-modal .btn-close-custom {
-          background-color: #7A70BA !important;
+          background-color: #dc3545 !important;
           color: white !important;
           border-radius: 8px !important;
           font-weight: 500 !important;
@@ -1478,10 +1478,10 @@ const WalletPointsEntry = () => {
           transition: background-color 0.2s;
         }
         .item-custom-modal .btn-close-custom:hover {
-          background-color: #6357a7 !important;
+          background-color: #bb2d3b !important;
         }
         .item-custom-modal .btn-save-custom {
-          background-color: #2ece8a !important;
+          background-color: #0a500f !important;
           color: white !important;
           border-radius: 8px !important;
           font-weight: 500 !important;
@@ -1492,7 +1492,7 @@ const WalletPointsEntry = () => {
           transition: background-color 0.2s;
         }
         .item-custom-modal .btn-save-custom:hover {
-          background-color: #26b277 !important;
+          background-color: #073d0b !important;
         }
 
         /* Segmented buttons for Addition / Deduction */
@@ -1523,9 +1523,9 @@ const WalletPointsEntry = () => {
           transition: all 0.2s ease;
         }
         .points-segmented-btn.active.addition {
-          background: #2ece8a;
+          background: #0a500f;
           color: #ffffff;
-          box-shadow: 0 2px 6px rgba(46, 206, 138, 0.35);
+          box-shadow: 0 2px 6px rgba(10, 80, 15, 0.35);
         }
         .points-segmented-btn.active.deduction {
           background: #ef4444;
@@ -1591,12 +1591,12 @@ const WalletPointsEntry = () => {
         .wallet-scheme-modal .modal-icon-circle {
           width: 42px;
           height: 42px;
-          background-color: #2ece8a;
+          background-color: #0a500f;
           border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
-          box-shadow: 0 4px 10px rgba(46, 206, 138, 0.2);
+          box-shadow: 0 4px 10px rgba(10, 80, 15, 0.2);
           flex-shrink: 0;
         }
         .wallet-scheme-modal .modal-close-x {
@@ -1644,16 +1644,16 @@ const WalletPointsEntry = () => {
         }
         .wallet-scheme-modal .scheme-custom-tabs .nav-link:hover {
           text-decoration: none !important;
-          color: #2ece8a;
+          color: #0a500f;
           border-bottom-color: #cbd5e1 !important;
         }
         .wallet-scheme-modal .scheme-custom-tabs .nav-link.active {
           text-decoration: none !important;
-          color: #2ece8a !important;
+          color: #0a500f !important;
           font-weight: 600;
           background-color: transparent !important;
           border: none !important;
-          border-bottom: 2px solid #2ece8a !important;
+          border-bottom: 2px solid #0a500f !important;
         }
         .wallet-scheme-modal .scheme-tab-content {
           flex: 1 1 auto !important;
@@ -1791,7 +1791,7 @@ const WalletPointsEntry = () => {
                                   {item.entry_type === 'Addition' ? '+ Addition' : '− Deduction'}
                                 </span>
                               </td>
-                              <td className="text-end font-w600" style={{ color: item.entry_type === 'Addition' ? '#2ece8a' : '#ef4444' }}>
+                              <td className="text-end font-w600" style={{ color: item.entry_type === 'Addition' ? '#0a500f' : '#ef4444' }}>
                                 {item.entry_type === 'Addition' ? `+${parseFloat(item.points || 0).toFixed(2)}` : `-${parseFloat(item.points || 0).toFixed(2)}`}
                               </td>
                               <td className="text-end">
@@ -2471,7 +2471,7 @@ const WalletPointsEntry = () => {
                     </div>
                     <div
                       className="balance-card-value"
-                      style={{ color: entryType === 'Addition' ? '#2ece8a' : '#ef4444' }}
+                      style={{ color: entryType === 'Addition' ? '#0a500f' : '#ef4444' }}
                     >
                       {entryType === 'Addition' ? `+${numericPoints.toFixed(2)}` : `−${numericPoints.toFixed(2)}`}
                     </div>
@@ -2573,7 +2573,7 @@ const WalletPointsEntry = () => {
       >
         <div className="modal-header-custom">
           <div className="d-flex align-items-center gap-3">
-            <div className="modal-icon-circle" style={{ backgroundColor: '#2ece8a' }}>
+            <div className="modal-icon-circle" style={{ backgroundColor: '#0a500f' }}>
               <i className="fa fa-list-check text-white" style={{ fontSize: '18px' }}></i>
             </div>
             <div>

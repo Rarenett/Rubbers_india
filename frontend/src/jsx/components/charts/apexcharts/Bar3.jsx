@@ -51,7 +51,7 @@ class ApexBar3 extends React.Component {
             strokeWidth: 0,
             radius: 19,
             strokeColor: "#fff",
-            fillColors: ["#43DC80", "#D45BFF"],
+            fillColors: ["#0a500f", "#D45BFF"],
             offsetX: 0,
             offsetY: 0,
           },
@@ -75,7 +75,7 @@ class ApexBar3 extends React.Component {
           categories: ["06", "07", "08", "09", "10", "11","12"],
         },
         fill: {
-          colors: ["#43DC80", "#D45BFF"],
+          colors: ["#0a500f", "#D45BFF"],
           opacity: 1,
         },
         tooltip: {

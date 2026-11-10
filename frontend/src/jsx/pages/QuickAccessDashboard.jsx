@@ -783,8 +783,8 @@ const QuickAccessDashboard = ({ allroutes }) => {
                                         onClick={() => setShowCustomizeModal(true)}
                                         className="btn btn-primary d-flex align-items-center gap-2"
                                         style={{ 
-                                            backgroundColor: 'rgb(61, 53, 119)', 
-                                            borderColor: 'rgb(61, 53, 119)', 
+                                            backgroundColor: '#0a500f', 
+                                            borderColor: '#0a500f', 
                                             color: '#ffffff',
                                             height: '34px',
                                             padding: '0 14px',
@@ -882,8 +882,8 @@ const QuickAccessDashboard = ({ allroutes }) => {
                                     onClick={() => setShowCustomizeModal(true)}
                                     className="btn btn-primary d-inline-flex align-items-center gap-2"
                                     style={{ 
-                                        backgroundColor: 'rgb(61, 53, 119)', 
-                                        borderColor: 'rgb(61, 53, 119)', 
+                                        backgroundColor: '#0a500f', 
+                                        borderColor: '#0a500f', 
                                         color: '#ffffff',
                                         height: '34px',
                                         padding: '0 16px',
@@ -1161,7 +1161,7 @@ const QuickAccessDashboard = ({ allroutes }) => {
                                     width: '46px', 
                                     height: '46px', 
                                     borderRadius: '12px',
-                                    background: 'var(--form-icon-color, var(--cc-primary, var(--primary, #2bc155)))',
+                                    background: 'var(--form-icon-color, var(--cc-primary, var(--primary, #0a500f)))',
                                     display: 'flex', 
                                     alignItems: 'center', 
                                     justifyContent: 'center',

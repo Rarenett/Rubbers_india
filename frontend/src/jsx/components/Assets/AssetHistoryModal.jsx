@@ -53,7 +53,7 @@ const AssetHistoryModal = ({
             border-radius: 0 0 16px 16px;
         }
         .scfm-modal .btn-close-custom {
-            background-color: #dc3545 !important;
+            background-color: var(--cancel-btn-color, #dc3545) !important;
             color: white !important;
             border-radius: 8px !important;
             font-weight: 500 !important;
@@ -63,7 +63,7 @@ const AssetHistoryModal = ({
             cursor: pointer;
             transition: background-color 0.2s;
         }
-        .scfm-modal .btn-close-custom:hover { background-color: #bb2d3b !important; }
+        .scfm-modal .btn-close-custom:hover, .btn-close-custom:active, .btn-close-custom:focus { background-color: var(--cancel-btn-color, #dc3545) !important; border-color: var(--cancel-btn-color, #dc3545) !important; opacity: 1 !important; box-shadow: none !important; }
     `;
 
     const Icons = {

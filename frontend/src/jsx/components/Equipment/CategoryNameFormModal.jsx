@@ -76,7 +76,7 @@ const CategoryNameFormModal = ({ show, onHide, onSaved }) => {
             <style>{`
                 .cnfm-modal .modal-content { border-radius: 16px !important; border: none !important; box-shadow: 0 10px 40px rgba(0,0,0,0.12) !important; overflow: hidden; }
                 .cnfm-modal .modal-header-custom { display: flex; align-items: center; justify-content: space-between; padding: 24px 28px 16px 28px; border-bottom: 1px solid #f1f5f9; }
-                .cnfm-modal .modal-icon-circle { width: 48px; height: 48px; background-color: #0a500f; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(10, 80, 15,0.2); }
+                .cnfm-modal .modal-icon-circle { width: 48px; height: 48px; background-color: var(--form-icon-color, #0a500f); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(10, 80, 15,0.2); }
                 .cnfm-modal .modal-close-x { border: none; background: transparent; font-size: 24px; color: #aaa; cursor: pointer; transition: color 0.2s; display: flex; align-items: center; justify-content: center; padding: 4px; }
                 .cnfm-modal .modal-close-x:hover { color: #555; }
                 .cnfm-modal .modal-body-custom { padding: 24px 28px; }
@@ -84,10 +84,10 @@ const CategoryNameFormModal = ({ show, onHide, onSaved }) => {
                 .cnfm-modal .form-label-custom { font-size: 14px; font-weight: 500; color: #4a5568; margin-bottom: 8px; }
                 .cnfm-modal .form-control-custom { border: 1px solid #cbd5e1; border-radius: 10px; padding: 12px 16px; font-size: 14px; color: #334155; background-color: #fff; transition: border-color 0.2s, box-shadow 0.2s; width: 100%; }
                 .cnfm-modal .form-control-custom:focus { outline: none; border-color: #0a500f; box-shadow: 0 0 0 3px rgba(10, 80, 15,0.15); }
-                .cnfm-modal .btn-close-custom { background-color: #dc3545 !important; color: white !important; border-radius: 8px !important; font-weight: 500 !important; font-size: 14px !important; padding: 10px 24px !important; border: none !important; cursor: pointer; }
-                .cnfm-modal .btn-close-custom:hover { background-color: #bb2d3b !important; }
-                .cnfm-modal .btn-save-custom { background-color: #0a500f !important; color: white !important; border-radius: 8px !important; font-weight: 500 !important; font-size: 14px !important; padding: 10px 24px !important; border: none !important; cursor: pointer; }
-                .cnfm-modal .btn-save-custom:hover { background-color: #073d0b !important; }
+                .cnfm-modal .btn-close-custom { background-color: var(--cancel-btn-color, #dc3545) !important; color: white !important; border-radius: 8px !important; font-weight: 500 !important; font-size: 14px !important; padding: 10px 24px !important; border: none !important; cursor: pointer; }
+                .cnfm-modal .btn-close-custom:hover, .btn-close-custom:active, .btn-close-custom:focus { background-color: var(--cancel-btn-color, #dc3545) !important; border-color: var(--cancel-btn-color, #dc3545) !important; opacity: 1 !important; box-shadow: none !important; }
+                .cnfm-modal .btn-save-custom { background-color: var(--save-btn-color, #0a500f) !important; color: white !important; border-radius: 8px !important; font-weight: 500 !important; font-size: 14px !important; padding: 10px 24px !important; border: none !important; cursor: pointer; }
+                .cnfm-modal .btn-save-custom:hover, .btn-save-custom:active, .btn-save-custom:focus { background-color: var(--save-btn-color, #0a500f) !important; border-color: var(--save-btn-color, #0a500f) !important; opacity: 1 !important; box-shadow: none !important; }
                 .quick-add-btn {
                     display: inline-flex; align-items: center; justify-content: center;
                     width: 44px; height: 44px; border-radius: 8px;

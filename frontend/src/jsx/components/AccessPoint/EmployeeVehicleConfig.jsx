@@ -807,7 +807,7 @@ const EmployeeVehicleConfig = () => {
                                 <div>
                                     <div className="fw-bold" style={{ color: '#1e293b', fontSize: '0.95rem' }}>{targetEmployee.name}</div>
                                     <div className="text-muted" style={{ fontSize: '12px' }}>
-                                        ID: <span className="fw-semibold text-dark">{targetEmployee.employment_no || '—'}</span> &bull; Current: <strong style={{ color: '#0a500f' }}>{targetEmployee.preferred_vehicle?.vehicle_number || (targetEmployee.vehicles?.[0]?.vehicle_number || 'No Vehicle')}</strong>
+                                        ID: <span className="fw-semibold text-dark">{targetEmployee.employment_no || '—'}</span> &bull; Current: <strong style={{ color: "var(--cc-primary, #0a500f)" }}>{targetEmployee.preferred_vehicle?.vehicle_number || (targetEmployee.vehicles?.[0]?.vehicle_number || 'No Vehicle')}</strong>
                                     </div>
                                 </div>
                                 <div>
@@ -885,7 +885,7 @@ const EmployeeVehicleConfig = () => {
                                             <button
                                                 type="button"
                                                 className="btn btn-sm btn-link text-decoration-none fw-semibold"
-                                                style={{ color: '#0a500f' }}
+                                                style={{ color: "var(--cc-primary, #0a500f)" }}
                                                 onClick={() => setModalMode('new')}
                                             >
                                                 + Click here to register a new vehicle &rarr;

@@ -152,7 +152,7 @@ const LeaveRequestDetailModal = ({ show, onHide, request, onSuccess, onReview, o
                 .leave-custom-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #0a500f;
+                    background-color: var(--form-icon-color, #0a500f);
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
@@ -183,7 +183,7 @@ const LeaveRequestDetailModal = ({ show, onHide, request, onSuccess, onReview, o
                     gap: 12px;
                 }
                 .leave-custom-modal .btn-close-custom {
-                    background-color: #dc3545 !important;
+                    background-color: var(--cancel-btn-color, #dc3545) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -193,7 +193,7 @@ const LeaveRequestDetailModal = ({ show, onHide, request, onSuccess, onReview, o
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .leave-custom-modal .btn-close-custom:hover { background-color: #bb2d3b !important; }
+                .leave-custom-modal .btn-close-custom:hover, .btn-close-custom:active, .btn-close-custom:focus { background-color: var(--cancel-btn-color, #dc3545) !important; border-color: var(--cancel-btn-color, #dc3545) !important; opacity: 1 !important; box-shadow: none !important; }
                 .leave-custom-modal .btn-cancel-request-custom {
                     background-color: #fff !important;
                     color: #dc3545 !important;

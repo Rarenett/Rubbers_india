@@ -4096,7 +4096,7 @@ const CheckoutModal = ({
 
                 /* ── Theme Buttons ── */
                 .btn-close-custom {
-                    background-color: #dc3545 !important;
+                    background-color: var(--cancel-btn-color, #dc3545) !important;
                     border: none !important;
                     color: #ffffff !important;
                     font-weight: 500 !important;
@@ -4107,11 +4107,7 @@ const CheckoutModal = ({
                     transition: all 0.2s ease !important;
                     cursor: pointer !important;
                 }
-                .btn-close-custom:hover:not(:disabled) {
-                    background-color: #bb2d3b !important;
-                    color: #ffffff !important;
-                    transform: translateY(-1px) !important;
-                }
+                .btn-close-custom:hover, .btn-close-custom:active, .btn-close-custom:focus { background-color: var(--cancel-btn-color, #dc3545) !important; border-color: var(--cancel-btn-color, #dc3545) !important; opacity: 1 !important; box-shadow: none !important; }
                 .btn-close-custom:disabled {
                     opacity: 0.65 !important;
                     cursor: not-allowed !important;

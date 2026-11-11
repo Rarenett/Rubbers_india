@@ -383,7 +383,7 @@ const UpdateProgressModal = ({ show, onHide, assignment, editingEntry, formData,
                         <button
                             type="button"
                             className="btn-close-custom btn-cancel-custom"
-                            style={{ backgroundColor: '#dc3545', borderColor: '#dc3545', color: '#ffffff' }}
+                            style={{ backgroundColor: "var(--cancel-btn-color, #dc3545)", borderColor: "var(--cancel-btn-color, #dc3545)", color: "#ffffff" }}
                             onClick={onHide}
                         >
                             Cancel
@@ -425,7 +425,7 @@ const ViewDetailModal = ({ show, onHide, entry }) => {
             <div className="item-custom-modal" style={{ ...modalCardStyle, maxWidth: '560px', width: '100%', boxShadow: '0 20px 60px rgba(0, 0, 0, 0.28)' }}>
                 <div className="modal-header-custom">
                     <div className="d-flex align-items-center gap-3">
-                        <div className="modal-icon-circle" style={{ backgroundColor: '#0284c7', boxShadow: '0 4px 10px rgba(2, 132, 199, 0.25)' }}>
+                        <div className="modal-icon-circle">
                             <FileText size={20} color="#fff" />
                         </div>
                         <div>
@@ -547,7 +547,7 @@ const ViewDetailModal = ({ show, onHide, entry }) => {
                     <button
                         type="button"
                         className="btn-close-custom btn-cancel-custom"
-                        style={{ backgroundColor: '#dc3545', borderColor: '#dc3545', color: '#ffffff' }}
+                        style={{ backgroundColor: "var(--cancel-btn-color, #dc3545)", borderColor: "var(--cancel-btn-color, #dc3545)", color: "#ffffff" }}
                         onClick={onHide}
                     >
                         Close
@@ -734,7 +734,7 @@ const ProgressHistoryModal = ({ show, onHide, assignment, history, overview, loa
                 <div className="item-custom-modal" style={{ ...modalCardStyle, maxWidth: '96vw', width: '1150px' }}>
                     <div className="modal-header-custom" style={{ padding: '16px 24px' }}>
                         <div className="d-flex align-items-center gap-3">
-                            <div className="modal-icon-circle" style={{ backgroundColor: '#6366f1', boxShadow: '0 4px 10px rgba(99, 102, 241, 0.2)' }}>
+                            <div className="modal-icon-circle">
                                 <Clock size={20} color="#fff" />
                             </div>
                             <div>
@@ -1090,7 +1090,7 @@ const ProgressHistoryModal = ({ show, onHide, assignment, history, overview, loa
                         <button
                             type="button"
                             className="btn-close-custom btn-cancel-custom"
-                            style={{ backgroundColor: '#dc3545', borderColor: '#dc3545', color: '#ffffff' }}
+                            style={{ backgroundColor: "var(--cancel-btn-color, #dc3545)", borderColor: "var(--cancel-btn-color, #dc3545)", color: "#ffffff" }}
                             onClick={onHide}
                         >
                             Close
@@ -1736,7 +1736,7 @@ const TaskProgressUpdatePage = () => {
                 .item-custom-modal .modal-icon-circle {
                     width: 44px;
                     height: 44px;
-                    background-color: #0a500f;
+                    background-color: var(--form-icon-color, #0a500f);
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
@@ -1804,7 +1804,7 @@ const TaskProgressUpdatePage = () => {
                     border-color: #0a500f;
                 }
                 .item-custom-modal .btn-close-custom {
-                    background-color: #dc3545 !important;
+                    background-color: var(--cancel-btn-color, #dc3545) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -1817,11 +1817,9 @@ const TaskProgressUpdatePage = () => {
                     align-items: center;
                     justify-content: center;
                 }
-                .item-custom-modal .btn-close-custom:hover {
-                    background-color: #bb2d3b !important;
-                }
+                .item-custom-modal .btn-close-custom:hover, .btn-close-custom:active, .btn-close-custom:focus { background-color: var(--cancel-btn-color, #dc3545) !important; border-color: var(--cancel-btn-color, #dc3545) !important; opacity: 1 !important; box-shadow: none !important; }
                 .item-custom-modal .btn-save-custom {
-                    background-color: #0a500f !important;
+                    background-color: var(--save-btn-color, #0a500f) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -1834,9 +1832,7 @@ const TaskProgressUpdatePage = () => {
                     align-items: center;
                     justify-content: center;
                 }
-                .item-custom-modal .btn-save-custom:hover {
-                    background-color: #26b97b !important;
-                }
+                .item-custom-modal .btn-save-custom:hover, .btn-save-custom:active, .btn-save-custom:focus { background-color: var(--save-btn-color, #0a500f) !important; border-color: var(--save-btn-color, #0a500f) !important; opacity: 1 !important; box-shadow: none !important; }
                 .item-custom-modal .btn-save-custom:disabled {
                     opacity: 0.6;
                     cursor: not-allowed;

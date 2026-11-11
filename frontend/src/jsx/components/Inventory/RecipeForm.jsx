@@ -674,7 +674,7 @@ const RecipeForm = ({ stockItem, onCancel, mode, onSaveSuccess }) => {
                                         </div>
                                         <div className="d-flex gap-2">
                                             {editRecipeId && (
-                                                <button type="button" className="btn btn-outline-custom" style={{ backgroundColor: 'white', color: '#7E69B7', border: '1px solid #7E69B7', borderRadius: '8px', padding: '8px 20px', fontWeight: 500 }} onClick={() => {
+                                                <button type="button" className="btn btn-outline-custom" style={{ backgroundColor: "white", color: "var(--cancel-btn-color, #dc3545)", border: "1px solid var(--cancel-btn-color, #dc3545)", borderRadius: '8px', padding: '8px 20px', fontWeight: 500 }} onClick={() => {
                                                     setEditRecipeId(null);
                                                     setFormData({
                                                         recipe_name: '',
@@ -687,7 +687,7 @@ const RecipeForm = ({ stockItem, onCancel, mode, onSaveSuccess }) => {
                                                 </button>
                                             )}
                                             {isDuplicating && (
-                                                <button type="button" className="btn btn-outline-custom" style={{ backgroundColor: 'white', color: '#7E69B7', border: '1px solid #7E69B7', borderRadius: '8px', padding: '8px 20px', fontWeight: 500 }} onClick={() => {
+                                                <button type="button" className="btn btn-outline-custom" style={{ backgroundColor: "white", color: "var(--cancel-btn-color, #dc3545)", border: "1px solid var(--cancel-btn-color, #dc3545)", borderRadius: '8px', padding: '8px 20px', fontWeight: 500 }} onClick={() => {
                                                     setIsDuplicating(false);
                                                     setSelectedStockItemId('');
                                                     setFormData({
@@ -725,38 +725,33 @@ const RecipeForm = ({ stockItem, onCancel, mode, onSaveSuccess }) => {
 const styles = `
     .item-custom-modal .btn-outline-custom {
         background-color: white !important;
-        border: 1px solid #7E69B7 !important;
-        color: #7E69B7 !important;
+        border: 1px solid var(--cancel-btn-color, #dc3545) !important; color: var(--cancel-btn-color, #dc3545) !important;
         border-radius: 8px !important;
         padding: 8px 20px !important;
         font-weight: 500;
     }
     .item-custom-modal .btn-outline-custom:hover {
-        background-color: #7E69B7 !important;
+        background-color: var(--cancel-btn-color, #dc3545) !important;
         color: white !important;
     }
     .item-custom-modal .btn-close-custom {
-        background-color: #7E69B7 !important;
+        background-color: var(--cancel-btn-color, #dc3545) !important;
         color: white !important;
         border: none !important;
         border-radius: 8px !important;
         padding: 8px 20px !important;
         font-weight: 500;
     }
-    .item-custom-modal .btn-close-custom:hover {
-        background-color: #bb2d3b !important;
-    }
+    .item-custom-modal .btn-close-custom:hover, .btn-close-custom:active, .btn-close-custom:focus { background-color: var(--cancel-btn-color, #dc3545) !important; border-color: var(--cancel-btn-color, #dc3545) !important; opacity: 1 !important; box-shadow: none !important; }
     .item-custom-modal .btn-save-custom {
-        background-color: #45D08B !important;
+        background-color: var(--save-btn-color, #0a500f) !important;
         color: white !important;
         border: none !important;
         border-radius: 8px !important;
         padding: 8px 20px !important;
         font-weight: 500;
     }
-    .item-custom-modal .btn-save-custom:hover:not(:disabled) {
-        background-color: #073d0b !important;
-    }
+    .item-custom-modal .btn-save-custom:hover, .btn-save-custom:active, .btn-save-custom:focus { background-color: var(--save-btn-color, #0a500f) !important; border-color: var(--save-btn-color, #0a500f) !important; opacity: 1 !important; box-shadow: none !important; }
     .item-custom-modal .btn-save-custom:disabled {
         opacity: 0.7;
         cursor: not-allowed;

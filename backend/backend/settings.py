@@ -145,7 +145,7 @@ DATABASES = {
             'NAME': 'db_rubbersindia',
             'USER':'remote_user',        
             'PASSWORD':'12345',
-            'HOST': '192.168.1.45',  # server PC IP
+            'HOST': '192.168.1.44',  # server PC IP
 
         }
 
@@ -219,6 +219,13 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 CORS_ALLOW_CREDENTIALS = True
+
+from corsheaders.defaults import default_headers
+CORS_ALLOW_HEADERS = list(default_headers) + [
+    'cache-control',
+    'pragma',
+    'expires',
+]
 
 # REST Framework Settings
 REST_FRAMEWORK = {

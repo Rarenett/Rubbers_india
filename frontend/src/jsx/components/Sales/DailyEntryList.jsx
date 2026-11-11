@@ -235,7 +235,7 @@ const DetailModal = ({ entry, show, onHide }) => {
                     className="btn-cancel-custom" 
                     size="sm" 
                     onClick={onHide} 
-                    style={{ backgroundColor: '#dc3545', borderColor: '#dc3545', color: '#ffffff', borderRadius: 8 }}
+                    style={{ backgroundColor: "var(--cancel-btn-color, #dc3545)", borderColor: "var(--cancel-btn-color, #dc3545)", color: "#ffffff", borderRadius: 8 }}
                 >
                     Close
                 </Button>

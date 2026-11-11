@@ -652,7 +652,7 @@ const LeadList = () => {
                                         variant="primary"
                                         onClick={() => navigate('/crm_new/leads/create')}
                                         className="d-flex align-items-center justify-content-center lead-add-btn"
-                                        style={{ height: '38px', borderRadius: '6px', whiteSpace: 'nowrap', padding: '0 16px', backgroundColor: '#0a500f', borderColor: '#0a500f', color: 'white' }}
+                                        style={{ height: "38px", borderRadius: "6px", whiteSpace: "nowrap", padding: "0 16px", backgroundColor: "var(--cc-primary, #0a500f)", borderColor: "var(--cc-primary, #0a500f)", color: "white" }}
                                     >
                                         <i className="fa fa-plus me-2"></i>
                                         ADD LEAD

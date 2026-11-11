@@ -925,7 +925,7 @@ const EmployeeReportModal = ({ show, onHide, candidateId, employeeId, employeeNa
                 .emp-custom-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #0a500f;
+                    background-color: var(--form-icon-color, #0a500f);
                     border-radius: 50%;
                     display: flex;
                     align-items: center;

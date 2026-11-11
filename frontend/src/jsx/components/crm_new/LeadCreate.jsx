@@ -896,7 +896,7 @@ const LeadCreate = () => {
 
                 /* Action buttons */
                 .btn-close-custom {
-                    background-color: #dc3545 !important;
+                    background-color: var(--cancel-btn-color, #dc3545) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -906,11 +906,9 @@ const LeadCreate = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .btn-close-custom:hover {
-                    background-color: #bb2d3b !important;
-                }
+                .btn-close-custom:hover, .btn-close-custom:active, .btn-close-custom:focus { background-color: var(--cancel-btn-color, #dc3545) !important; border-color: var(--cancel-btn-color, #dc3545) !important; opacity: 1 !important; box-shadow: none !important; }
                 .btn-save-custom {
-                    background-color: #0a500f !important;
+                    background-color: var(--save-btn-color, #0a500f) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -920,9 +918,7 @@ const LeadCreate = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .btn-save-custom:hover {
-                    background-color: #26b579 !important;
-                }
+                .btn-save-custom:hover, .btn-save-custom:active, .btn-save-custom:focus { background-color: var(--save-btn-color, #0a500f) !important; border-color: var(--save-btn-color, #0a500f) !important; opacity: 1 !important; box-shadow: none !important; }
                 .btn-save-next-custom {
                     background-color: #0284c7 !important;
                     color: white !important;

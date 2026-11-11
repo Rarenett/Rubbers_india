@@ -220,7 +220,7 @@ const CrmPurposeModal = ({ show, onHide }) => {
                 .purpose-custom-modal .modal-icon-circle {
                     width: 42px;
                     height: 42px;
-                    background-color: #0a500f;
+                    background-color: var(--form-icon-color, #0a500f);
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
@@ -266,7 +266,7 @@ const CrmPurposeModal = ({ show, onHide }) => {
                     box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
                 }
                 .purpose-custom-modal .btn-save-custom {
-                    background-color: #0a500f !important;
+                    background-color: var(--save-btn-color, #0a500f) !important;
                     color: #fff !important;
                     border-radius: 8px !important;
                     font-weight: 600 !important;
@@ -279,11 +279,9 @@ const CrmPurposeModal = ({ show, onHide }) => {
                     gap: 6px;
                     transition: background-color 0.2s;
                 }
-                .purpose-custom-modal .btn-save-custom:hover {
-                    background-color: #073d0b !important;
-                }
+                .purpose-custom-modal .btn-save-custom:hover, .btn-save-custom:active, .btn-save-custom:focus { background-color: var(--save-btn-color, #0a500f) !important; border-color: var(--save-btn-color, #0a500f) !important; opacity: 1 !important; box-shadow: none !important; }
                 .purpose-custom-modal .btn-cancel-custom {
-                    background-color: #dc3545 !important;
+                    background-color: var(--cancel-btn-color, #dc3545) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -293,9 +291,7 @@ const CrmPurposeModal = ({ show, onHide }) => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .purpose-custom-modal .btn-cancel-custom:hover {
-                    background-color: #bb2d3b !important;
-                }
+                .purpose-custom-modal .btn-cancel-custom:hover, .btn-cancel-custom:active, .btn-cancel-custom:focus { background-color: var(--cancel-btn-color, #dc3545) !important; border-color: var(--cancel-btn-color, #dc3545) !important; opacity: 1 !important; box-shadow: none !important; }
                 .purpose-custom-modal .purpose-table-wrapper {
                     max-height: 240px;
                     overflow-y: auto;

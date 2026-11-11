@@ -295,16 +295,19 @@ table tbody tr:hover,
   transition: all 0.2s ease !important;
   border: none !important;
 }
-.btn-universal-close:hover {
-  background-color: #bb2d3b !important;
-  border-color: #bb2d3b !important;
+.btn-universal-close:hover,
+.btn-universal-close:active,
+.btn-universal-close:focus {
+  background-color: var(--cancel-btn-color, #dc3545) !important;
+  border-color: var(--cancel-btn-color, #dc3545) !important;
   color: #fff !important;
-  opacity: 0.9;
+  opacity: 1 !important;
+  box-shadow: none !important;
 }
 
 .btn-universal-save {
-  background-color: #0a500f !important;
-  border-color: #0a500f !important;
+  background-color: var(--save-btn-color, #0a500f) !important;
+  border-color: var(--save-btn-color, #0a500f) !important;
   color: #fff !important;
   height: 42px !important;
   padding: 0 24px !important;
@@ -317,11 +320,14 @@ table tbody tr:hover,
   transition: all 0.2s ease !important;
   border: none !important;
 }
-.btn-universal-save:hover {
-  background-color: #22a844 !important;
-  border-color: #22a844 !important;
+.btn-universal-save:hover,
+.btn-universal-save:active,
+.btn-universal-save:focus {
+  background-color: var(--save-btn-color, #0a500f) !important;
+  border-color: var(--save-btn-color, #0a500f) !important;
   color: #fff !important;
-  opacity: 0.9;
+  opacity: 1 !important;
+  box-shadow: none !important;
 }
 
 /* =====================================================
@@ -937,7 +943,7 @@ input[type="datetime-local"]::-webkit-datetime-edit-year-field:focus {
 
 [data-theme-version="dark"] .nav-tabs .nav-link:hover,
 [data-theme-version="dark"] .nav-tabs .nav-link:focus {
-  color: #ffffff !important;
+  color: var(--cc-primary, #0a500f) !important;
   border-color: #3d464e #3d464e transparent !important;
   background-color: rgba(255, 255, 255, 0.02) !important;
 }
@@ -945,7 +951,7 @@ input[type="datetime-local"]::-webkit-datetime-edit-year-field:focus {
 [data-theme-version="dark"] .nav-tabs .nav-link.active,
 [data-theme-version="dark"] .nav-tabs .nav-item.show .nav-link {
   background-color: #24292D !important;
-  color: #0a500f !important;
+  color: var(--cc-primary, #0a500f) !important;
   border-color: #3d464e #3d464e #24292D !important;
   font-weight: 600;
 }
@@ -1128,7 +1134,7 @@ input[type="number"] {
 
 [data-theme-version="dark"] .nav-tabs .nav-link:hover,
 [data-theme-version="dark"] .nav-tabs .nav-link:focus {
-  color: #ffffff !important;
+  color: var(--cc-primary, #0a500f) !important;
   border-color: #3d464e #3d464e transparent !important;
   background-color: rgba(255, 255, 255, 0.02) !important;
 }
@@ -1136,7 +1142,7 @@ input[type="number"] {
 [data-theme-version="dark"] .nav-tabs .nav-link.active,
 [data-theme-version="dark"] .nav-tabs .nav-item.show .nav-link {
   background-color: #24292D !important;
-  color: #0a500f !important;
+  color: var(--cc-primary, #0a500f) !important;
   border-color: #3d464e #3d464e #24292D !important;
   font-weight: 600;
 }
@@ -1339,8 +1345,8 @@ html {
 [data-primary] .btn-cancel-custom,
 [data-primary] .btn.btn-cancel-custom,
 .btn-universal-close {
-  background-color: #dc3545 !important;
-  border-color: #dc3545 !important;
+  background-color: var(--cancel-btn-color, #dc3545) !important;
+  border-color: var(--cancel-btn-color, #dc3545) !important;
   color: #ffffff !important;
   border: none !important;
   border-radius: 8px !important;
@@ -1356,20 +1362,35 @@ html {
 }
 
 .modal-footer .btn-danger.light:hover,
+.modal-footer .btn-danger.light:active,
+.modal-footer .btn-danger.light:focus,
 .modal-footer .btn.light.btn-danger:hover,
+.modal-footer .btn.light.btn-danger:active,
+.modal-footer .btn.light.btn-danger:focus,
 .modal-footer .btn-secondary:hover,
+.modal-footer .btn-secondary:active,
+.modal-footer .btn-secondary:focus,
 .modal-footer button.btn-danger.light:hover,
-.item-custom-modal .btn-close-custom:hover,
-.btn-close-custom:hover,
-.btn-cancel-custom:hover,
-.btn.btn-cancel-custom:hover,
-[data-primary] .btn-cancel-custom:hover,
-[data-primary] .btn.btn-cancel-custom:hover,
-.btn-universal-close:hover {
-  background-color: #bb2d3b !important;
-  border-color: #bb2d3b !important;
+.modal-footer button.btn-danger.light:active,
+.modal-footer button.btn-danger.light:focus,
+.item-custom-modal .btn-close-custom:hover, .btn-close-custom:active, .btn-close-custom:focus { background-color: var(--cancel-btn-color, #dc3545) !important; border-color: var(--cancel-btn-color, #dc3545) !important; opacity: 1 !important; box-shadow: none !important; }
+
+/* ---- UNIFIED SAVE BUTTON STYLES FOR MODALS & FORMS ---- */
+.btn-save-custom,
+.item-custom-modal .btn-save-custom,
+.gate-custom-modal .btn-save-custom,
+.pkg-custom-modal .btn-save-custom,
+.addr-custom-modal .btn-save-custom,
+.contact-custom-modal .btn-save-custom,
+.branch-custom-modal .btn-save-custom,
+.factory-custom-modal .btn-save-custom,
+.warehouse-custom-modal .btn-save-custom {
+  background-color: var(--save-btn-color, #0a500f) !important;
+  border-color: var(--save-btn-color, #0a500f) !important;
   color: #ffffff !important;
 }
+
+.btn-save-custom:hover, .btn-save-custom:active, .btn-save-custom:focus { background-color: var(--save-btn-color, #0a500f) !important; border-color: var(--save-btn-color, #0a500f) !important; opacity: 1 !important; box-shadow: none !important; }
 
 /* ---- SWEETALERT2 NOTIFICATION THEME OVERRIDES (#0a500f) ---- */
 .swal2-styled.swal2-confirm {
@@ -1471,3 +1492,413 @@ html {
 
 
 
+
+
+/* ==========================================================================
+   DYNAMIC EDIT & DELETE ACTION BUTTON STYLING
+   Edit Button: dynamically reflects Primary Color var(--cc-primary, #0a500f)
+   Delete Button: dynamically reflects Cancel Button Color var(--cancel-btn-color, #dc3545)
+   ========================================================================== */
+
+/* --- EDIT BUTTONS --- */
+.btn-edit-action,
+button.btn-edit-action,
+.btn.btn-edit-action,
+.btn-outline-primary.btn-edit-action,
+.btn-primary.btn-edit-action,
+.btn-outline-primary.btn-xs.sharp,
+.btn-outline-primary.sharp,
+.btn-primary.btn-xxs.sharp,
+.btn-primary.btn-xs.sharp {
+  color: var(--cc-primary, #0a500f) !important;
+  border-color: var(--cc-primary, #0a500f) !important;
+  background-color: transparent !important;
+}
+
+.btn-edit-action i,
+.btn-edit-action svg,
+.btn-outline-primary.btn-xs.sharp i,
+.btn-outline-primary.sharp i,
+.btn-primary.btn-xxs.sharp i,
+.btn-primary.btn-xs.sharp i {
+  color: var(--cc-primary, #0a500f) !important;
+}
+
+/* Hover, active, focus states for Edit buttons */
+.btn-edit-action:hover,
+.btn-edit-action:active,
+.btn-edit-action:focus,
+button.btn-edit-action:hover,
+button.btn-edit-action:active,
+button.btn-edit-action:focus,
+.btn.btn-edit-action:hover,
+.btn.btn-edit-action:active,
+.btn.btn-edit-action:focus,
+.btn-outline-primary.btn-edit-action:hover,
+.btn-outline-primary.btn-edit-action:active,
+.btn-outline-primary.btn-edit-action:focus,
+.btn-primary.btn-edit-action:hover,
+.btn-primary.btn-edit-action:active,
+.btn-primary.btn-edit-action:focus,
+.btn-outline-primary.btn-xs.sharp:hover,
+.btn-outline-primary.btn-xs.sharp:active,
+.btn-outline-primary.btn-xs.sharp:focus,
+.btn-outline-primary.sharp:hover,
+.btn-outline-primary.sharp:active,
+.btn-outline-primary.sharp:focus,
+.btn-primary.btn-xxs.sharp:hover,
+.btn-primary.btn-xxs.sharp:active,
+.btn-primary.btn-xxs.sharp:focus,
+.btn-primary.btn-xs.sharp:hover,
+.btn-primary.btn-xs.sharp:active,
+.btn-primary.btn-xs.sharp:focus {
+  background-color: var(--cc-primary, #0a500f) !important;
+  border-color: var(--cc-primary, #0a500f) !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
+  box-shadow: none !important;
+}
+
+.btn-edit-action:hover i,
+.btn-edit-action:hover svg,
+.btn-edit-action:active i,
+.btn-edit-action:active svg,
+.btn-edit-action:focus i,
+.btn-edit-action:focus svg,
+.btn-outline-primary.btn-xs.sharp:hover i,
+.btn-outline-primary.sharp:hover i,
+.btn-primary.btn-xxs.sharp:hover i,
+.btn-primary.btn-xs.sharp:hover i {
+  color: #ffffff !important;
+}
+
+/* Filled edit buttons if variant="primary" */
+.btn-primary.btn-edit-action:not(:hover):not(:active):not(:focus) {
+  background-color: var(--cc-primary, #0a500f) !important;
+  border-color: var(--cc-primary, #0a500f) !important;
+  color: #ffffff !important;
+}
+.btn-primary.btn-edit-action:not(:hover):not(:active):not(:focus) i {
+  color: #ffffff !important;
+}
+
+/* --- DELETE BUTTONS --- */
+.btn-delete-action,
+button.btn-delete-action,
+.btn.btn-delete-action,
+.btn-outline-danger.btn-delete-action,
+.btn-danger.btn-delete-action,
+.btn-outline-danger.btn-xs.sharp,
+.btn-outline-danger.sharp,
+.btn-danger.btn-xxs.sharp,
+.btn-danger.btn-xs.sharp {
+  color: var(--cancel-btn-color, #dc3545) !important;
+  border-color: var(--cancel-btn-color, #dc3545) !important;
+  background-color: transparent !important;
+}
+
+.btn-delete-action i,
+.btn-delete-action svg,
+.btn-outline-danger.btn-xs.sharp i,
+.btn-outline-danger.sharp i,
+.btn-danger.btn-xxs.sharp i,
+.btn-danger.btn-xs.sharp i {
+  color: var(--cancel-btn-color, #dc3545) !important;
+}
+
+/* Hover, active, focus states for Delete buttons */
+.btn-delete-action:hover,
+.btn-delete-action:active,
+.btn-delete-action:focus,
+button.btn-delete-action:hover,
+button.btn-delete-action:active,
+button.btn-delete-action:focus,
+.btn.btn-delete-action:hover,
+.btn.btn-delete-action:active,
+.btn.btn-delete-action:focus,
+.btn-outline-danger.btn-delete-action:hover,
+.btn-outline-danger.btn-delete-action:active,
+.btn-outline-danger.btn-delete-action:focus,
+.btn-danger.btn-delete-action:hover,
+.btn-danger.btn-delete-action:active,
+.btn-danger.btn-delete-action:focus,
+.btn-outline-danger.btn-xs.sharp:hover,
+.btn-outline-danger.btn-xs.sharp:active,
+.btn-outline-danger.btn-xs.sharp:focus,
+.btn-outline-danger.sharp:hover,
+.btn-outline-danger.sharp:active,
+.btn-outline-danger.sharp:focus,
+.btn-danger.btn-xxs.sharp:hover,
+.btn-danger.btn-xxs.sharp:active,
+.btn-danger.btn-xxs.sharp:focus,
+.btn-danger.btn-xs.sharp:hover,
+.btn-danger.btn-xs.sharp:active,
+.btn-danger.btn-xs.sharp:focus {
+  background-color: var(--cancel-btn-color, #dc3545) !important;
+  border-color: var(--cancel-btn-color, #dc3545) !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
+  box-shadow: none !important;
+}
+
+.btn-delete-action:hover i,
+.btn-delete-action:hover svg,
+.btn-delete-action:active i,
+.btn-delete-action:active svg,
+.btn-delete-action:focus i,
+.btn-delete-action:focus svg,
+.btn-outline-danger.btn-xs.sharp:hover i,
+.btn-outline-danger.sharp:hover i,
+.btn-danger.btn-xxs.sharp:hover i,
+.btn-danger.btn-xs.sharp:hover i {
+  color: #ffffff !important;
+}
+
+/* Filled delete buttons if variant="danger" */
+.btn-danger.btn-delete-action:not(:hover):not(:active):not(:focus),
+button.btn-danger:not(.light):not(:hover):not(:active):not(:focus) {
+  background-color: var(--cancel-btn-color, #dc3545);
+  border-color: var(--cancel-btn-color, #dc3545);
+  color: #ffffff;
+}
+
+
+/* ==========================================================================
+   DYNAMIC PRIMARY COLOR FOR ALL TABS & PRIMARY BUTTONS
+   ========================================================================== */
+
+/* Universal primary button (.btn-primary) styling */
+.btn-primary,
+button.btn-primary,
+[data-primary] .btn-primary,
+[data-primary="color_custom"] .btn-primary,
+[data-primary="color_1"] .btn-primary,
+[data-primary="color_2"] .btn-primary,
+[data-primary="color_3"] .btn-primary,
+[data-primary="color_4"] .btn-primary,
+[data-primary="color_5"] .btn-primary,
+[data-primary="color_6"] .btn-primary,
+[data-primary="color_7"] .btn-primary,
+[data-primary="color_8"] .btn-primary {
+  background-color: var(--cc-primary, #0a500f) !important;
+  border-color: var(--cc-primary, #0a500f) !important;
+  color: #ffffff !important;
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus,
+button.btn-primary:hover,
+button.btn-primary:active,
+button.btn-primary:focus,
+[data-primary] .btn-primary:hover,
+[data-primary] .btn-primary:active,
+[data-primary] .btn-primary:focus,
+[data-primary="color_custom"] .btn-primary:hover,
+[data-primary="color_custom"] .btn-primary:active,
+[data-primary="color_custom"] .btn-primary:focus {
+  background-color: var(--cc-primary, #0a500f) !important;
+  border-color: var(--cc-primary, #0a500f) !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
+  box-shadow: none !important;
+}
+
+/* Outline primary button (.btn-outline-primary) styling */
+.btn-outline-primary,
+button.btn-outline-primary,
+[data-primary] .btn-outline-primary,
+[data-primary="color_custom"] .btn-outline-primary {
+  color: var(--cc-primary, #0a500f) !important;
+  border-color: var(--cc-primary, #0a500f) !important;
+  background-color: transparent !important;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:active,
+.btn-outline-primary:focus,
+button.btn-outline-primary:hover,
+button.btn-outline-primary:active,
+button.btn-outline-primary:focus,
+[data-primary] .btn-outline-primary:hover,
+[data-primary] .btn-outline-primary:active,
+[data-primary] .btn-outline-primary:focus,
+[data-primary="color_custom"] .btn-outline-primary:hover,
+[data-primary="color_custom"] .btn-outline-primary:active,
+[data-primary="color_custom"] .btn-outline-primary:focus {
+  background-color: var(--cc-primary, #0a500f) !important;
+  border-color: var(--cc-primary, #0a500f) !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
+  box-shadow: none !important;
+}
+
+/* Universal Tab Active & Focus styling across ERP */
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link,
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link,
+.default-tab .nav-link.active,
+.custom-tab-1 .nav-link.active,
+.card-tabs .nav-tabs .nav-link.active,
+.table-tabs .nav-tabs .nav-link.active,
+.manage-company-tabs.nav-tabs .nav-link.active,
+.manage-company-tabs.nav-tabs .nav-item.show .nav-link {
+  color: var(--cc-primary, #0a500f) !important;
+  border-color: var(--cc-primary, #0a500f) !important;
+}
+
+.nav-tabs .nav-link:hover,
+.nav-pills .nav-link:hover,
+.default-tab .nav-link:hover,
+.custom-tab-1 .nav-link:hover,
+.manage-company-tabs.nav-tabs .nav-link:hover {
+  color: var(--cc-primary, #0a500f) !important;
+}
+
+.nav-pills:not(.light) .nav-link.active,
+.nav-pills:not(.light) .show > .nav-link {
+  background-color: var(--cc-primary, #0a500f) !important;
+  color: #ffffff !important;
+}
+
+.custom-tab-1 .nav-link.active,
+.manage-company-tabs.nav-tabs .nav-link.active,
+.manage-company-tabs.nav-tabs .nav-item.show .nav-link {
+  border-bottom: 3px solid var(--cc-primary, #0a500f) !important;
+}
+
+/* ==========================================================================
+   UNIVERSAL PAGINATION ACTIVE & HOVER DYNAMIC PRIMARY COLOR
+   Eliminates legacy color flipping (e.g. purple / hardcoded green)
+   ========================================================================== */
+.pagination .page-item.active .page-link,
+.pagination .page-item.active button.page-link,
+.pagination-primary .page-item.active .page-link,
+.pagination-primary .page-item.active button.page-link,
+[data-primary] .pagination .page-item.active .page-link,
+[data-primary] .pagination-primary .page-item.active .page-link,
+[data-primary] .pagination.no-bg.pagination-primary .page-item.active .page-link,
+[data-theme-version="dark"] [data-primary] .pagination .page-item.active .page-link,
+[data-theme-version="dark"] [data-primary] .pagination-primary .page-item.active .page-link {
+  background-color: var(--cc-primary, #0a500f) !important;
+  border-color: var(--cc-primary, #0a500f) !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}
+
+.pagination .page-item:not(.disabled):not(.page-indicator):hover .page-link,
+.pagination .page-item:not(.disabled):not(.page-indicator) button.page-link:hover,
+.pagination .page-item:not(.disabled):not(.page-indicator):active .page-link,
+.pagination .page-item:not(.disabled):not(.page-indicator) button.page-link:active,
+.pagination .page-item:not(.disabled):not(.page-indicator):focus .page-link,
+.pagination .page-item:not(.disabled):not(.page-indicator) button.page-link:focus,
+.pagination-primary .page-item:not(.disabled):not(.page-indicator):hover .page-link,
+.pagination-primary .page-item:not(.disabled):not(.page-indicator) button.page-link:hover,
+.pagination-primary .page-item:not(.disabled):not(.page-indicator):active .page-link,
+.pagination-primary .page-item:not(.disabled):not(.page-indicator) button.page-link:active,
+.pagination-primary .page-item:not(.disabled):not(.page-indicator):focus .page-link,
+.pagination-primary .page-item:not(.disabled):not(.page-indicator) button.page-link:focus,
+.pagination.no-bg.pagination-primary li:not(.page-indicator):not(.active):hover .page-link,
+[data-primary] .pagination .page-item:not(.disabled):not(.page-indicator):hover .page-link,
+[data-primary] .pagination-primary .page-item:not(.disabled):not(.page-indicator):hover .page-link,
+[data-primary] .pagination.no-bg.pagination-primary li:not(.page-indicator):not(.active):hover .page-link,
+[data-theme-version="dark"] [data-primary] .pagination.no-bg.pagination-primary li:not(.page-indicator):not(.active):hover .page-link {
+  background-color: var(--cc-primary, #0a500f) !important;
+  border-color: var(--cc-primary, #0a500f) !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}
+
+/* ==========================================================================
+   UNIVERSAL SAVE / SUBMIT BUTTON OVERRIDES
+   Ensures ALL form/modal save and submit buttons strictly follow --save-btn-color
+   ========================================================================== */
+.btn-save-custom,
+.btn-universal-save,
+.btn-primary-custom,
+.pkg-submit-btn,
+.cp-btn-save,
+.sof-btn-save,
+.btn-generate-custom,
+.modal-footer button[type="submit"],
+.modal-footer .btn-primary:not(.btn-close-custom):not(.btn-cancel-custom):not(.btn-edit-action),
+.modal-footer-custom button[type="submit"],
+.modal-footer-custom .btn-primary:not(.btn-close-custom):not(.btn-cancel-custom):not(.btn-edit-action),
+form button[type="submit"]:not(.btn-secondary):not(.btn-danger):not(.btn-close-custom):not(.btn-cancel-custom),
+form input[type="submit"],
+form .btn-primary[type="submit"] {
+  background-color: var(--save-btn-color, #0a500f) !important;
+  border-color: var(--save-btn-color, #0a500f) !important;
+  color: #ffffff !important;
+}
+
+.btn-save-custom:hover,
+.btn-save-custom:active,
+.btn-save-custom:focus,
+.btn-universal-save:hover,
+.btn-universal-save:active,
+.btn-universal-save:focus,
+.btn-primary-custom:hover,
+.btn-primary-custom:active,
+.btn-primary-custom:focus,
+.pkg-submit-btn:hover,
+.pkg-submit-btn:active,
+.pkg-submit-btn:focus,
+.cp-btn-save:hover,
+.cp-btn-save:active,
+.cp-btn-save:focus,
+.sof-btn-save:hover,
+.sof-btn-save:active,
+.sof-btn-save:focus,
+.btn-generate-custom:hover,
+.btn-generate-custom:active,
+.btn-generate-custom:focus,
+.modal-footer button[type="submit"]:hover,
+.modal-footer button[type="submit"]:active,
+.modal-footer button[type="submit"]:focus,
+.modal-footer .btn-primary:not(.btn-close-custom):not(.btn-cancel-custom):not(.btn-edit-action):hover,
+.modal-footer .btn-primary:not(.btn-close-custom):not(.btn-cancel-custom):not(.btn-edit-action):active,
+.modal-footer .btn-primary:not(.btn-close-custom):not(.btn-cancel-custom):not(.btn-edit-action):focus,
+.modal-footer-custom button[type="submit"]:hover,
+.modal-footer-custom button[type="submit"]:active,
+.modal-footer-custom button[type="submit"]:focus,
+.modal-footer-custom .btn-primary:not(.btn-close-custom):not(.btn-cancel-custom):not(.btn-edit-action):hover,
+.modal-footer-custom .btn-primary:not(.btn-close-custom):not(.btn-cancel-custom):not(.btn-edit-action):active,
+.modal-footer-custom .btn-primary:not(.btn-close-custom):not(.btn-cancel-custom):not(.btn-edit-action):focus,
+form button[type="submit"]:not(.btn-secondary):not(.btn-danger):not(.btn-close-custom):not(.btn-cancel-custom):hover,
+form button[type="submit"]:not(.btn-secondary):not(.btn-danger):not(.btn-close-custom):not(.btn-cancel-custom):active,
+form button[type="submit"]:not(.btn-secondary):not(.btn-danger):not(.btn-close-custom):not(.btn-cancel-custom):focus,
+form input[type="submit"]:hover,
+form input[type="submit"]:active,
+form input[type="submit"]:focus,
+form .btn-primary[type="submit"]:hover,
+form .btn-primary[type="submit"]:active,
+form .btn-primary[type="submit"]:focus {
+  background-color: var(--save-btn-color, #0a500f) !important;
+  border-color: var(--save-btn-color, #0a500f) !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
+  box-shadow: none !important;
+}
+
+/* ==========================================================================
+   UNIVERSAL FORM & MODAL ICON COLOR
+   Ensures ALL modal/form header icon circles dynamically reflect --form-icon-color
+   ========================================================================== */
+.modal-icon-circle,
+.form-icon-circle,
+.modal-header-custom .modal-icon-circle,
+.pkg-custom-modal .modal-icon-circle,
+.gate-custom-modal .modal-icon-circle,
+.item-custom-modal .modal-icon-circle,
+.addr-custom-modal .modal-icon-circle,
+.contact-custom-modal .modal-icon-circle,
+.branch-custom-modal .modal-icon-circle,
+.factory-custom-modal .modal-icon-circle,
+.warehouse-custom-modal .modal-icon-circle,
+.fy-custom-modal .modal-icon-circle,
+.adj-modal .modal-icon-circle,
+.egfm-modal .modal-icon-circle {
+  background-color: var(--form-icon-color, #0a500f) !important;
+}

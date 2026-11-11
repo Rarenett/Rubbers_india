@@ -118,7 +118,7 @@ const AssetAllocationModals = ({
         .scfm-modal .modal-icon-circle {
             width: 48px;
             height: 48px;
-            background-color: #0a500f;
+            background-color: var(--form-icon-color, #0a500f);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -126,11 +126,11 @@ const AssetAllocationModals = ({
             box-shadow: 0 4px 10px rgba(10, 80, 15, 0.2);
         }
         .scfm-modal .modal-icon-circle.return {
-            background-color: #f59e0b;
+            background-color: var(--form-icon-color, #f59e0b);
             box-shadow: 0 4px 10px rgba(245, 158, 11, 0.2);
         }
         .scfm-modal .modal-icon-circle.reallocate {
-            background-color: #3b82f6;
+            background-color: var(--form-icon-color, #3b82f6);
             box-shadow: 0 4px 10px rgba(59, 130, 246, 0.2);
         }
         .scfm-modal .modal-close-x {
@@ -179,7 +179,7 @@ const AssetAllocationModals = ({
         }
         .scfm-modal .form-control-custom::placeholder { color: #94a3b8; }
         .scfm-modal .btn-close-custom {
-            background-color: #dc3545 !important;
+            background-color: var(--cancel-btn-color, #dc3545) !important;
             color: white !important;
             border-radius: 8px !important;
             font-weight: 500 !important;
@@ -189,9 +189,9 @@ const AssetAllocationModals = ({
             cursor: pointer;
             transition: background-color 0.2s;
         }
-        .scfm-modal .btn-close-custom:hover { background-color: #bb2d3b !important; }
+        .scfm-modal .btn-close-custom:hover, .btn-close-custom:active, .btn-close-custom:focus { background-color: var(--cancel-btn-color, #dc3545) !important; border-color: var(--cancel-btn-color, #dc3545) !important; opacity: 1 !important; box-shadow: none !important; }
         .scfm-modal .btn-save-custom {
-            background-color: #0a500f !important;
+            background-color: var(--save-btn-color, #0a500f) !important;
             color: white !important;
             border-radius: 8px !important;
             font-weight: 500 !important;
@@ -201,7 +201,7 @@ const AssetAllocationModals = ({
             cursor: pointer;
             transition: background-color 0.2s;
         }
-        .scfm-modal .btn-save-custom:hover { background-color: #073d0b !important; }
+        .scfm-modal .btn-save-custom:hover, .btn-save-custom:active, .btn-save-custom:focus { background-color: var(--save-btn-color, #0a500f) !important; border-color: var(--save-btn-color, #0a500f) !important; opacity: 1 !important; box-shadow: none !important; }
         .scfm-modal .btn-save-custom.return { background-color: #f59e0b !important; }
         .scfm-modal .btn-save-custom.return:hover { background-color: #d97706 !important; }
         .scfm-modal .btn-save-custom.reallocate { background-color: #3b82f6 !important; }

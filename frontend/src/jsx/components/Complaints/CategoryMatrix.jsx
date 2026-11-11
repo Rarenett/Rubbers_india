@@ -150,7 +150,7 @@ const CategoryMatrix = () => {
                 .item-custom-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #0a500f;
+                    background-color: var(--form-icon-color, #0a500f);
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
@@ -212,7 +212,7 @@ const CategoryMatrix = () => {
                     border-color: #0a500f;
                 }
                 .item-custom-modal .btn-close-custom {
-                    background-color: #dc3545 !important;
+                    background-color: var(--cancel-btn-color, #dc3545) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -222,11 +222,9 @@ const CategoryMatrix = () => {
                     cursor: pointer;
                     transition: background-color 0.2s, transform 0.1s;
                 }
-                .item-custom-modal .btn-close-custom:hover {
-                    background-color: #bb2d3b !important;
-                }
+                .item-custom-modal .btn-close-custom:hover, .btn-close-custom:active, .btn-close-custom:focus { background-color: var(--cancel-btn-color, #dc3545) !important; border-color: var(--cancel-btn-color, #dc3545) !important; opacity: 1 !important; box-shadow: none !important; }
                 .item-custom-modal .btn-save-custom {
-                    background-color: #0a500f !important;
+                    background-color: var(--save-btn-color, #0a500f) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -236,9 +234,7 @@ const CategoryMatrix = () => {
                     cursor: pointer;
                     transition: background-color 0.2s, transform 0.1s;
                 }
-                .item-custom-modal .btn-save-custom:hover {
-                    background-color: #073d0b !important;
-                }
+                .item-custom-modal .btn-save-custom:hover, .btn-save-custom:active, .btn-save-custom:focus { background-color: var(--save-btn-color, #0a500f) !important; border-color: var(--save-btn-color, #0a500f) !important; opacity: 1 !important; box-shadow: none !important; }
                 .category-matrix-header-container {
                     display: flex !important;
                     flex-direction: row !important;
@@ -401,7 +397,7 @@ const CategoryMatrix = () => {
                                         variant="primary"
                                         onClick={() => handleShowModal()}
                                         className="d-flex align-items-center justify-content-center category-matrix-add-btn"
-                                        style={{ height: '38px', borderRadius: '6px', whiteSpace: 'nowrap', padding: '0 16px', backgroundColor: '#0a500f', borderColor: '#0a500f', color: 'white' }}
+                                        style={{ height: "38px", borderRadius: "6px", whiteSpace: "nowrap", padding: "0 16px", backgroundColor: "var(--cc-primary, #0a500f)", borderColor: "var(--cc-primary, #0a500f)", color: "white" }}
                                     >
                                         <i className="fa fa-plus me-2"></i>
                                         ADD CATEGORY

@@ -144,7 +144,7 @@ const DashboardList = () => {
                 .dashboard-custom-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #0a500f;
+                    background-color: var(--form-icon-color, #0a500f);
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
@@ -197,7 +197,7 @@ const DashboardList = () => {
                 }
                 .dashboard-custom-modal .form-control-custom::placeholder { color: #94a3b8; }
                 .dashboard-custom-modal .btn-close-custom {
-                    background-color: #dc3545 !important;
+                    background-color: var(--cancel-btn-color, #dc3545) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -208,7 +208,7 @@ const DashboardList = () => {
                     transition: background-color 0.2s;
                 }
                 .dashboard-custom-modal .btn-save-custom {
-                    background-color: #0a500f !important;
+                    background-color: var(--save-btn-color, #0a500f) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;

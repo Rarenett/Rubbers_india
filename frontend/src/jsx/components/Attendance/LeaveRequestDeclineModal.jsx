@@ -94,7 +94,7 @@ const LeaveRequestDeclineModal = ({ show, onHide, request, onSuccess }) => {
                 .leave-custom-modal .modal-icon-circle-danger {
                     width: 46px;
                     height: 46px;
-                    background-color: #ef4444;
+                    background-color: var(--form-icon-color, #ef4444);
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
@@ -126,7 +126,7 @@ const LeaveRequestDeclineModal = ({ show, onHide, request, onSuccess }) => {
                     gap: 12px;
                 }
                 .leave-custom-modal .btn-cancel-custom {
-                    background-color: #dc3545 !important;
+                    background-color: var(--cancel-btn-color, #dc3545) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -136,7 +136,7 @@ const LeaveRequestDeclineModal = ({ show, onHide, request, onSuccess }) => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .leave-custom-modal .btn-cancel-custom:hover { background-color: #bb2d3b !important; }
+                .leave-custom-modal .btn-cancel-custom:hover, .btn-cancel-custom:active, .btn-cancel-custom:focus { background-color: var(--cancel-btn-color, #dc3545) !important; border-color: var(--cancel-btn-color, #dc3545) !important; opacity: 1 !important; box-shadow: none !important; }
                 .leave-custom-modal .btn-confirm-decline {
                     background-color: #ef4444 !important;
                     color: white !important;

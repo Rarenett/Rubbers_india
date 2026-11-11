@@ -95,7 +95,7 @@ const ShiftFormModal = ({ show, onHide, shiftId, onSuccess, factories, breakType
             <style>{`
                 .shift-modal .modal-content { border-radius: 16px !important; border: none !important; box-shadow: 0 10px 40px rgba(0,0,0,0.12) !important; overflow: hidden; }
                 .shift-modal .modal-header-custom { display:flex; align-items:center; justify-content:space-between; padding:24px 28px 16px; border-bottom:1px solid #f1f5f9; }
-                .shift-modal .modal-icon-circle { width:48px; height:48px; background:#0a500f; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 10px rgba(10, 80, 15,.2); }
+                .shift-modal .modal-icon-circle { width:48px; height:48px; background:var(--form-icon-color, #0a500f); border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 10px rgba(10, 80, 15,.2); }
                 .shift-modal .modal-close-x { border:none; background:transparent; font-size:24px; color:#aaa; cursor:pointer; transition:color .2s; }
                 .shift-modal .modal-close-x:hover { color:#555; }
                 .shift-modal .modal-body-custom { padding:24px 28px; }
@@ -103,8 +103,8 @@ const ShiftFormModal = ({ show, onHide, shiftId, onSuccess, factories, breakType
                 .shift-modal .form-label-custom { font-size:14px; font-weight:500; color:#4a5568; margin-bottom:8px; }
                 .shift-modal .form-control-custom { border:1px solid #cbd5e1; border-radius:10px; padding:12px 16px; font-size:14px; color:inherit; width:100%; transition:border-color .2s,box-shadow .2s; }
                 .shift-modal .form-control-custom:focus { outline:none; border-color:#0a500f; box-shadow:0 0 0 3px rgba(10, 80, 15,.15); }
-                .shift-modal .btn-close-custom { background:#dc3545 !important; color:white !important; border-radius:8px !important; font-weight:500 !important; font-size:14px !important; padding:10px 24px !important; border:none !important; cursor:pointer; }
-                .shift-modal .btn-save-custom { background:#0a500f !important; color:white !important; border-radius:8px !important; font-weight:500 !important; font-size:14px !important; padding:10px 24px !important; border:none !important; cursor:pointer; }
+                .shift-modal .btn-close-custom { background-color: var(--cancel-btn-color, #dc3545) !important; color:white !important; border-radius:8px !important; font-weight:500 !important; font-size:14px !important; padding:10px 24px !important; border:none !important; cursor:pointer; }
+                .shift-modal .btn-save-custom { background:var(--save-btn-color, #0a500f) !important; color:white !important; border-radius:8px !important; font-weight:500 !important; font-size:14px !important; padding:10px 24px !important; border:none !important; cursor:pointer; }
                 .shift-break-box { max-height: 150px; overflow-y: auto; border: 1px solid #cbd5e1; border-radius: 10px; padding: 12px 16px; background-color: #ffffff; }
 
                 /* Dark mode overrides */

@@ -256,37 +256,37 @@ const Setting = () => {
 								<div style={{ display: 'flex', gap: '6px', marginTop: '12px', padding: '8px 0' }}>
 									<button
 										type="button"
-										onClick={() => resetToDefault('light')}
+										onClick={() => changeBackground({ value: 'light', label: 'Light' })}
 										style={{
 											flex: 1,
 											padding: '6px 4px',
 											borderRadius: '6px',
-											border: '1px solid #0a500f',
-											background: background?.value === 'light' ? '#0a500f' : 'transparent',
-											color: background?.value === 'light' ? '#fff' : '#0a500f',
+											border: '1px solid var(--cc-primary, #0a500f)',
+											background: background?.value === 'light' ? 'var(--cc-primary, #0a500f)' : 'transparent',
+											color: background?.value === 'light' ? '#fff' : 'var(--cc-primary, #0a500f)',
 											fontSize: '11px',
 											cursor: 'pointer',
 											fontWeight: 600
 										}}
 									>
-										☀️ Light Default
+										☀️ Light Theme
 									</button>
 									<button
 										type="button"
-										onClick={() => resetToDefault('dark')}
+										onClick={() => changeBackground({ value: 'dark', label: 'Dark' })}
 										style={{
 											flex: 1,
 											padding: '6px 4px',
 											borderRadius: '6px',
-											border: '1px solid #0a500f',
-											background: background?.value === 'dark' ? '#0a500f' : 'transparent',
-											color: background?.value === 'dark' ? '#fff' : '#0a500f',
+											border: '1px solid var(--cc-primary, #0a500f)',
+											background: background?.value === 'dark' ? 'var(--cc-primary, #0a500f)' : 'transparent',
+											color: background?.value === 'dark' ? '#fff' : 'var(--cc-primary, #0a500f)',
 											fontSize: '11px',
 											cursor: 'pointer',
 											fontWeight: 600
 										}}
 									>
-										🌙 Dark Default
+										🌙 Dark Theme
 									</button>
 								</div>
 									</Tab.Pane>

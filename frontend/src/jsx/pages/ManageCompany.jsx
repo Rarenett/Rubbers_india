@@ -80,9 +80,11 @@ const ManageCompany = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const [activeTab, setActiveTab] = useState('profile');
-    const { 
+    const {
         formIconColor, changeFormIconColor,
         customPrimaryColor, changeCustomPrimaryColor,
+        saveBtnColor, changeSaveBtnColor,
+        cancelBtnColor, changeCancelBtnColor,
         customNavHeaderColor, changeCustomNavHeaderColor,
         customHeaderColor, changeCustomHeaderColor,
         customSidebarColor, changeCustomSidebarColor,
@@ -90,6 +92,7 @@ const ManageCompany = () => {
         customBgColor, changeCustomBgColor,
         customFontColor, changeCustomFontColor,
         background, changeBackground,
+        fetchThemeFromBackend,
         resetToDefault
     } = useContext(ThemeContext);
 
@@ -206,7 +209,7 @@ const ManageCompany = () => {
 
     useEffect(() => { setLicensePage(1); }, [licenseSearchTerm]);
 
-    const filteredLicenses = companyLicenses.filter(l => 
+    const filteredLicenses = companyLicenses.filter(l =>
         (l.license_name || '').toLowerCase().includes(licenseSearchTerm.toLowerCase()) ||
         String(l.months_to_expiry || '').includes(licenseSearchTerm)
     );
@@ -559,10 +562,10 @@ const ManageCompany = () => {
     const addressTypeSelectRef = useRef(null);
 
     const addressTypeOptions = [
-        { value: 'registered',   label: 'Registered' },
-        { value: 'corporate',    label: 'Corporate' },
-        { value: 'billing',      label: 'Billing' },
-        { value: 'shipping',     label: 'Shipping' },
+        { value: 'registered', label: 'Registered' },
+        { value: 'corporate', label: 'Corporate' },
+        { value: 'billing', label: 'Billing' },
+        { value: 'shipping', label: 'Shipping' },
         { value: 'headquarters', label: 'HeadQuarters' },
     ];
 
@@ -702,7 +705,7 @@ const ManageCompany = () => {
                 const next = all[index + 1];
                 next.focus();
                 if (next.tagName === 'SELECT' && typeof next.showPicker === 'function') {
-                    try { next.showPicker(); } catch (err) {}
+                    try { next.showPicker(); } catch (err) { }
                 }
             }
         }
@@ -726,7 +729,7 @@ const ManageCompany = () => {
                 const next = all[index + 1];
                 next.focus();
                 if (next.tagName === 'SELECT' && typeof next.showPicker === 'function') {
-                    try { next.showPicker(); } catch (err) {}
+                    try { next.showPicker(); } catch (err) { }
                 }
             }
         }
@@ -750,7 +753,7 @@ const ManageCompany = () => {
                 const next = all[index + 1];
                 next.focus();
                 if (next.tagName === 'SELECT' && typeof next.showPicker === 'function') {
-                    try { next.showPicker(); } catch (err) {}
+                    try { next.showPicker(); } catch (err) { }
                 }
             }
         }
@@ -911,12 +914,12 @@ const ManageCompany = () => {
         }
 
         try {
-            const payload = { 
-                ...branchForm, 
+            const payload = {
+                ...branchForm,
                 name: (branchForm.name || '').toUpperCase(),
                 branch_code: (branchForm.branch_code || '').toUpperCase(),
                 gst_number: (branchForm.gst_number || '').toUpperCase(),
-                company: company.id 
+                company: company.id
             };
             if (editItemId) await updateBranch(editItemId, payload);
             else await createBranch(payload);
@@ -1092,7 +1095,7 @@ const ManageCompany = () => {
                 .fy-custom-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #c084fc;
+                    background-color: var(--form-icon-color, #c084fc);
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
@@ -1153,7 +1156,7 @@ const ManageCompany = () => {
                     border-color: #0a500f;
                 }
                 .fy-custom-modal .btn-close-custom {
-                    background-color: #dc3545 !important;
+                    background-color: var(--cancel-btn-color, #dc3545) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -1163,9 +1166,9 @@ const ManageCompany = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .fy-custom-modal .btn-close-custom:hover { background-color: #bb2d3b !important; }
+                .fy-custom-modal .btn-close-custom:hover, .btn-close-custom:active, .btn-close-custom:focus { background-color: var(--cancel-btn-color, #dc3545) !important; border-color: var(--cancel-btn-color, #dc3545) !important; opacity: 1 !important; box-shadow: none !important; }
                 .fy-custom-modal .btn-save-custom {
-                    background-color: #0a500f !important;
+                    background-color: var(--save-btn-color, #0a500f) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -1175,7 +1178,7 @@ const ManageCompany = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .fy-custom-modal .btn-save-custom:hover { background-color: #073d0b !important; }
+                .fy-custom-modal .btn-save-custom:hover, .btn-save-custom:active, .btn-save-custom:focus { background-color: var(--save-btn-color, #0a500f) !important; border-color: var(--save-btn-color, #0a500f) !important; opacity: 1 !important; box-shadow: none !important; }
                 .search-input-custom {
                     height: 38px !important;
                     border-radius: 6px !important;
@@ -1284,7 +1287,7 @@ const ManageCompany = () => {
                 .addr-custom-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #3b82f6;
+                    background-color: var(--form-icon-color, #3b82f6);
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
@@ -1345,7 +1348,7 @@ const ManageCompany = () => {
                     border-color: #0a500f;
                 }
                 .addr-custom-modal .btn-close-custom {
-                    background-color: #dc3545 !important;
+                    background-color: var(--cancel-btn-color, #dc3545) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -1355,9 +1358,9 @@ const ManageCompany = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .addr-custom-modal .btn-close-custom:hover { background-color: #bb2d3b !important; }
+                .addr-custom-modal .btn-close-custom:hover, .btn-close-custom:active, .btn-close-custom:focus { background-color: var(--cancel-btn-color, #dc3545) !important; border-color: var(--cancel-btn-color, #dc3545) !important; opacity: 1 !important; box-shadow: none !important; }
                 .addr-custom-modal .btn-save-custom {
-                    background-color: #0a500f !important;
+                    background-color: var(--save-btn-color, #0a500f) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -1367,7 +1370,7 @@ const ManageCompany = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .addr-custom-modal .btn-save-custom:hover { background-color: #073d0b !important; }
+                .addr-custom-modal .btn-save-custom:hover, .btn-save-custom:active, .btn-save-custom:focus { background-color: var(--save-btn-color, #0a500f) !important; border-color: var(--save-btn-color, #0a500f) !important; opacity: 1 !important; box-shadow: none !important; }
 
                 /* ===== CONTACT MODAL ===== */
                 .contact-custom-modal .modal-content {
@@ -1386,7 +1389,7 @@ const ManageCompany = () => {
                 .contact-custom-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #10b981;
+                    background-color: var(--form-icon-color, #10b981);
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
@@ -1447,7 +1450,7 @@ const ManageCompany = () => {
                     border-color: #0a500f;
                 }
                 .contact-custom-modal .btn-close-custom {
-                    background-color: #dc3545 !important;
+                    background-color: var(--cancel-btn-color, #dc3545) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -1457,9 +1460,9 @@ const ManageCompany = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .contact-custom-modal .btn-close-custom:hover { background-color: #bb2d3b !important; }
+                .contact-custom-modal .btn-close-custom:hover, .btn-close-custom:active, .btn-close-custom:focus { background-color: var(--cancel-btn-color, #dc3545) !important; border-color: var(--cancel-btn-color, #dc3545) !important; opacity: 1 !important; box-shadow: none !important; }
                 .contact-custom-modal .btn-save-custom {
-                    background-color: #0a500f !important;
+                    background-color: var(--save-btn-color, #0a500f) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -1469,7 +1472,7 @@ const ManageCompany = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .contact-custom-modal .btn-save-custom:hover { background-color: #073d0b !important; }
+                .contact-custom-modal .btn-save-custom:hover, .btn-save-custom:active, .btn-save-custom:focus { background-color: var(--save-btn-color, #0a500f) !important; border-color: var(--save-btn-color, #0a500f) !important; opacity: 1 !important; box-shadow: none !important; }
 
                 /* ===== BRANCH MODAL ===== */
                 .branch-custom-modal .modal-content {
@@ -1488,7 +1491,7 @@ const ManageCompany = () => {
                 .branch-custom-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #6366f1;
+                    background-color: var(--form-icon-color, #6366f1);
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
@@ -1549,7 +1552,7 @@ const ManageCompany = () => {
                     border-color: #0a500f;
                 }
                 .branch-custom-modal .btn-close-custom {
-                    background-color: #dc3545 !important;
+                    background-color: var(--cancel-btn-color, #dc3545) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -1559,9 +1562,9 @@ const ManageCompany = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .branch-custom-modal .btn-close-custom:hover { background-color: #bb2d3b !important; }
+                .branch-custom-modal .btn-close-custom:hover, .btn-close-custom:active, .btn-close-custom:focus { background-color: var(--cancel-btn-color, #dc3545) !important; border-color: var(--cancel-btn-color, #dc3545) !important; opacity: 1 !important; box-shadow: none !important; }
                 .branch-custom-modal .btn-save-custom {
-                    background-color: #0a500f !important;
+                    background-color: var(--save-btn-color, #0a500f) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -1571,7 +1574,7 @@ const ManageCompany = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .branch-custom-modal .btn-save-custom:hover { background-color: #073d0b !important; }
+                .branch-custom-modal .btn-save-custom:hover, .btn-save-custom:active, .btn-save-custom:focus { background-color: var(--save-btn-color, #0a500f) !important; border-color: var(--save-btn-color, #0a500f) !important; opacity: 1 !important; box-shadow: none !important; }
 
                 /* ===== FACTORY MODAL ===== */
                 .factory-custom-modal .modal-content {
@@ -1590,7 +1593,7 @@ const ManageCompany = () => {
                 .factory-custom-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #f97316;
+                    background-color: var(--form-icon-color, #f97316);
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
@@ -1651,7 +1654,7 @@ const ManageCompany = () => {
                     border-color: #0a500f;
                 }
                 .factory-custom-modal .btn-close-custom {
-                    background-color: #dc3545 !important;
+                    background-color: var(--cancel-btn-color, #dc3545) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -1661,9 +1664,9 @@ const ManageCompany = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .factory-custom-modal .btn-close-custom:hover { background-color: #bb2d3b !important; }
+                .factory-custom-modal .btn-close-custom:hover, .btn-close-custom:active, .btn-close-custom:focus { background-color: var(--cancel-btn-color, #dc3545) !important; border-color: var(--cancel-btn-color, #dc3545) !important; opacity: 1 !important; box-shadow: none !important; }
                 .factory-custom-modal .btn-save-custom {
-                    background-color: #0a500f !important;
+                    background-color: var(--save-btn-color, #0a500f) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -1673,7 +1676,7 @@ const ManageCompany = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .factory-custom-modal .btn-save-custom:hover { background-color: #073d0b !important; }
+                .factory-custom-modal .btn-save-custom:hover, .btn-save-custom:active, .btn-save-custom:focus { background-color: var(--save-btn-color, #0a500f) !important; border-color: var(--save-btn-color, #0a500f) !important; opacity: 1 !important; box-shadow: none !important; }
 
                 /* ===== WAREHOUSE MODAL ===== */
                 .warehouse-custom-modal .modal-content {
@@ -1692,7 +1695,7 @@ const ManageCompany = () => {
                 .warehouse-custom-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #8b5cf6;
+                    background-color: var(--form-icon-color, #8b5cf6);
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
@@ -1753,7 +1756,7 @@ const ManageCompany = () => {
                     border-color: #0a500f;
                 }
                 .warehouse-custom-modal .btn-close-custom {
-                    background-color: #dc3545 !important;
+                    background-color: var(--cancel-btn-color, #dc3545) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -1763,9 +1766,9 @@ const ManageCompany = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .warehouse-custom-modal .btn-close-custom:hover { background-color: #bb2d3b !important; }
+                .warehouse-custom-modal .btn-close-custom:hover, .btn-close-custom:active, .btn-close-custom:focus { background-color: var(--cancel-btn-color, #dc3545) !important; border-color: var(--cancel-btn-color, #dc3545) !important; opacity: 1 !important; box-shadow: none !important; }
                 .warehouse-custom-modal .btn-save-custom {
-                    background-color: #0a500f !important;
+                    background-color: var(--save-btn-color, #0a500f) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -1775,7 +1778,7 @@ const ManageCompany = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .warehouse-custom-modal .btn-save-custom:hover { background-color: #073d0b !important; }
+                .warehouse-custom-modal .btn-save-custom:hover, .btn-save-custom:active, .btn-save-custom:focus { background-color: var(--save-btn-color, #0a500f) !important; border-color: var(--save-btn-color, #0a500f) !important; opacity: 1 !important; box-shadow: none !important; }
 
                 /* Responsive enhancements for ManageCompany */
                 .manage-company-tabs.nav-tabs {
@@ -1802,6 +1805,18 @@ const ManageCompany = () => {
                     white-space: nowrap;
                     padding: 10px 16px;
                     font-size: 14px;
+                    color: var(--custom-font-color, #495057);
+                    transition: all 0.2s ease;
+                }
+                .manage-company-tabs.nav-tabs .nav-link:hover {
+                    color: var(--cc-primary, #0a500f) !important;
+                }
+                .manage-company-tabs.nav-tabs .nav-link.active,
+                .manage-company-tabs.nav-tabs .nav-item.show .nav-link {
+                    color: var(--cc-primary, #0a500f) !important;
+                    font-weight: 700 !important;
+                    border-bottom: 3px solid var(--cc-primary, #0a500f) !important;
+                    background: transparent !important;
                 }
 
                 @media (max-width: 768px) {
@@ -2246,7 +2261,7 @@ const ManageCompany = () => {
                                         </form>
                                     </Tab.Pane>
 
-                                    
+
 
                                     {/* ADDRESSES TAB */}
                                     <Tab.Pane eventKey="addresses">
@@ -2310,54 +2325,54 @@ const ManageCompany = () => {
                                         </div>
 
                                         {filteredAddresses.length > 0 && (
-                                        <div className="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 mt-3 mb-3">
-                                            <div className="text-muted" style={{ fontSize: '13px' }}>
+                                            <div className="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 mt-3 mb-3">
+                                                <div className="text-muted" style={{ fontSize: '13px' }}>
                                                     Showing {addressIndexOfFirstItem + 1} to {Math.min(addressIndexOfLastItem, filteredAddresses.length)} of {filteredAddresses.length} entries
                                                 </div>
-                                            {addressTotalPages > 1 && (
-                                                <nav>
-                                                    <ul className="pagination pagination-gutter pagination-primary no-bg mb-0">
-                                                        <li className={`page-item page-indicator ${addressPage === 1 ? 'disabled' : ''}`}>
-                                                            <button type="button" className="page-link" onClick={() => setAddressPage(prev => Math.max(prev - 1, 1))} disabled={addressPage === 1} style={{ border: 'none', background: 'none' }}>
-                                                                <i className="la la-angle-left" />
-                                                            </button>
-                                                        </li>
-                                                        {Array.from({ length: addressTotalPages }, (_, index) => {
-                                                            const pageNumber = index + 1;
-                                                            if (
-                                                                pageNumber === 1 ||
-                                                                pageNumber === addressTotalPages ||
-                                                                (pageNumber >= addressPage - 1 && pageNumber <= addressPage + 1)
-                                                            ) {
-                                                                return (
-                                                                    <li key={pageNumber} className={`page-item ${addressPage === pageNumber ? 'active' : ''}`}>
-                                                                        <button type="button" className="page-link" onClick={() => setAddressPage(pageNumber)} style={{ border: 'none' }}>
-                                                                            {pageNumber}
-                                                                        </button>
-                                                                    </li>
-                                                                );
-                                                            } else if (
-                                                                pageNumber === addressPage - 2 ||
-                                                                pageNumber === addressPage + 2
-                                                            ) {
-                                                                return (
-                                                                    <li key={pageNumber} className="page-item disabled">
-                                                                        <span className="page-link" style={{ border: 'none', background: 'none' }}>...</span>
-                                                                    </li>
-                                                                );
-                                                            }
-                                                            return null;
-                                                        })}
-                                                        <li className={`page-item page-indicator ${addressPage === addressTotalPages ? 'disabled' : ''}`}>
-                                                            <button type="button" className="page-link" onClick={() => setAddressPage(prev => Math.min(prev + 1, addressTotalPages))} disabled={addressPage === addressTotalPages} style={{ border: 'none', background: 'none' }}>
-                                                                <i className="la la-angle-right" />
-                                                            </button>
-                                                        </li>
-                                                    </ul>
-                                                </nav>
-                                            )}
-                                        </div>
-                                    )}
+                                                {addressTotalPages > 1 && (
+                                                    <nav>
+                                                        <ul className="pagination pagination-gutter pagination-primary no-bg mb-0">
+                                                            <li className={`page-item page-indicator ${addressPage === 1 ? 'disabled' : ''}`}>
+                                                                <button type="button" className="page-link" onClick={() => setAddressPage(prev => Math.max(prev - 1, 1))} disabled={addressPage === 1} style={{ border: 'none', background: 'none' }}>
+                                                                    <i className="la la-angle-left" />
+                                                                </button>
+                                                            </li>
+                                                            {Array.from({ length: addressTotalPages }, (_, index) => {
+                                                                const pageNumber = index + 1;
+                                                                if (
+                                                                    pageNumber === 1 ||
+                                                                    pageNumber === addressTotalPages ||
+                                                                    (pageNumber >= addressPage - 1 && pageNumber <= addressPage + 1)
+                                                                ) {
+                                                                    return (
+                                                                        <li key={pageNumber} className={`page-item ${addressPage === pageNumber ? 'active' : ''}`}>
+                                                                            <button type="button" className="page-link" onClick={() => setAddressPage(pageNumber)} style={{ border: 'none' }}>
+                                                                                {pageNumber}
+                                                                            </button>
+                                                                        </li>
+                                                                    );
+                                                                } else if (
+                                                                    pageNumber === addressPage - 2 ||
+                                                                    pageNumber === addressPage + 2
+                                                                ) {
+                                                                    return (
+                                                                        <li key={pageNumber} className="page-item disabled">
+                                                                            <span className="page-link" style={{ border: 'none', background: 'none' }}>...</span>
+                                                                        </li>
+                                                                    );
+                                                                }
+                                                                return null;
+                                                            })}
+                                                            <li className={`page-item page-indicator ${addressPage === addressTotalPages ? 'disabled' : ''}`}>
+                                                                <button type="button" className="page-link" onClick={() => setAddressPage(prev => Math.min(prev + 1, addressTotalPages))} disabled={addressPage === addressTotalPages} style={{ border: 'none', background: 'none' }}>
+                                                                    <i className="la la-angle-right" />
+                                                                </button>
+                                                            </li>
+                                                        </ul>
+                                                    </nav>
+                                                )}
+                                            </div>
+                                        )}
                                     </Tab.Pane>
 
                                     {/* CONTACTS TAB */}
@@ -2422,54 +2437,54 @@ const ManageCompany = () => {
                                         </div>
 
                                         {filteredContacts.length > 0 && (
-                                        <div className="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 mt-3 mb-3">
-                                            <div className="text-muted" style={{ fontSize: '13px' }}>
+                                            <div className="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 mt-3 mb-3">
+                                                <div className="text-muted" style={{ fontSize: '13px' }}>
                                                     Showing {contactIndexOfFirstItem + 1} to {Math.min(contactIndexOfLastItem, filteredContacts.length)} of {filteredContacts.length} entries
                                                 </div>
-                                            {contactTotalPages > 1 && (
-                                                <nav>
-                                                    <ul className="pagination pagination-gutter pagination-primary no-bg mb-0">
-                                                        <li className={`page-item page-indicator ${contactPage === 1 ? 'disabled' : ''}`}>
-                                                            <button type="button" className="page-link" onClick={() => setContactPage(prev => Math.max(prev - 1, 1))} disabled={contactPage === 1} style={{ border: 'none', background: 'none' }}>
-                                                                <i className="la la-angle-left" />
-                                                            </button>
-                                                        </li>
-                                                        {Array.from({ length: contactTotalPages }, (_, index) => {
-                                                            const pageNumber = index + 1;
-                                                            if (
-                                                                pageNumber === 1 ||
-                                                                pageNumber === contactTotalPages ||
-                                                                (pageNumber >= contactPage - 1 && pageNumber <= contactPage + 1)
-                                                            ) {
-                                                                return (
-                                                                    <li key={pageNumber} className={`page-item ${contactPage === pageNumber ? 'active' : ''}`}>
-                                                                        <button type="button" className="page-link" onClick={() => setContactPage(pageNumber)} style={{ border: 'none' }}>
-                                                                            {pageNumber}
-                                                                        </button>
-                                                                    </li>
-                                                                );
-                                                            } else if (
-                                                                pageNumber === contactPage - 2 ||
-                                                                pageNumber === contactPage + 2
-                                                            ) {
-                                                                return (
-                                                                    <li key={pageNumber} className="page-item disabled">
-                                                                        <span className="page-link" style={{ border: 'none', background: 'none' }}>...</span>
-                                                                    </li>
-                                                                );
-                                                            }
-                                                            return null;
-                                                        })}
-                                                        <li className={`page-item page-indicator ${contactPage === contactTotalPages ? 'disabled' : ''}`}>
-                                                            <button type="button" className="page-link" onClick={() => setContactPage(prev => Math.min(prev + 1, contactTotalPages))} disabled={contactPage === contactTotalPages} style={{ border: 'none', background: 'none' }}>
-                                                                <i className="la la-angle-right" />
-                                                            </button>
-                                                        </li>
-                                                    </ul>
-                                                </nav>
-                                            )}
-                                        </div>
-                                    )}
+                                                {contactTotalPages > 1 && (
+                                                    <nav>
+                                                        <ul className="pagination pagination-gutter pagination-primary no-bg mb-0">
+                                                            <li className={`page-item page-indicator ${contactPage === 1 ? 'disabled' : ''}`}>
+                                                                <button type="button" className="page-link" onClick={() => setContactPage(prev => Math.max(prev - 1, 1))} disabled={contactPage === 1} style={{ border: 'none', background: 'none' }}>
+                                                                    <i className="la la-angle-left" />
+                                                                </button>
+                                                            </li>
+                                                            {Array.from({ length: contactTotalPages }, (_, index) => {
+                                                                const pageNumber = index + 1;
+                                                                if (
+                                                                    pageNumber === 1 ||
+                                                                    pageNumber === contactTotalPages ||
+                                                                    (pageNumber >= contactPage - 1 && pageNumber <= contactPage + 1)
+                                                                ) {
+                                                                    return (
+                                                                        <li key={pageNumber} className={`page-item ${contactPage === pageNumber ? 'active' : ''}`}>
+                                                                            <button type="button" className="page-link" onClick={() => setContactPage(pageNumber)} style={{ border: 'none' }}>
+                                                                                {pageNumber}
+                                                                            </button>
+                                                                        </li>
+                                                                    );
+                                                                } else if (
+                                                                    pageNumber === contactPage - 2 ||
+                                                                    pageNumber === contactPage + 2
+                                                                ) {
+                                                                    return (
+                                                                        <li key={pageNumber} className="page-item disabled">
+                                                                            <span className="page-link" style={{ border: 'none', background: 'none' }}>...</span>
+                                                                        </li>
+                                                                    );
+                                                                }
+                                                                return null;
+                                                            })}
+                                                            <li className={`page-item page-indicator ${contactPage === contactTotalPages ? 'disabled' : ''}`}>
+                                                                <button type="button" className="page-link" onClick={() => setContactPage(prev => Math.min(prev + 1, contactTotalPages))} disabled={contactPage === contactTotalPages} style={{ border: 'none', background: 'none' }}>
+                                                                    <i className="la la-angle-right" />
+                                                                </button>
+                                                            </li>
+                                                        </ul>
+                                                    </nav>
+                                                )}
+                                            </div>
+                                        )}
                                     </Tab.Pane>
 
                                     {/* FINANCIAL YEARS TAB */}
@@ -2542,54 +2557,54 @@ const ManageCompany = () => {
                                         </div>
 
                                         {filteredFYs.length > 0 && (
-                                        <div className="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 mt-3 mb-3">
-                                            <div className="text-muted" style={{ fontSize: '13px' }}>
+                                            <div className="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 mt-3 mb-3">
+                                                <div className="text-muted" style={{ fontSize: '13px' }}>
                                                     Showing {fyIndexOfFirstItem + 1} to {Math.min(fyIndexOfLastItem, filteredFYs.length)} of {filteredFYs.length} entries
                                                 </div>
-                                            {fyTotalPages > 1 && (
-                                                <nav>
-                                                    <ul className="pagination pagination-gutter pagination-primary no-bg mb-0">
-                                                        <li className={`page-item page-indicator ${fyPage === 1 ? 'disabled' : ''}`}>
-                                                            <button type="button" className="page-link" onClick={() => setFyPage(prev => Math.max(prev - 1, 1))} disabled={fyPage === 1} style={{ border: 'none', background: 'none' }}>
-                                                                <i className="la la-angle-left" />
-                                                            </button>
-                                                        </li>
-                                                        {Array.from({ length: fyTotalPages }, (_, index) => {
-                                                            const pageNumber = index + 1;
-                                                            if (
-                                                                pageNumber === 1 ||
-                                                                pageNumber === fyTotalPages ||
-                                                                (pageNumber >= fyPage - 1 && pageNumber <= fyPage + 1)
-                                                            ) {
-                                                                return (
-                                                                    <li key={pageNumber} className={`page-item ${fyPage === pageNumber ? 'active' : ''}`}>
-                                                                        <button type="button" className="page-link" onClick={() => setFyPage(pageNumber)} style={{ border: 'none' }}>
-                                                                            {pageNumber}
-                                                                        </button>
-                                                                    </li>
-                                                                );
-                                                            } else if (
-                                                                pageNumber === fyPage - 2 ||
-                                                                pageNumber === fyPage + 2
-                                                            ) {
-                                                                return (
-                                                                    <li key={pageNumber} className="page-item disabled">
-                                                                        <span className="page-link" style={{ border: 'none', background: 'none' }}>...</span>
-                                                                    </li>
-                                                                );
-                                                            }
-                                                            return null;
-                                                        })}
-                                                        <li className={`page-item page-indicator ${fyPage === fyTotalPages ? 'disabled' : ''}`}>
-                                                            <button type="button" className="page-link" onClick={() => setFyPage(prev => Math.min(prev + 1, fyTotalPages))} disabled={fyPage === fyTotalPages} style={{ border: 'none', background: 'none' }}>
-                                                                <i className="la la-angle-right" />
-                                                            </button>
-                                                        </li>
-                                                    </ul>
-                                                </nav>
-                                            )}
-                                        </div>
-                                    )}
+                                                {fyTotalPages > 1 && (
+                                                    <nav>
+                                                        <ul className="pagination pagination-gutter pagination-primary no-bg mb-0">
+                                                            <li className={`page-item page-indicator ${fyPage === 1 ? 'disabled' : ''}`}>
+                                                                <button type="button" className="page-link" onClick={() => setFyPage(prev => Math.max(prev - 1, 1))} disabled={fyPage === 1} style={{ border: 'none', background: 'none' }}>
+                                                                    <i className="la la-angle-left" />
+                                                                </button>
+                                                            </li>
+                                                            {Array.from({ length: fyTotalPages }, (_, index) => {
+                                                                const pageNumber = index + 1;
+                                                                if (
+                                                                    pageNumber === 1 ||
+                                                                    pageNumber === fyTotalPages ||
+                                                                    (pageNumber >= fyPage - 1 && pageNumber <= fyPage + 1)
+                                                                ) {
+                                                                    return (
+                                                                        <li key={pageNumber} className={`page-item ${fyPage === pageNumber ? 'active' : ''}`}>
+                                                                            <button type="button" className="page-link" onClick={() => setFyPage(pageNumber)} style={{ border: 'none' }}>
+                                                                                {pageNumber}
+                                                                            </button>
+                                                                        </li>
+                                                                    );
+                                                                } else if (
+                                                                    pageNumber === fyPage - 2 ||
+                                                                    pageNumber === fyPage + 2
+                                                                ) {
+                                                                    return (
+                                                                        <li key={pageNumber} className="page-item disabled">
+                                                                            <span className="page-link" style={{ border: 'none', background: 'none' }}>...</span>
+                                                                        </li>
+                                                                    );
+                                                                }
+                                                                return null;
+                                                            })}
+                                                            <li className={`page-item page-indicator ${fyPage === fyTotalPages ? 'disabled' : ''}`}>
+                                                                <button type="button" className="page-link" onClick={() => setFyPage(prev => Math.min(prev + 1, fyTotalPages))} disabled={fyPage === fyTotalPages} style={{ border: 'none', background: 'none' }}>
+                                                                    <i className="la la-angle-right" />
+                                                                </button>
+                                                            </li>
+                                                        </ul>
+                                                    </nav>
+                                                )}
+                                            </div>
+                                        )}
                                     </Tab.Pane>
                                 </Tab.Content>
                                 <Tab.Content>
@@ -2654,54 +2669,54 @@ const ManageCompany = () => {
                                         </div>
 
                                         {filteredFactories.length > 0 && (
-                                        <div className="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 mt-3 mb-3">
-                                            <div className="text-muted" style={{ fontSize: '13px' }}>
+                                            <div className="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 mt-3 mb-3">
+                                                <div className="text-muted" style={{ fontSize: '13px' }}>
                                                     Showing {factoryIndexOfFirstItem + 1} to {Math.min(factoryIndexOfLastItem, filteredFactories.length)} of {filteredFactories.length} entries
                                                 </div>
-                                            {factoryTotalPages > 1 && (
-                                                <nav>
-                                                    <ul className="pagination pagination-gutter pagination-primary no-bg mb-0">
-                                                        <li className={`page-item page-indicator ${factoryPage === 1 ? 'disabled' : ''}`}>
-                                                            <button type="button" className="page-link" onClick={() => setFactoryPage(prev => Math.max(prev - 1, 1))} disabled={factoryPage === 1} style={{ border: 'none', background: 'none' }}>
-                                                                <i className="la la-angle-left" />
-                                                            </button>
-                                                        </li>
-                                                        {Array.from({ length: factoryTotalPages }, (_, index) => {
-                                                            const pageNumber = index + 1;
-                                                            if (
-                                                                pageNumber === 1 ||
-                                                                pageNumber === factoryTotalPages ||
-                                                                (pageNumber >= factoryPage - 1 && pageNumber <= factoryPage + 1)
-                                                            ) {
-                                                                return (
-                                                                    <li key={pageNumber} className={`page-item ${factoryPage === pageNumber ? 'active' : ''}`}>
-                                                                        <button type="button" className="page-link" onClick={() => setFactoryPage(pageNumber)} style={{ border: 'none' }}>
-                                                                            {pageNumber}
-                                                                        </button>
-                                                                    </li>
-                                                                );
-                                                            } else if (
-                                                                pageNumber === factoryPage - 2 ||
-                                                                pageNumber === factoryPage + 2
-                                                            ) {
-                                                                return (
-                                                                    <li key={pageNumber} className="page-item disabled">
-                                                                        <span className="page-link" style={{ border: 'none', background: 'none' }}>...</span>
-                                                                    </li>
-                                                                );
-                                                            }
-                                                            return null;
-                                                        })}
-                                                        <li className={`page-item page-indicator ${factoryPage === factoryTotalPages ? 'disabled' : ''}`}>
-                                                            <button type="button" className="page-link" onClick={() => setFactoryPage(prev => Math.min(prev + 1, factoryTotalPages))} disabled={factoryPage === factoryTotalPages} style={{ border: 'none', background: 'none' }}>
-                                                                <i className="la la-angle-right" />
-                                                            </button>
-                                                        </li>
-                                                    </ul>
-                                                </nav>
-                                            )}
-                                        </div>
-                                    )}
+                                                {factoryTotalPages > 1 && (
+                                                    <nav>
+                                                        <ul className="pagination pagination-gutter pagination-primary no-bg mb-0">
+                                                            <li className={`page-item page-indicator ${factoryPage === 1 ? 'disabled' : ''}`}>
+                                                                <button type="button" className="page-link" onClick={() => setFactoryPage(prev => Math.max(prev - 1, 1))} disabled={factoryPage === 1} style={{ border: 'none', background: 'none' }}>
+                                                                    <i className="la la-angle-left" />
+                                                                </button>
+                                                            </li>
+                                                            {Array.from({ length: factoryTotalPages }, (_, index) => {
+                                                                const pageNumber = index + 1;
+                                                                if (
+                                                                    pageNumber === 1 ||
+                                                                    pageNumber === factoryTotalPages ||
+                                                                    (pageNumber >= factoryPage - 1 && pageNumber <= factoryPage + 1)
+                                                                ) {
+                                                                    return (
+                                                                        <li key={pageNumber} className={`page-item ${factoryPage === pageNumber ? 'active' : ''}`}>
+                                                                            <button type="button" className="page-link" onClick={() => setFactoryPage(pageNumber)} style={{ border: 'none' }}>
+                                                                                {pageNumber}
+                                                                            </button>
+                                                                        </li>
+                                                                    );
+                                                                } else if (
+                                                                    pageNumber === factoryPage - 2 ||
+                                                                    pageNumber === factoryPage + 2
+                                                                ) {
+                                                                    return (
+                                                                        <li key={pageNumber} className="page-item disabled">
+                                                                            <span className="page-link" style={{ border: 'none', background: 'none' }}>...</span>
+                                                                        </li>
+                                                                    );
+                                                                }
+                                                                return null;
+                                                            })}
+                                                            <li className={`page-item page-indicator ${factoryPage === factoryTotalPages ? 'disabled' : ''}`}>
+                                                                <button type="button" className="page-link" onClick={() => setFactoryPage(prev => Math.min(prev + 1, factoryTotalPages))} disabled={factoryPage === factoryTotalPages} style={{ border: 'none', background: 'none' }}>
+                                                                    <i className="la la-angle-right" />
+                                                                </button>
+                                                            </li>
+                                                        </ul>
+                                                    </nav>
+                                                )}
+                                            </div>
+                                        )}
                                     </Tab.Pane>
                                     {/* WAREHOUSES TAB (Direct to Company) */}
                                     <Tab.Pane eventKey="warehouses">
@@ -2766,54 +2781,54 @@ const ManageCompany = () => {
                                         </div>
 
                                         {filteredWarehouses.length > 0 && (
-                                        <div className="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 mt-3 mb-3">
-                                            <div className="text-muted" style={{ fontSize: '13px' }}>
+                                            <div className="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 mt-3 mb-3">
+                                                <div className="text-muted" style={{ fontSize: '13px' }}>
                                                     Showing {warehouseIndexOfFirstItem + 1} to {Math.min(warehouseIndexOfLastItem, filteredWarehouses.length)} of {filteredWarehouses.length} entries
                                                 </div>
-                                            {warehouseTotalPages > 1 && (
-                                                <nav>
-                                                    <ul className="pagination pagination-gutter pagination-primary no-bg mb-0">
-                                                        <li className={`page-item page-indicator ${warehousePage === 1 ? 'disabled' : ''}`}>
-                                                            <button type="button" className="page-link" onClick={() => setWarehousePage(prev => Math.max(prev - 1, 1))} disabled={warehousePage === 1} style={{ border: 'none', background: 'none' }}>
-                                                                <i className="la la-angle-left" />
-                                                            </button>
-                                                        </li>
-                                                        {Array.from({ length: warehouseTotalPages }, (_, index) => {
-                                                            const pageNumber = index + 1;
-                                                            if (
-                                                                pageNumber === 1 ||
-                                                                pageNumber === warehouseTotalPages ||
-                                                                (pageNumber >= warehousePage - 1 && pageNumber <= warehousePage + 1)
-                                                            ) {
-                                                                return (
-                                                                    <li key={pageNumber} className={`page-item ${warehousePage === pageNumber ? 'active' : ''}`}>
-                                                                        <button type="button" className="page-link" onClick={() => setWarehousePage(pageNumber)} style={{ border: 'none' }}>
-                                                                            {pageNumber}
-                                                                        </button>
-                                                                    </li>
-                                                                );
-                                                            } else if (
-                                                                pageNumber === warehousePage - 2 ||
-                                                                pageNumber === warehousePage + 2
-                                                            ) {
-                                                                return (
-                                                                    <li key={pageNumber} className="page-item disabled">
-                                                                        <span className="page-link" style={{ border: 'none', background: 'none' }}>...</span>
-                                                                    </li>
-                                                                );
-                                                            }
-                                                            return null;
-                                                        })}
-                                                        <li className={`page-item page-indicator ${warehousePage === warehouseTotalPages ? 'disabled' : ''}`}>
-                                                            <button type="button" className="page-link" onClick={() => setWarehousePage(prev => Math.min(prev + 1, warehouseTotalPages))} disabled={warehousePage === warehouseTotalPages} style={{ border: 'none', background: 'none' }}>
-                                                                <i className="la la-angle-right" />
-                                                            </button>
-                                                        </li>
-                                                    </ul>
-                                                </nav>
-                                            )}
-                                        </div>
-                                    )}
+                                                {warehouseTotalPages > 1 && (
+                                                    <nav>
+                                                        <ul className="pagination pagination-gutter pagination-primary no-bg mb-0">
+                                                            <li className={`page-item page-indicator ${warehousePage === 1 ? 'disabled' : ''}`}>
+                                                                <button type="button" className="page-link" onClick={() => setWarehousePage(prev => Math.max(prev - 1, 1))} disabled={warehousePage === 1} style={{ border: 'none', background: 'none' }}>
+                                                                    <i className="la la-angle-left" />
+                                                                </button>
+                                                            </li>
+                                                            {Array.from({ length: warehouseTotalPages }, (_, index) => {
+                                                                const pageNumber = index + 1;
+                                                                if (
+                                                                    pageNumber === 1 ||
+                                                                    pageNumber === warehouseTotalPages ||
+                                                                    (pageNumber >= warehousePage - 1 && pageNumber <= warehousePage + 1)
+                                                                ) {
+                                                                    return (
+                                                                        <li key={pageNumber} className={`page-item ${warehousePage === pageNumber ? 'active' : ''}`}>
+                                                                            <button type="button" className="page-link" onClick={() => setWarehousePage(pageNumber)} style={{ border: 'none' }}>
+                                                                                {pageNumber}
+                                                                            </button>
+                                                                        </li>
+                                                                    );
+                                                                } else if (
+                                                                    pageNumber === warehousePage - 2 ||
+                                                                    pageNumber === warehousePage + 2
+                                                                ) {
+                                                                    return (
+                                                                        <li key={pageNumber} className="page-item disabled">
+                                                                            <span className="page-link" style={{ border: 'none', background: 'none' }}>...</span>
+                                                                        </li>
+                                                                    );
+                                                                }
+                                                                return null;
+                                                            })}
+                                                            <li className={`page-item page-indicator ${warehousePage === warehouseTotalPages ? 'disabled' : ''}`}>
+                                                                <button type="button" className="page-link" onClick={() => setWarehousePage(prev => Math.min(prev + 1, warehouseTotalPages))} disabled={warehousePage === warehouseTotalPages} style={{ border: 'none', background: 'none' }}>
+                                                                    <i className="la la-angle-right" />
+                                                                </button>
+                                                            </li>
+                                                        </ul>
+                                                    </nav>
+                                                )}
+                                            </div>
+                                        )}
                                     </Tab.Pane>
                                     {/* BRANCHES TAB */}
                                     <Tab.Pane eventKey="branches">
@@ -2878,54 +2893,54 @@ const ManageCompany = () => {
                                         </div>
 
                                         {filteredBranches.length > 0 && (
-                                        <div className="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 mt-3 mb-3">
-                                            <div className="text-muted" style={{ fontSize: '13px' }}>
+                                            <div className="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 mt-3 mb-3">
+                                                <div className="text-muted" style={{ fontSize: '13px' }}>
                                                     Showing {branchIndexOfFirstItem + 1} to {Math.min(branchIndexOfLastItem, filteredBranches.length)} of {filteredBranches.length} entries
                                                 </div>
-                                            {branchTotalPages > 1 && (
-                                                <nav>
-                                                    <ul className="pagination pagination-gutter pagination-primary no-bg mb-0">
-                                                        <li className={`page-item page-indicator ${branchPage === 1 ? 'disabled' : ''}`}>
-                                                            <button type="button" className="page-link" onClick={() => setBranchPage(prev => Math.max(prev - 1, 1))} disabled={branchPage === 1} style={{ border: 'none', background: 'none' }}>
-                                                                <i className="la la-angle-left" />
-                                                            </button>
-                                                        </li>
-                                                        {Array.from({ length: branchTotalPages }, (_, index) => {
-                                                            const pageNumber = index + 1;
-                                                            if (
-                                                                pageNumber === 1 ||
-                                                                pageNumber === branchTotalPages ||
-                                                                (pageNumber >= branchPage - 1 && pageNumber <= branchPage + 1)
-                                                            ) {
-                                                                return (
-                                                                    <li key={pageNumber} className={`page-item ${branchPage === pageNumber ? 'active' : ''}`}>
-                                                                        <button type="button" className="page-link" onClick={() => setBranchPage(pageNumber)} style={{ border: 'none' }}>
-                                                                            {pageNumber}
-                                                                        </button>
-                                                                    </li>
-                                                                );
-                                                            } else if (
-                                                                pageNumber === branchPage - 2 ||
-                                                                pageNumber === branchPage + 2
-                                                            ) {
-                                                                return (
-                                                                    <li key={pageNumber} className="page-item disabled">
-                                                                        <span className="page-link" style={{ border: 'none', background: 'none' }}>...</span>
-                                                                    </li>
-                                                                );
-                                                            }
-                                                            return null;
-                                                        })}
-                                                        <li className={`page-item page-indicator ${branchPage === branchTotalPages ? 'disabled' : ''}`}>
-                                                            <button type="button" className="page-link" onClick={() => setBranchPage(prev => Math.min(prev + 1, branchTotalPages))} disabled={branchPage === branchTotalPages} style={{ border: 'none', background: 'none' }}>
-                                                                <i className="la la-angle-right" />
-                                                            </button>
-                                                        </li>
-                                                    </ul>
-                                                </nav>
-                                            )}
-                                        </div>
-                                    )}
+                                                {branchTotalPages > 1 && (
+                                                    <nav>
+                                                        <ul className="pagination pagination-gutter pagination-primary no-bg mb-0">
+                                                            <li className={`page-item page-indicator ${branchPage === 1 ? 'disabled' : ''}`}>
+                                                                <button type="button" className="page-link" onClick={() => setBranchPage(prev => Math.max(prev - 1, 1))} disabled={branchPage === 1} style={{ border: 'none', background: 'none' }}>
+                                                                    <i className="la la-angle-left" />
+                                                                </button>
+                                                            </li>
+                                                            {Array.from({ length: branchTotalPages }, (_, index) => {
+                                                                const pageNumber = index + 1;
+                                                                if (
+                                                                    pageNumber === 1 ||
+                                                                    pageNumber === branchTotalPages ||
+                                                                    (pageNumber >= branchPage - 1 && pageNumber <= branchPage + 1)
+                                                                ) {
+                                                                    return (
+                                                                        <li key={pageNumber} className={`page-item ${branchPage === pageNumber ? 'active' : ''}`}>
+                                                                            <button type="button" className="page-link" onClick={() => setBranchPage(pageNumber)} style={{ border: 'none' }}>
+                                                                                {pageNumber}
+                                                                            </button>
+                                                                        </li>
+                                                                    );
+                                                                } else if (
+                                                                    pageNumber === branchPage - 2 ||
+                                                                    pageNumber === branchPage + 2
+                                                                ) {
+                                                                    return (
+                                                                        <li key={pageNumber} className="page-item disabled">
+                                                                            <span className="page-link" style={{ border: 'none', background: 'none' }}>...</span>
+                                                                        </li>
+                                                                    );
+                                                                }
+                                                                return null;
+                                                            })}
+                                                            <li className={`page-item page-indicator ${branchPage === branchTotalPages ? 'disabled' : ''}`}>
+                                                                <button type="button" className="page-link" onClick={() => setBranchPage(prev => Math.min(prev + 1, branchTotalPages))} disabled={branchPage === branchTotalPages} style={{ border: 'none', background: 'none' }}>
+                                                                    <i className="la la-angle-right" />
+                                                                </button>
+                                                            </li>
+                                                        </ul>
+                                                    </nav>
+                                                )}
+                                            </div>
+                                        )}
                                     </Tab.Pane>
 
                                     {/* LICENSES TAB */}
@@ -3003,38 +3018,38 @@ const ManageCompany = () => {
                                         </div>
 
                                         {filteredLicenses.length > 0 && (
-                                        <div className="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 mt-3 mb-3">
-                                            <div className="text-muted" style={{ fontSize: '13px' }}>
+                                            <div className="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 mt-3 mb-3">
+                                                <div className="text-muted" style={{ fontSize: '13px' }}>
                                                     Showing {licenseIndexOfFirstItem + 1} to {Math.min(licenseIndexOfLastItem, filteredLicenses.length)} of {filteredLicenses.length} entries
                                                 </div>
-                                            {licenseTotalPages > 1 && (
-                                                <nav>
-                                                    <ul className="pagination pagination-gutter pagination-primary no-bg mb-0">
-                                                        <li className={`page-item page-indicator ${licensePage === 1 ? 'disabled' : ''}`}>
-                                                            <button type="button" className="page-link" onClick={() => setLicensePage(prev => Math.max(prev - 1, 1))} disabled={licensePage === 1} style={{ border: 'none', background: 'none' }}>
-                                                                <i className="la la-angle-left" />
-                                                            </button>
-                                                        </li>
-                                                        {Array.from({ length: licenseTotalPages }, (_, index) => {
-                                                            const pageNumber = index + 1;
-                                                            return (
-                                                                <li key={pageNumber} className={`page-item ${licensePage === pageNumber ? 'active' : ''}`}>
-                                                                    <button type="button" className="page-link" onClick={() => setLicensePage(pageNumber)} style={{ border: 'none' }}>
-                                                                        {pageNumber}
-                                                                    </button>
-                                                                </li>
-                                                            );
-                                                        })}
-                                                        <li className={`page-item page-indicator ${licensePage === licenseTotalPages ? 'disabled' : ''}`}>
-                                                            <button type="button" className="page-link" onClick={() => setLicensePage(prev => Math.min(prev + 1, licenseTotalPages))} disabled={licensePage === licenseTotalPages} style={{ border: 'none', background: 'none' }}>
-                                                                <i className="la la-angle-right" />
-                                                            </button>
-                                                        </li>
-                                                    </ul>
-                                                </nav>
-                                            )}
-                                        </div>
-                                    )}
+                                                {licenseTotalPages > 1 && (
+                                                    <nav>
+                                                        <ul className="pagination pagination-gutter pagination-primary no-bg mb-0">
+                                                            <li className={`page-item page-indicator ${licensePage === 1 ? 'disabled' : ''}`}>
+                                                                <button type="button" className="page-link" onClick={() => setLicensePage(prev => Math.max(prev - 1, 1))} disabled={licensePage === 1} style={{ border: 'none', background: 'none' }}>
+                                                                    <i className="la la-angle-left" />
+                                                                </button>
+                                                            </li>
+                                                            {Array.from({ length: licenseTotalPages }, (_, index) => {
+                                                                const pageNumber = index + 1;
+                                                                return (
+                                                                    <li key={pageNumber} className={`page-item ${licensePage === pageNumber ? 'active' : ''}`}>
+                                                                        <button type="button" className="page-link" onClick={() => setLicensePage(pageNumber)} style={{ border: 'none' }}>
+                                                                            {pageNumber}
+                                                                        </button>
+                                                                    </li>
+                                                                );
+                                                            })}
+                                                            <li className={`page-item page-indicator ${licensePage === licenseTotalPages ? 'disabled' : ''}`}>
+                                                                <button type="button" className="page-link" onClick={() => setLicensePage(prev => Math.min(prev + 1, licenseTotalPages))} disabled={licensePage === licenseTotalPages} style={{ border: 'none', background: 'none' }}>
+                                                                    <i className="la la-angle-right" />
+                                                                </button>
+                                                            </li>
+                                                        </ul>
+                                                    </nav>
+                                                )}
+                                            </div>
+                                        )}
                                     </Tab.Pane>
 
                                     {/* THEME SETTINGS TAB */}
@@ -3042,32 +3057,63 @@ const ManageCompany = () => {
                                         <div className="d-flex justify-content-between mb-3 align-items-center flex-wrap gap-2">
                                             <h5 className="mb-0 text-nowrap">Theme Settings</h5>
                                             <div className="d-flex gap-2">
-                                                <button 
-                                                    type="button" 
+                                                <button
+                                                    type="button"
                                                     className={`btn btn-sm px-3 ${background?.value === 'light' ? 'btn-primary' : 'btn-outline-primary'}`}
-                                                    onClick={() => resetToDefault('light')}
+                                                    onClick={() => changeBackground({ value: 'light', label: 'Light' })}
                                                 >
-                                                    ☀️ Default Light
+                                                    ☀️ Light Theme
                                                 </button>
-                                                <button 
-                                                    type="button" 
+                                                <button
+                                                    type="button"
                                                     className={`btn btn-sm px-3 ${background?.value === 'dark' ? 'btn-primary' : 'btn-outline-primary'}`}
-                                                    onClick={() => resetToDefault('dark')}
+                                                    onClick={() => changeBackground({ value: 'dark', label: 'Dark' })}
                                                 >
-                                                    🌙 Default Dark
+                                                    🌙 Dark Theme
                                                 </button>
                                             </div>
                                         </div>
                                         <div className="row mt-4">
 
+                                            {/* Primary Color */}
+                                            <div className="col-md-6 mb-4">
+                                                <label className="font-w600">Primary Color <span className="text-danger">*</span></label>
+                                                <div className="d-flex align-items-center gap-3 mt-2">
+                                                    <input
+                                                        type="color"
+                                                        className="form-control form-control-color border-0 p-0"
+                                                        value={customPrimaryColor}
+                                                        onChange={(e) => changeCustomPrimaryColor(e.target.value)}
+                                                        style={{ cursor: 'pointer', width: '60px', height: '45px', borderRadius: '8px' }}
+                                                    />
+                                                    <div>
+                                                        <div className="d-flex align-items-center gap-2">
+                                                            <div className="font-w700 fs-16 mb-0" style={{ textTransform: 'uppercase' }}>{customPrimaryColor}</div>
+                                                            {customPrimaryColor !== '#0a500f' && (
+                                                                <button
+                                                                    type="button"
+                                                                    className="btn btn-link btn-xs p-0 text-muted"
+                                                                    style={{ fontSize: '11px', textDecoration: 'underline' }}
+                                                                    onClick={() => changeCustomPrimaryColor('#0a500f')}
+                                                                    title="Reset primary color to default"
+                                                                >
+                                                                    Reset
+                                                                </button>
+                                                            )}
+                                                        </div>
+                                                        <span className="text-muted small">Pick a primary brand color for buttons, active tabs, highlights, and theme accents.</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                             {/* Navigation Header Background */}
                                             <div className="col-md-6 mb-4">
                                                 <label className="font-w600">Navigation Header Background <span className="text-danger">*</span></label>
                                                 <div className="d-flex align-items-center gap-3 mt-2">
-                                                    <input 
-                                                        type="color" 
+                                                    <input
+                                                        type="color"
                                                         className="form-control form-control-color border-0 p-0"
-                                                        value={customNavHeaderColor} 
+                                                        value={customNavHeaderColor}
                                                         onChange={(e) => changeCustomNavHeaderColor(e.target.value)}
                                                         style={{ cursor: 'pointer', width: '60px', height: '45px', borderRadius: '8px' }}
                                                     />
@@ -3082,10 +3128,10 @@ const ManageCompany = () => {
                                             <div className="col-md-6 mb-4">
                                                 <label className="font-w600">Top Header Background <span className="text-danger">*</span></label>
                                                 <div className="d-flex align-items-center gap-3 mt-2">
-                                                    <input 
-                                                        type="color" 
+                                                    <input
+                                                        type="color"
                                                         className="form-control form-control-color border-0 p-0"
-                                                        value={customHeaderColor} 
+                                                        value={customHeaderColor}
                                                         onChange={(e) => changeCustomHeaderColor(e.target.value)}
                                                         style={{ cursor: 'pointer', width: '60px', height: '45px', borderRadius: '8px' }}
                                                     />
@@ -3100,10 +3146,10 @@ const ManageCompany = () => {
                                             <div className="col-md-6 mb-4">
                                                 <label className="font-w600">Sidebar Background <span className="text-danger">*</span></label>
                                                 <div className="d-flex align-items-center gap-3 mt-2">
-                                                    <input 
-                                                        type="color" 
+                                                    <input
+                                                        type="color"
                                                         className="form-control form-control-color border-0 p-0"
-                                                        value={customSidebarColor} 
+                                                        value={customSidebarColor}
                                                         onChange={(e) => changeCustomSidebarColor(e.target.value)}
                                                         style={{ cursor: 'pointer', width: '60px', height: '45px', borderRadius: '8px' }}
                                                     />
@@ -3131,10 +3177,10 @@ const ManageCompany = () => {
                                             <div className="col-md-6 mb-4">
                                                 <label className="font-w600">Sidebar Font Color <span className="text-danger">*</span></label>
                                                 <div className="d-flex align-items-center gap-3 mt-2">
-                                                    <input 
-                                                        type="color" 
+                                                    <input
+                                                        type="color"
                                                         className="form-control form-control-color border-0 p-0"
-                                                        value={customSidebarFontColor || (background?.value === 'dark' ? '#FFFFFF' : '#7e7e7e')} 
+                                                        value={customSidebarFontColor || (background?.value === 'dark' ? '#FFFFFF' : '#7e7e7e')}
                                                         onChange={(e) => changeCustomSidebarFontColor(e.target.value)}
                                                         style={{ cursor: 'pointer', width: '60px', height: '45px', borderRadius: '8px' }}
                                                     />
@@ -3164,10 +3210,10 @@ const ManageCompany = () => {
                                             <div className="col-md-6 mb-4">
                                                 <label className="font-w600">Dashboard Background <span className="text-danger">*</span></label>
                                                 <div className="d-flex align-items-center gap-3 mt-2">
-                                                    <input 
-                                                        type="color" 
+                                                    <input
+                                                        type="color"
                                                         className="form-control form-control-color border-0 p-0"
-                                                        value={customBgColor || (background?.value === 'dark' ? '#24292D' : '#F9F9F9')} 
+                                                        value={customBgColor || (background?.value === 'dark' ? '#24292D' : '#F9F9F9')}
                                                         onChange={(e) => changeCustomBgColor(e.target.value)}
                                                         style={{ cursor: 'pointer', width: '60px', height: '45px', borderRadius: '8px' }}
                                                     />
@@ -3197,10 +3243,10 @@ const ManageCompany = () => {
                                             <div className="col-md-6 mb-4">
                                                 <label className="font-w600">Font Color <span className="text-danger">*</span></label>
                                                 <div className="d-flex align-items-center gap-3 mt-2">
-                                                    <input 
-                                                        type="color" 
+                                                    <input
+                                                        type="color"
                                                         className="form-control form-control-color border-0 p-0"
-                                                        value={customFontColor || (background?.value === 'dark' ? '#FFFFFF' : '#333333')} 
+                                                        value={customFontColor || (background?.value === 'dark' ? '#FFFFFF' : '#333333')}
                                                         onChange={(e) => changeCustomFontColor(e.target.value)}
                                                         style={{ cursor: 'pointer', width: '60px', height: '45px', borderRadius: '8px' }}
                                                     />
@@ -3230,16 +3276,91 @@ const ManageCompany = () => {
                                             <div className="col-md-6 mb-4">
                                                 <label className="font-w600">Form & Modal Icon Color <span className="text-danger">*</span></label>
                                                 <div className="d-flex align-items-center gap-3 mt-2">
-                                                    <input 
-                                                        type="color" 
+                                                    <input
+                                                        type="color"
                                                         className="form-control form-control-color border-0 p-0"
-                                                        value={formIconColor} 
+                                                        value={formIconColor}
                                                         onChange={(e) => changeFormIconColor(e.target.value)}
                                                         style={{ cursor: 'pointer', width: '60px', height: '45px', borderRadius: '8px' }}
                                                     />
                                                     <div>
-                                                        <div className="font-w700 fs-16 mb-0" style={{ textTransform: 'uppercase' }}>{formIconColor}</div>
+                                                        <div className="d-flex align-items-center gap-2">
+                                                            <div className="font-w700 fs-16 mb-0" style={{ textTransform: 'uppercase' }}>{formIconColor}</div>
+                                                            {formIconColor !== '#0a500f' && (
+                                                                <button
+                                                                    type="button"
+                                                                    className="btn btn-link btn-xs p-0 text-muted"
+                                                                    style={{ fontSize: '11px', textDecoration: 'underline' }}
+                                                                    onClick={() => changeFormIconColor('#0a500f')}
+                                                                    title="Reset form icon color to default"
+                                                                >
+                                                                    Reset
+                                                                </button>
+                                                            )}
+                                                        </div>
                                                         <span className="text-muted small">Pick a color to globally customize form and modal header icons.</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            {/* Save Button Color */}
+                                            <div className="col-md-6 mb-4">
+                                                <label className="font-w600">Save Button Color <span className="text-danger">*</span></label>
+                                                <div className="d-flex align-items-center gap-3 mt-2">
+                                                    <input
+                                                        type="color"
+                                                        className="form-control form-control-color border-0 p-0"
+                                                        value={saveBtnColor}
+                                                        onChange={(e) => changeSaveBtnColor(e.target.value)}
+                                                        style={{ cursor: 'pointer', width: '60px', height: '45px', borderRadius: '8px' }}
+                                                    />
+                                                    <div>
+                                                        <div className="d-flex align-items-center gap-2">
+                                                            <div className="font-w700 fs-16 mb-0" style={{ textTransform: 'uppercase' }}>{saveBtnColor}</div>
+                                                            {saveBtnColor !== '#0a500f' && (
+                                                                <button
+                                                                    type="button"
+                                                                    className="btn btn-link btn-xs p-0 text-muted"
+                                                                    style={{ fontSize: '11px', textDecoration: 'underline' }}
+                                                                    onClick={() => changeSaveBtnColor('#0a500f')}
+                                                                    title="Reset save button color to default"
+                                                                >
+                                                                    Reset
+                                                                </button>
+                                                            )}
+                                                        </div>
+                                                        <span className="text-muted small">Pick a color for form and modal submit/save buttons.</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            {/* Cancel Button Color */}
+                                            <div className="col-md-6 mb-4">
+                                                <label className="font-w600">Cancel Button Color <span className="text-danger">*</span></label>
+                                                <div className="d-flex align-items-center gap-3 mt-2">
+                                                    <input
+                                                        type="color"
+                                                        className="form-control form-control-color border-0 p-0"
+                                                        value={cancelBtnColor}
+                                                        onChange={(e) => changeCancelBtnColor(e.target.value)}
+                                                        style={{ cursor: 'pointer', width: '60px', height: '45px', borderRadius: '8px' }}
+                                                    />
+                                                    <div>
+                                                        <div className="d-flex align-items-center gap-2">
+                                                            <div className="font-w700 fs-16 mb-0" style={{ textTransform: 'uppercase' }}>{cancelBtnColor}</div>
+                                                            {cancelBtnColor !== '#dc3545' && (
+                                                                <button
+                                                                    type="button"
+                                                                    className="btn btn-link btn-xs p-0 text-muted"
+                                                                    style={{ fontSize: '11px', textDecoration: 'underline' }}
+                                                                    onClick={() => changeCancelBtnColor('#dc3545')}
+                                                                    title="Reset cancel button color to default"
+                                                                >
+                                                                    Reset
+                                                                </button>
+                                                            )}
+                                                        </div>
+                                                        <span className="text-muted small">Pick a color for form and modal close/cancel buttons.</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -3286,7 +3407,7 @@ const ManageCompany = () => {
                                                                             });
                                                                         });
                                                                 }
-                                                            } catch {}
+                                                            } catch { }
                                                         }}
                                                     >
                                                         Apply
@@ -3359,7 +3480,7 @@ const ManageCompany = () => {
                                                     } else {
                                                         next.focus();
                                                         if (next.tagName === 'SELECT' && typeof next.showPicker === 'function') {
-                                                            try { next.showPicker(); } catch (err) {}
+                                                            try { next.showPicker(); } catch (err) { }
                                                         }
                                                     }
                                                 }
@@ -4099,7 +4220,7 @@ const ManageCompany = () => {
             <Modal show={showLicenseModal} onHide={() => setShowLicenseModal(false)} dialogClassName="branch-custom-modal" centered size="lg">
                 <div className="modal-header-custom">
                     <div className="d-flex align-items-center gap-3">
-                        <div className="modal-icon-circle" style={{ backgroundColor: '#6c5ce7', width: '45px', height: '45px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <div className="modal-icon-circle" style={{ width: '45px', height: '45px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                             <i className="fa fa-id-card text-white fs-4"></i>
                         </div>
                         <div>

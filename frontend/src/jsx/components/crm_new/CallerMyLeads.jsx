@@ -2603,7 +2603,7 @@ const CallerMyLeads = () => {
                         <>
                             <Modal.Header closeButton style={{ borderBottom: '1px solid #e2e8f0', backgroundColor: '#f8fafc' }}>
                                 <Modal.Title style={{ fontSize: '16px', fontWeight: 700, color: '#1e293b' }}>
-                                    <i className="fa fa-exchange me-2" style={{ color: '#0a500f' }}></i>
+                                    <i className="fa fa-exchange me-2" style={{ color: "var(--cc-primary, #0a500f)" }}></i>
                                     {isManagerTarget 
                                         ? (isTeamAssignment ? 'Reassign Lead to Team Member' : 'Reassign Lead to Telecalling Member') 
                                         : (isTeamAssignment ? 'Reassign Call to Team Leader' : 'Reassign Call to Assigner')}
@@ -2748,7 +2748,7 @@ const CallerMyLeads = () => {
                             <Modal.Footer style={{ borderTop: '1px solid #e2e8f0' }}>
                                 <Button 
                                     className="btn-cancel-custom"
-                                    style={{ backgroundColor: '#dc3545', borderColor: '#dc3545', color: '#ffffff' }}
+                                    style={{ backgroundColor: "var(--cancel-btn-color, #dc3545)", borderColor: "var(--cancel-btn-color, #dc3545)", color: "#ffffff" }}
                                     onClick={handleCloseReassignModal} 
                                     disabled={reassignSubmitting} 
                                 >
@@ -2759,7 +2759,7 @@ const CallerMyLeads = () => {
                                         onClick={handleSubmitTeamLeadReassign}
                                         disabled={reassignSubmitting}
                                         className="font-w600"
-                                        style={{ borderRadius: '6px', fontSize: '12px', backgroundColor: '#0a500f', borderColor: '#0a500f', color: '#ffffff' }}
+                                        className="btn-save-custom" style={{ borderRadius: "6px", fontSize: "12px", color: "#ffffff" }}
                                     >
                                         {reassignSubmitting ? (
                                             <>
@@ -2776,7 +2776,7 @@ const CallerMyLeads = () => {
                                     <Button
                                         onClick={handleSubmitReassignRequest}
                                         disabled={reassignSubmitting}
-                                        style={{ borderRadius: '6px', fontSize: '12px', fontWeight: 600, backgroundColor: '#0a500f', borderColor: '#0a500f', color: '#ffffff' }}
+                                        className="btn-save-custom" style={{ borderRadius: "6px", fontSize: "12px", fontWeight: 600, color: "#ffffff" }}
                                     >
                                         {reassignSubmitting ? (
                                             <>
@@ -2887,7 +2887,7 @@ const CallerMyLeads = () => {
                                                 <tr>
                                                     <td className="text-muted font-w600" style={{ padding: '10px 12px' }}>Status:</td>
                                                     <td style={{ padding: '10px 12px' }}>
-                                                        <span className="badge" style={{ backgroundColor: 'rgba(10, 80, 15, 0.12)', color: '#0a500f', border: '1px solid rgba(10, 80, 15, 0.25)' }}>
+                                                        <span className="badge" style={{ backgroundColor: 'rgba(var(--primary-rgb, 10, 80, 15), 0.12)', color: 'var(--cc-primary, #0a500f)', border: '1px solid rgba(var(--primary-rgb, 10, 80, 15), 0.25)' }}>
                                                             {viewReassignTarget.reassignment_status === 'REQUESTED' ? 'Reassignment Requested' : 'Reassigned'}
                                                         </span>
                                                     </td>
@@ -2920,7 +2920,7 @@ const CallerMyLeads = () => {
                             <Modal.Footer style={{ borderTop: '1px solid #e2e8f0', backgroundColor: '#f8fafc' }}>
                                 <Button
                                     className="btn-cancel-custom"
-                                    style={{ backgroundColor: '#dc3545', borderColor: '#dc3545', color: '#ffffff' }}
+                                    style={{ backgroundColor: "var(--cancel-btn-color, #dc3545)", borderColor: "var(--cancel-btn-color, #dc3545)", color: "#ffffff" }}
                                     onClick={() => setViewReassignTarget(null)}
                                 >
                                     Close
@@ -2931,14 +2931,7 @@ const CallerMyLeads = () => {
                                         setViewReassignTarget(null);
                                         handleOpenReassignModal(target);
                                     }}
-                                    style={{
-                                        borderRadius: '6px',
-                                        fontSize: '12px',
-                                        fontWeight: 600,
-                                        backgroundColor: '#0a500f',
-                                        borderColor: '#0a500f',
-                                        color: '#ffffff'
-                                    }}
+                                    className="btn-save-custom" style={{ borderRadius: "6px", fontSize: "12px", fontWeight: 600, color: "#ffffff" }}
                                 >
                                     <i className="fa fa-exchange me-1"></i> Reassign Lead
                                 </Button>

@@ -395,7 +395,7 @@ const WalletLedgerModal = ({ wallet, ledgerData: initialLedgerData, loading: ini
                 .wallet-ledger-modal .modal-icon-circle {
                     width: 44px;
                     height: 44px;
-                    background-color: #0a500f;
+                    background-color: var(--form-icon-color, #0a500f);
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
@@ -433,7 +433,7 @@ const WalletLedgerModal = ({ wallet, ledgerData: initialLedgerData, loading: ini
                     background-color: #fafbfc;
                 }
                 .wallet-ledger-modal .btn-close-custom {
-                    background-color: #dc3545 !important;
+                    background-color: var(--cancel-btn-color, #dc3545) !important;
                     color: #ffffff !important;
                     border: none !important;
                     border-radius: 8px !important;
@@ -444,10 +444,7 @@ const WalletLedgerModal = ({ wallet, ledgerData: initialLedgerData, loading: ini
                     transition: all 0.2s !important;
                     box-shadow: 0 2px 4px rgba(122, 112, 186, 0.2) !important;
                 }
-                .wallet-ledger-modal .btn-close-custom:hover {
-                    background-color: #6a60a8 !important;
-                    transform: translateY(-1px);
-                }
+                .wallet-ledger-modal .btn-close-custom:hover, .btn-close-custom:active, .btn-close-custom:focus { background-color: var(--cancel-btn-color, #dc3545) !important; border-color: var(--cancel-btn-color, #dc3545) !important; opacity: 1 !important; box-shadow: none !important; }
                 .wallet-ledger-modal .summary-card {
                     border-radius: 10px;
                     padding: 14px 16px;

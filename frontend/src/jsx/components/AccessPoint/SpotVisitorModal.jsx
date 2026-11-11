@@ -834,7 +834,7 @@ const SpotVisitorModal = ({
                 .item-custom-modal .modal-icon-circle {
                     width: 48px !important;
                     height: 48px !important;
-                    background-color: #0a500f !important;
+                    background-color: var(--form-icon-color, #0a500f) !important;
                     border-radius: 50% !important;
                     display: flex !important;
                     align-items: center !important;
@@ -901,7 +901,7 @@ const SpotVisitorModal = ({
                     margin: 0 -28px -24px -28px !important;
                 }
                 .item-custom-modal .btn-close-custom {
-                    background-color: #dc3545 !important;
+                    background-color: var(--cancel-btn-color, #dc3545) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -911,11 +911,9 @@ const SpotVisitorModal = ({
                     cursor: pointer !important;
                     transition: background-color 0.2s, transform 0.1s !important;
                 }
-                .item-custom-modal .btn-close-custom:hover {
-                    background-color: #bb2d3b !important;
-                }
+                .item-custom-modal .btn-close-custom:hover, .btn-close-custom:active, .btn-close-custom:focus { background-color: var(--cancel-btn-color, #dc3545) !important; border-color: var(--cancel-btn-color, #dc3545) !important; opacity: 1 !important; box-shadow: none !important; }
                 .item-custom-modal .btn-save-custom {
-                    background-color: #0a500f !important;
+                    background-color: var(--save-btn-color, #0a500f) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -927,9 +925,7 @@ const SpotVisitorModal = ({
                     display: inline-flex !important;
                     align-items: center !important;
                 }
-                .item-custom-modal .btn-save-custom:hover:not(:disabled) {
-                    background-color: #25a870 !important;
-                }
+                .item-custom-modal .btn-save-custom:hover, .btn-save-custom:active, .btn-save-custom:focus { background-color: var(--save-btn-color, #0a500f) !important; border-color: var(--save-btn-color, #0a500f) !important; opacity: 1 !important; box-shadow: none !important; }
                 .item-custom-modal .btn-save-custom:disabled {
                     opacity: 0.65 !important;
                     cursor: not-allowed !important;

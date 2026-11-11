@@ -750,7 +750,7 @@ const teamModalItemsPerPage = 5;
                                             module="telecalling"
                                             variant="success"
                                             className="btn-sm"
-                                            style={{ backgroundColor: '#0a500f', borderColor: '#0a500f' }}
+                                            style={{ backgroundColor: "var(--cc-primary, #0a500f)", borderColor: "var(--cc-primary, #0a500f)" }}
                                             onClick={() => {
                                                 setEditingTeamId(null);
                                                 setTeamName('');
@@ -2345,7 +2345,7 @@ const teamModalItemsPerPage = 5;
                 .telecalling-team-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #0a500f;
+                    background-color: var(--form-icon-color, #0a500f);
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
@@ -2432,7 +2432,7 @@ const teamModalItemsPerPage = 5;
                 .item-custom-modal .btn-close-custom,
                 .parkarea-custom-modal .btn-close-custom,
                 .telecalling-team-modal .btn-close-custom {
-                    background-color: #dc3545 !important;
+                    background-color: var(--cancel-btn-color, #dc3545) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -2444,15 +2444,11 @@ const teamModalItemsPerPage = 5;
                     line-height: 1.5 !important;
                     white-space: nowrap !important;
                 }
-                .item-custom-modal .btn-close-custom:hover,
-                .parkarea-custom-modal .btn-close-custom:hover,
-                .telecalling-team-modal .btn-close-custom:hover {
-                    background-color: #bb2d3b !important;
-                }
+                .item-custom-modal .btn-close-custom:hover, .btn-close-custom:active, .btn-close-custom:focus { background-color: var(--cancel-btn-color, #dc3545) !important; border-color: var(--cancel-btn-color, #dc3545) !important; opacity: 1 !important; box-shadow: none !important; }
                 .item-custom-modal .btn-save-custom,
                 .parkarea-custom-modal .btn-save-custom,
                 .telecalling-team-modal .btn-save-custom {
-                    background-color: #0a500f !important;
+                    background-color: var(--save-btn-color, #0a500f) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -2464,11 +2460,7 @@ const teamModalItemsPerPage = 5;
                     line-height: 1.5 !important;
                     white-space: nowrap !important;
                 }
-                .item-custom-modal .btn-save-custom:hover,
-                .parkarea-custom-modal .btn-save-custom:hover,
-                .telecalling-team-modal .btn-save-custom:hover {
-                    background-color: #073d0b !important;
-                }
+                .item-custom-modal .btn-save-custom:hover, .btn-save-custom:active, .btn-save-custom:focus { background-color: var(--save-btn-color, #0a500f) !important; border-color: var(--save-btn-color, #0a500f) !important; opacity: 1 !important; box-shadow: none !important; }
                 .item-custom-modal .btn-save-custom:disabled,
                 .parkarea-custom-modal .btn-save-custom:disabled,
                 .telecalling-team-modal .btn-save-custom:disabled,

@@ -1102,7 +1102,7 @@ const ShiftPlanForm = () => {
                 <Card.Footer className="d-flex justify-content-end gap-2 flex-wrap">
                     <style>{`
                         .btn-cancel-custom {
-                            background-color: #dc3545 !important;
+                            background-color: var(--cancel-btn-color, #dc3545) !important;
                             color: white !important;
                             border-radius: 8px !important;
                             font-weight: 500 !important;
@@ -1112,9 +1112,7 @@ const ShiftPlanForm = () => {
                             cursor: pointer;
                             transition: background-color 0.2s;
                         }
-                        .btn-cancel-custom:hover {
-                            background-color: #bb2d3b !important;
-                        }
+                        .btn-cancel-custom:hover, .btn-cancel-custom:active, .btn-cancel-custom:focus { background-color: var(--cancel-btn-color, #dc3545) !important; border-color: var(--cancel-btn-color, #dc3545) !important; opacity: 1 !important; box-shadow: none !important; }
                         .btn-generate-custom {
                             background-color: #0a500f !important;
                             color: white !important;

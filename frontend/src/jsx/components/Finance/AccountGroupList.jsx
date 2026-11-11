@@ -677,7 +677,7 @@ const AccountGroupList = () => {
                     <Modal.Footer>
                         <Button 
                             className="btn-universal-close btn-cancel-custom"
-                            style={{ backgroundColor: '#dc3545', borderColor: '#dc3545', color: '#ffffff' }}
+                            style={{ backgroundColor: "var(--cancel-btn-color, #dc3545)", borderColor: "var(--cancel-btn-color, #dc3545)", color: "#ffffff" }}
                             onClick={() => setShowModal(false)}
                         >
                             Close

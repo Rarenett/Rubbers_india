@@ -1373,7 +1373,23 @@ html {
 .modal-footer button.btn-danger.light:hover,
 .modal-footer button.btn-danger.light:active,
 .modal-footer button.btn-danger.light:focus,
-.item-custom-modal .btn-close-custom:hover, .btn-close-custom:active, .btn-close-custom:focus { background-color: var(--cancel-btn-color, #dc3545) !important; border-color: var(--cancel-btn-color, #dc3545) !important; opacity: 1 !important; box-shadow: none !important; }
+.item-custom-modal .btn-close-custom:hover,
+.item-custom-modal .btn-close-custom:active,
+.item-custom-modal .btn-close-custom:focus,
+.btn-close-custom:hover,
+.btn-close-custom:active,
+.btn-close-custom:focus,
+.btn-cancel-custom:hover,
+.btn-cancel-custom:active,
+.btn-cancel-custom:focus,
+.btn-universal-close:hover,
+.btn-universal-close:active,
+.btn-universal-close:focus {
+  background-color: var(--cancel-btn-color, #dc3545) !important;
+  border-color: var(--cancel-btn-color, #dc3545) !important;
+  opacity: 1 !important;
+  box-shadow: none !important;
+}
 
 /* ---- UNIFIED SAVE BUTTON STYLES FOR MODALS & FORMS ---- */
 .btn-save-custom,
@@ -1467,18 +1483,24 @@ html {
   border-color: #bb2d3b !important;
 }
 
-/* Header Notification Badges & Header Elements (#0a500f) */
+/* Header Notification Badges & Header Elements (Follows Primary Color) */
 .header-right .notification_dropdown .nav-link .badge,
 .header-right .notification_dropdown .nav-link .badge.light,
 .header-right .notification_dropdown .nav-link .badge.bg-primary {
-  background-color: #0a500f !important;
-  background: #0a500f !important;
+  background-color: var(--cc-primary, #0a500f) !important;
+  background: var(--cc-primary, #0a500f) !important;
   color: #ffffff !important;
   box-shadow: 0px 0px 10px 3px rgba(10, 80, 15, 0.35) !important;
 }
 .header-profile .dropdown-menu .dropdown-item svg#icon-inbox {
-  color: #0a500f !important;
-  stroke: #0a500f !important;
+  color: var(--cc-primary, #0a500f) !important;
+  stroke: var(--cc-primary, #0a500f) !important;
+}
+.header-profile .dropdown-toggle .rounded-circle:not(img),
+.header-profile .dropdown-toggle div[style*="borderRadius: '1.25rem'"],
+.header-profile .dropdown-toggle div[style*="border-radius: 1.25rem"] {
+  background: var(--cc-primary, #0a500f) !important;
+  background-color: var(--cc-primary, #0a500f) !important;
 }
 .header-profile .dropdown-menu .dropdown-item svg#icon-change-password {
   color: #0d6efd !important;
@@ -1833,6 +1855,75 @@ form .btn-primary[type="submit"] {
   color: #ffffff !important;
 }
 
+/* ==========================================================================
+   UNIVERSAL CLOSE / CANCEL BUTTON OVERRIDES
+   Ensures ALL modal close/cancel buttons strictly follow --cancel-btn-color
+   ========================================================================== */
+.btn-close-custom,
+.btn-cancel-custom,
+.btn.btn-cancel-custom,
+.btn-universal-close,
+.modal-footer .btn-close-custom,
+.modal-footer .btn-cancel-custom,
+.modal-footer-custom .btn-close-custom,
+.modal-footer-custom .btn-cancel-custom,
+.modal-footer .btn-secondary,
+.modal-footer-custom .btn-secondary,
+.modal-footer .btn-danger.light,
+.modal-footer button.btn-danger.light,
+.modal-footer-custom .btn-danger.light,
+.modal-footer-custom button.btn-danger.light {
+  background-color: var(--cancel-btn-color, #dc3545) !important;
+  border-color: var(--cancel-btn-color, #dc3545) !important;
+  color: #ffffff !important;
+}
+
+.btn-close-custom:hover,
+.btn-close-custom:active,
+.btn-close-custom:focus,
+.btn-cancel-custom:hover,
+.btn-cancel-custom:active,
+.btn-cancel-custom:focus,
+.btn-universal-close:hover,
+.btn-universal-close:active,
+.btn-universal-close:focus,
+.modal-footer .btn-close-custom:hover,
+.modal-footer .btn-close-custom:active,
+.modal-footer .btn-close-custom:focus,
+.modal-footer .btn-cancel-custom:hover,
+.modal-footer .btn-cancel-custom:active,
+.modal-footer .btn-cancel-custom:focus,
+.modal-footer-custom .btn-close-custom:hover,
+.modal-footer-custom .btn-close-custom:active,
+.modal-footer-custom .btn-close-custom:focus,
+.modal-footer-custom .btn-cancel-custom:hover,
+.modal-footer-custom .btn-cancel-custom:active,
+.modal-footer-custom .btn-cancel-custom:focus,
+.modal-footer .btn-secondary:hover,
+.modal-footer .btn-secondary:active,
+.modal-footer .btn-secondary:focus,
+.modal-footer-custom .btn-secondary:hover,
+.modal-footer-custom .btn-secondary:active,
+.modal-footer-custom .btn-secondary:focus,
+.modal-footer .btn-danger.light:hover,
+.modal-footer .btn-danger.light:active,
+.modal-footer .btn-danger.light:focus,
+.modal-footer button.btn-danger.light:hover,
+.modal-footer button.btn-danger.light:active,
+.modal-footer button.btn-danger.light:focus,
+.modal-footer-custom .btn-danger.light:hover,
+.modal-footer-custom .btn-danger.light:active,
+.modal-footer-custom .btn-danger.light:focus,
+.modal-footer-custom button.btn-danger.light:hover,
+.modal-footer-custom button.btn-danger.light:active,
+.modal-footer-custom button.btn-danger.light:focus {
+  background-color: var(--cancel-btn-color, #dc3545) !important;
+  border-color: var(--cancel-btn-color, #dc3545) !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
+  box-shadow: none !important;
+}
+
 .btn-save-custom:hover,
 .btn-save-custom:active,
 .btn-save-custom:focus,
@@ -1901,4 +1992,39 @@ form .btn-primary[type="submit"]:focus {
 .adj-modal .modal-icon-circle,
 .egfm-modal .modal-icon-circle {
   background-color: var(--form-icon-color, #0a500f) !important;
+}
+
+/* ==========================================================================
+   UNIVERSAL TAB STYLING ACROSS ALL MODALS & FORMS
+   Ensures active tabs and indicators always follow dynamic company primary color
+   ========================================================================== */
+.cfm-custom-tabs .nav-link.active,
+.emp-custom-tabs .nav-link.active,
+.user-custom-tabs .nav-link.active,
+.scfm-custom-tabs .nav-link.active,
+.sgfm-custom-tabs .nav-link.active,
+.item-custom-tabs .nav-link.active,
+.wallet-scheme-modal .scheme-custom-tabs .nav-link.active,
+.scheme-modal-nav .nav-link.active,
+.custom-form-tabs .tab-btn.active,
+.custom-tab-link.active,
+.factory-tab-link.active,
+.ledger-modal-body .nav-link.active,
+.manage-company-tabs.nav-tabs .nav-link.active {
+  color: var(--cc-primary, #0a500f) !important;
+  border-bottom-color: var(--cc-primary, #0a500f) !important;
+}
+
+.cfm-custom-tabs .nav-link:hover,
+.emp-custom-tabs .nav-link:hover,
+.user-custom-tabs .nav-link:hover,
+.scfm-custom-tabs .nav-link:hover,
+.sgfm-custom-tabs .nav-link:hover,
+.item-custom-tabs .nav-link:hover,
+.wallet-scheme-modal .scheme-custom-tabs .nav-link:hover,
+.scheme-modal-nav .nav-link:hover,
+.custom-tab-link:hover,
+.factory-tab-link:hover:not(.active),
+.ledger-modal-body .nav-link:hover {
+  color: var(--cc-primary, #0a500f) !important;
 }

@@ -419,10 +419,10 @@ const BranchDetails = () => {
             align-items: center;
             gap: 8px;
         }
-        .custom-tab-link:hover { color: #0a500f !important; background-color: #f8fafc !important; }
+        .custom-tab-link:hover { color: var(--cc-primary, #0a500f) !important; background-color: #f8fafc !important; }
         .custom-tab-link.active {
-            color: #0a500f !important;
-            border-bottom-color: #0a500f !important;
+            color: var(--cc-primary, #0a500f) !important;
+            border-bottom-color: var(--cc-primary, #0a500f) !important;
             background-color: transparent !important;
             box-shadow: none !important;
         }
@@ -430,7 +430,7 @@ const BranchDetails = () => {
         [data-theme-version="dark"] .custom-tab-link.active {
             color: #c4b5fd !important;
             background-color: #24292D !important;
-            border-bottom-color: #0a500f !important;
+            border-bottom-color: var(--cc-primary, #0a500f) !important;
         }
         .btn-primary-custom {
             background-color: var(--save-btn-color, #0a500f) !important;

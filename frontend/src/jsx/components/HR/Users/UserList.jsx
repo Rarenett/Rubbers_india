@@ -1144,9 +1144,9 @@ const UserList = () => {
           }
           .user-custom-tabs .nav-link:hover { color: #475569; border-bottom-color: #cbd5e1; }
           .user-custom-tabs .nav-link.active {
-              color: #0a500f;
+              color: var(--cc-primary, #0a500f);
               background: transparent;
-              border-bottom-color: #0a500f;
+              border-bottom-color: var(--cc-primary, #0a500f);
           }
           .user-tab-content { padding: 24px 28px; }
           .user-custom-modal .modal-footer-custom {

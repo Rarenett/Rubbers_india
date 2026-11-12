@@ -407,9 +407,9 @@ const StockCategoryFormModal = ({ show, onHide, onSaved, existingCategories = []
                 }
                 .scfm-custom-tabs .nav-link:hover { color: #475569; border-bottom-color: #cbd5e1; }
                 .scfm-custom-tabs .nav-link.active {
-                    color: #0a500f;
+                    color: var(--cc-primary, #0a500f);
                     background: transparent;
-                    border-bottom-color: #0a500f;
+                    border-bottom-color: var(--cc-primary, #0a500f);
                 }
                 .scfm-tab-content { padding: 24px 28px; }
             `}</style>

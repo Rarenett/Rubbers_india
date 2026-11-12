@@ -540,7 +540,7 @@ function Header({ onNote }) {
                   </svg>
                   <span 
                     className="badge light text-white bg-primary rounded-circle"
-                    style={{ backgroundColor: '#0a500f', color: '#ffffff' }}
+                    style={{ backgroundColor: 'var(--cc-primary, #0a500f)', color: '#ffffff' }}
                   >
                     6
                   </span>
@@ -565,7 +565,7 @@ function Header({ onNote }) {
                   {unreadCount > 0 && (
                     <span 
                       className="badge light text-white bg-primary rounded-circle"
-                      style={{ backgroundColor: '#0a500f', color: '#ffffff' }}
+                      style={{ backgroundColor: 'var(--cc-primary, #0a500f)', color: '#ffffff' }}
                     >
                       {unreadCount > 99 ? '99+' : unreadCount}
                     </span>
@@ -657,12 +657,12 @@ function Header({ onNote }) {
                     />
                   ) : (
                     <div
-                      className="d-flex align-items-center justify-content-center fw-bold text-white shadow-sm"
+                      className="d-flex align-items-center justify-content-center fw-bold text-white shadow-sm user-avatar-initials"
                       style={{
                         width: '45px',
                         height: '45px',
                         borderRadius: '1.25rem',
-                        background: '#0a500f',
+                        background: 'var(--cc-primary, #0a500f)',
                         fontSize: '15px',
                         fontWeight: '700',
                         letterSpacing: '0.5px',
@@ -704,12 +704,12 @@ function Header({ onNote }) {
                     <svg
                       id="icon-inbox"
                       xmlns="http://www.w3.org/2000/svg"
-                      style={{ color: '#0a500f' }}
+                      style={{ color: 'var(--cc-primary, #0a500f)' }}
                       width={18}
                       height={18}
                       viewBox="0 0 24 24"
                       fill="none"
-                      stroke="#0a500f"
+                      stroke="var(--cc-primary, #0a500f)"
                       strokeWidth={2}
                       strokeLinecap="round"
                       strokeLinejoin="round"

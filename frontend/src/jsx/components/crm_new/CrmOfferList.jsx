@@ -692,8 +692,8 @@ const CrmOfferList = () => {
                     background: transparent;
                 }
                 .scheme-modal-nav .nav-link.active {
-                    color: #0a500f !important;
-                    border-bottom: 2px solid #0a500f !important;
+                    color: var(--cc-primary, #0a500f) !important;
+                    border-bottom: 2px solid var(--cc-primary, #0a500f) !important;
                     background: transparent !important;
                 }
                 .criteria-table th {

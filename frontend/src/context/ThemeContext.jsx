@@ -163,6 +163,9 @@ const ThemeContextProvider = (props) => {
   const changeSaveBtnColor = (color) => {
     setSaveBtnColor(color);
     localStorage.setItem("saveBtnColor", color);
+    document.documentElement.style.setProperty('--save-btn-color', color);
+    document.documentElement.style.setProperty('--save-btn-hover-color', color);
+    patchThemeToBackend({ theme_save_btn_color: color });
   };
 
   useEffect(() => {
@@ -177,6 +180,9 @@ const ThemeContextProvider = (props) => {
   const changeCancelBtnColor = (color) => {
     setCancelBtnColor(color);
     localStorage.setItem("cancelBtnColor", color);
+    document.documentElement.style.setProperty('--cancel-btn-color', color);
+    document.documentElement.style.setProperty('--cancel-btn-hover-color', color);
+    patchThemeToBackend({ theme_cancel_btn_color: color });
   };
 
   useEffect(() => {
@@ -345,6 +351,20 @@ const ThemeContextProvider = (props) => {
         setFormIconColor(iconColor);
         localStorage.setItem('formIconColor', iconColor);
         document.documentElement.style.setProperty('--form-icon-color', iconColor);
+
+        // Save Button Color
+        const saveColor = data.theme_save_btn_color || '#0a500f';
+        setSaveBtnColor(saveColor);
+        localStorage.setItem('saveBtnColor', saveColor);
+        document.documentElement.style.setProperty('--save-btn-color', saveColor);
+        document.documentElement.style.setProperty('--save-btn-hover-color', saveColor);
+
+        // Cancel Button Color
+        const cancelColor = data.theme_cancel_btn_color || '#dc3545';
+        setCancelBtnColor(cancelColor);
+        localStorage.setItem('cancelBtnColor', cancelColor);
+        document.documentElement.style.setProperty('--cancel-btn-color', cancelColor);
+        document.documentElement.style.setProperty('--cancel-btn-hover-color', cancelColor);
       })
       .catch(() => { /* silently ignore — localStorage values remain */ });
   }, []);
@@ -574,6 +594,8 @@ const ThemeContextProvider = (props) => {
         theme_sidebar_color: '',
         theme_sidebar_font_color: '',
         theme_primary_color: '',
+        theme_save_btn_color: '',
+        theme_cancel_btn_color: '',
         theme_bg_color: '',
         theme_font_color: '',
         theme_form_icon_color: '',

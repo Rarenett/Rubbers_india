@@ -87,8 +87,9 @@ class CompanyViewSet(viewsets.ModelViewSet):
             
             allowed_theme_fields = [
                 'theme_nav_header_color', 'theme_header_color', 'theme_sidebar_color',
-                'theme_sidebar_font_color', 'theme_primary_color', 'theme_bg_color',
-                'theme_font_color', 'theme_form_icon_color', 'theme_version', 'login_panel_color'
+                'theme_sidebar_font_color', 'theme_primary_color', 'theme_save_btn_color',
+                'theme_cancel_btn_color', 'theme_bg_color', 'theme_font_color',
+                'theme_form_icon_color', 'theme_version', 'login_panel_color'
             ]
             for field in allowed_theme_fields:
                 if field in request.data:
@@ -109,6 +110,8 @@ class CompanyViewSet(viewsets.ModelViewSet):
                 'theme_sidebar_color': '',
                 'theme_sidebar_font_color': '',
                 'theme_primary_color': '',
+                'theme_save_btn_color': '',
+                'theme_cancel_btn_color': '',
                 'theme_bg_color': '',
                 'theme_font_color': '',
                 'theme_form_icon_color': '',
@@ -137,6 +140,8 @@ class CompanyViewSet(viewsets.ModelViewSet):
             'theme_sidebar_color':    company.theme_sidebar_color    or '',
             'theme_sidebar_font_color': company.theme_sidebar_font_color or '',
             'theme_primary_color':    company.theme_primary_color    or '',
+            'theme_save_btn_color':   company.theme_save_btn_color   or '',
+            'theme_cancel_btn_color': company.theme_cancel_btn_color or '',
             'theme_bg_color':         company.theme_bg_color         or '',
             'theme_font_color':       company.theme_font_color       or '',
             'theme_form_icon_color':  company.theme_form_icon_color  or '',

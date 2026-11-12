@@ -1955,16 +1955,16 @@ const WalletSchemes = () => {
                 }
                 .wallet-scheme-modal .scheme-custom-tabs .nav-link:hover {
                     text-decoration: none !important;
-                    color: #0a500f;
+                    color: var(--cc-primary, #0a500f) !important;
                     border-bottom-color: #cbd5e1 !important;
                 }
                 .wallet-scheme-modal .scheme-custom-tabs .nav-link.active {
                     text-decoration: none !important;
-                    color: #0a500f !important;
+                    color: var(--cc-primary, #0a500f) !important;
                     font-weight: 600;
                     background-color: transparent !important;
                     border: none !important;
-                    border-bottom: 2px solid #0a500f !important;
+                    border-bottom: 2px solid var(--cc-primary, #0a500f) !important;
                 }
                 .wallet-scheme-modal .scheme-tab-content {
                     flex: 1 1 auto !important;

@@ -437,13 +437,13 @@ const FactoryDetails = () => {
             gap: 8px;
         }
         .factory-tab-link:hover:not(.active) {
-            color: #0a500f !important;
+            color: var(--cc-primary, #0a500f) !important;
             background-color: rgba(122, 112, 186, 0.05) !important;
         }
         .factory-tab-link.active {
-            color: #0a500f !important;
+            color: var(--cc-primary, #0a500f) !important;
             background-color: #ffffff !important;
-            border-bottom: 3px solid #0a500f !important;
+            border-bottom: 3px solid var(--cc-primary, #0a500f) !important;
             box-shadow: none !important;
         }
 
@@ -700,7 +700,7 @@ const FactoryDetails = () => {
         [data-theme-version="dark"] .factory-tab-link.active {
             color: #c4b5fd !important;
             background-color: #24292D !important;
-            border-bottom-color: #0a500f !important;
+            border-bottom-color: var(--cc-primary, #0a500f) !important;
         }
         [data-theme-version="dark"] .table-custom thead th {
             background-color: #1e2630 !important;

@@ -801,8 +801,8 @@ const LeadCreate = () => {
                 .custom-form-tabs .tab-btn.active {
                     background: transparent !important;
                     border: none !important;
-                    border-bottom: 2px solid #0a500f !important;
-                    color: #0a500f !important;
+                    border-bottom: 2px solid var(--cc-primary, #0a500f) !important;
+                    color: var(--cc-primary, #0a500f) !important;
                     font-weight: 600 !important;
                     box-shadow: none !important;
                 }

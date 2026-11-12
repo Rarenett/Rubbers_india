@@ -7650,7 +7650,7 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                 }
                 .quick-add-btn:active { transform: scale(0.96); }
                 .btn-close-custom {
-                    background-color: #dc3545 !important;
+                    background-color: var(--cancel-btn-color, #dc3545) !important;
                     border-color: #0a500f !important;
                     color: #fff !important;
                     font-weight: 500;
@@ -7658,13 +7658,9 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                     padding: 10px 24px !important;
                     border-radius: 8px;
                 }
-                .btn-close-custom:hover {
-                    background-color: #bb2d3b !important;
-                    border-color: #073d0b !important;
-                    color: #fff !important;
-                }
+                .btn-close-custom:hover, .btn-close-custom:active, .btn-close-custom:focus { background-color: var(--cancel-btn-color, #dc3545) !important; border-color: var(--cancel-btn-color, #dc3545) !important; opacity: 1 !important; box-shadow: none !important; }
                 .btn-save-custom {
-                    background-color: #0a500f !important;
+                    background-color: var(--save-btn-color, #0a500f) !important;
                     border-color: #0a500f !important;
                     color: #fff !important;
                     font-weight: 500;
@@ -7672,11 +7668,7 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                     padding: 10px 24px !important;
                     border-radius: 8px;
                 }
-                .btn-save-custom:hover {
-                    background-color: #073d0b !important;
-                    border-color: #073d0b !important;
-                    color: #fff !important;
-                }
+                .btn-save-custom:hover, .btn-save-custom:active, .btn-save-custom:focus { background-color: var(--save-btn-color, #0a500f) !important; border-color: var(--save-btn-color, #0a500f) !important; opacity: 1 !important; box-shadow: none !important; }
                 .appointment-custom-modal .modal-content,
                 .item-custom-modal .modal-content {
                     border-radius: 16px !important;
@@ -7705,7 +7697,7 @@ const GateEntryForm = ({ embedded = false, inModal = false, onClose = null, onSu
                 .item-custom-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #0a500f;
+                    background-color: var(--form-icon-color, #0a500f);
                     border-radius: 50%;
                     display: flex;
                     align-items: center;

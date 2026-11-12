@@ -40,7 +40,7 @@ const styles = {
     },
     activeBreadcrumb: {
         fontSize: '16px',
-        color: '#58d68d',
+        color: 'var(--cc-primary, #0a500f)',
         fontWeight: '500'
     },
     cardTitle: {
@@ -64,7 +64,7 @@ const styles = {
         fontSize: '16px'
     },
     navLink: {
-        color: '#58d68d',
+        color: 'var(--cc-primary, #0a500f)',
         fontSize: '17px',
         fontWeight: '500',
         border: 'none',
@@ -75,7 +75,7 @@ const styles = {
     activeNavLink: {
         backgroundColor: '#f0fdf9',
         borderRadius: '8px',
-        color: '#58d68d'
+        color: 'var(--cc-primary, #0a500f)'
     }
 };
 
@@ -334,7 +334,7 @@ const BranchDetails = () => {
             width: 56px;
             height: 56px;
             border-radius: 12px;
-            background: linear-gradient(135deg, #0a500f 0%, #58d68d 100%);
+            background: linear-gradient(135deg, var(--cc-primary, #0a500f) 0%, var(--save-btn-color, #0a500f) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -419,10 +419,10 @@ const BranchDetails = () => {
             align-items: center;
             gap: 8px;
         }
-        .custom-tab-link:hover { color: #0a500f !important; background-color: #f8fafc !important; }
+        .custom-tab-link:hover { color: var(--cc-primary, #0a500f) !important; background-color: #f8fafc !important; }
         .custom-tab-link.active {
-            color: #0a500f !important;
-            border-bottom-color: #0a500f !important;
+            color: var(--cc-primary, #0a500f) !important;
+            border-bottom-color: var(--cc-primary, #0a500f) !important;
             background-color: transparent !important;
             box-shadow: none !important;
         }
@@ -430,11 +430,11 @@ const BranchDetails = () => {
         [data-theme-version="dark"] .custom-tab-link.active {
             color: #c4b5fd !important;
             background-color: #24292D !important;
-            border-bottom-color: #0a500f !important;
+            border-bottom-color: var(--cc-primary, #0a500f) !important;
         }
         .btn-primary-custom {
-            background-color: #58d68d !important;
-            border-color: #58d68d !important;
+            background-color: var(--save-btn-color, #0a500f) !important;
+            border-color: var(--save-btn-color, #0a500f) !important;
             color: white !important;
             border-radius: 8px !important;
             font-weight: 600 !important;
@@ -442,8 +442,9 @@ const BranchDetails = () => {
             padding: 10px 24px !important;
         }
         .btn-primary-custom:hover {
-            background-color: #4ec08d !important;
-            border-color: #4ec08d !important;
+            background-color: var(--save-btn-color, #0a500f) !important;
+            border-color: var(--save-btn-color, #0a500f) !important;
+            opacity: 1 !important;
         }
         .table-custom thead th {
             background-color: #fcfdfe !important;
@@ -535,23 +536,23 @@ const BranchDetails = () => {
             justify-content: center;
         }
         .addr-custom-modal .modal-icon-circle {
-            background-color: #3b82f6;
+            background-color: var(--form-icon-color, #3b82f6);
             box-shadow: 0 4px 10px rgba(59,130,246,0.25);
         }
         .contact-custom-modal .modal-icon-circle {
-            background-color: #10b981;
+            background-color: var(--form-icon-color, #10b981);
             box-shadow: 0 4px 10px rgba(16,185,129,0.25);
         }
         .bank-custom-modal .modal-icon-circle {
-            background-color: #f59e0b;
+            background-color: var(--form-icon-color, #f59e0b);
             box-shadow: 0 4px 10px rgba(245,158,11,0.25);
         }
         .factory-custom-modal .modal-icon-circle {
-            background-color: #f97316;
+            background-color: var(--form-icon-color, #f97316);
             box-shadow: 0 4px 10px rgba(249,115,22,0.25);
         }
         .warehouse-custom-modal .modal-icon-circle {
-            background-color: #8b5cf6;
+            background-color: var(--form-icon-color, #8b5cf6);
             box-shadow: 0 4px 10px rgba(139,92,246,0.25);
         }
         .modal-close-x {
@@ -606,7 +607,7 @@ const BranchDetails = () => {
         .form-control-custom::placeholder { color: #94a3b8; }
         
         .btn-close-custom {
-            background-color: #dc3545 !important;
+            background-color: var(--cancel-btn-color, #dc3545) !important;
             color: white !important;
             border-radius: 8px !important;
             font-weight: 500 !important;
@@ -616,10 +617,10 @@ const BranchDetails = () => {
             cursor: pointer;
             transition: background-color 0.2s;
         }
-        .btn-close-custom:hover { background-color: #bb2d3b !important; }
+        .btn-close-custom:hover, .btn-close-custom:active, .btn-close-custom:focus { background-color: var(--cancel-btn-color, #dc3545) !important; border-color: var(--cancel-btn-color, #dc3545) !important; opacity: 1 !important; box-shadow: none !important; }
         
         .btn-save-custom {
-            background-color: #0a500f !important;
+            background-color: var(--save-btn-color, #0a500f) !important;
             color: white !important;
             border-radius: 8px !important;
             font-weight: 500 !important;
@@ -629,7 +630,7 @@ const BranchDetails = () => {
             cursor: pointer;
             transition: background-color 0.2s;
         }
-        .btn-save-custom:hover { background-color: #073d0b !important; }
+        .btn-save-custom:hover, .btn-save-custom:active, .btn-save-custom:focus { background-color: var(--save-btn-color, #0a500f) !important; border-color: var(--save-btn-color, #0a500f) !important; opacity: 1 !important; box-shadow: none !important; }
 
         /* ===== DARK MODE SUPPORT ===== */
         [data-theme-version="dark"] .modal-content {
@@ -1238,19 +1239,19 @@ const BranchDetails = () => {
                                                     <h5 className="mb-1 font-w600">Departments</h5>
                                                     <p className="text-muted mb-0" style={{ fontSize: '13px' }}>Departments operating under this branch</p>
                                                 </div>
-                                                <Button className="btn-primary-custom" onClick={handleDepartmentsSubmit}>Save Selection</Button>
+                                                <Button className="btn-save-custom" onClick={handleDepartmentsSubmit}>Save Selection</Button>
                                             </div>
                                             <div className="row">
                                                 {allDepartments.map(dept => (
                                                     <div key={dept.id} className="col-md-3 mb-3">
-                                                        <div className={`form-check custom-checkbox p-3 border rounded h-100 transition-all hover-shadow dept-card${selectedBranchDepts.includes(dept.id) ? ' dept-card-selected' : ''}`} style={{ cursor: 'pointer', borderColor: selectedBranchDepts.includes(dept.id) ? '#58d68d' : '#eee' }} onClick={() => handleDeptToggle(dept.id)}>
+                                                        <div className={`form-check custom-checkbox p-3 border rounded h-100 transition-all hover-shadow dept-card${selectedBranchDepts.includes(dept.id) ? ' dept-card-selected' : ''}`} style={{ cursor: 'pointer', borderColor: selectedBranchDepts.includes(dept.id) ? 'var(--cc-primary, #0a500f)' : '#eee' }} onClick={() => handleDeptToggle(dept.id)}>
                                                             <input
                                                                 type="checkbox"
                                                                 className="form-check-input"
                                                                 id={`dept-${dept.id}`}
                                                                 checked={selectedBranchDepts.includes(dept.id)}
                                                                 onChange={() => { }}
-                                                                style={{ accentColor: '#58d68d' }}
+                                                                style={{ accentColor: 'var(--cc-primary, #0a500f)' }}
                                                             />
                                                             <label className="form-check-label ms-2" style={{ cursor: 'pointer', fontWeight: selectedBranchDepts.includes(dept.id) ? '600' : '400' }}>
                                                                 {dept.name}
@@ -1624,7 +1625,7 @@ const BranchDetails = () => {
                 <Modal show={showLicenseModal} onHide={() => setShowLicenseModal(false)} dialogClassName="branch-custom-modal" centered size="xl">
                     <div className="modal-header-custom">
                         <div className="d-flex align-items-center gap-3">
-                            <div className="modal-icon-circle" style={{ backgroundColor: '#6c5ce7', width: '45px', height: '45px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                            <div className="modal-icon-circle" style={{ width: '45px', height: '45px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                                 <i className="fa fa-id-card text-white fs-4"></i>
                             </div>
                             <div>

@@ -161,7 +161,7 @@ const LeadCategoryList = () => {
                 .item-custom-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #0a500f;
+                    background-color: var(--form-icon-color, #0a500f);
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
@@ -219,7 +219,7 @@ const LeadCategoryList = () => {
                     box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
                 }
                 .item-custom-modal .btn-close-custom {
-                    background-color: #dc3545 !important;
+                    background-color: var(--cancel-btn-color, #dc3545) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -229,11 +229,9 @@ const LeadCategoryList = () => {
                     cursor: pointer;
                     transition: background-color 0.2s, transform 0.1s;
                 }
-                .item-custom-modal .btn-close-custom:hover {
-                    background-color: #bb2d3b !important;
-                }
+                .item-custom-modal .btn-close-custom:hover, .btn-close-custom:active, .btn-close-custom:focus { background-color: var(--cancel-btn-color, #dc3545) !important; border-color: var(--cancel-btn-color, #dc3545) !important; opacity: 1 !important; box-shadow: none !important; }
                 .item-custom-modal .btn-save-custom {
-                    background-color: #0a500f !important;
+                    background-color: var(--save-btn-color, #0a500f) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -243,9 +241,7 @@ const LeadCategoryList = () => {
                     cursor: pointer;
                     transition: background-color 0.2s, transform 0.1s;
                 }
-                .item-custom-modal .btn-save-custom:hover {
-                    background-color: #073d0b !important;
-                }
+                .item-custom-modal .btn-save-custom:hover, .btn-save-custom:active, .btn-save-custom:focus { background-color: var(--save-btn-color, #0a500f) !important; border-color: var(--save-btn-color, #0a500f) !important; opacity: 1 !important; box-shadow: none !important; }
                 .lead-category-header-container {
                     display: flex !important;
                     flex-direction: row !important;

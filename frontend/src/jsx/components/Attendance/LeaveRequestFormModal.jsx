@@ -504,7 +504,7 @@ const LeaveRequestFormModal = ({ show, onHide, onSuccess, editMode = false, leav
                 .leave-custom-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #0a500f;
+                    background-color: var(--form-icon-color, #0a500f);
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
@@ -574,7 +574,7 @@ const LeaveRequestFormModal = ({ show, onHide, onSuccess, editMode = false, leav
                     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%232ece8a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E") !important;
                 }
                 .leave-custom-modal .btn-close-custom {
-                    background-color: #dc3545 !important;
+                    background-color: var(--cancel-btn-color, #dc3545) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -584,9 +584,9 @@ const LeaveRequestFormModal = ({ show, onHide, onSuccess, editMode = false, leav
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .leave-custom-modal .btn-close-custom:hover { background-color: #bb2d3b !important; }
+                .leave-custom-modal .btn-close-custom:hover, .btn-close-custom:active, .btn-close-custom:focus { background-color: var(--cancel-btn-color, #dc3545) !important; border-color: var(--cancel-btn-color, #dc3545) !important; opacity: 1 !important; box-shadow: none !important; }
                 .leave-custom-modal .btn-save-custom {
-                    background-color: #0a500f !important;
+                    background-color: var(--save-btn-color, #0a500f) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -596,7 +596,7 @@ const LeaveRequestFormModal = ({ show, onHide, onSuccess, editMode = false, leav
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .leave-custom-modal .btn-save-custom:hover { background-color: #073d0b !important; }
+                .leave-custom-modal .btn-save-custom:hover, .btn-save-custom:active, .btn-save-custom:focus { background-color: var(--save-btn-color, #0a500f) !important; border-color: var(--save-btn-color, #0a500f) !important; opacity: 1 !important; box-shadow: none !important; }
                 .date-badge-pill {
                     display: inline-flex;
                     align-items: center;

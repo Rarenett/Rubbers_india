@@ -335,7 +335,7 @@ const AdjustmentModal = ({ show, onHide, onSuccess, adjustment = null }) => {
                 .adj-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background: #0a500f;
+                    background: var(--form-icon-color, #0a500f);
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
@@ -385,7 +385,7 @@ const AdjustmentModal = ({ show, onHide, onSuccess, adjustment = null }) => {
                     box-shadow: 0 0 0 3px rgba(10, 80, 15,.15);
                 }
                 .adj-modal .btn-close-custom {
-                    background: #0a500f !important;
+                    background: var(--cancel-btn-color, #dc3545) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -395,7 +395,7 @@ const AdjustmentModal = ({ show, onHide, onSuccess, adjustment = null }) => {
                     cursor: pointer;
                 }
                 .adj-modal .btn-save-custom {
-                    background: #0a500f !important;
+                    background: var(--save-btn-color, #0a500f) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;

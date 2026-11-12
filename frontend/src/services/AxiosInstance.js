@@ -1,7 +1,7 @@
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
-const getBaseURL = () => {
+export const getBaseURL = () => {
     const envUrl = import.meta.env.VITE_BACKEND_URL;
     if (envUrl && envUrl.includes(':8001')) {
         return envUrl.replace(':8001', ':8000');

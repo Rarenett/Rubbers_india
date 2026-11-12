@@ -25,7 +25,7 @@ const styles = {
     },
     activeBreadcrumb: {
         fontSize: '16px',
-        color: '#58d68d',
+        color: 'var(--cc-primary, #0a500f)',
         fontWeight: '500'
     },
     formLabel: {
@@ -196,7 +196,7 @@ const WarehouseDetails = () => {
             width: 56px;
             height: 56px;
             border-radius: 12px;
-            background: linear-gradient(135deg, #0a500f 0%, #58d68d 100%);
+            background: linear-gradient(135deg, var(--cc-primary, #0a500f) 0%, var(--save-btn-color, #0a500f) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -281,10 +281,10 @@ const WarehouseDetails = () => {
             align-items: center;
             gap: 8px;
         }
-        .custom-tab-link:hover { color: #0a500f !important; background-color: #f8fafc !important; }
+        .custom-tab-link:hover { color: var(--cc-primary, #0a500f) !important; background-color: #f8fafc !important; }
         .custom-tab-link.active {
-            color: #0a500f !important;
-            border-bottom-color: #0a500f !important;
+            color: var(--cc-primary, #0a500f) !important;
+            border-bottom-color: var(--cc-primary, #0a500f) !important;
             background-color: transparent !important;
             box-shadow: none !important;
         }
@@ -292,7 +292,7 @@ const WarehouseDetails = () => {
         [data-theme-version="dark"] .custom-tab-link.active {
             color: #c4b5fd !important;
             background-color: #24292D !important;
-            border-bottom-color: #0a500f !important;
+            border-bottom-color: var(--cc-primary, #0a500f) !important;
         }
         .table-custom thead th {
             background-color: #fcfdfe !important;
@@ -313,7 +313,7 @@ const WarehouseDetails = () => {
             color: #444 !important;
         }
         .badge-primary-custom {
-            background-color: #58d68d !important;
+            background-color: var(--cc-primary, #0a500f) !important;
             color: #fff !important;
             font-weight: 600 !important;
             font-size: 14px !important;
@@ -356,7 +356,7 @@ const WarehouseDetails = () => {
             transition: all 0.2s ease;
         }
         .btn-view { background-color: #3498db !important; box-shadow: 0 4px 6px rgba(52, 152, 219, 0.2); }
-        .btn-edit { background-color: #58d68d !important; box-shadow: 0 4px 6px rgba(88, 214, 141, 0.2); }
+        .btn-edit { background-color: var(--cc-primary, #0a500f) !important; box-shadow: 0 4px 6px rgba(88, 214, 141, 0.2); }
         .btn-delete { background-color: #e74c3c !important; box-shadow: 0 4px 6px rgba(231, 76, 60, 0.2); }
         .action-btn:hover { transform: translateY(-2px); opacity: 0.9; }
 
@@ -383,11 +383,11 @@ const WarehouseDetails = () => {
             justify-content: center;
         }
         .addr-custom-modal .modal-icon-circle {
-            background-color: #3b82f6;
+            background-color: var(--form-icon-color, #3b82f6);
             box-shadow: 0 4px 10px rgba(59,130,246,0.25);
         }
         .contact-custom-modal .modal-icon-circle {
-            background-color: #10b981;
+            background-color: var(--form-icon-color, #10b981);
             box-shadow: 0 4px 10px rgba(16,185,129,0.25);
         }
         .modal-close-x {
@@ -442,7 +442,7 @@ const WarehouseDetails = () => {
         .form-control-custom::placeholder { color: #94a3b8; }
         
         .btn-close-custom {
-            background-color: #dc3545 !important;
+            background-color: var(--cancel-btn-color, #dc3545) !important;
             color: white !important;
             border-radius: 8px !important;
             font-weight: 500 !important;
@@ -452,10 +452,10 @@ const WarehouseDetails = () => {
             cursor: pointer;
             transition: background-color 0.2s;
         }
-        .btn-close-custom:hover { background-color: #bb2d3b !important; }
+        .btn-close-custom:hover, .btn-close-custom:active, .btn-close-custom:focus { background-color: var(--cancel-btn-color, #dc3545) !important; border-color: var(--cancel-btn-color, #dc3545) !important; opacity: 1 !important; box-shadow: none !important; }
         
         .btn-save-custom {
-            background-color: #0a500f !important;
+            background-color: var(--save-btn-color, #0a500f) !important;
             color: white !important;
             border-radius: 8px !important;
             font-weight: 500 !important;
@@ -465,7 +465,7 @@ const WarehouseDetails = () => {
             cursor: pointer;
             transition: background-color 0.2s;
         }
-        .btn-save-custom:hover { background-color: #073d0b !important; }
+        .btn-save-custom:hover, .btn-save-custom:active, .btn-save-custom:focus { background-color: var(--save-btn-color, #0a500f) !important; border-color: var(--save-btn-color, #0a500f) !important; opacity: 1 !important; box-shadow: none !important; }
 
         /* ===== DARK MODE SUPPORT ===== */
         [data-theme-version="dark"] .modal-content {

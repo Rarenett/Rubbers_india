@@ -560,7 +560,7 @@ const AppointmentFormModal = ({ show, onHide, itemToEdit, onSave }) => {
                                     <Button
                                         type="button"
                                         className="btn btn-sm d-flex align-items-center justify-content-center px-3"
-                                        style={{ height: '38px', borderRadius: '8px', fontWeight: 500, backgroundColor: '#0a500f', border: 'none', color: 'white', whiteSpace: 'nowrap' }}
+                                        style={{ height: "38px", borderRadius: "8px", fontWeight: 500, backgroundColor: "var(--cc-primary, #0a500f)", border: "none", color: "white", whiteSpace: "nowrap" }}
                                         onClick={() => {
                                             if (entryMode === 'visitor') setShowSpotModal(true);
                                             else setShowSpotVehicleModal(true);
@@ -708,7 +708,7 @@ const AppointmentFormModal = ({ show, onHide, itemToEdit, onSave }) => {
                 .appointment-custom-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #0a500f;
+                    background-color: var(--form-icon-color, #0a500f);
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
@@ -769,7 +769,7 @@ const AppointmentFormModal = ({ show, onHide, itemToEdit, onSave }) => {
                     color: #94a3b8;
                 }
                 .appointment-custom-modal .btn-close-custom {
-                    background-color: #dc3545 !important;
+                    background-color: var(--cancel-btn-color, #dc3545) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -779,11 +779,9 @@ const AppointmentFormModal = ({ show, onHide, itemToEdit, onSave }) => {
                     cursor: pointer;
                     transition: background-color 0.2s, transform 0.1s;
                 }
-                .appointment-custom-modal .btn-close-custom:hover {
-                    background-color: #bb2d3b !important;
-                }
+                .appointment-custom-modal .btn-close-custom:hover, .btn-close-custom:active, .btn-close-custom:focus { background-color: var(--cancel-btn-color, #dc3545) !important; border-color: var(--cancel-btn-color, #dc3545) !important; opacity: 1 !important; box-shadow: none !important; }
                 .appointment-custom-modal .btn-save-custom {
-                    background-color: #0a500f !important;
+                    background-color: var(--save-btn-color, #0a500f) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -793,9 +791,7 @@ const AppointmentFormModal = ({ show, onHide, itemToEdit, onSave }) => {
                     cursor: pointer;
                     transition: background-color 0.2s, transform 0.1s;
                 }
-                .appointment-custom-modal .btn-save-custom:hover {
-                    background-color: #073d0b !important;
-                }
+                .appointment-custom-modal .btn-save-custom:hover, .btn-save-custom:active, .btn-save-custom:focus { background-color: var(--save-btn-color, #0a500f) !important; border-color: var(--save-btn-color, #0a500f) !important; opacity: 1 !important; box-shadow: none !important; }
             `}</style>
         </>
     );

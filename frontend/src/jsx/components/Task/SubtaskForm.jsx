@@ -228,7 +228,7 @@ const SubtaskForm = ({ show, onHide, editId, formData, setFormData, onSubmit, sa
                     <button
                         type="button"
                         className="btn-close-custom btn-cancel-custom"
-                        style={{ backgroundColor: '#dc3545', borderColor: '#dc3545', color: '#ffffff' }}
+                        style={{ backgroundColor: "var(--cancel-btn-color, #dc3545)", borderColor: "var(--cancel-btn-color, #dc3545)", color: "#ffffff" }}
                         onClick={onHide}
                     >
                         Cancel

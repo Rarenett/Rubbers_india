@@ -113,7 +113,7 @@ const ApprovelessEntryConfig = () => {
             ...base,
             minHeight: '42px',
             borderRadius: '8px',
-            borderColor: state.isFocused ? '#0a500f' : (isDark ? '#334155' : '#e2e8f0'),
+            borderColor: state.isFocused ? "var(--cc-primary, #0a500f)" : (isDark ? "#334155" : "#e2e8f0"),
             backgroundColor: isDark ? '#1e293b' : '#ffffff',
             color: isDark ? '#f8fafc' : '#0f172a',
             boxShadow: state.isFocused ? '0 0 0 3px rgba(10, 80, 15, 0.15)' : 'none',
@@ -466,8 +466,7 @@ const ApprovelessEntryConfig = () => {
                                         className="btn text-white fw-medium shadow-sm d-flex align-items-center justify-content-center"
                                         disabled={submitting || !selectedDepartment || !selectedEmployee}
                                         style={{
-                                            backgroundColor: '#0a500f',
-                                            borderColor: '#0a500f',
+                                            backgroundColor: "var(--cc-primary, #0a500f)", borderColor: "var(--cc-primary, #0a500f)",
                                             borderRadius: '8px',
                                             fontSize: '14px',
                                             padding: '8px 24px',

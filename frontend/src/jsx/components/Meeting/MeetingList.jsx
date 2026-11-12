@@ -771,7 +771,7 @@ const MeetingList = () => {
                         width: 48px;
                         height: 48px;
                         border-radius: 12px;
-                        background: #0a500f;
+                        background: var(--form-icon-color, #0a500f);
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -837,34 +837,27 @@ const MeetingList = () => {
                         padding: 0 24px;
                         border-radius: 8px;
                         border: none;
-                        background: #dc3545 !important;
-                        background-color: #dc3545 !important;
+                        background: var(--cancel-btn-color, #dc3545) !important;
+                        background-color: var(--cancel-btn-color, #dc3545) !important;
                         color: white !important;
                         font-weight: 500;
                         font-size: 14px;
                         transition: all 0.2s;
                     }
-                    .mc-modal .btn-close-custom:hover {
-                        background: #bb2d3b !important;
-                        background-color: #bb2d3b !important;
-                        color: white !important;
-                    }
+                    .mc-modal .btn-close-custom:hover, .btn-close-custom:active, .btn-close-custom:focus { background-color: var(--cancel-btn-color, #dc3545) !important; border-color: var(--cancel-btn-color, #dc3545) !important; opacity: 1 !important; box-shadow: none !important; }
                     .mc-modal .btn-save-custom {
                         height: 42px;
                         padding: 0 28px;
                         border-radius: 10px;
                         border: none;
-                        background: #0a500f;
+                        background: var(--save-btn-color, #0a500f);
                         color: white;
                         font-weight: 600;
                         font-size: 14px;
                         box-shadow: 0 4px 14px rgba(10, 80, 15, 0.25);
                         transition: all 0.2s;
                     }
-                    .mc-modal .btn-save-custom:hover {
-                        background: #25ba7a;
-                        color: white;
-                    }
+                    .mc-modal .btn-save-custom:hover, .btn-save-custom:active, .btn-save-custom:focus { background-color: var(--save-btn-color, #0a500f) !important; border-color: var(--save-btn-color, #0a500f) !important; opacity: 1 !important; box-shadow: none !important; }
                 `}</style>
                 <div className="modal-header-custom">
                     <div className="d-flex align-items-center gap-3">

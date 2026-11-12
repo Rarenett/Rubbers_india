@@ -437,13 +437,13 @@ const FactoryDetails = () => {
             gap: 8px;
         }
         .factory-tab-link:hover:not(.active) {
-            color: #0a500f !important;
+            color: var(--cc-primary, #0a500f) !important;
             background-color: rgba(122, 112, 186, 0.05) !important;
         }
         .factory-tab-link.active {
-            color: #0a500f !important;
+            color: var(--cc-primary, #0a500f) !important;
             background-color: #ffffff !important;
-            border-bottom: 3px solid #0a500f !important;
+            border-bottom: 3px solid var(--cc-primary, #0a500f) !important;
             box-shadow: none !important;
         }
 
@@ -582,10 +582,10 @@ const FactoryDetails = () => {
             align-items: center;
             justify-content: center;
         }
-        .addr-custom-modal .modal-icon-circle { background-color: #3b82f6; }
-        .contact-custom-modal .modal-icon-circle { background-color: #10b981; }
-        .warehouse-custom-modal .modal-icon-circle { background-color: #8b5cf6; }
-        .factory-custom-modal .modal-icon-circle { background-color: #0a500f; }
+        .addr-custom-modal .modal-icon-circle { background-color: var(--form-icon-color, #3b82f6); }
+        .contact-custom-modal .modal-icon-circle { background-color: var(--form-icon-color, #10b981); }
+        .warehouse-custom-modal .modal-icon-circle { background-color: var(--form-icon-color, #8b5cf6); }
+        .factory-custom-modal .modal-icon-circle { background-color: var(--form-icon-color, #0a500f); }
 
         .modal-close-x {
             border: none;
@@ -637,7 +637,7 @@ const FactoryDetails = () => {
             box-shadow: 0 0 0 3px rgba(10, 80, 15, 0.15);
         }
         .btn-close-custom {
-            background-color: #dc3545 !important;
+            background-color: var(--cancel-btn-color, #dc3545) !important;
             color: white !important;
             border-radius: 8px !important;
             font-weight: 500 !important;
@@ -647,9 +647,9 @@ const FactoryDetails = () => {
             cursor: pointer;
             transition: background-color 0.2s;
         }
-        .btn-close-custom:hover { background-color: #bb2d3b !important; }
+        .btn-close-custom:hover, .btn-close-custom:active, .btn-close-custom:focus { background-color: var(--cancel-btn-color, #dc3545) !important; border-color: var(--cancel-btn-color, #dc3545) !important; opacity: 1 !important; box-shadow: none !important; }
         .btn-save-custom {
-            background-color: #0a500f !important;
+            background-color: var(--save-btn-color, #0a500f) !important;
             color: white !important;
             border-radius: 8px !important;
             font-weight: 500 !important;
@@ -659,7 +659,7 @@ const FactoryDetails = () => {
             cursor: pointer;
             transition: background-color 0.2s;
         }
-        .btn-save-custom:hover { background-color: #073d0b !important; }
+        .btn-save-custom:hover, .btn-save-custom:active, .btn-save-custom:focus { background-color: var(--save-btn-color, #0a500f) !important; border-color: var(--save-btn-color, #0a500f) !important; opacity: 1 !important; box-shadow: none !important; }
 
         /* Search input styling */
         .search-input-custom {
@@ -700,7 +700,7 @@ const FactoryDetails = () => {
         [data-theme-version="dark"] .factory-tab-link.active {
             color: #c4b5fd !important;
             background-color: #24292D !important;
-            border-bottom-color: #0a500f !important;
+            border-bottom-color: var(--cc-primary, #0a500f) !important;
         }
         [data-theme-version="dark"] .table-custom thead th {
             background-color: #1e2630 !important;
@@ -1533,7 +1533,7 @@ const FactoryDetails = () => {
             <Modal show={showLicenseModal} onHide={() => setShowLicenseModal(false)} dialogClassName="factory-custom-modal" centered size="xl">
                 <div className="modal-header-custom">
                     <div className="d-flex align-items-center gap-3">
-                        <div className="modal-icon-circle" style={{ backgroundColor: '#0a500f', width: '44px', height: '44px', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <div className="modal-icon-circle" style={{ width: '44px', height: '44px', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                             <i className="fa fa-id-card text-white fs-4"></i>
                         </div>
                         <div>

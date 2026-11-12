@@ -70,17 +70,34 @@ class CompanyViewSet(viewsets.ModelViewSet):
     serializer_class = CompanySerializer
     permission_classes = [module_permission('company')]
 
-    @action(detail=False, methods=['get'], permission_classes=[])
+    @action(detail=False, methods=['get', 'patch'], permission_classes=[])
     def branding(self, request):
         """
-        Public endpoint — returns safe branding + theme fields (no auth required).
-        Used by the Login page and ThemeContext to apply the correct colours in any browser.
+        Public / Authenticated endpoint:
+        - GET: returns safe branding + theme fields (no auth required) with no-cache headers.
+        - PATCH: updates theme settings on the primary company (requires authenticated user).
         """
-        from rest_framework.permissions import AllowAny
-        self.permission_classes = [AllowAny]
         company = Company.objects.first()
+        if request.method == 'PATCH':
+            from rest_framework.permissions import IsAuthenticated
+            if not request.user or not request.user.is_authenticated:
+                return Response({'detail': 'Authentication credentials were not provided.'}, status=status.HTTP_401_UNAUTHORIZED)
+            if not company:
+                return Response({'detail': 'No company found.'}, status=status.HTTP_404_NOT_FOUND)
+            
+            allowed_theme_fields = [
+                'theme_nav_header_color', 'theme_header_color', 'theme_sidebar_color',
+                'theme_sidebar_font_color', 'theme_primary_color', 'theme_save_btn_color',
+                'theme_cancel_btn_color', 'theme_bg_color', 'theme_font_color',
+                'theme_form_icon_color', 'theme_version', 'login_panel_color'
+            ]
+            for field in allowed_theme_fields:
+                if field in request.data:
+                    setattr(company, field, request.data[field])
+            company.save()
+
         if not company:
-            return Response({
+            response = Response({
                 'id': None,
                 'login_panel_color': '#0a500f',
                 'display_name': '',
@@ -93,15 +110,22 @@ class CompanyViewSet(viewsets.ModelViewSet):
                 'theme_sidebar_color': '',
                 'theme_sidebar_font_color': '',
                 'theme_primary_color': '',
+                'theme_save_btn_color': '',
+                'theme_cancel_btn_color': '',
                 'theme_bg_color': '',
                 'theme_font_color': '',
                 'theme_form_icon_color': '',
                 'theme_version': 'light',
                 'date_format': 'DD/MM/YYYY',
             })
+            response['Cache-Control'] = 'no-cache, no-store, must-revalidate, max-age=0'
+            response['Pragma'] = 'no-cache'
+            response['Expires'] = '0'
+            return response
+
         logo_url = request.build_absolute_uri(company.logo.url) if company.logo else None
         title_logo_url = request.build_absolute_uri(company.title_logo.url) if company.title_logo else None
-        return Response({
+        response = Response({
             'id': company.id,
             'login_panel_color': company.login_panel_color or '#0a500f',
             'display_name': company.display_name or company.name or '',
@@ -116,11 +140,17 @@ class CompanyViewSet(viewsets.ModelViewSet):
             'theme_sidebar_color':    company.theme_sidebar_color    or '',
             'theme_sidebar_font_color': company.theme_sidebar_font_color or '',
             'theme_primary_color':    company.theme_primary_color    or '',
+            'theme_save_btn_color':   company.theme_save_btn_color   or '',
+            'theme_cancel_btn_color': company.theme_cancel_btn_color or '',
             'theme_bg_color':         company.theme_bg_color         or '',
             'theme_font_color':       company.theme_font_color       or '',
             'theme_form_icon_color':  company.theme_form_icon_color  or '',
             'theme_version':          company.theme_version          or 'light',
         })
+        response['Cache-Control'] = 'no-cache, no-store, must-revalidate, max-age=0'
+        response['Pragma'] = 'no-cache'
+        response['Expires'] = '0'
+        return response
 
     def _ensure_default_branch_and_factory(self, company):
         """

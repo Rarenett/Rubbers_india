@@ -745,18 +745,19 @@ const LedgerFormModal = ({ show, onHide, ledgerToEdit, accountGroups, onSave }) 
                             border: none !important;
                             border-bottom: 2px solid transparent !important;
                             padding: 8px 16px;
+                            transition: color 0.15s ease, border-color 0.15s ease;
                         }
                         .ledger-modal-body .nav-link:hover {
                             text-decoration: none !important;
-                            color: #3b82f6;
+                            color: var(--cc-primary, #0a500f) !important;
                         }
                         .ledger-modal-body .nav-link.active {
                             text-decoration: none !important;
-                            color: #2563eb !important;
+                            color: var(--cc-primary, #0a500f) !important;
                             font-weight: 600;
                             background-color: transparent !important;
                             border: none !important;
-                            border-bottom: 2px solid #2563eb !important;
+                            border-bottom: 2px solid var(--cc-primary, #0a500f) !important;
                         }
                         .ledger-modal-body input, .ledger-modal-body select, .ledger-modal-body textarea, .ledger-modal-body a {
                             text-decoration: none !important;
@@ -1302,7 +1303,7 @@ const LedgerFormModal = ({ show, onHide, ledgerToEdit, accountGroups, onSave }) 
                 <Modal.Footer>
                     <Button 
                         className="btn-universal-close btn-cancel-custom"
-                        style={{ backgroundColor: '#dc3545', borderColor: '#dc3545', color: '#ffffff' }}
+                        style={{ backgroundColor: "var(--cancel-btn-color, #dc3545)", borderColor: "var(--cancel-btn-color, #dc3545)", color: "#ffffff" }}
                         onClick={onHide}
                     >
                         Close

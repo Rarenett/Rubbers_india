@@ -1,5 +1,6 @@
-import React, { createContext, useEffect, useState, useRef } from "react";
+import React, { createContext, useEffect, useState, useRef, useCallback } from "react";
 import {dezThemeSet} from './ThemeDemo';
+import { getBaseURL } from '../services/AxiosInstance';
 
 export const ThemeContext = createContext();
 
@@ -155,6 +156,40 @@ const ThemeContextProvider = (props) => {
     document.documentElement.style.setProperty('--form-icon-color', formIconColor);
   }, [formIconColor]);
 
+  const [saveBtnColor, setSaveBtnColor] = useState(
+    localStorage.getItem("saveBtnColor") || "#0a500f"
+  );
+
+  const changeSaveBtnColor = (color) => {
+    setSaveBtnColor(color);
+    localStorage.setItem("saveBtnColor", color);
+    document.documentElement.style.setProperty('--save-btn-color', color);
+    document.documentElement.style.setProperty('--save-btn-hover-color', color);
+    patchThemeToBackend({ theme_save_btn_color: color });
+  };
+
+  useEffect(() => {
+    document.documentElement.style.setProperty('--save-btn-color', saveBtnColor);
+    document.documentElement.style.setProperty('--save-btn-hover-color', saveBtnColor);
+  }, [saveBtnColor]);
+
+  const [cancelBtnColor, setCancelBtnColor] = useState(
+    localStorage.getItem("cancelBtnColor") || "#dc3545"
+  );
+
+  const changeCancelBtnColor = (color) => {
+    setCancelBtnColor(color);
+    localStorage.setItem("cancelBtnColor", color);
+    document.documentElement.style.setProperty('--cancel-btn-color', color);
+    document.documentElement.style.setProperty('--cancel-btn-hover-color', color);
+    patchThemeToBackend({ theme_cancel_btn_color: color });
+  };
+
+  useEffect(() => {
+    document.documentElement.style.setProperty('--cancel-btn-color', cancelBtnColor);
+    document.documentElement.style.setProperty('--cancel-btn-hover-color', cancelBtnColor);
+  }, [cancelBtnColor]);
+
   const [customPrimaryColor, setCustomPrimaryColor] = useState(
     localStorage.getItem("customPrimaryColor") || "#0a500f"
   );
@@ -183,10 +218,10 @@ const ThemeContextProvider = (props) => {
     localStorage.getItem("customSidebarFontColor") || ""
   );
 
-  // ── Fetch theme from backend on mount (works in any browser, not just first one) ──
-  useEffect(() => {
-    const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://127.0.0.1:8000';
-    fetch(`${backendUrl}/api/settings/company/branding/`)
+  // ── Fetch theme from backend on mount and sync across all tabs/browsers ──
+  const fetchThemeFromBackend = useCallback(() => {
+    const backendUrl = getBaseURL();
+    fetch(`${backendUrl}/api/settings/company/branding/?_t=${Date.now()}`)
       .then(res => res.ok ? res.json() : null)
       .then(data => {
         if (!data) return;
@@ -311,20 +346,38 @@ const ThemeContextProvider = (props) => {
           localStorage.removeItem('customFontColor');
         }
 
-        // Form Icon Color
-        if (data.theme_form_icon_color) {
-          setFormIconColor(data.theme_form_icon_color);
-          localStorage.setItem('formIconColor', data.theme_form_icon_color);
-          document.documentElement.style.setProperty('--form-icon-color', data.theme_form_icon_color);
-        } else {
-          setFormIconColor('#0a500f');
-          localStorage.setItem('formIconColor', '#0a500f');
-          document.documentElement.style.setProperty('--form-icon-color', '#0a500f');
-        }
+        // Form & Modal Icon Color
+        const iconColor = data.theme_form_icon_color || '#0a500f';
+        setFormIconColor(iconColor);
+        localStorage.setItem('formIconColor', iconColor);
+        document.documentElement.style.setProperty('--form-icon-color', iconColor);
+
+        // Save Button Color
+        const saveColor = data.theme_save_btn_color || '#0a500f';
+        setSaveBtnColor(saveColor);
+        localStorage.setItem('saveBtnColor', saveColor);
+        document.documentElement.style.setProperty('--save-btn-color', saveColor);
+        document.documentElement.style.setProperty('--save-btn-hover-color', saveColor);
+
+        // Cancel Button Color
+        const cancelColor = data.theme_cancel_btn_color || '#dc3545';
+        setCancelBtnColor(cancelColor);
+        localStorage.setItem('cancelBtnColor', cancelColor);
+        document.documentElement.style.setProperty('--cancel-btn-color', cancelColor);
+        document.documentElement.style.setProperty('--cancel-btn-hover-color', cancelColor);
       })
       .catch(() => { /* silently ignore — localStorage values remain */ });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    fetchThemeFromBackend();
+    window.addEventListener('companySettingsUpdate', fetchThemeFromBackend);
+    window.addEventListener('focus', fetchThemeFromBackend);
+    return () => {
+      window.removeEventListener('companySettingsUpdate', fetchThemeFromBackend);
+      window.removeEventListener('focus', fetchThemeFromBackend);
+    };
+  }, [fetchThemeFromBackend]);
 
   // ── Helper: PATCH theme colours to backend so any browser picks them up ──
   const pendingPatch = useRef({});
@@ -346,36 +399,28 @@ const ThemeContextProvider = (props) => {
         const userDetails = localStorage.getItem('userDetails');
         if (!userDetails) return;
         const { access } = JSON.parse(userDetails);
-        const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://127.0.0.1:8000';
+        const backendUrl = getBaseURL();
         
-        // Directly patch if companyId is cached!
-        const id = localStorage.getItem('companyId');
-        if (id) {
-          fetch(`${backendUrl}/api/settings/company/${id}/`, {
-            method: 'PATCH',
-            headers: { Authorization: `Bearer ${access}`, 'Content-Type': 'application/json' },
-            body: JSON.stringify(finalPatch)
-          });
-        } else {
-          // Fallback if not cached yet
-          fetch(`${backendUrl}/api/settings/company/`, {
-            headers: { Authorization: `Bearer ${access}` }
-          })
-            .then(r => r.ok ? r.json() : null)
-            .then(list => {
-              if (!list || !list.length) return;
-              const companyId = list[0].id;
-              localStorage.setItem('companyId', companyId);
-              fetch(`${backendUrl}/api/settings/company/${companyId}/`, {
+        // Patch /api/settings/company/branding/ directly for immediate theme persistence
+        fetch(`${backendUrl}/api/settings/company/branding/`, {
+          method: 'PATCH',
+          headers: { Authorization: `Bearer ${access}`, 'Content-Type': 'application/json' },
+          body: JSON.stringify(finalPatch)
+        }).then(res => {
+          if (!res.ok) {
+            // Fallback to company ID endpoint if branding PATCH is unsupported
+            const id = localStorage.getItem('companyId');
+            if (id) {
+              fetch(`${backendUrl}/api/settings/company/${id}/`, {
                 method: 'PATCH',
                 headers: { Authorization: `Bearer ${access}`, 'Content-Type': 'application/json' },
                 body: JSON.stringify(finalPatch)
               });
-            })
-            .catch(() => {});
-        }
+            }
+          }
+        }).catch(() => {});
       } catch {}
-    }, 800); // 800ms debounce
+    }, 400); // 400ms debounce for responsive persistence
   };
 
     // layout
@@ -549,6 +594,8 @@ const ThemeContextProvider = (props) => {
         theme_sidebar_color: '',
         theme_sidebar_font_color: '',
         theme_primary_color: '',
+        theme_save_btn_color: '',
+        theme_cancel_btn_color: '',
         theme_bg_color: '',
         theme_font_color: '',
         theme_form_icon_color: '',
@@ -559,6 +606,17 @@ const ThemeContextProvider = (props) => {
       setFormIconColor('#0a500f');
       localStorage.setItem('formIconColor', '#0a500f');
       document.documentElement.style.setProperty('--form-icon-color', '#0a500f');
+
+      // Reset button colors
+      setSaveBtnColor('#0a500f');
+      localStorage.setItem('saveBtnColor', '#0a500f');
+      document.documentElement.style.setProperty('--save-btn-color', '#0a500f');
+      document.documentElement.style.setProperty('--save-btn-hover-color', '#0a500f');
+
+      setCancelBtnColor('#dc3545');
+      localStorage.setItem('cancelBtnColor', '#dc3545');
+      document.documentElement.style.setProperty('--cancel-btn-color', '#dc3545');
+      document.documentElement.style.setProperty('--cancel-btn-hover-color', '#dc3545');
 
       // 8. Reset login panel color in companySettings localStorage
       const settings = JSON.parse(localStorage.getItem('companySettings') || '{}');
@@ -946,6 +1004,11 @@ const ThemeContextProvider = (props) => {
         changeCustomSidebarColor,
         customSidebarFontColor,
         changeCustomSidebarFontColor,
+        saveBtnColor,
+        changeSaveBtnColor,
+        cancelBtnColor,
+        changeCancelBtnColor,
+        fetchThemeFromBackend,
         resetToDefault
 	}}
     >

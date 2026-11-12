@@ -371,7 +371,7 @@ const CalculationTypeList = () => {
                     color: #475569;
                 }
                 .btn-close-custom {
-                    background-color: #dc3545 !important;
+                    background-color: var(--cancel-btn-color, #dc3545) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -381,9 +381,9 @@ const CalculationTypeList = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .btn-close-custom:hover { background-color: #bb2d3b !important; }
+                .btn-close-custom:hover, .btn-close-custom:active, .btn-close-custom:focus { background-color: var(--cancel-btn-color, #dc3545) !important; border-color: var(--cancel-btn-color, #dc3545) !important; opacity: 1 !important; box-shadow: none !important; }
                 .btn-save-custom {
-                    background-color: #0a500f !important;
+                    background-color: var(--save-btn-color, #0a500f) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -393,7 +393,7 @@ const CalculationTypeList = () => {
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .btn-save-custom:hover:not(:disabled) { background-color: #073d0b !important; }
+                .btn-save-custom:hover, .btn-save-custom:active, .btn-save-custom:focus { background-color: var(--save-btn-color, #0a500f) !important; border-color: var(--save-btn-color, #0a500f) !important; opacity: 1 !important; box-shadow: none !important; }
                 .btn-save-custom:disabled {
                     opacity: 0.6 !important;
                 }

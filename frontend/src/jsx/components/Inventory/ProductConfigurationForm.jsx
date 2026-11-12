@@ -82,7 +82,7 @@ const ProductConfigurationForm = ({
                 .cl-custom-modal .modal-icon-circle {
                     width: 48px;
                     height: 48px;
-                    background-color: #0a500f;
+                    background-color: var(--form-icon-color, #0a500f);
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
@@ -123,7 +123,7 @@ const ProductConfigurationForm = ({
                     margin-bottom: 6px;
                 }
                 .cl-custom-modal .btn-close-custom {
-                    background-color: #dc3545 !important;
+                    background-color: var(--cancel-btn-color, #dc3545) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -133,13 +133,13 @@ const ProductConfigurationForm = ({
                     cursor: pointer;
                     transition: background-color 0.2s;
                 }
-                .cl-custom-modal .btn-close-custom:hover { background-color: #bb2d3b !important; }
+                .cl-custom-modal .btn-close-custom:hover, .btn-close-custom:active, .btn-close-custom:focus { background-color: var(--cancel-btn-color, #dc3545) !important; border-color: var(--cancel-btn-color, #dc3545) !important; opacity: 1 !important; box-shadow: none !important; }
                 .cl-custom-modal .btn-close-custom:focus { 
                     outline: none !important;
                     box-shadow: 0 0 0 4px rgba(122, 112, 186, 0.3) !important;
                 }
                 .cl-custom-modal .btn-save-custom {
-                    background-color: #0a500f !important;
+                    background-color: var(--save-btn-color, #0a500f) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -149,7 +149,7 @@ const ProductConfigurationForm = ({
                     cursor: pointer;
                     transition: background-color 0.2s, box-shadow 0.2s;
                 }
-                .cl-custom-modal .btn-save-custom:hover { background-color: #073d0b !important; }
+                .cl-custom-modal .btn-save-custom:hover, .btn-save-custom:active, .btn-save-custom:focus { background-color: var(--save-btn-color, #0a500f) !important; border-color: var(--save-btn-color, #0a500f) !important; opacity: 1 !important; box-shadow: none !important; }
                 .cl-custom-modal .btn-save-custom:focus {
                     outline: none !important;
                     box-shadow: 0 0 0 4px rgba(10, 80, 15, 0.3) !important;

@@ -224,18 +224,13 @@ const TaskForm = ({ onClose, onSaved, existingTask = null }) => {
                     <Button 
                         className="mr-2 btn-cancel-custom" 
                         style={{ 
-                            backgroundColor: '#dc3545', 
-                            borderColor: '#dc3545', 
-                            color: '#ffffff', 
-                            borderRadius: '8px', 
-                            fontWeight: 500, 
-                            padding: '8px 22px' 
+                            backgroundColor: "var(--cancel-btn-color, #dc3545)", borderColor: "var(--cancel-btn-color, #dc3545)", color: "#ffffff", borderRadius: "8px", fontWeight: 500, padding: "8px 22px" 
                         }} 
                         onClick={onClose}
                     >
                         Cancel
                     </Button>
-                    <Button variant="primary" type="submit" style={{ backgroundColor: '#0a500f', borderColor: '#0a500f', borderRadius: '8px', fontWeight: 500, padding: '8px 22px' }}>Save</Button>
+                    <Button type="submit" className="btn-save-custom" style={{ borderRadius: "8px", fontWeight: 500, padding: "8px 22px" }}>Save</Button>
                 </Modal.Footer>
             </Form>
         </Modal>

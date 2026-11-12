@@ -1009,14 +1009,14 @@ const RepairPartForm = () => {
                     <div className="d-flex justify-content-end gap-2 mt-4 pt-3 border-top">
                         <Button 
                             className="btn-cancel-custom"
-                            style={{ backgroundColor: '#dc3545', borderColor: '#dc3545', color: '#ffffff' }}
+                            style={{ backgroundColor: "var(--cancel-btn-color, #dc3545)", borderColor: "var(--cancel-btn-color, #dc3545)", color: "#ffffff" }}
                             onClick={() => navigate('/repair-part-list')}
                         >
                             Cancel
                         </Button>
                         <Button 
                             type="submit"
-                            style={{ backgroundColor: '#0a500f', borderColor: '#0a500f', color: '#ffffff' }}
+                            className="btn-save-custom"
                         >
                             Submit
                         </Button>

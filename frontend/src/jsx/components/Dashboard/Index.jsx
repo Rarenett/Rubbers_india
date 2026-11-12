@@ -31,11 +31,7 @@ const WidgetChart2 = loadable(() =>
 );
 
 const Index = () =>{
-	const { changeBackground, background } = useContext(ThemeContext);
-	useEffect(() => {
-		changeBackground({ value: "light", label: "Light" });
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
+	const { background } = useContext(ThemeContext);
 	return(
 		<Fragment>
 			<div className="row">

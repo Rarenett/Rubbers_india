@@ -273,7 +273,7 @@ const RouteStopsManagement = () => {
                     width: 32px;
                     height: 32px;
                     border-radius: 8px;
-                    background: linear-gradient(135deg, #0a500f, #073d0b);
+                    background: var(--save-btn-color, #0a500f);
                     border: none;
                     color: white;
                     font-size: 18px;
@@ -282,7 +282,7 @@ const RouteStopsManagement = () => {
                     cursor: pointer;
                     flex-shrink: 0;
                     transition: opacity 0.2s, transform 0.15s;
-                    box-shadow: 0 2px 6px rgba(10, 80, 15,0.35);
+                    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
                     margin-top: 1px;
                 }
                 .quick-add-btn:hover {
@@ -775,10 +775,20 @@ const RouteStopsManagement = () => {
                 </div>
                 
                 <div className="modal-footer-custom">
-                    <Button type="button" className="btn-close-custom" onClick={closeModal}>
+                    <Button 
+                        type="button" 
+                        className="btn-close-custom btn-universal-close" 
+                        style={{ backgroundColor: 'var(--cancel-btn-color, #dc3545)', borderColor: 'var(--cancel-btn-color, #dc3545)', color: '#ffffff' }}
+                        onClick={closeModal}
+                    >
                         Close
                     </Button>
-                    <Button type="button" className="btn-save-custom" onClick={handleSubmit}>
+                    <Button 
+                        type="button" 
+                        className="btn-save-custom btn-universal-save" 
+                        style={{ backgroundColor: 'var(--save-btn-color, #0a500f)', borderColor: 'var(--save-btn-color, #0a500f)', color: '#ffffff' }}
+                        onClick={handleSubmit}
+                    >
                         Save & Next
                     </Button>
                 </div>

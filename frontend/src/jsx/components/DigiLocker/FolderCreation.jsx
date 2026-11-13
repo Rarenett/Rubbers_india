@@ -744,12 +744,15 @@ const FolderCreation = () => {
       {/* Modal for Folder Create / Edit / Subfolder */}
       <Modal show={showModal} onHide={handleCloseModal} centered>
         <Modal.Header closeButton>
-          <Modal.Title>
-            {isEditMode
-              ? "Edit Folder"
-              : formData.parent_folder
-              ? "Create Subfolder"
-              : "Create New Root Folder"}
+          <Modal.Title className="d-flex align-items-center gap-2">
+            <i className="fa fa-folder text-primary"></i>
+            <span>
+              {isEditMode
+                ? "Edit Folder"
+                : formData.parent_folder
+                ? "Create Subfolder"
+                : "Create New Root Folder"}
+            </span>
           </Modal.Title>
         </Modal.Header>
         <Form onSubmit={handleSubmit}>

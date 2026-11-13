@@ -375,8 +375,8 @@ const BillSettlementPopup = ({ show, onHide, invoices, ledgerName, totalAmount, 
 
             <div className="modal-footer-custom">
                 <div className="d-flex gap-2 ms-auto">
-                    <Button variant="secondary" onClick={onHide} className="modal-btn-cancel">Cancel</Button>
-                    <Button variant="primary" onClick={handleSave} disabled={isSaveDisabled} className="btn-save-custom"><i className="fa fa-check me-1"></i> Apply {billCount > 0 ? `(${billCount} Bill${billCount > 1 ? 's' : ''})` : ''}</Button>
+                    <Button onClick={onHide} className="btn-close-custom btn-universal-close">Cancel</Button>
+                    <Button onClick={handleSave} disabled={isSaveDisabled} className="btn-save-custom btn-universal-save"><i className="fa fa-check me-1"></i> Apply {billCount > 0 ? `(${billCount} Bill${billCount > 1 ? 's' : ''})` : ''}</Button>
                 </div>
             </div>
         </div>

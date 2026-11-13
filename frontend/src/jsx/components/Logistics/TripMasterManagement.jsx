@@ -346,7 +346,8 @@ const TripMasterManagement = () => {
                     <Form onSubmit={handleSubmit}>
                         <style>{`
                             .pkg-close-btn {
-                                background-color: #dc3545 !important;
+                                background-color: var(--cancel-btn-color, #dc3545) !important;
+                                border-color: var(--cancel-btn-color, #dc3545) !important;
                                 color: white !important;
                                 border-radius: 8px !important;
                                 font-weight: 500 !important;
@@ -357,10 +358,13 @@ const TripMasterManagement = () => {
                                 transition: background-color 0.2s, transform 0.1s !important;
                             }
                             .pkg-close-btn:hover {
-                                background-color: #bb2d3b !important;
+                                background-color: var(--cancel-btn-color, #dc3545) !important;
+                                border-color: var(--cancel-btn-color, #dc3545) !important;
+                                opacity: 0.9 !important;
                             }
                             .pkg-submit-btn {
-                                background-color: #0a500f !important;
+                                background-color: var(--save-btn-color, #0a500f) !important;
+                                border-color: var(--save-btn-color, #0a500f) !important;
                                 color: white !important;
                                 border-radius: 8px !important;
                                 font-weight: 500 !important;
@@ -371,8 +375,10 @@ const TripMasterManagement = () => {
                                 transition: background-color 0.2s, transform 0.1s !important;
                             }
                             .pkg-submit-btn:hover, .pkg-submit-btn:focus {
-                                background-color: #073d0b !important;
-                                box-shadow: 0 0 0 4px rgba(10, 80, 15, 0.4) !important;
+                                background-color: var(--save-btn-color, #0a500f) !important;
+                                border-color: var(--save-btn-color, #0a500f) !important;
+                                opacity: 0.9 !important;
+                                box-shadow: 0 0 0 4px rgba(10, 80, 15, 0.2) !important;
                                 outline: none !important;
                             }
                         `}</style>
@@ -471,14 +477,14 @@ const TripMasterManagement = () => {
                         >
                             <button
                                 type="button"
-                                className="pkg-close-btn"
+                                className="pkg-close-btn btn-close-custom btn-universal-close"
                                 onClick={handleCloseModal}
                             >
                                 Cancel
                             </button>
                             <button
                                 type="submit"
-                                className="pkg-submit-btn"
+                                className="pkg-submit-btn btn-save-custom btn-universal-save"
                             >
                                 {isEditing ? 'Save Changes' : 'Save'}
                             </button>

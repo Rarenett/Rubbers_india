@@ -8,6 +8,8 @@ import { usePermission } from '../../../hooks/usePermission';
 import EditButton from '../../../components/permissions/EditButton';
 import DeleteButton from '../../../components/permissions/DeleteButton';
 import CreateButton from '../../../components/permissions/CreateButton';
+import { useContext } from 'react';
+import { ThemeContext } from '../../../context/ThemeContext';
 
 
 
@@ -20,6 +22,7 @@ import { useGoogleMaps } from '../../../context/GoogleMapsProvider';
 
 const RouteMasterManagement = () => {
     const { isLoaded, loadError } = useGoogleMaps();
+    const { saveBtnColor, cancelBtnColor, customPrimaryColor } = useContext(ThemeContext) || {};
     
     const { can } = usePermission();
 
@@ -267,6 +270,7 @@ const RouteMasterManagement = () => {
                 }
                 .btn-close-custom {
                     background-color: var(--cancel-btn-color, #dc3545) !important;
+                    border-color: var(--cancel-btn-color, #dc3545) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -279,6 +283,7 @@ const RouteMasterManagement = () => {
                 .btn-close-custom:hover, .btn-close-custom:active, .btn-close-custom:focus { background-color: var(--cancel-btn-color, #dc3545) !important; border-color: var(--cancel-btn-color, #dc3545) !important; opacity: 1 !important; box-shadow: none !important; }
                 .btn-save-custom {
                     background-color: var(--save-btn-color, #0a500f) !important;
+                    border-color: var(--save-btn-color, #0a500f) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -290,7 +295,7 @@ const RouteMasterManagement = () => {
                 }
                 .btn-save-custom:hover, .btn-save-custom:active, .btn-save-custom:focus { background-color: var(--save-btn-color, #0a500f) !important; border-color: var(--save-btn-color, #0a500f) !important; opacity: 1 !important; box-shadow: none !important; }
                 .btn-add-icon {
-                    background-color: #0a500f !important;
+                    background-color: var(--save-btn-color, #0a500f) !important;
                     color: white !important;
                     border: none !important;
                     border-radius: 6px !important;
@@ -301,7 +306,7 @@ const RouteMasterManagement = () => {
                     justify-content: center;
                     transition: background-color 0.2s;
                 }
-                .btn-add-icon:hover { background-color: #073d0b !important; }
+                .btn-add-icon:hover { background-color: var(--save-btn-color, #073d0b) !important; opacity: 0.9; }
             `}</style>
 
             <div className="container-fluid">
@@ -449,8 +454,14 @@ const RouteMasterManagement = () => {
                     <div className="page-titles">
                         <button 
                             onClick={() => setIsFormView(false)} 
-                            className="btn btn-outline-primary btn-sm d-flex align-items-center"
-                            style={{ gap: '6px', borderRadius: '6px' }}
+                            className="btn btn-sm d-flex align-items-center"
+                            style={{ 
+                                gap: '6px', 
+                                borderRadius: '6px', 
+                                color: cancelBtnColor || 'var(--cancel-btn-color, #dc3545)', 
+                                borderColor: cancelBtnColor || 'var(--cancel-btn-color, #dc3545)',
+                                backgroundColor: 'transparent'
+                            }}
                         >
                             <i className="fa fa-arrow-left"></i> Back
                         </button>
@@ -530,12 +541,42 @@ const RouteMasterManagement = () => {
                                             </div>
 
                                             <div className="d-flex gap-2 mt-4 pt-3" style={{ borderTop: '1px solid #f1f5f9' }}>
-                                                <Button type="button" className="btn-close-custom" onClick={() => setIsFormView(false)}>
+                                                <button 
+                                                    type="button" 
+                                                    className="btn-close-custom btn-universal-close" 
+                                                    style={{ 
+                                                        backgroundColor: cancelBtnColor || 'var(--cancel-btn-color, #dc3545)', 
+                                                        borderColor: cancelBtnColor || 'var(--cancel-btn-color, #dc3545)', 
+                                                        color: '#ffffff',
+                                                        border: 'none',
+                                                        borderRadius: '8px',
+                                                        fontWeight: 500,
+                                                        fontSize: '14px',
+                                                        padding: '10px 24px',
+                                                        cursor: 'pointer'
+                                                    }}
+                                                    onClick={() => setIsFormView(false)}
+                                                >
                                                     Close
-                                                </Button>
-                                                <Button type="button" className="btn-save-custom" onClick={handleSubmit}>
+                                                </button>
+                                                <button 
+                                                    type="button" 
+                                                    className="btn-save-custom btn-universal-save" 
+                                                    style={{ 
+                                                        backgroundColor: saveBtnColor || 'var(--save-btn-color, #0a500f)', 
+                                                        borderColor: saveBtnColor || 'var(--save-btn-color, #0a500f)', 
+                                                        color: '#ffffff',
+                                                        border: 'none',
+                                                        borderRadius: '8px',
+                                                        fontWeight: 500,
+                                                        fontSize: '14px',
+                                                        padding: '10px 24px',
+                                                        cursor: 'pointer'
+                                                    }}
+                                                    onClick={handleSubmit}
+                                                >
                                                     Save & Next
-                                                </Button>
+                                                </button>
                                             </div>
                                         </div>
                                         

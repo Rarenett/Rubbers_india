@@ -464,18 +464,15 @@ const BillSettlementPopup = ({ show, onHide, invoices, ledgerName, totalAmount, 
                 
                 <div className="d-flex gap-2">
                     <Button
-                        variant="secondary"
                         size="sm"
                         onClick={onHide}
-                        className="px-4 py-2 border-0 rounded-3 text-dark fw-semibold"
-                        style={{ backgroundColor: '#e2e8f0', color: '#1e293b' }}
+                        className="btn-universal-close btn-close-custom px-4 py-2 border-0 rounded-3 text-white fw-semibold"
                     >
                         Cancel
                     </Button>
                     
                     <Button
                         id="bill-apply-btn"
-                        variant="primary"
                         size="sm"
                         onClick={handleSave}
                         disabled={isSaveDisabled}
@@ -485,8 +482,7 @@ const BillSettlementPopup = ({ show, onHide, invoices, ledgerName, totalAmount, 
                                 handleSave();
                             }
                         }}
-                        className="px-4 py-2 border-0 rounded-3 fw-bold shadow-sm"
-                        style={{ backgroundColor: '#3b6fd4', color: '#fff' }}
+                        className="btn-universal-save btn-save-custom px-4 py-2 border-0 rounded-3 fw-bold shadow-sm text-white"
                     >
                         <i className="fa fa-check me-1"></i> Apply {billCount > 0 ? `(${billCount} Bill${billCount > 1 ? 's' : ''})` : ''}
                     </Button>
@@ -1993,14 +1989,14 @@ const ReceiptList = () => {
                         <div className="d-flex gap-2">
                             <Button 
                                 type="button"
-                                className="btn-universal-close" 
+                                className="btn-universal-close btn-close-custom" 
                                 onClick={() => setShowModal(false)}
                             >
                                 Close
                             </Button>
                             <Button
                                 type="submit"
-                                className="btn-universal-save"
+                                className="btn-universal-save btn-save-custom"
                                 disabled={!isBalanced}
                             >
                                 <i className="fa fa-save me-2"></i>

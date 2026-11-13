@@ -12,8 +12,8 @@ const QuickAccessDashboard = ({ allroutes }) => {
     const navigate = useNavigate();
     const { menus: dynamicMenus, loading: menusLoading } = useSelector(state => state.menu);
     const { can, permissionsLoading } = usePermission();
-    const { background } = useContext(ThemeContext);
-    const isDark = background.value === "dark";
+    const { background, saveBtnColor, cancelBtnColor, customPrimaryColor, formIconColor } = useContext(ThemeContext) || {};
+    const isDark = background?.value === "dark";
 
     const [activeSubMenuId, setActiveSubMenuId] = useState(null);
     const [activeSubSubMenuId, setActiveSubSubMenuId] = useState(null);
@@ -783,15 +783,15 @@ const QuickAccessDashboard = ({ allroutes }) => {
                                         onClick={() => setShowCustomizeModal(true)}
                                         className="btn btn-primary d-flex align-items-center gap-2"
                                         style={{ 
-                                            backgroundColor: '#0a500f', 
-                                            borderColor: '#0a500f', 
+                                            backgroundColor: saveBtnColor || 'var(--save-btn-color, var(--cc-primary, #0a500f))', 
+                                            borderColor: saveBtnColor || 'var(--save-btn-color, var(--cc-primary, #0a500f))', 
                                             color: '#ffffff',
                                             height: '34px',
                                             padding: '0 14px',
                                             fontSize: '13px',
                                             fontWeight: 500,
                                             borderRadius: '6px',
-                                            boxShadow: '0 2px 6px rgba(61, 53, 119, 0.25)'
+                                            boxShadow: '0 2px 6px rgba(10, 80, 15, 0.25)'
                                         }}
                                     >
                                         <i className="fa fa-cog"></i> Customize Shortcuts
@@ -882,15 +882,15 @@ const QuickAccessDashboard = ({ allroutes }) => {
                                     onClick={() => setShowCustomizeModal(true)}
                                     className="btn btn-primary d-inline-flex align-items-center gap-2"
                                     style={{ 
-                                        backgroundColor: '#0a500f', 
-                                        borderColor: '#0a500f', 
+                                        backgroundColor: saveBtnColor || 'var(--save-btn-color, var(--cc-primary, #0a500f))', 
+                                        borderColor: saveBtnColor || 'var(--save-btn-color, var(--cc-primary, #0a500f))', 
                                         color: '#ffffff',
                                         height: '34px',
                                         padding: '0 16px',
                                         fontSize: '13px',
                                         fontWeight: 500,
                                         borderRadius: '6px',
-                                        boxShadow: '0 2px 6px rgba(61, 53, 119, 0.25)'
+                                        boxShadow: '0 2px 6px rgba(10, 80, 15, 0.25)'
                                     }}
                                 >
                                     <i className="fa fa-cog"></i> Customize Shortcuts
@@ -1131,6 +1131,34 @@ const QuickAccessDashboard = ({ allroutes }) => {
                 
                 .modal-dark .btn-close {
                     filter: invert(1) grayscale(100%) brightness(200%);
+                }
+
+                .quick-access-modal .btn-save-custom {
+                    background-color: var(--save-btn-color, #0a500f) !important;
+                    border-color: var(--save-btn-color, #0a500f) !important;
+                    color: #ffffff !important;
+                }
+                .quick-access-modal .btn-save-custom:hover,
+                .quick-access-modal .btn-save-custom:active,
+                .quick-access-modal .btn-save-custom:focus {
+                    background-color: var(--save-btn-color, #0a500f) !important;
+                    border-color: var(--save-btn-color, #0a500f) !important;
+                    opacity: 1 !important;
+                    box-shadow: none !important;
+                }
+
+                .quick-access-modal .btn-close-custom {
+                    background-color: var(--cancel-btn-color, #dc3545) !important;
+                    border-color: var(--cancel-btn-color, #dc3545) !important;
+                    color: #ffffff !important;
+                }
+                .quick-access-modal .btn-close-custom:hover,
+                .quick-access-modal .btn-close-custom:active,
+                .quick-access-modal .btn-close-custom:focus {
+                    background-color: var(--cancel-btn-color, #dc3545) !important;
+                    border-color: var(--cancel-btn-color, #dc3545) !important;
+                    opacity: 1 !important;
+                    box-shadow: none !important;
                 }
                 `
             }} />
@@ -1443,16 +1471,26 @@ const QuickAccessDashboard = ({ allroutes }) => {
                     }}>
                         <button 
                             type="button" 
-                            className="btn btn-secondary" 
-                            style={{ padding: '6px 20px' }} 
+                            className="btn btn-secondary btn-close-custom btn-universal-close" 
+                            style={{ 
+                                padding: '6px 20px',
+                                backgroundColor: cancelBtnColor || 'var(--cancel-btn-color, #dc3545)',
+                                borderColor: cancelBtnColor || 'var(--cancel-btn-color, #dc3545)',
+                                color: '#ffffff'
+                            }} 
                             onClick={() => setShowCustomizeModal(false)}
                         >
                             Cancel
                         </button>
                         <button 
                             type="button" 
-                            className="btn btn-primary" 
-                            style={{ padding: '6px 20px' }} 
+                            className="btn btn-primary btn-save-custom btn-universal-save" 
+                            style={{ 
+                                padding: '6px 20px',
+                                backgroundColor: saveBtnColor || 'var(--save-btn-color, #0a500f)',
+                                borderColor: saveBtnColor || 'var(--save-btn-color, #0a500f)',
+                                color: '#ffffff'
+                            }} 
                             onClick={() => handleSavePins(selectedPinnedIds)}
                         >
                             Save

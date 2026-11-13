@@ -1666,8 +1666,11 @@ const DigiLockerMapping = () => {
       {/* Modal for Folder Mapping */}
       <Modal show={showModal} onHide={handleCloseModal} size="lg" centered>
         <Modal.Header closeButton>
-          <Modal.Title>
-            {isEditMode ? "Edit Folder Permissions" : "Hierarchical Folder Mapping to Employee"}
+          <Modal.Title className="d-flex align-items-center gap-2">
+            <i className="fa fa-sitemap text-primary"></i>
+            <span>
+              {isEditMode ? "Edit Folder Permissions" : "Hierarchical Folder Mapping to Employee"}
+            </span>
           </Modal.Title>
         </Modal.Header>
         <Form onSubmit={handleSubmit}>

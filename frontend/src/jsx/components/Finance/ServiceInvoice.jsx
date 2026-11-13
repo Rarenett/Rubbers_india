@@ -1267,13 +1267,13 @@ const ServiceInvoice = () => {
                     </Modal.Body>
                     <Modal.Footer className="py-2" style={{ paddingTop: '8px', paddingBottom: '8px' }}>
                         <Button 
-                            className="btn-universal-close" 
+                            className="btn-universal-close btn-close-custom" 
                             onClick={() => setShowModal(false)}
                         >
                             Close
                         </Button>
                         <Button 
-                            className="btn-universal-save" 
+                            className="btn-universal-save btn-save-custom" 
                             type="submit"
                         >
                             {editMode ? 'Update' : 'Save'}

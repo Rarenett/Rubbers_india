@@ -1039,7 +1039,10 @@ const UploadFiles = () => {
       {/* Modal for File Upload */}
       <Modal show={showUploadModal} onHide={handleCloseUploadModal} size="xl" centered>
         <Modal.Header closeButton>
-          <Modal.Title>Upload Documents to DigiLocker</Modal.Title>
+          <Modal.Title className="d-flex align-items-center gap-2">
+            <i className="fa fa-upload text-primary"></i>
+            <span>Upload Documents to DigiLocker</span>
+          </Modal.Title>
         </Modal.Header>
         <Form onSubmit={handleUploadSubmit}>
           <Modal.Body>
@@ -1461,7 +1464,10 @@ const UploadFiles = () => {
       {/* Edit Document Modal matching Upload Modal layout */}
       <Modal show={showEditModal} onHide={handleCloseEditModal} size="xl" centered>
         <Modal.Header closeButton>
-          <Modal.Title>Upload Documents to DigiLocker</Modal.Title>
+          <Modal.Title className="d-flex align-items-center gap-2">
+            <i className="fa fa-upload text-primary"></i>
+            <span>Upload Documents to DigiLocker</span>
+          </Modal.Title>
         </Modal.Header>
         <Form onSubmit={handleEditSubmit}>
           <Modal.Body>

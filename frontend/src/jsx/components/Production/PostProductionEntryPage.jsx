@@ -1,10 +1,11 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState, useEffect, Fragment, useContext } from 'react';
 import { Card, Button, Spinner, Badge, Row, Col, Tabs, Tab, Form, Dropdown } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import ProductionService from '../../../services/ProductionService';
 import Swal from 'sweetalert2';
 import PageTitle from '../../layouts/PageTitle';
 import PostProductionEntryModal from './PostProductionEntryModal';
+import { ThemeContext } from '../../../context/ThemeContext';
 
 const FACTORY_COLORS = [
     { bg: '#EEF2FF', border: '#818CF8', text: '#4338CA' },
@@ -30,6 +31,7 @@ const formatTime = (timeString) => {
 
 const PostProductionEntryPage = () => {
     const navigate = useNavigate();
+    const { customPrimaryColor } = useContext(ThemeContext) || {};
     const [productionLines, setProductionLines] = useState([]);
     const [loading, setLoading] = useState(true);
     
@@ -81,21 +83,17 @@ const PostProductionEntryPage = () => {
         return (
             <Dropdown show={ddOpen} onToggle={setDdOpen}>
                 <Dropdown.Toggle as="button"
-                    className="btn btn-outline-secondary btn-sm d-flex align-items-center justify-content-between text-start spm-dropdown-btn"
-                    style={{ width: '175px', height: '34px', fontSize: '13px', borderRadius: '6px', borderColor: '#e2e8f0', color: '#475569' }}>
-                    <span className="d-flex align-items-center gap-1 text-truncate" style={{ maxWidth: '145px' }}>
-                        <i className="fa fa-industry" style={{ fontSize: '11px', color: '#0a500f', flexShrink: 0 }}></i>
+                    className="btn btn-sm d-flex align-items-center justify-content-between text-start factory-filter-btn">
+                    <span className="d-flex align-items-center gap-1 text-truncate factory-filter-text">
+                        <i className="fa fa-industry factory-filter-icon"></i>
                         <span className="text-truncate font-w500">{selectedLabel}</span>
                     </span>
                 </Dropdown.Toggle>
-                <Dropdown.Menu style={{ minWidth: '175px', padding: '6px' }}>
+                <Dropdown.Menu className="factory-filter-menu">
                     <Dropdown.Item onClick={() => { onChange(''); setDdOpen(false); }}
                         active={!value}
-                        style={{
-                            fontSize: '12px', borderRadius: '4px', padding: '6px 12px',
-                            fontWeight: !value ? '600' : '400'
-                        }}>
-                        <span style={{ display: 'inline-block', width: '8px', height: '8px', borderRadius: '2px', backgroundColor: '#94a3b8', marginRight: '8px' }}></span>All Factories
+                        className={`factory-filter-item ${!value ? 'is-active' : ''}`}>
+                        <span className="factory-dot-all"></span>All Factories
                     </Dropdown.Item>
                     {factories.length > 0 && <Dropdown.Divider />}
                     {factories.map((f, idx) => {
@@ -105,11 +103,8 @@ const PostProductionEntryPage = () => {
                             <Dropdown.Item key={f.id}
                                 onClick={() => { onChange(String(f.id)); setDdOpen(false); }}
                                 active={isActive}
-                                style={{
-                                    fontSize: '12px', borderRadius: '4px', padding: '6px 12px',
-                                    fontWeight: isActive ? '600' : '400'
-                                }}>
-                                <span style={{ display: 'inline-block', width: '8px', height: '8px', borderRadius: '50%', backgroundColor: color.border, marginRight: '8px' }}></span>
+                                className={`factory-filter-item ${isActive ? 'is-active' : ''}`}>
+                                <span className={`factory-dot-item factory-dot-color-${idx % 8}`}></span>
                                 {f.name}
                             </Dropdown.Item>
                         );
@@ -150,6 +145,83 @@ const PostProductionEntryPage = () => {
     return (
         <div className="container-fluid">
             <style>{`
+                .factory-filter-btn {
+                    width: 175px;
+                    height: 34px;
+                    font-size: 13px;
+                    border-radius: 6px;
+                    border: 1px solid #e2e8f0 !important;
+                    background-color: #ffffff !important;
+                    color: #475569 !important;
+                    box-shadow: none !important;
+                }
+                .factory-filter-btn:hover,
+                .factory-filter-btn:focus,
+                .factory-filter-btn:active,
+                .factory-filter-btn.show,
+                .show > .factory-filter-btn.dropdown-toggle {
+                    background-color: #f8fafc !important;
+                    border-color: var(--cc-primary, #0a500f) !important;
+                    color: #1e293b !important;
+                    box-shadow: 0 0 0 2px rgba(10, 80, 15, 0.1) !important;
+                }
+                .factory-filter-text {
+                    max-width: 145px;
+                }
+                .factory-filter-icon {
+                    font-size: 11px;
+                    color: var(--cc-primary, #0a500f) !important;
+                    flex-shrink: 0;
+                }
+                .factory-filter-menu {
+                    min-width: 175px;
+                    padding: 6px;
+                }
+                .factory-filter-item {
+                    font-size: 12px;
+                    border-radius: 4px;
+                    padding: 6px 12px;
+                    font-weight: 400;
+                }
+                .factory-filter-item.is-active,
+                .factory-filter-item.active {
+                    background-color: var(--cc-primary, #0a500f) !important;
+                    color: #ffffff !important;
+                    font-weight: 600;
+                }
+                .factory-dot-all {
+                    display: inline-block;
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 2px;
+                    background-color: #94a3b8;
+                    margin-right: 8px;
+                }
+                .factory-dot-item {
+                    display: inline-block;
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    margin-right: 8px;
+                }
+                .factory-dot-color-0 { background-color: #818CF8; }
+                .factory-dot-color-1 { background-color: #FB923C; }
+                .factory-dot-color-2 { background-color: #4ADE80; }
+                .factory-dot-color-3 { background-color: #C084FC; }
+                .factory-dot-color-4 { background-color: #FB7185; }
+                .factory-dot-color-5 { background-color: #38BDF8; }
+                .factory-dot-color-6 { background-color: #FACC15; }
+                .factory-dot-color-7 { background-color: #94A3B8; }
+                .date-filter-control {
+                    width: 180px;
+                    height: 34px;
+                    font-size: 13px;
+                    border-radius: 6px;
+                }
+                .date-filter-control:focus {
+                    border-color: var(--cc-primary, #0a500f) !important;
+                    box-shadow: 0 0 0 2px rgba(10, 80, 15, 0.15) !important;
+                }
                 .line-schedule-card {
                     transition: all 0.2s ease-in-out;
                     border: 1px solid #e2e8f0;
@@ -163,13 +235,93 @@ const PostProductionEntryPage = () => {
                 }
                 .btn-entry-custom {
                     background-color: transparent !important;
-                    border: 1px solid #0a500f !important;
-                    color: #0a500f !important;
+                    border: 1px solid var(--cc-primary, #0a500f) !important;
+                    color: var(--cc-primary, #0a500f) !important;
+                    padding: 4px 12px;
+                    font-size: 12px;
+                    border-radius: 6px;
                 }
                 .btn-entry-custom:hover {
-                    background-color: #0a500f !important;
+                    background-color: var(--cc-primary, #0a500f) !important;
                     color: #ffffff !important;
-                    box-shadow: 0 4px 12px rgba(122, 112, 186, 0.2) !important;
+                    box-shadow: 0 4px 12px rgba(10, 80, 15, 0.2) !important;
+                }
+                .btn-edit-entry-custom {
+                    padding: 4px 12px;
+                    font-size: 12px;
+                    border-radius: 6px;
+                    border-color: var(--cc-primary, #0a500f) !important;
+                    color: var(--cc-primary, #0a500f) !important;
+                    background-color: transparent !important;
+                    transition: all 0.2s ease-in-out;
+                }
+                .btn-edit-entry-custom:hover {
+                    background-color: var(--cc-primary, #0a500f) !important;
+                    color: #ffffff !important;
+                }
+                .line-name-title {
+                    font-size: 14px;
+                }
+                .line-time-text {
+                    font-size: 11px;
+                }
+                .line-stock-text {
+                    font-size: 13px;
+                    max-width: 70%;
+                    font-weight: 500;
+                }
+                .line-qty-badge {
+                    font-size: 10px;
+                    padding: 3px 6px;
+                }
+                .line-status-badge {
+                    font-size: 10px;
+                    padding: 4px 8px;
+                    text-transform: capitalize;
+                }
+                .app-empty-folder-icon {
+                    font-size: 40px;
+                    opacity: 0.4;
+                }
+                .factory-banner-icon {
+                    font-size: 14px;
+                }
+                .factory-banner-text {
+                    font-size: 14px;
+                    letter-spacing: 0.3px;
+                }
+                .factory-banner-box {
+                    border-style: solid !important;
+                    border-width: 1px 1px 1px 4px !important;
+                }
+                .factory-banner-color-0 { background: #EEF2FF !important; border-color: #818CF8 !important; color: #4338CA !important; }
+                .factory-banner-color-0 .factory-banner-icon, .factory-banner-color-0 .factory-banner-text { color: #4338CA !important; }
+                .factory-banner-color-1 { background: #FFF7ED !important; border-color: #FB923C !important; color: #C2410C !important; }
+                .factory-banner-color-1 .factory-banner-icon, .factory-banner-color-1 .factory-banner-text { color: #C2410C !important; }
+                .factory-banner-color-2 { background: #F0FDF4 !important; border-color: #4ADE80 !important; color: #15803D !important; }
+                .factory-banner-color-2 .factory-banner-icon, .factory-banner-color-2 .factory-banner-text { color: #15803D !important; }
+                .factory-banner-color-3 { background: #FDF4FF !important; border-color: #C084FC !important; color: #7E22CE !important; }
+                .factory-banner-color-3 .factory-banner-icon, .factory-banner-color-3 .factory-banner-text { color: #7E22CE !important; }
+                .factory-banner-color-4 { background: #FFF1F2 !important; border-color: #FB7185 !important; color: #BE123C !important; }
+                .factory-banner-color-4 .factory-banner-icon, .factory-banner-color-4 .factory-banner-text { color: #BE123C !important; }
+                .factory-banner-color-5 { background: #F0F9FF !important; border-color: #38BDF8 !important; color: #0369A1 !important; }
+                .factory-banner-color-5 .factory-banner-icon, .factory-banner-color-5 .factory-banner-text { color: #0369A1 !important; }
+                .factory-banner-color-6 { background: #FEFCE8 !important; border-color: #FACC15 !important; color: #854D0E !important; }
+                .factory-banner-color-6 .factory-banner-icon, .factory-banner-color-6 .factory-banner-text { color: #854D0E !important; }
+                .factory-banner-color-7 { background: #F8FAFC !important; border-color: #94A3B8 !important; color: #334155 !important; }
+                .factory-banner-color-7 .factory-banner-icon, .factory-banner-color-7 .factory-banner-text { color: #334155 !important; }
+                [data-theme-version="dark"] .factory-filter-btn {
+                    background-color: #2F363E !important;
+                    border-color: #4a5568 !important;
+                    color: #cbd5e1 !important;
+                }
+                [data-theme-version="dark"] .factory-filter-btn:hover,
+                [data-theme-version="dark"] .factory-filter-btn:focus,
+                [data-theme-version="dark"] .factory-filter-btn.show,
+                [data-theme-version="dark"] .show > .factory-filter-btn.dropdown-toggle {
+                    background-color: #374151 !important;
+                    border-color: var(--cc-primary, #0a500f) !important;
+                    color: #ffffff !important;
                 }
                 [data-theme-version="dark"] .line-schedule-card {
                     background-color: #2F363E;
@@ -186,7 +338,6 @@ const PostProductionEntryPage = () => {
                 }
             `}</style>
             
-            
             <div className="row">
                 <div className="col-12">
                     <Card>
@@ -197,7 +348,7 @@ const PostProductionEntryPage = () => {
                                     type="date"
                                     value={selectedDate}
                                     onChange={(e) => setSelectedDate(e.target.value)}
-                                    style={{ width: '180px', height: '34px', fontSize: '13px', borderRadius: '6px' }}
+                                    className="date-filter-control"
                                 />
                                 {factories.length > 1 && (
                                     <FactoryFilterDropdown value={selectedFactoryId} onChange={setSelectedFactoryId} />
@@ -211,7 +362,7 @@ const PostProductionEntryPage = () => {
                                 </div>
                             ) : productionLines.length === 0 ? (
                                 <div className="text-center py-5 text-muted">
-                                    <i className="fa fa-folder-open-o mb-3" style={{ fontSize: '40px', opacity: 0.4 }}></i>
+                                    <i className="fa fa-folder-open-o mb-3 app-empty-folder-icon"></i>
                                     <h5>No Production Lines Found.</h5>
                                     <p className="mb-0">There are no planned production lines available at the moment.</p>
                                 </div>
@@ -223,10 +374,9 @@ const PostProductionEntryPage = () => {
                                     
                                     return (
                                         <div key={factory} className={fIndex > 0 ? "mt-5" : ""}>
-                                            <div className="d-flex align-items-center gap-2 mb-3 px-3 py-2 rounded-2 factory-banner-box"
-                                                style={{ background: fColor.bg, border: `1px solid ${fColor.border}`, borderLeft: `4px solid ${fColor.border}` }}>
-                                                <i className="fa fa-industry" style={{ color: fColor.text, fontSize: '14px' }}></i>
-                                                <span className="font-w700" style={{ color: fColor.text, fontSize: '14px', letterSpacing: '0.3px' }}>
+                                            <div className={`d-flex align-items-center gap-2 mb-3 px-3 py-2 rounded-2 factory-banner-box factory-banner-color-${fIndex % 8}`}>
+                                                <i className="fa fa-industry factory-banner-icon"></i>
+                                                <span className="font-w700 factory-banner-text">
                                                     {factory}
                                                 </span>
                                             </div>
@@ -251,9 +401,9 @@ const PostProductionEntryPage = () => {
                                                                         <div className="line-schedule-card p-3 shadow-sm d-flex flex-column justify-content-between">
                                                                             <div>
                                                                                 <div className="d-flex justify-content-between align-items-center mb-2">
-                                                                                    <span className="font-w600" style={{ fontSize: '14px' }}>{line.production_line_name}</span>
+                                                                                    <span className="font-w600 line-name-title">{line.production_line_name}</span>
                                                                                     {line.start_time && line.end_time && (
-                                                                                        <small className="text-muted" style={{ fontSize: '11px' }}>
+                                                                                        <small className="text-muted line-time-text">
                                                                                             <i className="fa fa-clock me-1"></i>{formatTime(line.start_time)} - {formatTime(line.end_time)}
                                                                                         </small>
                                                                                     )}
@@ -261,10 +411,10 @@ const PostProductionEntryPage = () => {
 
                                                                                 <div className="mb-2">
                                                                                     <div className="d-flex justify-content-between align-items-center">
-                                                                                        <span className="font-w500 text-truncate" style={{ fontSize: '13px', maxWidth: '70%', fontWeight: '500' }} title={line.stock_item_name}>
+                                                                                        <span className="font-w500 text-truncate line-stock-text" title={line.stock_item_name}>
                                                                                             {line.stock_item_name}
                                                                                         </span>
-                                                                                        <Badge bg="secondary" style={{ fontSize: '10px', padding: '3px 6px' }}>{parseFloat(line.planned_quantity).toFixed(2)} units</Badge>
+                                                                                        <Badge bg="secondary" className="line-qty-badge">{parseFloat(line.planned_quantity).toFixed(2)} units</Badge>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -274,7 +424,7 @@ const PostProductionEntryPage = () => {
                                                                                     <Badge
                                                                                         bg={line.status === 'RUNNING' ? 'primary' : line.status === 'COMPLETED' ? 'success' : 'light'}
                                                                                         text={line.status === 'PLANNED' ? 'dark' : 'light'}
-                                                                                        style={{ fontSize: '10px', padding: '4px 8px', textTransform: 'capitalize', border: line.status === 'PLANNED' ? '1px solid #cbd5e1' : 'none' }}
+                                                                                        className={`line-status-badge ${line.status === 'PLANNED' ? 'is-planned' : ''}`}
                                                                                     >
                                                                                         {line.status ? line.status.toLowerCase() : 'planned'}
                                                                                     </Badge>
@@ -286,12 +436,9 @@ const PostProductionEntryPage = () => {
                                                                                             <Button
                                                                                                 variant="outline-success"
                                                                                                 size="sm"
-                                                                                                className="shadow-sm"
-                                                                                                style={{ padding: '4px 12px', fontSize: '12px', borderRadius: '6px', borderColor: '#0a500f', color: '#0a500f', backgroundColor: 'transparent' }}
+                                                                                                className="shadow-sm btn-edit-entry-custom"
                                                                                                 onClick={() => handleAddEntry(line)}
                                                                                                 title="Edit Entry"
-                                                                                                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#0a500f'; e.currentTarget.style.color = '#fff'; }}
-                                                                                                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#0a500f'; }}
                                                                                             >
                                                                                                 <i className="fa fa-pen me-1"></i> Edit
                                                                                             </Button>
@@ -301,7 +448,6 @@ const PostProductionEntryPage = () => {
                                                                                             variant="outline-primary"
                                                                                             size="sm"
                                                                                             className="shadow-sm btn-entry-custom"
-                                                                                            style={{ padding: '4px 12px', fontSize: '12px', borderRadius: '6px' }}
                                                                                             onClick={() => handleAddEntry(line)}
                                                                                             title="Add Post Production Entry"
                                                                                         >

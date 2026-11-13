@@ -703,7 +703,8 @@ const EmployeeVehicleConfig = () => {
                     <form onSubmit={handleSubmitVehicleForm}>
                         <style>{`
                             .pkg-close-btn {
-                                background-color: #dc3545 !important;
+                                background-color: var(--cancel-btn-color, #dc3545) !important;
+                                border-color: var(--cancel-btn-color, #dc3545) !important;
                                 color: white !important;
                                 border-radius: 8px !important;
                                 font-weight: 500 !important;
@@ -713,11 +714,14 @@ const EmployeeVehicleConfig = () => {
                                 cursor: pointer;
                                 transition: background-color 0.2s, transform 0.1s !important;
                             }
-                            .pkg-close-btn:hover {
-                                background-color: #bb2d3b !important;
+                            .pkg-close-btn:hover, .pkg-close-btn:active, .pkg-close-btn:focus {
+                                background-color: var(--cancel-btn-color, #dc3545) !important;
+                                border-color: var(--cancel-btn-color, #dc3545) !important;
+                                opacity: 0.9 !important;
                             }
                             .pkg-submit-btn {
-                                background-color: #0a500f !important;
+                                background-color: var(--save-btn-color, #0a500f) !important;
+                                border-color: var(--save-btn-color, #0a500f) !important;
                                 color: white !important;
                                 border-radius: 8px !important;
                                 font-weight: 500 !important;
@@ -727,9 +731,10 @@ const EmployeeVehicleConfig = () => {
                                 cursor: pointer;
                                 transition: background-color 0.2s, transform 0.1s !important;
                             }
-                            .pkg-submit-btn:hover, .pkg-submit-btn:focus {
-                                background-color: #073d0b !important;
-                                box-shadow: 0 0 0 4px rgba(10, 80, 15, 0.4) !important;
+                            .pkg-submit-btn:hover, .pkg-submit-btn:focus, .pkg-submit-btn:active {
+                                background-color: var(--save-btn-color, #0a500f) !important;
+                                border-color: var(--save-btn-color, #0a500f) !important;
+                                opacity: 0.9 !important;
                                 outline: none !important;
                             }
                             .veh-tab-btn {
@@ -742,10 +747,10 @@ const EmployeeVehicleConfig = () => {
                                 cursor: pointer;
                             }
                             .veh-tab-btn.active {
-                                background-color: #0a500f !important;
-                                border-color: #0a500f !important;
+                                background-color: var(--save-btn-color, var(--cc-primary, #0a500f)) !important;
+                                border-color: var(--save-btn-color, var(--cc-primary, #0a500f)) !important;
                                 color: #ffffff !important;
-                                box-shadow: 0 2px 6px rgba(10, 80, 15, 0.3) !important;
+                                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15) !important;
                             }
                             .veh-tab-btn:not(.active) {
                                 background-color: #f8fafc !important;
@@ -763,7 +768,7 @@ const EmployeeVehicleConfig = () => {
                                 <div className="d-flex align-items-center gap-3">
                                     <div style={{
                                         width: '48px', height: '48px', borderRadius: '50%',
-                                        background: '#0a500f',
+                                        background: 'var(--save-btn-color, var(--cc-primary, #0a500f))',
                                         display: 'flex', alignItems: 'center', justifyContent: 'center',
                                         flexShrink: 0,
                                     }}>
@@ -1168,7 +1173,8 @@ const EmployeeVehicleConfig = () => {
                             )}
                             <button
                                 type="button"
-                                className="pkg-close-btn"
+                                className="pkg-close-btn btn-close-custom btn-universal-close"
+                                style={{ backgroundColor: 'var(--cancel-btn-color, #dc3545)', borderColor: 'var(--cancel-btn-color, #dc3545)', color: '#ffffff' }}
                                 onClick={() => !submitting && setShowVehicleModal(false)}
                                 disabled={submitting}
                             >
@@ -1176,7 +1182,8 @@ const EmployeeVehicleConfig = () => {
                             </button>
                             <button
                                 type="submit"
-                                className="pkg-submit-btn d-flex align-items-center gap-2"
+                                className="pkg-submit-btn btn-save-custom btn-universal-save d-flex align-items-center gap-2"
+                                style={{ backgroundColor: 'var(--save-btn-color, #0a500f)', borderColor: 'var(--save-btn-color, #0a500f)', color: '#ffffff' }}
                                 disabled={submitting || (modalMode === 'existing' && !selectedExistingVehicleId)}
                             >
                                 {submitting && <Spinner animation="border" size="sm" />}

@@ -237,7 +237,8 @@ const RouteStopMasterForm = ({ formData, setFormData, onSave, onCancel, isEditin
                 <div className="modal-footer-custom">
                     <button
                         type="button"
-                        className="btn-close-custom"
+                        className="btn-close-custom btn-universal-close"
+                        style={{ backgroundColor: 'var(--cancel-btn-color, #dc3545)', borderColor: 'var(--cancel-btn-color, #dc3545)', color: '#ffffff' }}
                         onClick={onCancel}
                     >
                         Cancel
@@ -245,7 +246,8 @@ const RouteStopMasterForm = ({ formData, setFormData, onSave, onCancel, isEditin
                     <button
                         ref={submitBtnRef}
                         type="submit"
-                        className="btn-save-custom"
+                        className="btn-save-custom btn-universal-save"
+                        style={{ backgroundColor: 'var(--save-btn-color, #0a500f)', borderColor: 'var(--save-btn-color, #0a500f)', color: '#ffffff' }}
                     >
                         {isEditing ? 'Save Changes' : 'Save'}
                     </button>

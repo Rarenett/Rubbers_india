@@ -1,10 +1,11 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState, useEffect, Fragment, useContext } from 'react';
 import { Card, Button, Spinner, Badge, Row, Col, Dropdown, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import Select from 'react-select';
 import ProductionService from '../../../services/ProductionService';
 import Swal from 'sweetalert2';
 import PageTitle from '../../layouts/PageTitle';
+import { ThemeContext } from '../../../context/ThemeContext';
 
 const FACTORY_COLORS = [
     { bg: '#EEF2FF', border: '#818CF8', text: '#4338CA' },
@@ -30,6 +31,7 @@ const formatTime = (timeString) => {
 
 const AssignPostProductionResponsibility = () => {
     const navigate = useNavigate();
+    const { customPrimaryColor } = useContext(ThemeContext) || {};
     const [productionLines, setProductionLines] = useState([]);
     const [employees, setEmployees] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -163,21 +165,17 @@ const AssignPostProductionResponsibility = () => {
         return (
             <Dropdown show={ddOpen} onToggle={setDdOpen}>
                 <Dropdown.Toggle as="button"
-                    className="btn btn-outline-secondary btn-sm d-flex align-items-center justify-content-between text-start spm-dropdown-btn"
-                    style={{ width: '175px', height: '34px', fontSize: '13px', borderRadius: '6px', borderColor: '#e2e8f0', color: '#475569' }}>
-                    <span className="d-flex align-items-center gap-1 text-truncate" style={{ maxWidth: '145px' }}>
-                        <i className="fa fa-industry" style={{ fontSize: '11px', color: '#0a500f', flexShrink: 0 }}></i>
+                    className="btn btn-sm d-flex align-items-center justify-content-between text-start factory-filter-btn">
+                    <span className="d-flex align-items-center gap-1 text-truncate factory-filter-text">
+                        <i className="fa fa-industry factory-filter-icon"></i>
                         <span className="text-truncate font-w500">{selectedLabel}</span>
                     </span>
                 </Dropdown.Toggle>
-                <Dropdown.Menu style={{ minWidth: '175px', padding: '6px' }}>
+                <Dropdown.Menu className="factory-filter-menu">
                     <Dropdown.Item onClick={() => { onChange(''); setDdOpen(false); }}
                         active={!value}
-                        style={{
-                            fontSize: '12px', borderRadius: '4px', padding: '6px 12px',
-                            fontWeight: !value ? '600' : '400'
-                        }}>
-                        <span style={{ display: 'inline-block', width: '8px', height: '8px', borderRadius: '2px', backgroundColor: '#94a3b8', marginRight: '8px' }}></span>All Factories
+                        className={`factory-filter-item ${!value ? 'is-active' : ''}`}>
+                        <span className="factory-dot-all"></span>All Factories
                     </Dropdown.Item>
                     {factories.length > 0 && <Dropdown.Divider />}
                     {factories.map((f, idx) => {
@@ -187,11 +185,8 @@ const AssignPostProductionResponsibility = () => {
                             <Dropdown.Item key={f.id}
                                 onClick={() => { onChange(String(f.id)); setDdOpen(false); }}
                                 active={isActive}
-                                style={{
-                                    fontSize: '12px', borderRadius: '4px', padding: '6px 12px',
-                                    fontWeight: isActive ? '600' : '400'
-                                }}>
-                                <span style={{ display: 'inline-block', width: '8px', height: '8px', borderRadius: '50%', backgroundColor: color.border, marginRight: '8px' }}></span>
+                                className={`factory-filter-item ${isActive ? 'is-active' : ''}`}>
+                                <span className={`factory-dot-item factory-dot-color-${idx % 8}`}></span>
                                 {f.name}
                             </Dropdown.Item>
                         );
@@ -219,14 +214,20 @@ const AssignPostProductionResponsibility = () => {
         control: (provided, state) => ({
             ...provided,
             borderRadius: '6px',
-            border: state.isFocused ? '1px solid #0a500f' : '1px solid #e2e8f0',
-            boxShadow: state.isFocused ? '0 0 0 1px #0a500f' : 'none',
+            border: state.isFocused ? `1px solid ${customPrimaryColor || 'var(--cc-primary, #0a500f)'}` : '1px solid #e2e8f0',
+            boxShadow: state.isFocused ? `0 0 0 1px ${customPrimaryColor || 'var(--cc-primary, #0a500f)'}` : 'none',
             minHeight: '34px',
             fontSize: '13px'
         }),
         option: (provided, state) => ({
             ...provided,
-            fontSize: '13px'
+            fontSize: '13px',
+            backgroundColor: state.isSelected ? (customPrimaryColor || 'var(--cc-primary, #0a500f)') : state.isFocused ? 'rgba(10, 80, 15, 0.08)' : 'transparent',
+            color: state.isSelected ? '#ffffff' : '#334155',
+            '&:active': {
+                backgroundColor: customPrimaryColor || 'var(--cc-primary, #0a500f)',
+                color: '#ffffff'
+            }
         }),
         menuPortal: base => ({ ...base, zIndex: 9999 })
     };
@@ -234,9 +235,131 @@ const AssignPostProductionResponsibility = () => {
     return (
         <div className="container-fluid">
             <style>{`
+                .factory-filter-btn {
+                    width: 175px;
+                    height: 34px;
+                    font-size: 13px;
+                    border-radius: 6px;
+                    border: 1px solid #e2e8f0 !important;
+                    background-color: #ffffff !important;
+                    color: #475569 !important;
+                    box-shadow: none !important;
+                }
+                .factory-filter-btn:hover,
+                .factory-filter-btn:focus,
+                .factory-filter-btn:active,
+                .factory-filter-btn.show,
+                .show > .factory-filter-btn.dropdown-toggle {
+                    background-color: #f8fafc !important;
+                    border-color: var(--cc-primary, #0a500f) !important;
+                    color: #1e293b !important;
+                    box-shadow: 0 0 0 2px rgba(10, 80, 15, 0.1) !important;
+                }
+                .factory-filter-text {
+                    max-width: 145px;
+                }
+                .factory-filter-icon {
+                    font-size: 11px;
+                    color: var(--cc-primary, #0a500f) !important;
+                    flex-shrink: 0;
+                }
+                .factory-filter-menu {
+                    min-width: 175px;
+                    padding: 6px;
+                }
+                .factory-filter-item {
+                    font-size: 12px;
+                    border-radius: 4px;
+                    padding: 6px 12px;
+                    font-weight: 400;
+                }
+                .factory-filter-item.is-active,
+                .factory-filter-item.active {
+                    background-color: var(--cc-primary, #0a500f) !important;
+                    color: #ffffff !important;
+                    font-weight: 600;
+                }
+                .factory-dot-all {
+                    display: inline-block;
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 2px;
+                    background-color: #94a3b8;
+                    margin-right: 8px;
+                }
+                .factory-dot-item {
+                    display: inline-block;
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    margin-right: 8px;
+                }
+                .factory-dot-color-0 { background-color: #818CF8; }
+                .factory-dot-color-1 { background-color: #FB923C; }
+                .factory-dot-color-2 { background-color: #4ADE80; }
+                .factory-dot-color-3 { background-color: #C084FC; }
+                .factory-dot-color-4 { background-color: #FB7185; }
+                .factory-dot-color-5 { background-color: #38BDF8; }
+                .factory-dot-color-6 { background-color: #FACC15; }
+                .factory-dot-color-7 { background-color: #94A3B8; }
+                .date-filter-control {
+                    width: 180px;
+                    height: 34px;
+                    font-size: 13px;
+                    border-radius: 6px;
+                }
+                .date-filter-control:focus {
+                    border-color: var(--cc-primary, #0a500f) !important;
+                    box-shadow: 0 0 0 2px rgba(10, 80, 15, 0.15) !important;
+                }
                 .app-table-header {
                     background-color: #f8fafc;
                     border-bottom: 1px solid #e2e8f0;
+                }
+                .app-th-line {
+                    width: 15%;
+                    padding: 12px 16px;
+                    font-size: 11px;
+                    font-weight: 600;
+                    letter-spacing: 0.5px;
+                }
+                .app-th-item {
+                    width: 25%;
+                    padding: 12px 16px;
+                    font-size: 11px;
+                    font-weight: 600;
+                    letter-spacing: 0.5px;
+                }
+                .app-th-timing {
+                    width: 15%;
+                    padding: 12px 16px;
+                    font-size: 11px;
+                    font-weight: 600;
+                    letter-spacing: 0.5px;
+                }
+                .app-th-emp {
+                    width: 45%;
+                    padding: 12px 16px;
+                    font-size: 11px;
+                    font-weight: 600;
+                    letter-spacing: 0.5px;
+                }
+                .app-td-cell {
+                    padding: 12px 16px;
+                }
+                .app-item-title {
+                    font-size: 15px;
+                }
+                .app-item-sub {
+                    font-size: 12px;
+                }
+                .app-timing-text {
+                    font-size: 15px;
+                    font-weight: 500;
+                }
+                .app-empty-icon {
+                    font-size: 48px;
+                    color: #cbd5e1;
                 }
                 .app-table-container {
                     border: 1px solid #f1f5f9;
@@ -249,6 +372,19 @@ const AssignPostProductionResponsibility = () => {
                 .app-factory-title {
                     border-bottom: 2px solid #e2e8f0;
                     padding-bottom: 10px;
+                }
+                [data-theme-version="dark"] .factory-filter-btn {
+                    background-color: #2F363E !important;
+                    border-color: #4a5568 !important;
+                    color: #cbd5e1 !important;
+                }
+                [data-theme-version="dark"] .factory-filter-btn:hover,
+                [data-theme-version="dark"] .factory-filter-btn:focus,
+                [data-theme-version="dark"] .factory-filter-btn.show,
+                [data-theme-version="dark"] .show > .factory-filter-btn.dropdown-toggle {
+                    background-color: #374151 !important;
+                    border-color: var(--cc-primary, #0a500f) !important;
+                    color: #ffffff !important;
                 }
                 [data-theme-version="dark"] .spm-dropdown-btn {
                     background-color: #2F363E !important;
@@ -304,7 +440,7 @@ const AssignPostProductionResponsibility = () => {
                                     type="date"
                                     value={selectedDate}
                                     onChange={(e) => setSelectedDate(e.target.value)}
-                                    style={{ width: '180px', height: '34px', fontSize: '13px', borderRadius: '6px' }}
+                                    className="date-filter-control"
                                 />
                                 {factories.length > 1 && (
                                     <FactoryFilterDropdown value={selectedFactoryId} onChange={setSelectedFactoryId} />
@@ -319,7 +455,7 @@ const AssignPostProductionResponsibility = () => {
                                 </div>
                             ) : productionLines.length === 0 ? (
                                 <div className="text-center py-5 text-muted">
-                                    <i className="fa fa-calendar-times-o mb-3" style={{ fontSize: '48px', color: '#cbd5e1' }}></i>
+                                    <i className="fa fa-calendar-times-o mb-3 app-empty-icon"></i>
                                     <h5>No production lines found</h5>
                                     <p>Select a different date or factory to view production lines.</p>
                                 </div>
@@ -345,32 +481,32 @@ const AssignPostProductionResponsibility = () => {
                                                         <table className="table mb-0 align-middle">
                                                             <thead className="app-table-header">
                                                                 <tr>
-                                                                    <th style={{ width: '15%', padding: '12px 16px', fontSize: '11px', fontWeight: '600', letterSpacing: '0.5px' }}>LINE</th>
-                                                                    <th style={{ width: '25%', padding: '12px 16px', fontSize: '11px', fontWeight: '600', letterSpacing: '0.5px' }}>ITEM</th>
-                                                                    <th style={{ width: '15%', padding: '12px 16px', fontSize: '11px', fontWeight: '600', letterSpacing: '0.5px' }}>TIMING</th>
-                                                                    <th style={{ width: '45%', padding: '12px 16px', fontSize: '11px', fontWeight: '600', letterSpacing: '0.5px' }}>RESPONSIBLE EMPLOYEE</th>
+                                                                    <th className="app-th-line">LINE</th>
+                                                                    <th className="app-th-item">ITEM</th>
+                                                                    <th className="app-th-timing">TIMING</th>
+                                                                    <th className="app-th-emp">RESPONSIBLE EMPLOYEE</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
                                                                 {lines.map((line, lIdx) => (
                                                                     <tr key={line.id} className={lIdx !== lines.length - 1 ? 'app-table-row' : ''}>
-                                                                        <td style={{ padding: '12px 16px' }}>
+                                                                        <td className="app-td-cell">
                                                                             <span className="font-w500">{line.production_line_name}</span>
                                                                         </td>
-                                                                        <td style={{ padding: '12px 16px' }}>
+                                                                        <td className="app-td-cell">
                                                                             <div className="d-flex flex-column">
-                                                                                <span className="font-w500 text-primary" style={{ fontSize: '15px' }}>{line.stock_item_name}</span>
-                                                                                <span className="text-muted" style={{ fontSize: '12px' }}>
+                                                                                <span className="font-w500 text-primary app-item-title">{line.stock_item_name}</span>
+                                                                                <span className="text-muted app-item-sub">
                                                                                     Planned: {parseFloat(line.planned_quantity)} {line.stock_item_base_unit_name}
                                                                                 </span>
                                                                             </div>
                                                                         </td>
-                                                                        <td style={{ padding: '12px 16px' }}>
-                                                                            <span style={{ fontSize: '15px', fontWeight: '500' }}>
+                                                                        <td className="app-td-cell">
+                                                                            <span className="app-timing-text">
                                                                                 {formatTime(line.start_time)} - {formatTime(line.end_time)}
                                                                             </span>
                                                                         </td>
-                                                                        <td style={{ padding: '12px 16px' }}>
+                                                                        <td className="app-td-cell">
                                                                             <Select
                                                                                 classNamePrefix="react-select"
                                                                                 options={employees}

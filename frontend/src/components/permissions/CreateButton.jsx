@@ -21,8 +21,8 @@ const CreateButton = ({ module, onClick, to, children, className, variant = "pri
     };
 
     const defaultStyle = {
-        backgroundColor: '#0a500f',
-        borderColor: '#0a500f',
+        backgroundColor: 'var(--save-btn-color, var(--cc-primary, #0a500f))',
+        borderColor: 'var(--save-btn-color, var(--cc-primary, #0a500f))',
         color: 'white',
         height: '34px',
         display: 'flex',

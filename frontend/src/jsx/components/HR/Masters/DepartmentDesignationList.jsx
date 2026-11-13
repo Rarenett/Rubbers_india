@@ -497,7 +497,8 @@ const DepartmentDesignationList = () => {
                     margin-bottom: 8px;
                 }
                 .assign-custom-modal .btn-close-custom {
-                    background-color: #64748b !important;
+                    background-color: var(--cancel-btn-color, #dc3545) !important;
+                    border-color: var(--cancel-btn-color, #dc3545) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
@@ -994,8 +995,8 @@ const DepartmentDesignationList = () => {
                         )}
                     </div>
                     <div className="modal-footer-custom">
-                        <Button type="button" className="btn" style={{ backgroundColor: "var(--cancel-btn-color, #dc3545)", color: "white", border: "none", borderRadius: "8px", padding: "8px 20px", fontWeight: 500 }} onClick={() => setShowModal(false)} disabled={saving}>Cancel</Button>
-                        <Button type="submit" className="btn-save-custom" disabled={saving || !selectedDept}>
+                        <Button type="button" className="btn-close-custom btn-universal-close" onClick={() => setShowModal(false)} disabled={saving}>Cancel</Button>
+                        <Button type="submit" className="btn-save-custom btn-universal-save" disabled={saving || !selectedDept}>
                             {saving ? 'Saving...' : 'Save'}
                         </Button>
                     </div>

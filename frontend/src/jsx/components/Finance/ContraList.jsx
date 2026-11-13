@@ -1217,14 +1217,14 @@ const ContraList = () => {
                         </div>
                         <div className="d-flex gap-2">
                             <Button 
-                                className="btn-universal-close" 
+                                className="btn-universal-close btn-close-custom" 
                                 onClick={() => setShowModal(false)}
                             >
                                 Close
                             </Button>
                             <Button
                                 type="submit"
-                                className="btn-universal-save"
+                                className="btn-universal-save btn-save-custom"
                                 disabled={!isBalanced}
                             >
                                 <i className="fa fa-save me-2"></i>

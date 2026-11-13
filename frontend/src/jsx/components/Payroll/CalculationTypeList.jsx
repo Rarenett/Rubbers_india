@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef, Fragment } from 'react';
-import { Card, Button, Modal, Form, Badge } from 'react-bootstrap';
+import React, { useState, useEffect, useRef, Fragment, useContext } from 'react';
+import { Card, Modal, Form } from 'react-bootstrap';
 import Select from 'react-select';
 import Swal from 'sweetalert2';
 import {
@@ -11,6 +11,7 @@ import {
     getAttendanceProductionTypes,
 } from '../../../services/PayrollService';
 import { usePageTitle } from '../../../context/TitleContext';
+import { ThemeContext } from '../../../context/ThemeContext';
 import CreateButton from '../../../components/permissions/CreateButton';
 import EditButton from '../../../components/permissions/EditButton';
 import DeleteButton from '../../../components/permissions/DeleteButton';
@@ -26,6 +27,7 @@ const EMPTY_CALCULATION_TYPE = {
 
 const CalculationTypeList = () => {
     usePageTitle('Calculation Methods');
+    const { saveBtnColor, cancelBtnColor, customPrimaryColor } = useContext(ThemeContext) || {};
 
     const [types, setTypes] = useState([]);
     const [units, setUnits] = useState([]);
@@ -281,11 +283,11 @@ const CalculationTypeList = () => {
         control: (base, state) => ({
             ...base,
             minHeight: '42px',
-            borderColor: state.isFocused ? '#6d4aff' : '#cbd5e1',
+            borderColor: state.isFocused ? (customPrimaryColor || 'var(--cc-primary, #0a500f)') : '#cbd5e1',
             borderRadius: '8px',
             fontSize: '13px',
-            boxShadow: state.isFocused ? '0 0 0 3px rgba(109,74,255,0.15)' : 'none',
-            '&:hover': { borderColor: state.isFocused ? '#6d4aff' : '#94a3b8' }
+            boxShadow: state.isFocused ? `0 0 0 3px ${customPrimaryColor ? `${customPrimaryColor}26` : 'rgba(10,80,15,0.15)'}` : 'none',
+            '&:hover': { borderColor: state.isFocused ? (customPrimaryColor || 'var(--cc-primary, #0a500f)') : '#94a3b8' }
         }),
         menu: (base) => ({
             ...base,
@@ -296,21 +298,21 @@ const CalculationTypeList = () => {
         menuPortal: (base) => ({ ...base, zIndex: 99999 }),
         multiValue: (base) => ({
             ...base,
-            backgroundColor: '#ede9fe',
+            backgroundColor: 'rgba(10, 80, 15, 0.1)',
             borderRadius: '6px',
         }),
         multiValueLabel: (base) => ({
             ...base,
-            color: '#6d4aff',
+            color: customPrimaryColor || 'var(--cc-primary, #0a500f)',
             fontWeight: 500,
             fontSize: '12px'
         }),
         multiValueRemove: (base) => ({
             ...base,
-            color: '#6d4aff',
+            color: customPrimaryColor || 'var(--cc-primary, #0a500f)',
             ':hover': {
-                backgroundColor: '#ddd6fe',
-                color: '#4c1d95',
+                backgroundColor: 'rgba(10, 80, 15, 0.2)',
+                color: customPrimaryColor || 'var(--cc-primary, #0a500f)',
             },
         }),
     };
@@ -337,11 +339,11 @@ const CalculationTypeList = () => {
                     width: 44px;
                     height: 44px;
                     border-radius: 12px;
-                    background: linear-gradient(135deg, #6d4aff 0%, #5233ea 100%);
+                    background: var(--form-icon-color, var(--cc-primary, #0a500f)) !important;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    box-shadow: 0 4px 12px rgba(109,74,255,0.3);
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
                 }
                 .modal-body-custom {
                     padding: 24px;
@@ -372,30 +374,92 @@ const CalculationTypeList = () => {
                 }
                 .btn-close-custom {
                     background-color: var(--cancel-btn-color, #dc3545) !important;
+                    border-color: var(--cancel-btn-color, #dc3545) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
                     font-size: 14px !important;
                     padding: 10px 24px !important;
-                    border: none !important;
+                    border-style: solid !important;
+                    border-width: 1px !important;
                     cursor: pointer;
-                    transition: background-color 0.2s;
+                    transition: all 0.2s;
                 }
-                .btn-close-custom:hover, .btn-close-custom:active, .btn-close-custom:focus { background-color: var(--cancel-btn-color, #dc3545) !important; border-color: var(--cancel-btn-color, #dc3545) !important; opacity: 1 !important; box-shadow: none !important; }
+                .btn-close-custom:hover, .btn-close-custom:active, .btn-close-custom:focus {
+                    background-color: var(--cancel-btn-color, #dc3545) !important;
+                    border-color: var(--cancel-btn-color, #dc3545) !important;
+                    color: white !important;
+                    opacity: 0.9 !important;
+                    box-shadow: none !important;
+                }
                 .btn-save-custom {
-                    background-color: var(--save-btn-color, #0a500f) !important;
+                    background-color: var(--save-btn-color, var(--cc-primary, #0a500f)) !important;
+                    border-color: var(--save-btn-color, var(--cc-primary, #0a500f)) !important;
                     color: white !important;
                     border-radius: 8px !important;
                     font-weight: 500 !important;
                     font-size: 14px !important;
                     padding: 10px 24px !important;
-                    border: none !important;
+                    border-style: solid !important;
+                    border-width: 1px !important;
                     cursor: pointer;
-                    transition: background-color 0.2s;
+                    transition: all 0.2s;
                 }
-                .btn-save-custom:hover, .btn-save-custom:active, .btn-save-custom:focus { background-color: var(--save-btn-color, #0a500f) !important; border-color: var(--save-btn-color, #0a500f) !important; opacity: 1 !important; box-shadow: none !important; }
-                .btn-save-custom:disabled {
+                .btn-save-custom:hover, .btn-save-custom:active, .btn-save-custom:focus {
+                    background-color: var(--save-btn-color, var(--cc-primary, #0a500f)) !important;
+                    border-color: var(--save-btn-color, var(--cc-primary, #0a500f)) !important;
+                    color: white !important;
+                    opacity: 0.9 !important;
+                    box-shadow: none !important;
+                }
+                .btn-save-custom:disabled, .btn-close-custom:disabled {
                     opacity: 0.6 !important;
+                    cursor: not-allowed !important;
+                }
+                .calc-search-input {
+                    width: 250px;
+                    height: 37px;
+                    border-radius: 6px;
+                    font-size: 13px;
+                }
+                .calc-th-sl {
+                    width: 60px;
+                }
+                .calc-th-status {
+                    width: 120px;
+                }
+                .calc-badge-unit {
+                    font-size: 11px;
+                    padding: 5px 8px;
+                    border-radius: 4px;
+                }
+                .calc-badge-attendance {
+                    font-size: 11px;
+                    padding: 5px 8px;
+                    border-radius: 4px;
+                }
+                .calc-form-label {
+                    font-size: 13px;
+                    font-weight: 500;
+                    color: #334155;
+                }
+                .calc-form-control {
+                    border-radius: 8px;
+                    font-size: 14px;
+                    padding: 10px 14px;
+                }
+                .calc-help-text {
+                    font-size: 12px;
+                }
+                .calc-modal-title {
+                    font-size: 18px;
+                    color: #1e293b;
+                }
+                .calc-modal-subtitle {
+                    font-size: 13px;
+                }
+                .calc-pagination-info {
+                    font-size: 13px;
                 }
             `}</style>
 
@@ -407,11 +471,10 @@ const CalculationTypeList = () => {
                             <div className="d-flex align-items-center gap-2">
                                 <input
                                     type="text"
-                                    className="form-control"
+                                    className="form-control calc-search-input"
                                     placeholder="Search calculation methods..."
                                     value={searchTerm}
                                     onChange={(e) => { setSearchTerm(e.target.value); setCurrentPage(1); }}
-                                    style={{ width: '250px', height: '37px', borderRadius: '6px', fontSize: '13px' }}
                                 />
                                 <CreateButton
                                     module="calc-type"
@@ -434,10 +497,10 @@ const CalculationTypeList = () => {
                                     <table className="table table-responsive-md">
                                         <thead>
                                             <tr>
-                                                <th style={{ width: '60px' }}><strong>SL NO</strong></th>
+                                                <th className="calc-th-sl"><strong>SL NO</strong></th>
                                                 <th><strong>CALCULATION METHOD NAME</strong></th>
                                                 <th><strong>LINKED PAY UNITS / ATTENDANCE TYPES</strong></th>
-                                                <th style={{ width: '120px' }}><strong>STATUS</strong></th>
+                                                <th className="calc-th-status"><strong>STATUS</strong></th>
                                                 <th className="text-end"><strong>ACTIONS</strong></th>
                                             </tr>
                                         </thead>
@@ -459,18 +522,18 @@ const CalculationTypeList = () => {
                                                             <div className="d-flex flex-wrap gap-1">
                                                                 {item.payroll_units_details && item.payroll_units_details.length > 0 && (
                                                                     item.payroll_units_details.map(u => (
-                                                                        <Badge key={`u-${u.id}`} bg="primary" className="light" style={{ fontSize: '11px', padding: '5px 8px' }}>
+                                                                        <span key={`u-${u.id}`} className="badge badge-primary light calc-badge-unit">
                                                                             <i className="fa fa-clock-o me-1"></i>
                                                                             {u.formal_name} ({u.symbol})
-                                                                        </Badge>
+                                                                        </span>
                                                                     ))
                                                                 )}
                                                                 {item.attendance_production_types_details && item.attendance_production_types_details.length > 0 && (
                                                                     item.attendance_production_types_details.map(a => (
-                                                                        <Badge key={`a-${a.id}`} bg="success" className="light" style={{ fontSize: '11px', padding: '5px 8px' }}>
+                                                                        <span key={`a-${a.id}`} className="badge badge-success light calc-badge-attendance">
                                                                             <i className="fa fa-calendar-check-o me-1"></i>
                                                                             {a.name} ({a.type_display || a.type})
-                                                                        </Badge>
+                                                                        </span>
                                                                     ))
                                                                 )}
                                                                 {(!item.payroll_units_details || item.payroll_units_details.length === 0) &&
@@ -509,25 +572,25 @@ const CalculationTypeList = () => {
 
                             {filteredItems.length > 0 && totalPages > 1 && (
                                 <div className="d-flex justify-content-between align-items-center mt-3 mb-3">
-                                    <div className="text-muted" style={{ fontSize: '13px' }}>
+                                    <div className="text-muted calc-pagination-info">
                                         Showing {indexOfFirstItem + 1} to {Math.min(indexOfLastItem, filteredItems.length)} of {filteredItems.length} entries
                                     </div>
                                     <nav>
                                         <ul className="pagination pagination-gutter pagination-primary no-bg mb-0">
                                             <li className={`page-item page-indicator ${currentPage === 1 ? 'disabled' : ''}`}>
-                                                <button type="button" className="page-link" onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))} disabled={currentPage === 1} style={{ border: 'none', background: 'none' }}>
+                                                <button type="button" className="page-link border-0 bg-transparent" onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))} disabled={currentPage === 1}>
                                                     <i className="la la-angle-left" />
                                                 </button>
                                             </li>
                                             {Array.from({ length: totalPages }, (_, index) => (
                                                 <li key={index + 1} className={`page-item ${currentPage === index + 1 ? 'active' : ''}`}>
-                                                    <button type="button" className="page-link" onClick={() => setCurrentPage(index + 1)} style={{ border: 'none' }}>
+                                                    <button type="button" className="page-link border-0" onClick={() => setCurrentPage(index + 1)}>
                                                         {index + 1}
                                                     </button>
                                                 </li>
                                             ))}
                                             <li className={`page-item page-indicator ${currentPage === totalPages ? 'disabled' : ''}`}>
-                                                <button type="button" className="page-link" onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))} disabled={currentPage === totalPages} style={{ border: 'none', background: 'none' }}>
+                                                <button type="button" className="page-link border-0 bg-transparent" onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))} disabled={currentPage === totalPages}>
                                                     <i className="la la-angle-right" />
                                                 </button>
                                             </li>
@@ -557,10 +620,10 @@ const CalculationTypeList = () => {
                                 </svg>
                             </div>
                             <div>
-                                <h4 className="modal-title font-w600 mb-0" style={{ fontSize: '18px', color: '#1e293b' }}>
+                                <h4 className="modal-title font-w600 mb-0 calc-modal-title">
                                     {editMode ? 'Edit Calculation Method' : 'Create Calculation Method'}
                                 </h4>
-                                <p className="text-muted mb-0" style={{ fontSize: '13px' }}>
+                                <p className="text-muted mb-0 calc-modal-subtitle">
                                     Configure calculation method and link applicable pay units
                                 </p>
                             </div>
@@ -572,7 +635,7 @@ const CalculationTypeList = () => {
                         <div className="row g-3">
                             {/* Calculation Type Name */}
                             <div className="col-md-12">
-                                <Form.Label style={{ fontSize: '13px', fontWeight: 500, color: '#334155' }}>
+                                <Form.Label className="calc-form-label">
                                     Calculation Method Name <span className="text-danger">*</span>
                                 </Form.Label>
                                 <Form.Control
@@ -582,13 +645,13 @@ const CalculationTypeList = () => {
                                     value={formData.name}
                                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                     required
-                                    style={{ borderRadius: '8px', fontSize: '14px', padding: '10px 14px' }}
+                                    className="calc-form-control"
                                 />
                             </div>
 
                             {/* Multi-Select: Attendance & Output Types */}
                             <div className="col-md-12">
-                                <Form.Label style={{ fontSize: '13px', fontWeight: 500, color: '#334155' }}>
+                                <Form.Label className="calc-form-label">
                                     Attendance & Output Types <span className="text-muted fw-normal">(Optional)</span>
                                 </Form.Label>
                                 <Select
@@ -610,7 +673,7 @@ const CalculationTypeList = () => {
                             <div className="col-md-12 pt-1">
                                 <div className="form-check">
                                     <input
-                                        className="form-check-input"
+                                        className="form-check-input cursor-pointer"
                                         type="checkbox"
                                         id="calcPeriodRequiredCheckbox"
                                         checked={formData.is_calculation_period_required}
@@ -622,23 +685,20 @@ const CalculationTypeList = () => {
                                                 payroll_units: checked ? prev.payroll_units : []
                                             }));
                                         }}
-                                        style={{ cursor: 'pointer' }}
                                     />
                                     <label
-                                        className="form-check-label"
+                                        className="form-check-label calc-form-label cursor-pointer"
                                         htmlFor="calcPeriodRequiredCheckbox"
-                                        style={{ fontSize: '13px', fontWeight: 500, color: '#334155', cursor: 'pointer' }}
                                     >
                                         Calculation Period is required for this calculation method
                                     </label>
-                                    
                                 </div>
                             </div>
 
                             {/* Conditional Multi-Select: Calculation Period */}
                             {formData.is_calculation_period_required && (
                                 <div className="col-md-12">
-                                    <Form.Label style={{ fontSize: '13px', fontWeight: 500, color: '#334155' }}>
+                                    <Form.Label className="calc-form-label">
                                         Calculation Period <span className="text-danger">*</span>
                                     </Form.Label>
                                     <Select
@@ -654,7 +714,7 @@ const CalculationTypeList = () => {
                                         placeholder="Select calculation periods (pay units)..."
                                         isSearchable
                                     />
-                                    <span className="text-muted mt-1 d-block" style={{ fontSize: '12px' }}>
+                                    <span className="text-muted mt-1 d-block calc-help-text">
                                         These units will be displayed in the Calculation Period dropdown when this type is selected in Pay Components.
                                     </span>
                                 </div>
@@ -664,14 +724,13 @@ const CalculationTypeList = () => {
                             <div className="col-md-12 pt-2">
                                 <div className="form-check form-switch">
                                     <input
-                                        className="form-check-input"
+                                        className="form-check-input cursor-pointer"
                                         type="checkbox"
                                         id="calcTypeActiveSwitch"
                                         checked={formData.is_active}
                                         onChange={(e) => setFormData({ ...formData, is_active: e.target.checked })}
-                                        style={{ cursor: 'pointer' }}
                                     />
-                                    <label className="form-check-label" htmlFor="calcTypeActiveSwitch" style={{ fontSize: '13px', fontWeight: 500, cursor: 'pointer' }}>
+                                    <label className="form-check-label calc-form-label cursor-pointer" htmlFor="calcTypeActiveSwitch">
                                         Active Status
                                     </label>
                                 </div>
@@ -680,21 +739,31 @@ const CalculationTypeList = () => {
                     </div>
 
                     <div className="modal-footer-custom">
-                        <Button
+                        <button
                             type="button"
-                            className="btn-close-custom"
+                            className="btn-close-custom btn-universal-close"
                             onClick={handleCloseModal}
                             disabled={submitting}
+                            style={{
+                                backgroundColor: cancelBtnColor || 'var(--cancel-btn-color, #dc3545)',
+                                borderColor: cancelBtnColor || 'var(--cancel-btn-color, #dc3545)',
+                                color: '#ffffff'
+                            }}
                         >
                             Cancel
-                        </Button>
-                        <Button
+                        </button>
+                        <button
                             type="submit"
-                            className="btn-save-custom"
+                            className="btn-save-custom btn-universal-save"
                             disabled={submitting}
+                            style={{
+                                backgroundColor: saveBtnColor || 'var(--save-btn-color, var(--cc-primary, #0a500f))',
+                                borderColor: saveBtnColor || 'var(--save-btn-color, var(--cc-primary, #0a500f))',
+                                color: '#ffffff'
+                            }}
                         >
                             {submitting ? 'Saving...' : (editMode ? 'Save Changes' : 'Save')}
-                        </Button>
+                        </button>
                     </div>
                 </Form>
             </Modal>

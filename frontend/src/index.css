@@ -281,8 +281,8 @@ table tbody tr:hover,
 
 /* Universal Save and Close Button styling */
 .btn-universal-close {
-  background-color: #dc3545 !important;
-  border-color: #dc3545 !important;
+  background-color: var(--cancel-btn-color, #dc3545) !important;
+  border-color: var(--cancel-btn-color, #dc3545) !important;
   color: #fff !important;
   height: 42px !important;
   padding: 0 24px !important;

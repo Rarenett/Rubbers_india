@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Row, Col, Card, Form, Button, Table, Spinner, Badge, Tabs, Tab, Modal } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 import ProductionService from '../../../services/ProductionService';
 import MainSweetAlert from 'sweetalert2';
 import { usePageTitle } from '../../../context/TitleContext';
+import { ThemeContext } from '../../../context/ThemeContext';
 import ShiftEmployeeModal from './ShiftEmployeeModal';
 
 // ── Exclude Dates Modal ──────────────────────────────────────────────────────
@@ -123,6 +124,7 @@ const ExcludeDatesModal = ({ show, onHide, datesList, shifts, activeShiftDates, 
 // ── Main Shift Plan Form ─────────────────────────────────────────────────────
 const ShiftPlanForm = () => {
     usePageTitle("Shift Plan");
+    const { saveBtnColor, cancelBtnColor } = useContext(ThemeContext) || {};
     const navigate = useNavigate();
     const { id } = useParams();
     const [loading, setLoading] = useState(false);
@@ -1103,29 +1105,49 @@ const ShiftPlanForm = () => {
                     <style>{`
                         .btn-cancel-custom {
                             background-color: var(--cancel-btn-color, #dc3545) !important;
+                            border-color: var(--cancel-btn-color, #dc3545) !important;
                             color: white !important;
                             border-radius: 8px !important;
                             font-weight: 500 !important;
                             font-size: 14px !important;
                             padding: 10px 24px !important;
-                            border: none !important;
+                            border-style: solid !important;
+                            border-width: 1px !important;
                             cursor: pointer;
                             transition: background-color 0.2s;
                         }
-                        .btn-cancel-custom:hover, .btn-cancel-custom:active, .btn-cancel-custom:focus { background-color: var(--cancel-btn-color, #dc3545) !important; border-color: var(--cancel-btn-color, #dc3545) !important; opacity: 1 !important; box-shadow: none !important; }
+                        .btn-cancel-custom:hover, 
+                        .btn-cancel-custom:active, 
+                        .btn-cancel-custom:focus,
+                        .btn-cancel-custom:focus-visible { 
+                            background-color: var(--cancel-btn-color, #dc3545) !important; 
+                            border-color: var(--cancel-btn-color, #dc3545) !important; 
+                            color: white !important;
+                            opacity: 1 !important; 
+                            box-shadow: none !important; 
+                        }
                         .btn-generate-custom {
-                            background-color: #0a500f !important;
+                            background-color: var(--save-btn-color, #0a500f) !important;
+                            border-color: var(--save-btn-color, #0a500f) !important;
                             color: white !important;
                             border-radius: 8px !important;
                             font-weight: 500 !important;
                             font-size: 14px !important;
                             padding: 10px 24px !important;
-                            border: none !important;
+                            border-style: solid !important;
+                            border-width: 1px !important;
                             cursor: pointer;
                             transition: background-color 0.2s;
                         }
-                        .btn-generate-custom:hover {
-                            background-color: #073d0b !important;
+                        .btn-generate-custom:hover,
+                        .btn-generate-custom:active,
+                        .btn-generate-custom:focus,
+                        .btn-generate-custom:focus-visible {
+                            background-color: var(--save-btn-color, #0a500f) !important;
+                            border-color: var(--save-btn-color, #0a500f) !important;
+                            color: white !important;
+                            opacity: 1 !important;
+                            box-shadow: none !important;
                         }
                         @media (max-width: 576px) {
                             .btn-cancel-custom,
@@ -1134,10 +1156,31 @@ const ShiftPlanForm = () => {
                             }
                         }
                     `}</style>
-                    <Button className="btn-cancel-custom" onClick={() => navigate('/production/shift-planning')}>Cancel</Button>
-                    <Button className="btn-generate-custom" onClick={() => handleSave(null)} disabled={loading}>
+                    <button 
+                        type="button" 
+                        className="btn-cancel-custom btn-universal-close" 
+                        style={{
+                            backgroundColor: cancelBtnColor || 'var(--cancel-btn-color, #dc3545)',
+                            borderColor: cancelBtnColor || 'var(--cancel-btn-color, #dc3545)',
+                            color: '#ffffff'
+                        }}
+                        onClick={() => navigate('/production/shift-planning')}
+                    >
+                        Cancel
+                    </button>
+                    <button 
+                        type="button" 
+                        className="btn-generate-custom btn-universal-save" 
+                        style={{
+                            backgroundColor: saveBtnColor || 'var(--save-btn-color, #0a500f)',
+                            borderColor: saveBtnColor || 'var(--save-btn-color, #0a500f)',
+                            color: '#ffffff'
+                        }}
+                        onClick={() => handleSave(null)} 
+                        disabled={loading}
+                    >
                         {loading ? <Spinner as="span" animation="border" size="sm" /> : (id ? 'Save Plan' : 'Generate Plan')}
-                    </Button>
+                    </button>
                 </Card.Footer>
             </Card>
 

@@ -15,7 +15,7 @@ class TableConfigurationView(views.APIView):
         if config:
             serializer = DynamicTableConfigurationSerializer(config)
             return Response(serializer.data)
-        return Response({'error': 'Not found'}, status=404)
+        return Response({'settings': {}, 'detail': 'No configuration found'}, status=200)
 
     def put(self, request):
         table_name = request.data.get('table_name')

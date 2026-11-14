@@ -42,7 +42,7 @@ const AssetService = {
     getRacks: () => axiosInstance.get('/api/assets/racks/'),
     getAssetTypes: () => axiosInstance.get('/api/assets/asset-types/'),
     getFiles: () => axiosInstance.get('/api/assets/files/'),
-    getCompanies: () => axiosInstance.get('/api/hr/companies/'),
+    getCompanies: () => axiosInstance.get('/api/settings/company/'),
 
     // Allocation management
     getAllocations: () => axiosInstance.get('/api/assets/allocations/'),

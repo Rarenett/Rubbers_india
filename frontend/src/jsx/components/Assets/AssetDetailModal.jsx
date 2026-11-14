@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ThemeContext } from '../../../context/ThemeContext';
 
 const AssetDetailModal = ({
     show,
@@ -7,17 +8,38 @@ const AssetDetailModal = ({
     formDocuments,
     getInheritedAttributes
 }) => {
+    const { cancelBtnColor } = useContext(ThemeContext) || {};
     if (!show) return null;
 
     return (
-        <div className="fd-modal-overlay">
-            <div className="fd-modal-content" style={{ maxWidth: '800px', borderRadius: '16px', border: 'none', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)' }}>
-                <div className="d-flex justify-content-between align-items-center mb-4 pb-3" style={{ borderBottom: '1px solid #f1f5f9' }}>
-                    <h2 className="m-0" style={{ fontSize: '1.5rem', fontWeight: '700', color: '#1e293b' }}>Asset Details</h2>
-                    <button className="btn-close" onClick={onClose} style={{ padding: '0.5rem' }}></button>
-                </div>
+        <>
+            <style>{`
+                .btn-close-custom-adm {
+                    background-color: var(--cancel-btn-color, #dc3545) !important;
+                    border-color: var(--cancel-btn-color, #dc3545) !important;
+                    color: #ffffff !important;
+                    border-radius: 10px !important;
+                    transition: all 0.2s ease;
+                }
+                .btn-close-custom-adm:hover,
+                .btn-close-custom-adm:active,
+                .btn-close-custom-adm:focus,
+                .btn-close-custom-adm:focus-visible {
+                    background-color: var(--cancel-btn-color, #dc3545) !important;
+                    border-color: var(--cancel-btn-color, #dc3545) !important;
+                    color: #ffffff !important;
+                    opacity: 1 !important;
+                    box-shadow: none !important;
+                }
+            `}</style>
+            <div className="fd-modal-overlay">
+                <div className="fd-modal-content" style={{ maxWidth: '800px', borderRadius: '16px', border: 'none', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)' }}>
+                    <div className="d-flex justify-content-between align-items-center mb-4 pb-3" style={{ borderBottom: '1px solid #f1f5f9' }}>
+                        <h2 className="m-0" style={{ fontSize: '1.5rem', fontWeight: '700', color: '#1e293b' }}>Asset Details</h2>
+                        <button className="btn-close" onClick={onClose} style={{ padding: '0.5rem' }}></button>
+                    </div>
 
-                <div className="row g-4 text-start">
+                    <div className="row g-4 text-start">
                     <div className="col-md-6 text-start">
                         <h6 className="text-primary text-uppercase fw-bold mb-3" style={{ fontSize: '0.7rem', letterSpacing: '1.2px' }}>Classification</h6>
                         <div className="detail-item mb-3">
@@ -190,10 +212,23 @@ const AssetDetailModal = ({
                 </div>
 
                 <div className="d-flex justify-content-end mt-5 pt-3" style={{ borderTop: '1px solid #f1f5f9' }}>
-                    <button type="button" onClick={onClose} className="btn btn-primary px-5 py-2 fw-bold" style={{ borderRadius: '10px' }}>Close</button>
+                    <button
+                        type="button"
+                        onClick={onClose}
+                        className="btn btn-close-custom-adm btn-universal-close px-5 py-2 fw-bold"
+                        style={{
+                            backgroundColor: cancelBtnColor || 'var(--cancel-btn-color, #dc3545)',
+                            borderColor: cancelBtnColor || 'var(--cancel-btn-color, #dc3545)',
+                            color: '#ffffff',
+                            borderRadius: '10px'
+                        }}
+                    >
+                        Close
+                    </button>
                 </div>
             </div>
         </div>
+        </>
     );
 };
 
